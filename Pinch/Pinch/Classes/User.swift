@@ -20,6 +20,13 @@ class User {
         return "\(firstName) \(lastName)"
     }
     var gender: Gender
+    var upcomingEvents: [Event]
+    var savedEvents: [Event]
+    var pastEvents: [Event]
+    var causes: [Cause]
+    var testimonials: [Testimonial]
+    //var badges: [Badge]
+    var orgs: [Organization]
     
     // Initializer
     init(uid: Int, firstName: String, lastName: String, gender: Gender) {
@@ -27,10 +34,22 @@ class User {
         self.firstName = firstName
         self.lastName = lastName
         self.gender = gender
+        self.upcomingEvents = []
+        self.savedEvents = []
+        self.pastEvents = []
+        self.causes = []
+        self.testimonials = []
+        //self.badges = []
+        self.orgs = []
     }
     
 }
 
 enum Gender {
     case Male, Female, Unspecified
+}
+
+struct Testimonial {
+    let eventID: Event!
+    var testimonial: String!
 }
