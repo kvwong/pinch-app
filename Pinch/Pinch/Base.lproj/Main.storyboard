@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--User Profile View Controller-->
+        <scene sceneID="W4B-XP-fOv">
+            <objects>
+                <viewController id="ALl-jm-gkw" customClass="UserProfileViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Nf-HX-u88"/>
+                        <viewControllerLayoutGuide type="bottom" id="kjH-Hw-cy2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MkQ-7A-2ZP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xV2-bH-zqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="224.5" y="-453.5"/>
+        </scene>
+        <!--User Badges View Controller-->
+        <scene sceneID="BEv-b1-fNV">
+            <objects>
+                <viewController id="ZdT-BO-QYW" customClass="UserBadgesViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y4s-PR-KZz"/>
+                        <viewControllerLayoutGuide type="bottom" id="rtG-RP-sen"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xu8-f2-Fcu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TD0-GG-aiA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="732.5" y="-624.5"/>
+        </scene>
+        <!--User Following View Controller-->
+        <scene sceneID="84K-yd-Mnn">
+            <objects>
+                <viewController id="n7v-Hh-x8C" customClass="UserFollowingViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PVo-O8-X2c"/>
+                        <viewControllerLayoutGuide type="bottom" id="na7-dt-MKj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QNS-tJ-tFX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mcz-hH-ATq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2197.5" y="-624.5"/>
+        </scene>
+        <!--User Orgs View Controller-->
+        <scene sceneID="CZz-UV-wlM">
+            <objects>
+                <viewController id="GKy-hA-A1V" customClass="UserOrgsViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FoK-oe-q7z"/>
+                        <viewControllerLayoutGuide type="bottom" id="3rW-19-Z1e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eBP-Gm-pAw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vW1-kW-yig" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1213.5" y="-624.5"/>
+        </scene>
+        <!--User Followers View Controller-->
+        <scene sceneID="7cf-s4-zQo">
+            <objects>
+                <viewController id="24W-5S-PWr" customClass="UserFollowersViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j57-pM-TaX"/>
+                        <viewControllerLayoutGuide type="bottom" id="oSu-js-Ddp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ax0-1o-4M1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fDT-GP-nFv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1711.5" y="-624.5"/>
+        </scene>
+        <!--User Stats View Controller-->
+        <scene sceneID="vSl-4Z-G5v">
+            <objects>
+                <viewController id="8DO-nQ-gIj" customClass="UserStatsViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mtp-73-qOc"/>
+                        <viewControllerLayoutGuide type="bottom" id="RCa-yo-iM4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ulz-TH-2hA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ERd-uR-Ud8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2683.5" y="-624.5"/>
+        </scene>
+        <!--Organization Profile View Controller-->
+        <scene sceneID="VzI-pz-sLp">
+            <objects>
+                <viewController id="8mf-en-3ur" customClass="OrganizationProfileViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dqL-ex-6P7"/>
+                        <viewControllerLayoutGuide type="bottom" id="6p7-oR-jC5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q8R-Ed-fz2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qK2-VW-R8H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1373.5" y="-1598.5"/>
+        </scene>
+        <!--Edit User Profile View Controller-->
+        <scene sceneID="sqo-Jk-Mae">
+            <objects>
+                <viewController id="Bp7-Dk-6a9" customClass="EditUserProfileViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DPF-FX-3eH"/>
+                        <viewControllerLayoutGuide type="bottom" id="ebf-cS-dIE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lBO-xf-hhg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uz3-pg-B17" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="224.5" y="-1262.5"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="dm6-NW-HzA">
+            <objects>
+                <viewController id="xzZ-HJ-EzB" customClass="SettingsViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CI5-qN-rMu"/>
+                        <viewControllerLayoutGuide type="bottom" id="crY-nR-8AN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7q5-8H-uoM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PfK-gx-MgR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="219.5" y="-2027.5"/>
+        </scene>
+        <!--Change Password View Controller-->
+        <scene sceneID="y7R-UW-hZu">
+            <objects>
+                <viewController id="ezi-nD-qOq" customClass="ChangePasswordViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kft-oU-8nX"/>
+                        <viewControllerLayoutGuide type="bottom" id="a6G-ve-jv3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ck1-Nr-9jl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NNe-ae-aj2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="732.5" y="-2027.5"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="PB9-El-w96">
+            <objects>
+                <viewController id="2rp-NI-EgO" customClass="WelcomeViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Boc-MJ-AbQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fa7-hN-jDz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JyB-3V-y7D">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="24a-Kv-KOV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2244.5" y="361.5"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="nrA-Zz-x3G">
+            <objects>
+                <viewController id="pbw-5e-0Jv" customClass="SignUpViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uBU-rA-i1i"/>
+                        <viewControllerLayoutGuide type="bottom" id="yN7-xy-tWk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gzu-yc-RfI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ado-d7-GJk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1744.5" y="361.5"/>
+        </scene>
+        <!--Log In View Controller-->
+        <scene sceneID="Z4S-An-RAc">
+            <objects>
+                <viewController id="JVW-9M-bk7" customClass="LogInViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e7J-QG-5hG"/>
+                        <viewControllerLayoutGuide type="bottom" id="nke-xI-SM3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jpl-p9-tQU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BGG-Ai-9Dp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1744.5" y="1177.5"/>
+        </scene>
+        <!--Onboarding Causes View Controller-->
+        <scene sceneID="ymM-lo-YFD">
+            <objects>
+                <viewController id="sKc-lS-1mz" customClass="OnboardingCausesViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6zL-uh-VwJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="CYJ-LS-UHi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PdF-K0-C1h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5vH-sF-hbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1248.5" y="361.5"/>
+        </scene>
+        <!--Onboarding Follow Friends View Controller-->
+        <scene sceneID="yGu-pC-Ovb">
+            <objects>
+                <viewController id="O6i-vz-hvi" customClass="OnboardingFollowFriendsViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LnY-7n-Wrf"/>
+                        <viewControllerLayoutGuide type="bottom" id="MdQ-K0-QgO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ni9-b6-hmo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cQc-Dr-XjM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-752.5" y="361.5"/>
+        </scene>
+        <!--Onboarding Finish View Controller-->
+        <scene sceneID="B49-6R-rTV">
+            <objects>
+                <viewController id="KFN-RR-cuI" customClass="OnboardingFinishViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dFo-Vx-zVB"/>
+                        <viewControllerLayoutGuide type="bottom" id="c3b-KC-ARh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aF2-JB-yfn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0o4-xi-2x1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-264.5" y="361.5"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="224.5" y="361.5"/>
+        </scene>
+        <!--Activity View Controller-->
+        <scene sceneID="PTX-dw-no2">
+            <objects>
+                <viewController id="Ngy-vJ-zBg" customClass="ActivityViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qag-Z1-5UD"/>
+                        <viewControllerLayoutGuide type="bottom" id="KO1-oo-e6W"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6af-40-ReT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YtO-M1-TVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="224.5" y="1163.5"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="vtQ-Xs-nlv">
+            <objects>
+                <viewController id="a33-VI-cXc" customClass="SearchViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tMu-cg-iPv"/>
+                        <viewControllerLayoutGuide type="bottom" id="2jF-2m-bGO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ugw-Yb-t74">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J73-fc-R79" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="732.5" y="361.5"/>
+        </scene>
+        <!--Search Results View Controller-->
+        <scene sceneID="rrH-Ub-lTl">
+            <objects>
+                <viewController id="qYW-OA-Ka8" customClass="SearchResultsViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lqf-MP-46J"/>
+                        <viewControllerLayoutGuide type="bottom" id="6N0-AQ-DJC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hg2-zt-ao7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="epC-04-IHD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1237.5" y="361.5"/>
+        </scene>
+        <!--Event View Controller-->
+        <scene sceneID="7OE-P0-STL">
+            <objects>
+                <viewController id="Z56-TJ-Wva" customClass="EventViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WaB-y6-TtV"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Ku-Fa-rZx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="21h-QA-sLL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G6b-cM-Ti1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="839.5" y="1241.5"/>
+        </scene>
+        <!--Event Details View Controller-->
+        <scene sceneID="bze-RS-pcP">
+            <objects>
+                <viewController id="q8K-ZH-XbN" customClass="EventDetailsViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="r1a-Hl-yOE"/>
+                        <viewControllerLayoutGuide type="bottom" id="JUN-zr-u8y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1TV-Lf-0RR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mc9-rq-N7k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1839.5" y="1241.5"/>
+        </scene>
+        <!--Event Attendees View Controller-->
+        <scene sceneID="Yh1-zD-gKJ">
+            <objects>
+                <viewController id="x3J-7c-fo6" customClass="EventAttendeesViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ubd-zl-zso"/>
+                        <viewControllerLayoutGuide type="bottom" id="Px7-tU-UW7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5xd-x8-0Cz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dxB-g5-ixR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3347.5" y="1241.5"/>
+        </scene>
+        <!--Event Cover Media View Controller-->
+        <scene sceneID="9Dz-Bo-OWa">
+            <objects>
+                <viewController id="6eq-NL-otq" customClass="EventCoverMediaViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mCG-SX-TpK"/>
+                        <viewControllerLayoutGuide type="bottom" id="xrj-CX-aj9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cpX-en-ZF5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rm0-yx-kSD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1335.5" y="1241.5"/>
+        </scene>
+        <!--Event Feedback View Controller-->
+        <scene sceneID="6Of-Zh-K1l">
+            <objects>
+                <viewController id="UiD-NR-hHo" customClass="EventFeedbackViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bte-Zb-0Lw"/>
+                        <viewControllerLayoutGuide type="bottom" id="ptR-Hu-xM5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zck-6D-jaI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wG0-PH-Up0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="219.5" y="2041.5"/>
+        </scene>
+        <!--Event Confirm Attendance View Controller-->
+        <scene sceneID="DI4-c9-A3I">
+            <objects>
+                <viewController id="AjS-94-CrB" customClass="EventConfirmAttendanceViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bWC-IS-cqO"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Tw-Su-bsi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="A3c-cc-Tax">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s1A-oq-qR5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="839.5" y="2041.5"/>
+        </scene>
+        <!--Event Location View Controller-->
+        <scene sceneID="KyX-l8-kri">
+            <objects>
+                <viewController id="dce-wP-KXj" customClass="EventLocationViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mND-ob-Blp"/>
+                        <viewControllerLayoutGuide type="bottom" id="fk9-8R-XRc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pcc-6S-MDQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cwy-76-hdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2347.5" y="1241.5"/>
+        </scene>
+        <!--Event Testimonials View Controller-->
+        <scene sceneID="ESb-L6-1AB">
+            <objects>
+                <viewController id="3xv-J6-eHk" customClass="EventTestimonialsViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="udC-67-8ij"/>
+                        <viewControllerLayoutGuide type="bottom" id="pYT-hL-22o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="23a-zT-eXb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YnX-sd-ABK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2851.5" y="1241.5"/>
+        </scene>
+        <!--Search Filters View Controller-->
+        <scene sceneID="gNe-eG-gAI">
+            <objects>
+                <viewController id="dfb-ts-liH" customClass="SearchFiltersViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="H5s-R4-Jig"/>
+                        <viewControllerLayoutGuide type="bottom" id="2aF-BV-nzh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="stM-iw-l55">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rtG-6D-tUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1743.5" y="361.5"/>
+        </scene>
+    </scenes>
+</document>
