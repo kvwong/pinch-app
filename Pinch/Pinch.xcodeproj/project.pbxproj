@@ -44,10 +44,10 @@
 		121648BE1BD0DCB000852536 /* OrganizationProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648BD1BD0DCB000852536 /* OrganizationProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		121648C01BD0DCDC00852536 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648BF1BD0DCDC00852536 /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		121648C21BD0DCED00852536 /* EditUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648C11BD0DCED00852536 /* EditUserProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121648C51BD0DDD900852536 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648C41BD0DDD900852536 /* Common.swift */; settings = {ASSET_TAGS = (); }; };
 		121648C71BD0DDF400852536 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648C61BD0DDF400852536 /* Event.swift */; settings = {ASSET_TAGS = (); }; };
 		121648C91BD0E23900852536 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648C81BD0E23900852536 /* Organization.swift */; settings = {ASSET_TAGS = (); }; };
 		121648CB1BD0E3B100852536 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648CA1BD0E3B100852536 /* User.swift */; settings = {ASSET_TAGS = (); }; };
+		12DB7DEA1BD2FEEF00C17FE4 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB7DE91BD2FEEF00C17FE4 /* Common.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,10 +111,10 @@
 		121648BD1BD0DCB000852536 /* OrganizationProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrganizationProfileViewController.swift; path = ViewControllers/OrganizationProfileViewController.swift; sourceTree = "<group>"; };
 		121648BF1BD0DCDC00852536 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ViewControllers/SettingsViewController.swift; sourceTree = "<group>"; };
 		121648C11BD0DCED00852536 /* EditUserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditUserProfileViewController.swift; path = ViewControllers/EditUserProfileViewController.swift; sourceTree = "<group>"; };
-		121648C41BD0DDD900852536 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		121648C61BD0DDF400852536 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Classes/Event.swift; sourceTree = "<group>"; };
 		121648C81BD0E23900852536 /* Organization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Organization.swift; path = Classes/Organization.swift; sourceTree = "<group>"; };
 		121648CA1BD0E3B100852536 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Classes/User.swift; sourceTree = "<group>"; };
+		12DB7DE91BD2FEEF00C17FE4 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Common.swift; path = Helpers/Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +145,7 @@
 		121184DB1BD21B8D00C17136 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				121648C41BD0DDD900852536 /* Common.swift */,
+				12DB7DE91BD2FEEF00C17FE4 /* Common.swift */,
 				121184DC1BD21BD900C17136 /* Cause.swift */,
 			);
 			name = Helpers;
@@ -434,7 +434,6 @@
 				121185121BD2243000C17136 /* UserOrgsViewController.swift in Sources */,
 				121648C91BD0E23900852536 /* Organization.swift in Sources */,
 				121185091BD2238000C17136 /* SearchFiltersViewController.swift in Sources */,
-				121648C51BD0DDD900852536 /* Common.swift in Sources */,
 				1211850E1BD223F300C17136 /* UserBadgesViewController.swift in Sources */,
 				121185071BD2235C00C17136 /* EventFeedbackViewController.swift in Sources */,
 				121648C01BD0DCDC00852536 /* SettingsViewController.swift in Sources */,
@@ -454,6 +453,7 @@
 				121184F01BD221CE00C17136 /* EventLocationViewController.swift in Sources */,
 				121648BE1BD0DCB000852536 /* OrganizationProfileViewController.swift in Sources */,
 				121184FF1BD222BA00C17136 /* OnboardingFollowFriendsViewController.swift in Sources */,
+				12DB7DEA1BD2FEEF00C17FE4 /* Common.swift in Sources */,
 				121185031BD2230000C17136 /* SignUpViewController.swift in Sources */,
 				121185181BD226F200C17136 /* OnboardingFinishViewController.swift in Sources */,
 				121648C71BD0DDF400852536 /* Event.swift in Sources */,
