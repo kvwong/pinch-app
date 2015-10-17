@@ -1,0 +1,709 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		121184DD1BD21BD900C17136 /* Cause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184DC1BD21BD900C17136 /* Cause.swift */; settings = {ASSET_TAGS = (); }; };
+		121184EE1BD221C300C17136 /* EventTestimonialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184ED1BD221C300C17136 /* EventTestimonialsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121184F01BD221CE00C17136 /* EventLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184EF1BD221CE00C17136 /* EventLocationViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121184F21BD221E100C17136 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184F11BD221E100C17136 /* EventDetailsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121184F41BD221F500C17136 /* EventAttendeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184F31BD221F500C17136 /* EventAttendeesViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121184F61BD2220700C17136 /* EventConfirmAttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184F51BD2220700C17136 /* EventConfirmAttendanceViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121184F81BD2222800C17136 /* EventCoverMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184F71BD2222800C17136 /* EventCoverMediaViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121184FD1BD2229100C17136 /* OnboardingCausesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184FC1BD2229100C17136 /* OnboardingCausesViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121184FF1BD222BA00C17136 /* OnboardingFollowFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184FE1BD222BA00C17136 /* OnboardingFollowFriendsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121185011BD222EF00C17136 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185001BD222EF00C17136 /* WelcomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121185031BD2230000C17136 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185021BD2230000C17136 /* SignUpViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121185051BD2230A00C17136 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185041BD2230A00C17136 /* LogInViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121185071BD2235C00C17136 /* EventFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185061BD2235C00C17136 /* EventFeedbackViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121185091BD2238000C17136 /* SearchFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185081BD2238000C17136 /* SearchFiltersViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		1211850B1BD223BB00C17136 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211850A1BD223BB00C17136 /* ChangePasswordViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		1211850E1BD223F300C17136 /* UserBadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211850D1BD223F300C17136 /* UserBadgesViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121185101BD223FA00C17136 /* UserStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211850F1BD223FA00C17136 /* UserStatsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121185121BD2243000C17136 /* UserOrgsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185111BD2243000C17136 /* UserOrgsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121185141BD2244400C17136 /* UserFollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185131BD2244400C17136 /* UserFollowersViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121185161BD2244F00C17136 /* UserFollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185151BD2244F00C17136 /* UserFollowingViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121185181BD226F200C17136 /* OnboardingFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185171BD226F200C17136 /* OnboardingFinishViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121648831BD0D6AF00852536 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648821BD0D6AF00852536 /* AppDelegate.swift */; };
+		121648851BD0D6AF00852536 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648841BD0D6AF00852536 /* ViewController.swift */; };
+		121648881BD0D6AF00852536 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 121648861BD0D6AF00852536 /* Main.storyboard */; };
+		1216488A1BD0D6AF00852536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 121648891BD0D6AF00852536 /* Assets.xcassets */; };
+		1216488D1BD0D6AF00852536 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1216488B1BD0D6AF00852536 /* LaunchScreen.storyboard */; };
+		121648981BD0D6AF00852536 /* PinchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648971BD0D6AF00852536 /* PinchTests.swift */; };
+		121648A31BD0D6AF00852536 /* PinchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648A21BD0D6AF00852536 /* PinchUITests.swift */; };
+		121648B21BD0D88000852536 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648B11BD0D88000852536 /* HomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121648B41BD0DAC400852536 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648B31BD0DAC400852536 /* ActivityViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121648B61BD0DBB300852536 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648B51BD0DBB300852536 /* EventViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121648B81BD0DC0E00852536 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648B71BD0DC0E00852536 /* SearchViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121648BA1BD0DC1C00852536 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648B91BD0DC1C00852536 /* SearchResultsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121648BC1BD0DC7200852536 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648BB1BD0DC7200852536 /* UserProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121648BE1BD0DCB000852536 /* OrganizationProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648BD1BD0DCB000852536 /* OrganizationProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121648C01BD0DCDC00852536 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648BF1BD0DCDC00852536 /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121648C21BD0DCED00852536 /* EditUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648C11BD0DCED00852536 /* EditUserProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121648C51BD0DDD900852536 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648C41BD0DDD900852536 /* Common.swift */; settings = {ASSET_TAGS = (); }; };
+		121648C71BD0DDF400852536 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648C61BD0DDF400852536 /* Event.swift */; settings = {ASSET_TAGS = (); }; };
+		121648C91BD0E23900852536 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648C81BD0E23900852536 /* Organization.swift */; settings = {ASSET_TAGS = (); }; };
+		121648CB1BD0E3B100852536 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648CA1BD0E3B100852536 /* User.swift */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		121648941BD0D6AF00852536 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 121648771BD0D6AF00852536 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1216487E1BD0D6AF00852536;
+			remoteInfo = Pinch;
+		};
+		1216489F1BD0D6AF00852536 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 121648771BD0D6AF00852536 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1216487E1BD0D6AF00852536;
+			remoteInfo = Pinch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		121184DC1BD21BD900C17136 /* Cause.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cause.swift; path = Helpers/Cause.swift; sourceTree = "<group>"; };
+		121184ED1BD221C300C17136 /* EventTestimonialsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTestimonialsViewController.swift; path = ViewControllers/EventTestimonialsViewController.swift; sourceTree = "<group>"; };
+		121184EF1BD221CE00C17136 /* EventLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventLocationViewController.swift; path = ViewControllers/EventLocationViewController.swift; sourceTree = "<group>"; };
+		121184F11BD221E100C17136 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDetailsViewController.swift; path = ViewControllers/EventDetailsViewController.swift; sourceTree = "<group>"; };
+		121184F31BD221F500C17136 /* EventAttendeesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventAttendeesViewController.swift; path = ViewControllers/EventAttendeesViewController.swift; sourceTree = "<group>"; };
+		121184F51BD2220700C17136 /* EventConfirmAttendanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventConfirmAttendanceViewController.swift; path = ViewControllers/EventConfirmAttendanceViewController.swift; sourceTree = "<group>"; };
+		121184F71BD2222800C17136 /* EventCoverMediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventCoverMediaViewController.swift; path = ViewControllers/EventCoverMediaViewController.swift; sourceTree = "<group>"; };
+		121184FC1BD2229100C17136 /* OnboardingCausesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingCausesViewController.swift; path = ViewControllers/OnboardingCausesViewController.swift; sourceTree = "<group>"; };
+		121184FE1BD222BA00C17136 /* OnboardingFollowFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingFollowFriendsViewController.swift; path = ViewControllers/OnboardingFollowFriendsViewController.swift; sourceTree = "<group>"; };
+		121185001BD222EF00C17136 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = ViewControllers/WelcomeViewController.swift; sourceTree = "<group>"; };
+		121185021BD2230000C17136 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = ViewControllers/SignUpViewController.swift; sourceTree = "<group>"; };
+		121185041BD2230A00C17136 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = ViewControllers/LogInViewController.swift; sourceTree = "<group>"; };
+		121185061BD2235C00C17136 /* EventFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventFeedbackViewController.swift; path = ViewControllers/EventFeedbackViewController.swift; sourceTree = "<group>"; };
+		121185081BD2238000C17136 /* SearchFiltersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchFiltersViewController.swift; path = ViewControllers/SearchFiltersViewController.swift; sourceTree = "<group>"; };
+		1211850A1BD223BB00C17136 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangePasswordViewController.swift; path = ViewControllers/ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		1211850D1BD223F300C17136 /* UserBadgesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserBadgesViewController.swift; path = ViewControllers/UserBadgesViewController.swift; sourceTree = "<group>"; };
+		1211850F1BD223FA00C17136 /* UserStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStatsViewController.swift; path = ViewControllers/UserStatsViewController.swift; sourceTree = "<group>"; };
+		121185111BD2243000C17136 /* UserOrgsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserOrgsViewController.swift; path = ViewControllers/UserOrgsViewController.swift; sourceTree = "<group>"; };
+		121185131BD2244400C17136 /* UserFollowersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserFollowersViewController.swift; path = ViewControllers/UserFollowersViewController.swift; sourceTree = "<group>"; };
+		121185151BD2244F00C17136 /* UserFollowingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserFollowingViewController.swift; path = ViewControllers/UserFollowingViewController.swift; sourceTree = "<group>"; };
+		121185171BD226F200C17136 /* OnboardingFinishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingFinishViewController.swift; path = ViewControllers/OnboardingFinishViewController.swift; sourceTree = "<group>"; };
+		1216487F1BD0D6AF00852536 /* Pinch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		121648821BD0D6AF00852536 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		121648841BD0D6AF00852536 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		121648871BD0D6AF00852536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		121648891BD0D6AF00852536 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1216488C1BD0D6AF00852536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1216488E1BD0D6AF00852536 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		121648931BD0D6AF00852536 /* PinchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		121648971BD0D6AF00852536 /* PinchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchTests.swift; sourceTree = "<group>"; };
+		121648991BD0D6AF00852536 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1216489E1BD0D6AF00852536 /* PinchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		121648A21BD0D6AF00852536 /* PinchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchUITests.swift; sourceTree = "<group>"; };
+		121648A41BD0D6AF00852536 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		121648B11BD0D88000852536 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewControllers/HomeViewController.swift; sourceTree = "<group>"; };
+		121648B31BD0DAC400852536 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityViewController.swift; path = ViewControllers/ActivityViewController.swift; sourceTree = "<group>"; };
+		121648B51BD0DBB300852536 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = ViewControllers/EventViewController.swift; sourceTree = "<group>"; };
+		121648B71BD0DC0E00852536 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = ViewControllers/SearchViewController.swift; sourceTree = "<group>"; };
+		121648B91BD0DC1C00852536 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResultsViewController.swift; path = ViewControllers/SearchResultsViewController.swift; sourceTree = "<group>"; };
+		121648BB1BD0DC7200852536 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileViewController.swift; path = ViewControllers/UserProfileViewController.swift; sourceTree = "<group>"; };
+		121648BD1BD0DCB000852536 /* OrganizationProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrganizationProfileViewController.swift; path = ViewControllers/OrganizationProfileViewController.swift; sourceTree = "<group>"; };
+		121648BF1BD0DCDC00852536 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ViewControllers/SettingsViewController.swift; sourceTree = "<group>"; };
+		121648C11BD0DCED00852536 /* EditUserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditUserProfileViewController.swift; path = ViewControllers/EditUserProfileViewController.swift; sourceTree = "<group>"; };
+		121648C41BD0DDD900852536 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		121648C61BD0DDF400852536 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Classes/Event.swift; sourceTree = "<group>"; };
+		121648C81BD0E23900852536 /* Organization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Organization.swift; path = Classes/Organization.swift; sourceTree = "<group>"; };
+		121648CA1BD0E3B100852536 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Classes/User.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1216487C1BD0D6AF00852536 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		121648901BD0D6AF00852536 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1216489B1BD0D6AF00852536 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		121184DB1BD21B8D00C17136 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				121648C41BD0DDD900852536 /* Common.swift */,
+				121184DC1BD21BD900C17136 /* Cause.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		121184E21BD220D500C17136 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				121648B51BD0DBB300852536 /* EventViewController.swift */,
+				121184F71BD2222800C17136 /* EventCoverMediaViewController.swift */,
+				121184F11BD221E100C17136 /* EventDetailsViewController.swift */,
+				121184EF1BD221CE00C17136 /* EventLocationViewController.swift */,
+				121184ED1BD221C300C17136 /* EventTestimonialsViewController.swift */,
+				121184F31BD221F500C17136 /* EventAttendeesViewController.swift */,
+				121184F51BD2220700C17136 /* EventConfirmAttendanceViewController.swift */,
+				121185061BD2235C00C17136 /* EventFeedbackViewController.swift */,
+			);
+			name = Event;
+			sourceTree = "<group>";
+		};
+		121184F91BD2223E00C17136 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				121648B71BD0DC0E00852536 /* SearchViewController.swift */,
+				121648B91BD0DC1C00852536 /* SearchResultsViewController.swift */,
+				121185081BD2238000C17136 /* SearchFiltersViewController.swift */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		121184FA1BD2225100C17136 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				121648BF1BD0DCDC00852536 /* SettingsViewController.swift */,
+				121648C11BD0DCED00852536 /* EditUserProfileViewController.swift */,
+				1211850A1BD223BB00C17136 /* ChangePasswordViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		121184FB1BD2226B00C17136 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				121184FC1BD2229100C17136 /* OnboardingCausesViewController.swift */,
+				121184FE1BD222BA00C17136 /* OnboardingFollowFriendsViewController.swift */,
+				121185171BD226F200C17136 /* OnboardingFinishViewController.swift */,
+			);
+			name = Onboarding;
+			sourceTree = "<group>";
+		};
+		1211850C1BD223E300C17136 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				121648BB1BD0DC7200852536 /* UserProfileViewController.swift */,
+				1211850D1BD223F300C17136 /* UserBadgesViewController.swift */,
+				1211850F1BD223FA00C17136 /* UserStatsViewController.swift */,
+				121185111BD2243000C17136 /* UserOrgsViewController.swift */,
+				121185131BD2244400C17136 /* UserFollowersViewController.swift */,
+				121185151BD2244F00C17136 /* UserFollowingViewController.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		121648761BD0D6AF00852536 = {
+			isa = PBXGroup;
+			children = (
+				121648811BD0D6AF00852536 /* Pinch */,
+				121648961BD0D6AF00852536 /* PinchTests */,
+				121648A11BD0D6AF00852536 /* PinchUITests */,
+				121648801BD0D6AF00852536 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		121648801BD0D6AF00852536 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1216487F1BD0D6AF00852536 /* Pinch.app */,
+				121648931BD0D6AF00852536 /* PinchTests.xctest */,
+				1216489E1BD0D6AF00852536 /* PinchUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		121648811BD0D6AF00852536 /* Pinch */ = {
+			isa = PBXGroup;
+			children = (
+				121648C31BD0DD8600852536 /* Classes */,
+				121648B01BD0D85800852536 /* View Controllers */,
+				121184DB1BD21B8D00C17136 /* Helpers */,
+				121648821BD0D6AF00852536 /* AppDelegate.swift */,
+				121648841BD0D6AF00852536 /* ViewController.swift */,
+				121648861BD0D6AF00852536 /* Main.storyboard */,
+				121648891BD0D6AF00852536 /* Assets.xcassets */,
+				1216488B1BD0D6AF00852536 /* LaunchScreen.storyboard */,
+				1216488E1BD0D6AF00852536 /* Info.plist */,
+			);
+			path = Pinch;
+			sourceTree = "<group>";
+		};
+		121648961BD0D6AF00852536 /* PinchTests */ = {
+			isa = PBXGroup;
+			children = (
+				121648971BD0D6AF00852536 /* PinchTests.swift */,
+				121648991BD0D6AF00852536 /* Info.plist */,
+			);
+			path = PinchTests;
+			sourceTree = "<group>";
+		};
+		121648A11BD0D6AF00852536 /* PinchUITests */ = {
+			isa = PBXGroup;
+			children = (
+				121648A21BD0D6AF00852536 /* PinchUITests.swift */,
+				121648A41BD0D6AF00852536 /* Info.plist */,
+			);
+			path = PinchUITests;
+			sourceTree = "<group>";
+		};
+		121648B01BD0D85800852536 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				121185001BD222EF00C17136 /* WelcomeViewController.swift */,
+				121185021BD2230000C17136 /* SignUpViewController.swift */,
+				121185041BD2230A00C17136 /* LogInViewController.swift */,
+				121648B11BD0D88000852536 /* HomeViewController.swift */,
+				121648B31BD0DAC400852536 /* ActivityViewController.swift */,
+				121184FB1BD2226B00C17136 /* Onboarding */,
+				121184E21BD220D500C17136 /* Event */,
+				121184F91BD2223E00C17136 /* Search */,
+				121184FA1BD2225100C17136 /* Settings */,
+				1211850C1BD223E300C17136 /* Profile */,
+				121648BD1BD0DCB000852536 /* OrganizationProfileViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		121648C31BD0DD8600852536 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				121648C61BD0DDF400852536 /* Event.swift */,
+				121648C81BD0E23900852536 /* Organization.swift */,
+				121648CA1BD0E3B100852536 /* User.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1216487E1BD0D6AF00852536 /* Pinch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 121648A71BD0D6AF00852536 /* Build configuration list for PBXNativeTarget "Pinch" */;
+			buildPhases = (
+				1216487B1BD0D6AF00852536 /* Sources */,
+				1216487C1BD0D6AF00852536 /* Frameworks */,
+				1216487D1BD0D6AF00852536 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pinch;
+			productName = Pinch;
+			productReference = 1216487F1BD0D6AF00852536 /* Pinch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		121648921BD0D6AF00852536 /* PinchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 121648AA1BD0D6AF00852536 /* Build configuration list for PBXNativeTarget "PinchTests" */;
+			buildPhases = (
+				1216488F1BD0D6AF00852536 /* Sources */,
+				121648901BD0D6AF00852536 /* Frameworks */,
+				121648911BD0D6AF00852536 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				121648951BD0D6AF00852536 /* PBXTargetDependency */,
+			);
+			name = PinchTests;
+			productName = PinchTests;
+			productReference = 121648931BD0D6AF00852536 /* PinchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1216489D1BD0D6AF00852536 /* PinchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 121648AD1BD0D6AF00852536 /* Build configuration list for PBXNativeTarget "PinchUITests" */;
+			buildPhases = (
+				1216489A1BD0D6AF00852536 /* Sources */,
+				1216489B1BD0D6AF00852536 /* Frameworks */,
+				1216489C1BD0D6AF00852536 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				121648A01BD0D6AF00852536 /* PBXTargetDependency */,
+			);
+			name = PinchUITests;
+			productName = PinchUITests;
+			productReference = 1216489E1BD0D6AF00852536 /* PinchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		121648771BD0D6AF00852536 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Team 2";
+				TargetAttributes = {
+					1216487E1BD0D6AF00852536 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					121648921BD0D6AF00852536 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 1216487E1BD0D6AF00852536;
+					};
+					1216489D1BD0D6AF00852536 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 1216487E1BD0D6AF00852536;
+					};
+				};
+			};
+			buildConfigurationList = 1216487A1BD0D6AF00852536 /* Build configuration list for PBXProject "Pinch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 121648761BD0D6AF00852536;
+			productRefGroup = 121648801BD0D6AF00852536 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1216487E1BD0D6AF00852536 /* Pinch */,
+				121648921BD0D6AF00852536 /* PinchTests */,
+				1216489D1BD0D6AF00852536 /* PinchUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1216487D1BD0D6AF00852536 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1216488D1BD0D6AF00852536 /* LaunchScreen.storyboard in Resources */,
+				1216488A1BD0D6AF00852536 /* Assets.xcassets in Resources */,
+				121648881BD0D6AF00852536 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		121648911BD0D6AF00852536 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1216489C1BD0D6AF00852536 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1216487B1BD0D6AF00852536 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				121184F81BD2222800C17136 /* EventCoverMediaViewController.swift in Sources */,
+				121184F61BD2220700C17136 /* EventConfirmAttendanceViewController.swift in Sources */,
+				121648B81BD0DC0E00852536 /* SearchViewController.swift in Sources */,
+				1211850B1BD223BB00C17136 /* ChangePasswordViewController.swift in Sources */,
+				121648BC1BD0DC7200852536 /* UserProfileViewController.swift in Sources */,
+				121185101BD223FA00C17136 /* UserStatsViewController.swift in Sources */,
+				121184FD1BD2229100C17136 /* OnboardingCausesViewController.swift in Sources */,
+				121648B61BD0DBB300852536 /* EventViewController.swift in Sources */,
+				121185011BD222EF00C17136 /* WelcomeViewController.swift in Sources */,
+				121648C21BD0DCED00852536 /* EditUserProfileViewController.swift in Sources */,
+				121185121BD2243000C17136 /* UserOrgsViewController.swift in Sources */,
+				121648C91BD0E23900852536 /* Organization.swift in Sources */,
+				121185091BD2238000C17136 /* SearchFiltersViewController.swift in Sources */,
+				121648C51BD0DDD900852536 /* Common.swift in Sources */,
+				1211850E1BD223F300C17136 /* UserBadgesViewController.swift in Sources */,
+				121185071BD2235C00C17136 /* EventFeedbackViewController.swift in Sources */,
+				121648C01BD0DCDC00852536 /* SettingsViewController.swift in Sources */,
+				121185141BD2244400C17136 /* UserFollowersViewController.swift in Sources */,
+				121184DD1BD21BD900C17136 /* Cause.swift in Sources */,
+				121184EE1BD221C300C17136 /* EventTestimonialsViewController.swift in Sources */,
+				121648851BD0D6AF00852536 /* ViewController.swift in Sources */,
+				121185161BD2244F00C17136 /* UserFollowingViewController.swift in Sources */,
+				121648CB1BD0E3B100852536 /* User.swift in Sources */,
+				121184F41BD221F500C17136 /* EventAttendeesViewController.swift in Sources */,
+				121184F21BD221E100C17136 /* EventDetailsViewController.swift in Sources */,
+				121648831BD0D6AF00852536 /* AppDelegate.swift in Sources */,
+				121648B21BD0D88000852536 /* HomeViewController.swift in Sources */,
+				121648BA1BD0DC1C00852536 /* SearchResultsViewController.swift in Sources */,
+				121185051BD2230A00C17136 /* LogInViewController.swift in Sources */,
+				121648B41BD0DAC400852536 /* ActivityViewController.swift in Sources */,
+				121184F01BD221CE00C17136 /* EventLocationViewController.swift in Sources */,
+				121648BE1BD0DCB000852536 /* OrganizationProfileViewController.swift in Sources */,
+				121184FF1BD222BA00C17136 /* OnboardingFollowFriendsViewController.swift in Sources */,
+				121185031BD2230000C17136 /* SignUpViewController.swift in Sources */,
+				121185181BD226F200C17136 /* OnboardingFinishViewController.swift in Sources */,
+				121648C71BD0DDF400852536 /* Event.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1216488F1BD0D6AF00852536 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				121648981BD0D6AF00852536 /* PinchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1216489A1BD0D6AF00852536 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				121648A31BD0D6AF00852536 /* PinchUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		121648951BD0D6AF00852536 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1216487E1BD0D6AF00852536 /* Pinch */;
+			targetProxy = 121648941BD0D6AF00852536 /* PBXContainerItemProxy */;
+		};
+		121648A01BD0D6AF00852536 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1216487E1BD0D6AF00852536 /* Pinch */;
+			targetProxy = 1216489F1BD0D6AF00852536 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		121648861BD0D6AF00852536 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				121648871BD0D6AF00852536 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1216488B1BD0D6AF00852536 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1216488C1BD0D6AF00852536 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		121648A51BD0D6AF00852536 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		121648A61BD0D6AF00852536 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		121648A81BD0D6AF00852536 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Pinch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.team2.Pinch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		121648A91BD0D6AF00852536 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Pinch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.team2.Pinch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		121648AB1BD0D6AF00852536 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PinchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.team2.PinchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pinch.app/Pinch";
+			};
+			name = Debug;
+		};
+		121648AC1BD0D6AF00852536 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PinchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.team2.PinchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pinch.app/Pinch";
+			};
+			name = Release;
+		};
+		121648AE1BD0D6AF00852536 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PinchUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.team2.PinchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Pinch;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		121648AF1BD0D6AF00852536 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PinchUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.team2.PinchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Pinch;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1216487A1BD0D6AF00852536 /* Build configuration list for PBXProject "Pinch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				121648A51BD0D6AF00852536 /* Debug */,
+				121648A61BD0D6AF00852536 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		121648A71BD0D6AF00852536 /* Build configuration list for PBXNativeTarget "Pinch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				121648A81BD0D6AF00852536 /* Debug */,
+				121648A91BD0D6AF00852536 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		121648AA1BD0D6AF00852536 /* Build configuration list for PBXNativeTarget "PinchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				121648AB1BD0D6AF00852536 /* Debug */,
+				121648AC1BD0D6AF00852536 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		121648AD1BD0D6AF00852536 /* Build configuration list for PBXNativeTarget "PinchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				121648AE1BD0D6AF00852536 /* Debug */,
+				121648AF1BD0D6AF00852536 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 121648771BD0D6AF00852536 /* Project object */;
+}
