@@ -23,14 +23,24 @@
                                     <action selector="didPressCloseButton:" destination="ALl-jm-gkw" eventType="touchUpInside" id="IZy-PX-XiJ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GdB-qO-KdL">
+                                <rect key="frame" x="329" y="20" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="Bp7-Dk-6a9" kind="push" id="Fgd-tL-GIU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Msn-f2-oQj"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xV2-bH-zqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="119.73333333333333" y="-429.31333333333333"/>
+            <point key="canvasLocation" x="119.5" y="-1195.5"/>
         </scene>
         <!--User Badges View Controller-->
         <scene sceneID="BEv-b1-fNV">
@@ -45,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TD0-GG-aiA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="582.5" y="-429.5"/>
+            <point key="canvasLocation" x="1628.5" y="-429.5"/>
         </scene>
         <!--User Following View Controller-->
         <scene sceneID="84K-yd-Mnn">
@@ -60,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcz-hH-ATq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1961.5" y="-429.5"/>
+            <point key="canvasLocation" x="3007.5" y="-429.5"/>
         </scene>
         <!--User Orgs View Controller-->
         <scene sceneID="CZz-UV-wlM">
@@ -75,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vW1-kW-yig" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1041.5" y="-429.5"/>
+            <point key="canvasLocation" x="2087.5" y="-429.5"/>
         </scene>
         <!--User Followers View Controller-->
         <scene sceneID="7cf-s4-zQo">
@@ -90,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDT-GP-nFv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1501.5" y="-429.5"/>
+            <point key="canvasLocation" x="2547.5" y="-429.5"/>
         </scene>
         <!--User Stats View Controller-->
         <scene sceneID="vSl-4Z-G5v">
@@ -105,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERd-uR-Ud8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2430.5" y="-429.5"/>
+            <point key="canvasLocation" x="3476.5" y="-429.5"/>
         </scene>
         <!--Organization Profile View Controller-->
         <scene sceneID="VzI-pz-sLp">
@@ -120,37 +130,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qK2-VW-R8H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1196.5" y="-1405.5"/>
+            <point key="canvasLocation" x="1728.5" y="-1405.5"/>
         </scene>
-        <!--Edit User Profile View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="sqo-Jk-Mae">
             <objects>
-                <viewController id="Bp7-Dk-6a9" customClass="EditUserProfileViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Bp7-Dk-6a9" customClass="SettingsViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lBO-xf-hhg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Settings" id="xbN-Lv-P9e">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CHH-ql-ZVc">
+                                <rect key="frame" x="0.0" y="97" width="375" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="xzZ-HJ-EzB" kind="push" id="7JD-Go-7Rx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="T9Q-fA-9yU">
+                                <rect key="frame" x="0.0" y="161" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="ezi-nD-qOq" kind="push" id="uqt-gn-AxV"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Bt1-59-eTu"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uz3-pg-B17" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="119.73333333333333" y="-1195.1666666666667"/>
+            <point key="canvasLocation" x="582.5" y="-1987.5"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Edit Profile-->
         <scene sceneID="dm6-NW-HzA">
             <objects>
-                <viewController id="xzZ-HJ-EzB" customClass="SettingsViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xzZ-HJ-EzB" customClass="EditUserProfileViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7q5-8H-uoM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Edit Profile" id="wE2-Tv-WiB">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Edit Profile" prompt="Save" id="F8r-yk-Rtd">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="rMv-RG-n34"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PfK-gx-MgR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116.5" y="-1967.5"/>
+            <point key="canvasLocation" x="1096.5" y="-2371.5"/>
         </scene>
         <!--Change Password View Controller-->
         <scene sceneID="y7R-UW-hZu">
@@ -161,11 +201,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="14l-LK-3dL"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NNe-ae-aj2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="582.5" y="-1967.5"/>
+            <point key="canvasLocation" x="1096.5" y="-1571.5"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="PB9-El-w96">
@@ -271,7 +312,7 @@
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="-2" maxY="0.0"/>
                                 <state key="normal" image="icon_profile_24x24"/>
                                 <connections>
-                                    <segue destination="ALl-jm-gkw" kind="modal" identifier="segueToProfile" id="0th-N6-9ER"/>
+                                    <segue destination="V8y-lG-Mwc" kind="modal" identifier="segueToProfile" id="0th-N6-9ER"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Do0-dU-di9" userLabel="Activity">
@@ -335,6 +376,13 @@
                     <view key="view" contentMode="scaleToFill" id="Ugw-Yb-t74">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wMK-0E-c5s">
+                                <rect key="frame" x="2" y="20" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icon_close_14x14"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -365,6 +413,12 @@
                     <view key="view" contentMode="scaleToFill" id="21h-QA-sLL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Event Details v3" id="wFv-Ah-817">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1662"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.45065789473684209" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -493,10 +547,33 @@
             </objects>
             <point key="canvasLocation" x="1501.5" y="341.5"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pM9-kD-UbX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="V8y-lG-Mwc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oNh-OC-qhL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ALl-jm-gkw" kind="relationship" relationship="rootViewController" id="G67-Uc-0RF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v2O-8y-65h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="119.5" y="-429.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Activity" width="375" height="667"/>
+        <image name="Edit Profile" width="375" height="667"/>
+        <image name="Event Details v3" width="375" height="1662"/>
+        <image name="Settings" width="375" height="667"/>
         <image name="icon_activity_24x24" width="24" height="24"/>
+        <image name="icon_close_14x14" width="14" height="14"/>
         <image name="icon_profile_24x24" width="24" height="24"/>
         <image name="icon_search_24x24" width="24" height="24"/>
         <image name="profile_user" width="375" height="667"/>
