@@ -10,10 +10,19 @@ import UIKit
 
 class SearchResultsViewController: UIViewController {
 
+    @IBOutlet weak var searchTermField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Search Term field style
+        searchTermField.layer.masksToBounds = true
+        searchTermField.layer.cornerRadius = 4.0
+        searchTermField.leftView = UIImageView(image: UIImage(named: "icon_search_13x13"))
+        searchTermField.leftView?.frame = CGRectMake(0, 0, 28, 28)
+        searchTermField.leftView?.contentMode = UIViewContentMode.Center
+        searchTermField.leftViewMode = UITextFieldViewMode.Always
+        
     }
 
     override func didReceiveMemoryWarning() {

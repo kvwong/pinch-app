@@ -17,7 +17,7 @@ class ChangePasswordViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        // Do something
     }
 
     override func didReceiveMemoryWarning() {

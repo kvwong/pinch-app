@@ -24,7 +24,15 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func didPressProfile(sender: UIButton) {
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .Plain, target: nil, action: nil)
+        performSegueWithIdentifier("segueToEditProfile", sender: nil)
+    }
 
+    @IBAction func didPressChangePassword(sender: UIButton) {
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .Plain, target: nil, action: nil)
+        performSegueWithIdentifier("segueToChangePassword", sender: nil)
+    }
     /*
     // MARK: - Navigation
 
