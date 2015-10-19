@@ -15,14 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        // Custom navigation bar style
         UINavigationBar.appearance().barTintColor = UIColorFromRGB("47C6B2")
         UINavigationBar.appearance().tintColor = UIColorFromRGB("FFFFFF")
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+            
         UINavigationBar.appearance().translucent = false
-        UIBarButtonItem.appearance().setBackButtonBackgroundImage(
-            UIImage(named: "icon_back_white_9x14")!.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 14, 0, 0)),
-            forState: UIControlState.Normal,
-            barMetrics: UIBarMetrics.Default
-        )
+        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "icon_back_white_16x14")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal).imageWithAlignmentRectInsets(UIEdgeInsetsMake(0, 0, -3, 0))
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "icon_back_white_16x14")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal).imageWithAlignmentRectInsets(UIEdgeInsetsMake(0, 0, -3, 0))
         
         return true
     }
