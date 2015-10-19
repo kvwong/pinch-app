@@ -10,10 +10,27 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
+    @IBOutlet weak var searchTermField: UITextField!
+    @IBOutlet weak var searchLocationField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Search Term field style
+        searchTermField.layer.masksToBounds = true
+        searchTermField.layer.cornerRadius = 4.0
+        searchTermField.leftView = UIImageView(image: UIImage(named: "icon_search_13x13"))
+        searchTermField.leftView?.frame = CGRectMake(0, 0, 28, 28)
+        searchTermField.leftView?.contentMode = UIViewContentMode.Center
+        searchTermField.leftViewMode = UITextFieldViewMode.Always
+        
+        // Search Location field style
+        searchLocationField.layer.masksToBounds = true
+        searchLocationField.layer.cornerRadius = 4.0
+        searchLocationField.leftView = UIImageView(image: UIImage(named: "icon_location_13x13"))
+        searchLocationField.leftView?.frame = CGRectMake(0, 0, 28, 28)
+        searchLocationField.leftView?.contentMode = UIViewContentMode.Center
+        searchLocationField.leftViewMode = UITextFieldViewMode.Always
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +38,9 @@ class SearchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func didPressCloseButton(sender: UIButton) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

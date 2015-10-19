@@ -132,7 +132,7 @@
             </objects>
             <point key="canvasLocation" x="1728.5" y="-1405.5"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="sqo-Jk-Mae">
             <objects>
                 <viewController id="Bp7-Dk-6a9" customClass="SettingsViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
@@ -158,10 +158,14 @@
                                     <segue destination="ezi-nD-qOq" kind="push" id="uqt-gn-AxV"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Y1v-Xw-gF4">
+                                <rect key="frame" x="2" y="20" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Bt1-59-eTu"/>
+                    <navigationItem key="navigationItem" title="Settings" id="Bt1-59-eTu"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uz3-pg-B17" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -183,7 +187,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Edit Profile" prompt="Save" id="F8r-yk-Rtd">
+                    <navigationItem key="navigationItem" title="Edit Profile" id="F8r-yk-Rtd">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="rMv-RG-n34"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -192,7 +196,7 @@
             </objects>
             <point key="canvasLocation" x="1096.5" y="-2371.5"/>
         </scene>
-        <!--Change Password View Controller-->
+        <!--Change Password-->
         <scene sceneID="y7R-UW-hZu">
             <objects>
                 <viewController id="ezi-nD-qOq" customClass="ChangePasswordViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
@@ -201,7 +205,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="14l-LK-3dL"/>
+                    <navigationItem key="navigationItem" title="Change Password" id="14l-LK-3dL"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NNe-ae-aj2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -407,6 +411,9 @@
                                 <rect key="frame" x="327" y="617" width="42" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="icon_search_24x24"/>
+                                <connections>
+                                    <action selector="didPressSearchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EgE-wh-CoE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dPA-il-pYx">
                                 <rect key="frame" x="168" y="310" width="39" height="30"/>
@@ -422,6 +429,7 @@
                     <navigationItem key="navigationItem" id="XH2-nX-lsZ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="searchButton" destination="EBb-mb-NY1" id="xUv-YZ-SMG"/>
                         <segue destination="a33-VI-cXc" kind="modal" identifier="segueToSearch" id="T03-8X-nxw"/>
                     </connections>
                 </viewController>
@@ -470,11 +478,62 @@
                                 <rect key="frame" x="2" y="20" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="icon_close_14x14"/>
+                                <connections>
+                                    <action selector="didPressCloseButton:" destination="a33-VI-cXc" eventType="touchUpInside" id="MBW-IO-Ne2"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" id="GUi-FQ-V1i">
+                                <rect key="frame" x="16" y="79" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.78823529410000004" green="0.80000000000000004" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" searchField="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="search"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Near Your Location" textAlignment="natural" minimumFontSize="17" id="IWW-QD-eYo">
+                                <rect key="frame" x="16" y="117" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.78823529410000004" green="0.80000000000000004" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" searchField="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="search"/>
+                            </textField>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="J8C-Uj-CTG">
+                                <rect key="frame" x="16" y="156" width="343" height="495"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="Lrs-E9-Qjm">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="495"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="CAUSES" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" id="EAc-Xu-9z8">
+                                                <rect key="frame" x="0.0" y="0.0" width="97" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RdM-ef-kMb">
+                                                <rect key="frame" x="0.0" y="38" width="343" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="searchLocationField" destination="IWW-QD-eYo" id="WWf-EB-xzE"/>
+                        <outlet property="searchTermField" destination="GUi-FQ-V1i" id="Mcr-oO-l2S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J73-fc-R79" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -683,9 +742,8 @@
         <!--Navigation Controller-->
         <scene sceneID="pM9-kD-UbX">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="V8y-lG-Mwc" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V8y-lG-Mwc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oNh-OC-qhL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -740,8 +798,9 @@
         <!--Navigation Controller-->
         <scene sceneID="Sbx-6b-Zhz">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bgu-z9-cIA" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Bgu-z9-cIA" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gHr-H7-fuW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

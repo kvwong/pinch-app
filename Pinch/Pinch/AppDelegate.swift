@@ -15,7 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        UINavigationBar.appearance().barTintColor = UIColorFromRGB("47C6B2")
+        UINavigationBar.appearance().tintColor = UIColorFromRGB("FFFFFF")
+        UINavigationBar.appearance().translucent = false
+        UIBarButtonItem.appearance().setBackButtonBackgroundImage(
+            UIImage(named: "icon_back_white_9x14")!.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 14, 0, 0)),
+            forState: UIControlState.Normal,
+            barMetrics: UIBarMetrics.Default
+        )
+        
         return true
     }
 
