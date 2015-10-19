@@ -555,6 +555,16 @@
                                     <action selector="didPressCloseButton:" destination="a33-VI-cXc" eventType="touchUpInside" id="GdC-4W-9Xy"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Near Your Location" textAlignment="natural" minimumFontSize="17" id="rc5-s7-Pnn">
+                                <rect key="frame" x="52" y="27" width="271" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.78823529410000004" green="0.80000000000000004" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" searchField="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="search"/>
+                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="TFB-aK-1jM">
                                 <rect key="frame" x="52" y="27" width="271" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -565,11 +575,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="search"/>
                             </textField>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Yle-bt-6bu">
+                                <rect key="frame" x="327" y="20" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icon_filters_20x14"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="searchLocationField" destination="rc5-s7-Pnn" id="zVt-Dg-flr"/>
                         <outlet property="searchTermField" destination="TFB-aK-1jM" id="FIS-qh-0dU"/>
                     </connections>
                 </viewController>
@@ -856,6 +872,7 @@
         <image name="Splash" width="375" height="667"/>
         <image name="icon_activity_24x24" width="24" height="24"/>
         <image name="icon_close_14x14" width="14" height="14"/>
+        <image name="icon_filters_20x14" width="20" height="14"/>
         <image name="icon_profile_24x24" width="24" height="24"/>
         <image name="icon_search_24x24" width="24" height="24"/>
         <image name="profile_top" width="376" height="668"/>

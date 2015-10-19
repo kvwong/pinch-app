@@ -31,7 +31,6 @@
 		121648831BD0D6AF00852536 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648821BD0D6AF00852536 /* AppDelegate.swift */; };
 		121648851BD0D6AF00852536 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648841BD0D6AF00852536 /* ViewController.swift */; };
 		121648881BD0D6AF00852536 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 121648861BD0D6AF00852536 /* Main.storyboard */; };
-		1216488A1BD0D6AF00852536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 121648891BD0D6AF00852536 /* Assets.xcassets */; };
 		1216488D1BD0D6AF00852536 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1216488B1BD0D6AF00852536 /* LaunchScreen.storyboard */; };
 		121648981BD0D6AF00852536 /* PinchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648971BD0D6AF00852536 /* PinchTests.swift */; };
 		121648A31BD0D6AF00852536 /* PinchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648A21BD0D6AF00852536 /* PinchUITests.swift */; };
@@ -47,6 +46,8 @@
 		121648C71BD0DDF400852536 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648C61BD0DDF400852536 /* Event.swift */; settings = {ASSET_TAGS = (); }; };
 		121648C91BD0E23900852536 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648C81BD0E23900852536 /* Organization.swift */; settings = {ASSET_TAGS = (); }; };
 		121648CB1BD0E3B100852536 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648CA1BD0E3B100852536 /* User.swift */; settings = {ASSET_TAGS = (); }; };
+		126B730E1BD4CD910081CA0E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126B730D1BD4CD910081CA0E /* Location.swift */; settings = {ASSET_TAGS = (); }; };
+		126B73101BD4D38B0081CA0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 126B730F1BD4D38B0081CA0E /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		12DB7DEA1BD2FEEF00C17FE4 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB7DE91BD2FEEF00C17FE4 /* Common.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -93,7 +94,6 @@
 		121648821BD0D6AF00852536 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		121648841BD0D6AF00852536 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		121648871BD0D6AF00852536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		121648891BD0D6AF00852536 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1216488C1BD0D6AF00852536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1216488E1BD0D6AF00852536 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		121648931BD0D6AF00852536 /* PinchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +114,8 @@
 		121648C61BD0DDF400852536 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Classes/Event.swift; sourceTree = "<group>"; };
 		121648C81BD0E23900852536 /* Organization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Organization.swift; path = Classes/Organization.swift; sourceTree = "<group>"; };
 		121648CA1BD0E3B100852536 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Classes/User.swift; sourceTree = "<group>"; };
+		126B730D1BD4CD910081CA0E /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Helpers/Location.swift; sourceTree = "<group>"; };
+		126B730F1BD4D38B0081CA0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12DB7DE91BD2FEEF00C17FE4 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Common.swift; path = Helpers/Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +149,7 @@
 			children = (
 				12DB7DE91BD2FEEF00C17FE4 /* Common.swift */,
 				121184DC1BD21BD900C17136 /* Cause.swift */,
+				126B730D1BD4CD910081CA0E /* Location.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -236,9 +239,9 @@
 				121648B01BD0D85800852536 /* View Controllers */,
 				121184DB1BD21B8D00C17136 /* Helpers */,
 				121648821BD0D6AF00852536 /* AppDelegate.swift */,
+				126B730F1BD4D38B0081CA0E /* Assets.xcassets */,
 				121648841BD0D6AF00852536 /* ViewController.swift */,
 				121648861BD0D6AF00852536 /* Main.storyboard */,
-				121648891BD0D6AF00852536 /* Assets.xcassets */,
 				1216488B1BD0D6AF00852536 /* LaunchScreen.storyboard */,
 				1216488E1BD0D6AF00852536 /* Info.plist */,
 			);
@@ -395,7 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1216488D1BD0D6AF00852536 /* LaunchScreen.storyboard in Resources */,
-				1216488A1BD0D6AF00852536 /* Assets.xcassets in Resources */,
+				126B73101BD4D38B0081CA0E /* Assets.xcassets in Resources */,
 				121648881BD0D6AF00852536 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +439,7 @@
 				121185091BD2238000C17136 /* SearchFiltersViewController.swift in Sources */,
 				1211850E1BD223F300C17136 /* UserBadgesViewController.swift in Sources */,
 				121185071BD2235C00C17136 /* EventFeedbackViewController.swift in Sources */,
+				126B730E1BD4CD910081CA0E /* Location.swift in Sources */,
 				121648C01BD0DCDC00852536 /* SettingsViewController.swift in Sources */,
 				121185141BD2244400C17136 /* UserFollowersViewController.swift in Sources */,
 				121184DD1BD21BD900C17136 /* Cause.swift in Sources */,

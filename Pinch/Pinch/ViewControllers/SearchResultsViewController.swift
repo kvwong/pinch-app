@@ -8,12 +8,16 @@
 
 import UIKit
 
-class SearchResultsViewController: UIViewController {
+class SearchResultsViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var searchTermField: UITextField!
+    @IBOutlet weak var searchLocationField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Assign delegates
+        searchTermField.delegate = self
         
         // Search Term field style
         searchTermField.layer.masksToBounds = true
@@ -23,6 +27,13 @@ class SearchResultsViewController: UIViewController {
         searchTermField.leftView?.contentMode = UIViewContentMode.Center
         searchTermField.leftViewMode = UITextFieldViewMode.Always
         
+        // Search Location field style
+        searchLocationField.layer.masksToBounds = true
+        searchLocationField.layer.cornerRadius = 4.0
+        searchLocationField.leftView = UIImageView(image: UIImage(named: "icon_location_13x13"))
+        searchLocationField.leftView?.frame = CGRectMake(0, 0, 28, 28)
+        searchLocationField.leftView?.contentMode = UIViewContentMode.Center
+        searchLocationField.leftViewMode = UITextFieldViewMode.Always
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +41,18 @@ class SearchResultsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        UIView.animateWithDuration(0.3, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
+            self.searchTermField.frame.size.width = 343
+            self.searchTermField.frame.origin.x = 16
+            self.searchTermField.frame.origin.y = 64
+            self.searchLocationField.frame.size.width = 343
+            self.searchLocationField.frame.origin.x = 16
+            self.searchLocationField.frame.origin.y = 100
+            }, completion: nil)
+        
+        return true
+    }
 
     /*
     // MARK: - Navigation

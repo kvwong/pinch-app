@@ -23,9 +23,10 @@ class Event {
     var addressCity: String
     var addressState: String
     var addressZIP: String
+    var location: Location
     var contactNumber: String
     var websiteURL: String
-    var attendees: [User]
+    var attendees: [Int] // Expects User.uid
     
     // Initializer
     init(
@@ -39,6 +40,7 @@ class Event {
         addressCity: String,
         addressState: String,
         addressZIP: String,
+        location: Location,
         contactNumber: String,
         websiteURL: String
         )
@@ -53,9 +55,21 @@ class Event {
         self.addressCity = addressCity
         self.addressState = addressState
         self.addressZIP = addressZIP
+        self.location = location
         self.contactNumber = contactNumber
         self.websiteURL = websiteURL
         self.attendees = []
     }
     
+    /*// Add attendee
+    func addAttendee(user: User) {
+        self.attendees.append(user.uid)
+    }
+    
+    // Remove attendee
+    func removeAttendee(user: User) {
+        self.attendees = self.attendees.filter() {
+            $0 != user.uid
+        }
+    }*/
 }
