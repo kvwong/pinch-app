@@ -12,10 +12,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="profile_user" id="hqW-p7-Wxf">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zbE-Nk-hKa">
                                 <rect key="frame" x="2" y="20" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -30,6 +26,10 @@
                                     <segue destination="Bp7-Dk-6a9" kind="push" id="Fgd-tL-GIU"/>
                                 </connections>
                             </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="profile_top" id="PSx-ge-I8o">
+                                <rect key="frame" x="0.0" y="0.0" width="376" height="668"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -835,6 +835,6 @@
         <image name="icon_close_14x14" width="14" height="14"/>
         <image name="icon_profile_24x24" width="24" height="24"/>
         <image name="icon_search_24x24" width="24" height="24"/>
-        <image name="profile_user" width="375" height="667"/>
+        <image name="profile_top" width="376" height="668"/>
     </resources>
 </document>
