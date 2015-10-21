@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5F5C5DFDC9B957AEA6064BCD96683810"
-               BuildableName = "libPods-Pinch.a"
+               BlueprintIdentifier = "DBC46146340B5D8EF0F644353B4D6C19"
+               BuildableName = "Pods_Pinch.framework"
                BlueprintName = "Pods-Pinch"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -45,8 +45,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5F5C5DFDC9B957AEA6064BCD96683810"
-            BuildableName = "libPods-Pinch.a"
+            BlueprintIdentifier = "DBC46146340B5D8EF0F644353B4D6C19"
+            BuildableName = "Pods_Pinch.framework"
             BlueprintName = "Pods-Pinch"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
@@ -63,8 +63,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5F5C5DFDC9B957AEA6064BCD96683810"
-            BuildableName = "libPods-Pinch.a"
+            BlueprintIdentifier = "DBC46146340B5D8EF0F644353B4D6C19"
+            BuildableName = "Pods_Pinch.framework"
             BlueprintName = "Pods-Pinch"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>

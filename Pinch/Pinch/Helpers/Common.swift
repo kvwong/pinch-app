@@ -37,7 +37,7 @@ func delay(delay:Double, closure:()->()) {
 // Modulate two range of values proportionally -----
 
 func convertValue(value: CGFloat, r1Min: CGFloat, r1Max: CGFloat, r2Min: CGFloat, r2Max: CGFloat) -> CGFloat {
-    var ratio = (r2Max - r2Min) / (r1Max - r1Min)
+    let ratio = (r2Max - r2Min) / (r1Max - r1Min)
     return value * ratio + r2Min - r1Min * ratio
 }
 
@@ -45,7 +45,7 @@ func convertValue(value: CGFloat, r1Min: CGFloat, r1Max: CGFloat, r2Min: CGFloat
 // Color from HEX values ---------------------------
 
 func UIColorFromRGB(colorCode: String, alpha: Float = 1.0) -> UIColor {
-    var scanner = NSScanner(string:colorCode)
+    let scanner = NSScanner(string:colorCode)
     var color:UInt32 = 0;
     scanner.scanHexInt(&color)
     

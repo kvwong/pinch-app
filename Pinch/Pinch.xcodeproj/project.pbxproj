@@ -25,7 +25,6 @@
 		1211850E1BD223F300C17136 /* UserBadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211850D1BD223F300C17136 /* UserBadgesViewController.swift */; };
 		121185101BD223FA00C17136 /* UserStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211850F1BD223FA00C17136 /* UserStatsViewController.swift */; };
 		121185121BD2243000C17136 /* UserOrgsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185111BD2243000C17136 /* UserOrgsViewController.swift */; };
-		121185141BD2244400C17136 /* UserFollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185131BD2244400C17136 /* UserFollowersViewController.swift */; };
 		121185161BD2244F00C17136 /* UserFollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185151BD2244F00C17136 /* UserFollowingViewController.swift */; };
 		121185181BD226F200C17136 /* OnboardingFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185171BD226F200C17136 /* OnboardingFinishViewController.swift */; };
 		121648831BD0D6AF00852536 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648821BD0D6AF00852536 /* AppDelegate.swift */; };
@@ -46,13 +45,19 @@
 		121648C71BD0DDF400852536 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648C61BD0DDF400852536 /* Event.swift */; };
 		121648C91BD0E23900852536 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648C81BD0E23900852536 /* Organization.swift */; };
 		121648CB1BD0E3B100852536 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648CA1BD0E3B100852536 /* User.swift */; };
+		1229B4B81BD796A8000A2B7D /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1229B4B51BD796A8000A2B7D /* Lato-Bold.ttf */; settings = {ASSET_TAGS = (); }; };
+		1229B4B91BD796A8000A2B7D /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1229B4B61BD796A8000A2B7D /* Lato-Regular.ttf */; settings = {ASSET_TAGS = (); }; };
+		1229B4BA1BD796A8000A2B7D /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1229B4B71BD796A8000A2B7D /* Raleway-Bold.ttf */; settings = {ASSET_TAGS = (); }; };
 		126B730E1BD4CD910081CA0E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126B730D1BD4CD910081CA0E /* Location.swift */; };
 		126B73101BD4D38B0081CA0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 126B730F1BD4D38B0081CA0E /* Assets.xcassets */; };
+		12AA0DFB1BD787CC009DA8CB /* UserActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA0DFA1BD787CC009DA8CB /* UserActivityViewController.swift */; };
+		12AA0DFD1BD7885B009DA8CB /* UserTestimonialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA0DFC1BD7885B009DA8CB /* UserTestimonialsViewController.swift */; };
+		12AA0E091BD79202009DA8CB /* FollowingUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA0E081BD79202009DA8CB /* FollowingUserTableViewCell.swift */; };
 		12DB7DEA1BD2FEEF00C17FE4 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB7DE91BD2FEEF00C17FE4 /* Common.swift */; };
 		CB50A5DF1BD7901E0072C54C /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB50A5DE1BD7901E0072C54C /* FadeTransition.swift */; settings = {ASSET_TAGS = (); }; };
 		CB50A5E11BD790240072C54C /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB50A5E01BD790240072C54C /* BaseTransition.swift */; settings = {ASSET_TAGS = (); }; };
 		CB50A5E31BD794320072C54C /* EventInviteFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB50A5E21BD794320072C54C /* EventInviteFriendsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		CE1463D21496567092D860C8 /* libPods-Pinch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91EB814D9B1AE6AFB4055E04 /* libPods-Pinch.a */; };
+		439B0A90EDAC7EB206EB98E3 /* Pods_Pinch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D9BEA7369A5037279544AF0 /* Pods_Pinch.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,7 +96,6 @@
 		1211850D1BD223F300C17136 /* UserBadgesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserBadgesViewController.swift; path = ViewControllers/UserBadgesViewController.swift; sourceTree = "<group>"; };
 		1211850F1BD223FA00C17136 /* UserStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStatsViewController.swift; path = ViewControllers/UserStatsViewController.swift; sourceTree = "<group>"; };
 		121185111BD2243000C17136 /* UserOrgsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserOrgsViewController.swift; path = ViewControllers/UserOrgsViewController.swift; sourceTree = "<group>"; };
-		121185131BD2244400C17136 /* UserFollowersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserFollowersViewController.swift; path = ViewControllers/UserFollowersViewController.swift; sourceTree = "<group>"; };
 		121185151BD2244F00C17136 /* UserFollowingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserFollowingViewController.swift; path = ViewControllers/UserFollowingViewController.swift; sourceTree = "<group>"; };
 		121185171BD226F200C17136 /* OnboardingFinishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingFinishViewController.swift; path = ViewControllers/OnboardingFinishViewController.swift; sourceTree = "<group>"; };
 		1216487F1BD0D6AF00852536 /* Pinch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,8 +122,14 @@
 		121648C61BD0DDF400852536 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Classes/Event.swift; sourceTree = "<group>"; };
 		121648C81BD0E23900852536 /* Organization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Organization.swift; path = Classes/Organization.swift; sourceTree = "<group>"; };
 		121648CA1BD0E3B100852536 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Classes/User.swift; sourceTree = "<group>"; };
+		1229B4B51BD796A8000A2B7D /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Bold.ttf"; path = "Fonts/Lato-Bold.ttf"; sourceTree = "<group>"; };
+		1229B4B61BD796A8000A2B7D /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "Fonts/Lato-Regular.ttf"; sourceTree = "<group>"; };
+		1229B4B71BD796A8000A2B7D /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Bold.ttf"; path = "Fonts/Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		126B730D1BD4CD910081CA0E /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Helpers/Location.swift; sourceTree = "<group>"; };
 		126B730F1BD4D38B0081CA0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		12AA0DFA1BD787CC009DA8CB /* UserActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserActivityViewController.swift; path = ViewControllers/UserActivityViewController.swift; sourceTree = "<group>"; };
+		12AA0DFC1BD7885B009DA8CB /* UserTestimonialsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTestimonialsViewController.swift; path = ViewControllers/UserTestimonialsViewController.swift; sourceTree = "<group>"; };
+		12AA0E081BD79202009DA8CB /* FollowingUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowingUserTableViewCell.swift; path = ViewControllers/UserProfileTableViews/FollowingUserTableViewCell.swift; sourceTree = "<group>"; };
 		12DB7DE91BD2FEEF00C17FE4 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Common.swift; path = Helpers/Common.swift; sourceTree = "<group>"; };
 		91EB814D9B1AE6AFB4055E04 /* libPods-Pinch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB50A5DE1BD7901E0072C54C /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
@@ -127,6 +137,7 @@
 		CB50A5E21BD794320072C54C /* EventInviteFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInviteFriendsViewController.swift; sourceTree = "<group>"; };
 		CD200BF1E73C5ACDBA11A16E /* Pods-Pinch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pinch/Pods-Pinch.debug.xcconfig"; sourceTree = "<group>"; };
 		FFE9900FE11AAFA44E22ABA7 /* Pods-Pinch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pinch/Pods-Pinch.release.xcconfig"; sourceTree = "<group>"; };
+		8D9BEA7369A5037279544AF0 /* Pods_Pinch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pinch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE1463D21496567092D860C8 /* libPods-Pinch.a in Frameworks */,
+				439B0A90EDAC7EB206EB98E3 /* Pods_Pinch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,7 +169,7 @@
 		0CEE5B369A2E71B66D9A1C8E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				91EB814D9B1AE6AFB4055E04 /* libPods-Pinch.a */,
+				8D9BEA7369A5037279544AF0 /* Pods_Pinch.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -228,8 +239,10 @@
 				1211850D1BD223F300C17136 /* UserBadgesViewController.swift */,
 				1211850F1BD223FA00C17136 /* UserStatsViewController.swift */,
 				121185111BD2243000C17136 /* UserOrgsViewController.swift */,
-				121185131BD2244400C17136 /* UserFollowersViewController.swift */,
 				121185151BD2244F00C17136 /* UserFollowingViewController.swift */,
+				12AA0DFA1BD787CC009DA8CB /* UserActivityViewController.swift */,
+				12AA0DFC1BD7885B009DA8CB /* UserTestimonialsViewController.swift */,
+				12AA0E081BD79202009DA8CB /* FollowingUserTableViewCell.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -259,8 +272,9 @@
 		121648811BD0D6AF00852536 /* Pinch */ = {
 			isa = PBXGroup;
 			children = (
-				121648C31BD0DD8600852536 /* Classes */,
+				1229B4BB1BD796AD000A2B7D /* Fonts */,
 				121648B01BD0D85800852536 /* View Controllers */,
+				121648C31BD0DD8600852536 /* Classes */,
 				121184DB1BD21B8D00C17136 /* Helpers */,
 				121648821BD0D6AF00852536 /* AppDelegate.swift */,
 				126B730F1BD4D38B0081CA0E /* Assets.xcassets */,
@@ -318,6 +332,16 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
+		1229B4BB1BD796AD000A2B7D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1229B4B51BD796A8000A2B7D /* Lato-Bold.ttf */,
+				1229B4B61BD796A8000A2B7D /* Lato-Regular.ttf */,
+				1229B4B71BD796A8000A2B7D /* Raleway-Bold.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		7324368EC06D9F403993EBEB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +363,7 @@
 				1216487C1BD0D6AF00852536 /* Frameworks */,
 				1216487D1BD0D6AF00852536 /* Resources */,
 				A0E57CC9DA4B4EBDEFB2F384 /* Copy Pods Resources */,
+				D3455A0F3E36BC0AE547084A /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -433,7 +458,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1229B4BA1BD796A8000A2B7D /* Raleway-Bold.ttf in Resources */,
 				1216488D1BD0D6AF00852536 /* LaunchScreen.storyboard in Resources */,
+				1229B4B91BD796A8000A2B7D /* Lato-Regular.ttf in Resources */,
+				1229B4B81BD796A8000A2B7D /* Lato-Bold.ttf in Resources */,
 				126B73101BD4D38B0081CA0E /* Assets.xcassets in Resources */,
 				121648881BD0D6AF00852536 /* Main.storyboard in Resources */,
 			);
@@ -486,6 +514,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		D3455A0F3E36BC0AE547084A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pinch/Pods-Pinch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -495,6 +538,7 @@
 			files = (
 				121184F81BD2222800C17136 /* EventCoverMediaViewController.swift in Sources */,
 				121184F61BD2220700C17136 /* EventConfirmAttendanceViewController.swift in Sources */,
+				12AA0DFB1BD787CC009DA8CB /* UserActivityViewController.swift in Sources */,
 				121648B81BD0DC0E00852536 /* SearchViewController.swift in Sources */,
 				1211850B1BD223BB00C17136 /* ChangePasswordViewController.swift in Sources */,
 				CB50A5E31BD794320072C54C /* EventInviteFriendsViewController.swift in Sources */,
@@ -509,11 +553,12 @@
 				121648C91BD0E23900852536 /* Organization.swift in Sources */,
 				121185091BD2238000C17136 /* SearchFiltersViewController.swift in Sources */,
 				1211850E1BD223F300C17136 /* UserBadgesViewController.swift in Sources */,
+				12AA0DFD1BD7885B009DA8CB /* UserTestimonialsViewController.swift in Sources */,
 				121185071BD2235C00C17136 /* EventFeedbackViewController.swift in Sources */,
 				126B730E1BD4CD910081CA0E /* Location.swift in Sources */,
 				121648C01BD0DCDC00852536 /* SettingsViewController.swift in Sources */,
-				121185141BD2244400C17136 /* UserFollowersViewController.swift in Sources */,
 				121184DD1BD21BD900C17136 /* Cause.swift in Sources */,
+				12AA0E091BD79202009DA8CB /* FollowingUserTableViewCell.swift in Sources */,
 				121184EE1BD221C300C17136 /* EventTestimonialsViewController.swift in Sources */,
 				121648851BD0D6AF00852536 /* ViewController.swift in Sources */,
 				121185161BD2244F00C17136 /* UserFollowingViewController.swift in Sources */,
