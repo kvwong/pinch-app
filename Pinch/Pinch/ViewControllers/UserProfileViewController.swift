@@ -10,11 +10,16 @@ import UIKit
 
 class UserProfileViewController: UIViewController {
 
+    @IBOutlet weak var profileView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(animated: Bool) {
+        
+        scrollView.contentSize = profileView.frame.size
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
     }
