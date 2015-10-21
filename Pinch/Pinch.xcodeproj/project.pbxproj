@@ -7,48 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		121184DD1BD21BD900C17136 /* Cause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184DC1BD21BD900C17136 /* Cause.swift */; settings = {ASSET_TAGS = (); }; };
-		121184EE1BD221C300C17136 /* EventTestimonialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184ED1BD221C300C17136 /* EventTestimonialsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121184F01BD221CE00C17136 /* EventLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184EF1BD221CE00C17136 /* EventLocationViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121184F21BD221E100C17136 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184F11BD221E100C17136 /* EventDetailsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121184F41BD221F500C17136 /* EventAttendeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184F31BD221F500C17136 /* EventAttendeesViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121184F61BD2220700C17136 /* EventConfirmAttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184F51BD2220700C17136 /* EventConfirmAttendanceViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121184F81BD2222800C17136 /* EventCoverMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184F71BD2222800C17136 /* EventCoverMediaViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121184FD1BD2229100C17136 /* OnboardingCausesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184FC1BD2229100C17136 /* OnboardingCausesViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121184FF1BD222BA00C17136 /* OnboardingFollowFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184FE1BD222BA00C17136 /* OnboardingFollowFriendsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121185011BD222EF00C17136 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185001BD222EF00C17136 /* WelcomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121185031BD2230000C17136 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185021BD2230000C17136 /* SignUpViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121185051BD2230A00C17136 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185041BD2230A00C17136 /* LogInViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121185071BD2235C00C17136 /* EventFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185061BD2235C00C17136 /* EventFeedbackViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121185091BD2238000C17136 /* SearchFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185081BD2238000C17136 /* SearchFiltersViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		1211850B1BD223BB00C17136 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211850A1BD223BB00C17136 /* ChangePasswordViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		1211850E1BD223F300C17136 /* UserBadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211850D1BD223F300C17136 /* UserBadgesViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121185101BD223FA00C17136 /* UserStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211850F1BD223FA00C17136 /* UserStatsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121185121BD2243000C17136 /* UserOrgsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185111BD2243000C17136 /* UserOrgsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121185141BD2244400C17136 /* UserFollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185131BD2244400C17136 /* UserFollowersViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121185161BD2244F00C17136 /* UserFollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185151BD2244F00C17136 /* UserFollowingViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121185181BD226F200C17136 /* OnboardingFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185171BD226F200C17136 /* OnboardingFinishViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121184DD1BD21BD900C17136 /* Cause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184DC1BD21BD900C17136 /* Cause.swift */; };
+		121184EE1BD221C300C17136 /* EventTestimonialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184ED1BD221C300C17136 /* EventTestimonialsViewController.swift */; };
+		121184F01BD221CE00C17136 /* EventLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184EF1BD221CE00C17136 /* EventLocationViewController.swift */; };
+		121184F21BD221E100C17136 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184F11BD221E100C17136 /* EventDetailsViewController.swift */; };
+		121184F41BD221F500C17136 /* EventAttendeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184F31BD221F500C17136 /* EventAttendeesViewController.swift */; };
+		121184F61BD2220700C17136 /* EventConfirmAttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184F51BD2220700C17136 /* EventConfirmAttendanceViewController.swift */; };
+		121184F81BD2222800C17136 /* EventCoverMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184F71BD2222800C17136 /* EventCoverMediaViewController.swift */; };
+		121184FD1BD2229100C17136 /* OnboardingCausesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184FC1BD2229100C17136 /* OnboardingCausesViewController.swift */; };
+		121184FF1BD222BA00C17136 /* OnboardingFollowFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184FE1BD222BA00C17136 /* OnboardingFollowFriendsViewController.swift */; };
+		121185011BD222EF00C17136 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185001BD222EF00C17136 /* WelcomeViewController.swift */; };
+		121185031BD2230000C17136 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185021BD2230000C17136 /* SignUpViewController.swift */; };
+		121185051BD2230A00C17136 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185041BD2230A00C17136 /* LogInViewController.swift */; };
+		121185071BD2235C00C17136 /* EventFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185061BD2235C00C17136 /* EventFeedbackViewController.swift */; };
+		121185091BD2238000C17136 /* SearchFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185081BD2238000C17136 /* SearchFiltersViewController.swift */; };
+		1211850B1BD223BB00C17136 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211850A1BD223BB00C17136 /* ChangePasswordViewController.swift */; };
+		1211850E1BD223F300C17136 /* UserBadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211850D1BD223F300C17136 /* UserBadgesViewController.swift */; };
+		121185101BD223FA00C17136 /* UserStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211850F1BD223FA00C17136 /* UserStatsViewController.swift */; };
+		121185121BD2243000C17136 /* UserOrgsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185111BD2243000C17136 /* UserOrgsViewController.swift */; };
+		121185141BD2244400C17136 /* UserFollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185131BD2244400C17136 /* UserFollowersViewController.swift */; };
+		121185161BD2244F00C17136 /* UserFollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185151BD2244F00C17136 /* UserFollowingViewController.swift */; };
+		121185181BD226F200C17136 /* OnboardingFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185171BD226F200C17136 /* OnboardingFinishViewController.swift */; };
 		121648831BD0D6AF00852536 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648821BD0D6AF00852536 /* AppDelegate.swift */; };
 		121648851BD0D6AF00852536 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648841BD0D6AF00852536 /* ViewController.swift */; };
 		121648881BD0D6AF00852536 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 121648861BD0D6AF00852536 /* Main.storyboard */; };
 		1216488D1BD0D6AF00852536 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1216488B1BD0D6AF00852536 /* LaunchScreen.storyboard */; };
 		121648981BD0D6AF00852536 /* PinchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648971BD0D6AF00852536 /* PinchTests.swift */; };
 		121648A31BD0D6AF00852536 /* PinchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648A21BD0D6AF00852536 /* PinchUITests.swift */; };
-		121648B21BD0D88000852536 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648B11BD0D88000852536 /* HomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121648B41BD0DAC400852536 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648B31BD0DAC400852536 /* ActivityViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121648B61BD0DBB300852536 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648B51BD0DBB300852536 /* EventViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121648B81BD0DC0E00852536 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648B71BD0DC0E00852536 /* SearchViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121648BA1BD0DC1C00852536 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648B91BD0DC1C00852536 /* SearchResultsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121648BC1BD0DC7200852536 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648BB1BD0DC7200852536 /* UserProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121648BE1BD0DCB000852536 /* OrganizationProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648BD1BD0DCB000852536 /* OrganizationProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121648C01BD0DCDC00852536 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648BF1BD0DCDC00852536 /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121648C21BD0DCED00852536 /* EditUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648C11BD0DCED00852536 /* EditUserProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		121648C71BD0DDF400852536 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648C61BD0DDF400852536 /* Event.swift */; settings = {ASSET_TAGS = (); }; };
-		121648C91BD0E23900852536 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648C81BD0E23900852536 /* Organization.swift */; settings = {ASSET_TAGS = (); }; };
-		121648CB1BD0E3B100852536 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648CA1BD0E3B100852536 /* User.swift */; settings = {ASSET_TAGS = (); }; };
-		126B730E1BD4CD910081CA0E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126B730D1BD4CD910081CA0E /* Location.swift */; settings = {ASSET_TAGS = (); }; };
-		126B73101BD4D38B0081CA0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 126B730F1BD4D38B0081CA0E /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
-		12DB7DEA1BD2FEEF00C17FE4 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB7DE91BD2FEEF00C17FE4 /* Common.swift */; settings = {ASSET_TAGS = (); }; };
+		121648B21BD0D88000852536 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648B11BD0D88000852536 /* HomeViewController.swift */; };
+		121648B41BD0DAC400852536 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648B31BD0DAC400852536 /* ActivityViewController.swift */; };
+		121648B61BD0DBB300852536 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648B51BD0DBB300852536 /* EventViewController.swift */; };
+		121648B81BD0DC0E00852536 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648B71BD0DC0E00852536 /* SearchViewController.swift */; };
+		121648BA1BD0DC1C00852536 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648B91BD0DC1C00852536 /* SearchResultsViewController.swift */; };
+		121648BC1BD0DC7200852536 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648BB1BD0DC7200852536 /* UserProfileViewController.swift */; };
+		121648BE1BD0DCB000852536 /* OrganizationProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648BD1BD0DCB000852536 /* OrganizationProfileViewController.swift */; };
+		121648C01BD0DCDC00852536 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648BF1BD0DCDC00852536 /* SettingsViewController.swift */; };
+		121648C21BD0DCED00852536 /* EditUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648C11BD0DCED00852536 /* EditUserProfileViewController.swift */; };
+		121648C71BD0DDF400852536 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648C61BD0DDF400852536 /* Event.swift */; };
+		121648C91BD0E23900852536 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648C81BD0E23900852536 /* Organization.swift */; };
+		121648CB1BD0E3B100852536 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648CA1BD0E3B100852536 /* User.swift */; };
+		126B730E1BD4CD910081CA0E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126B730D1BD4CD910081CA0E /* Location.swift */; };
+		126B73101BD4D38B0081CA0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 126B730F1BD4D38B0081CA0E /* Assets.xcassets */; };
+		12DB7DEA1BD2FEEF00C17FE4 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB7DE91BD2FEEF00C17FE4 /* Common.swift */; };
+		CE1463D21496567092D860C8 /* libPods-Pinch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91EB814D9B1AE6AFB4055E04 /* libPods-Pinch.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,9 @@
 		126B730D1BD4CD910081CA0E /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Helpers/Location.swift; sourceTree = "<group>"; };
 		126B730F1BD4D38B0081CA0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12DB7DE91BD2FEEF00C17FE4 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Common.swift; path = Helpers/Common.swift; sourceTree = "<group>"; };
+		91EB814D9B1AE6AFB4055E04 /* libPods-Pinch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD200BF1E73C5ACDBA11A16E /* Pods-Pinch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pinch/Pods-Pinch.debug.xcconfig"; sourceTree = "<group>"; };
+		FFE9900FE11AAFA44E22ABA7 /* Pods-Pinch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pinch/Pods-Pinch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1463D21496567092D860C8 /* libPods-Pinch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +149,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CEE5B369A2E71B66D9A1C8E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91EB814D9B1AE6AFB4055E04 /* libPods-Pinch.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		121184DB1BD21B8D00C17136 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +232,8 @@
 				121648961BD0D6AF00852536 /* PinchTests */,
 				121648A11BD0D6AF00852536 /* PinchUITests */,
 				121648801BD0D6AF00852536 /* Products */,
+				7324368EC06D9F403993EBEB /* Pods */,
+				0CEE5B369A2E71B66D9A1C8E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -294,6 +309,15 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
+		7324368EC06D9F403993EBEB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CD200BF1E73C5ACDBA11A16E /* Pods-Pinch.debug.xcconfig */,
+				FFE9900FE11AAFA44E22ABA7 /* Pods-Pinch.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -301,9 +325,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 121648A71BD0D6AF00852536 /* Build configuration list for PBXNativeTarget "Pinch" */;
 			buildPhases = (
+				CC9103189F388A75FDFCFAB8 /* Check Pods Manifest.lock */,
 				1216487B1BD0D6AF00852536 /* Sources */,
 				1216487C1BD0D6AF00852536 /* Frameworks */,
 				1216487D1BD0D6AF00852536 /* Resources */,
+				A0E57CC9DA4B4EBDEFB2F384 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -418,6 +444,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A0E57CC9DA4B4EBDEFB2F384 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pinch/Pods-Pinch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC9103189F388A75FDFCFAB8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1216487B1BD0D6AF00852536 /* Sources */ = {
@@ -600,6 +659,7 @@
 		};
 		121648A81BD0D6AF00852536 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD200BF1E73C5ACDBA11A16E /* Pods-Pinch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Pinch/Info.plist;
@@ -611,6 +671,7 @@
 		};
 		121648A91BD0D6AF00852536 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFE9900FE11AAFA44E22ABA7 /* Pods-Pinch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Pinch/Info.plist;
