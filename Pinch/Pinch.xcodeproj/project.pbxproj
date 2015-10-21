@@ -51,6 +51,7 @@
 		12DB7DEA1BD2FEEF00C17FE4 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB7DE91BD2FEEF00C17FE4 /* Common.swift */; };
 		CB50A5DF1BD7901E0072C54C /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB50A5DE1BD7901E0072C54C /* FadeTransition.swift */; settings = {ASSET_TAGS = (); }; };
 		CB50A5E11BD790240072C54C /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB50A5E01BD790240072C54C /* BaseTransition.swift */; settings = {ASSET_TAGS = (); }; };
+		CB50A5E31BD794320072C54C /* EventInviteFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB50A5E21BD794320072C54C /* EventInviteFriendsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		CE1463D21496567092D860C8 /* libPods-Pinch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91EB814D9B1AE6AFB4055E04 /* libPods-Pinch.a */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +124,7 @@
 		91EB814D9B1AE6AFB4055E04 /* libPods-Pinch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB50A5DE1BD7901E0072C54C /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
 		CB50A5E01BD790240072C54C /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
+		CB50A5E21BD794320072C54C /* EventInviteFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInviteFriendsViewController.swift; sourceTree = "<group>"; };
 		CD200BF1E73C5ACDBA11A16E /* Pods-Pinch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pinch/Pods-Pinch.debug.xcconfig"; sourceTree = "<group>"; };
 		FFE9900FE11AAFA44E22ABA7 /* Pods-Pinch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pinch/Pods-Pinch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,6 +186,7 @@
 				121184F31BD221F500C17136 /* EventAttendeesViewController.swift */,
 				121184F51BD2220700C17136 /* EventConfirmAttendanceViewController.swift */,
 				121185061BD2235C00C17136 /* EventFeedbackViewController.swift */,
+				CB50A5E21BD794320072C54C /* EventInviteFriendsViewController.swift */,
 			);
 			name = Event;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				121184F61BD2220700C17136 /* EventConfirmAttendanceViewController.swift in Sources */,
 				121648B81BD0DC0E00852536 /* SearchViewController.swift in Sources */,
 				1211850B1BD223BB00C17136 /* ChangePasswordViewController.swift in Sources */,
+				CB50A5E31BD794320072C54C /* EventInviteFriendsViewController.swift in Sources */,
 				121648BC1BD0DC7200852536 /* UserProfileViewController.swift in Sources */,
 				121185101BD223FA00C17136 /* UserStatsViewController.swift in Sources */,
 				121184FD1BD2229100C17136 /* OnboardingCausesViewController.swift in Sources */,

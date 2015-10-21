@@ -1,14 +1,14 @@
 //
-//  EventConfirmAttendanceViewController.swift
+//  EventInviteFriendsViewController.swift
 //  Pinch
 //
-//  Created by Cameron Wu on 10/16/15.
+//  Created by Kevin Wong on 10/21/15.
 //  Copyright © 2015 Team 2. All rights reserved.
 //
 
 import UIKit
 
-class EventConfirmAttendanceViewController: UIViewController {
+class EventInviteFriendsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +21,10 @@ class EventConfirmAttendanceViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func dismissConfirmation(sender: AnyObject) {
+
+    @IBAction func dismissInvite(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
-    
-
     /*
     // MARK: - Navigation
 

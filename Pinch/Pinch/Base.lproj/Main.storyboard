@@ -12,8 +12,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="profile_top" id="PSx-ge-I8o">
-                                <rect key="frame" x="0.0" y="0.0" width="376" height="668"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Profile - User" id="PSx-ge-I8o">
+                                <rect key="frame" x="0.0" y="0.0" width="376" height="1452"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <animations/>
                             </imageView>
@@ -53,6 +53,13 @@
                     <view key="view" contentMode="scaleToFill" id="Xu8-f2-Fcu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile - Badges" id="SXH-6n-4TD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -69,6 +76,13 @@
                     <view key="view" contentMode="scaleToFill" id="QNS-tJ-tFX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile - Following" id="WTH-72-p0W">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -85,6 +99,13 @@
                     <view key="view" contentMode="scaleToFill" id="eBP-Gm-pAw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile - Non-Profits" id="MLr-Ig-gex">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -101,6 +122,13 @@
                     <view key="view" contentMode="scaleToFill" id="ax0-1o-4M1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="sG8-Fy-g8U">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -117,6 +145,13 @@
                     <view key="view" contentMode="scaleToFill" id="Ulz-TH-2hA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile - Stats" id="Thm-Dn-0fG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -133,6 +168,13 @@
                     <view key="view" contentMode="scaleToFill" id="q8R-Ed-fz2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="0Az-bn-dZ1">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -342,7 +384,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Personalize - Bubbles" id="lQ9-rS-W98">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="lQ9-rS-W98">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <animations/>
@@ -826,6 +868,9 @@
                                         <state key="normal" title="Count Me In!">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="AjS-94-CrB" kind="modal" id="V1H-CZ-pd2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
@@ -931,7 +976,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Event Details - Rating" id="ZaK-HM-D67">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Event Details - Feedback 1" id="ZaK-HM-D67">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <animations/>
@@ -953,6 +998,29 @@
                     <view key="view" contentMode="scaleToFill" id="A3c-cc-Tax">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Event Details - Confirmed - Step 1" id="ZyX-BQ-Xu1">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wFj-oU-xym">
+                                <rect key="frame" x="0.0" y="269" width="189" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <connections>
+                                    <segue destination="a9I-TX-1Kb" kind="modal" id="6k3-ms-l3i"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XgF-v9-cfS">
+                                <rect key="frame" x="309" y="25" width="66" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="dismissConfirmation:" destination="AjS-94-CrB" eventType="touchUpInside" id="tTp-6a-Tgr"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -961,6 +1029,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s1A-oq-qR5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1282.5" y="2958.5"/>
+        </scene>
+        <!--Event Invite Friends View Controller-->
+        <scene sceneID="Zm5-dT-2hx">
+            <objects>
+                <viewController id="a9I-TX-1Kb" customClass="EventInviteFriendsViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dTz-91-KzI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Event Details - Confirmed - Step 2" id="HgM-bH-UnN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZIr-8H-CJJ">
+                                <rect key="frame" x="0.0" y="25" width="76" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="dismissInvite:" destination="a9I-TX-1Kb" eventType="touchUpInside" id="Wmw-ka-dXv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kLa-OI-s7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1755.5" y="2958.5"/>
         </scene>
         <!--Event Location View Controller-->
         <scene sceneID="KyX-l8-kri">
@@ -1015,6 +1114,13 @@
                     <view key="view" contentMode="scaleToFill" id="stM-iw-l55">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Search Results - Cards Copy 4" id="YfT-rI-Uwb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1107,16 +1213,23 @@
     <resources>
         <image name="Activity" width="375" height="667"/>
         <image name="Edit Profile" width="375" height="667"/>
+        <image name="Event Details - Confirmed - Step 1" width="375" height="717"/>
+        <image name="Event Details - Confirmed - Step 2" width="375" height="667"/>
+        <image name="Event Details - Feedback 1" width="375" height="667"/>
         <image name="Event Details - Map" width="375" height="667"/>
-        <image name="Event Details - More Info" width="375" height="1319"/>
+        <image name="Event Details - More Info" width="375" height="1351"/>
         <image name="Event Details - People Going" width="375" height="667"/>
         <image name="Event Details - Play Video" width="375" height="667"/>
-        <image name="Event Details - Rating" width="375" height="667"/>
         <image name="Event Details - Testimonials" width="375" height="1047"/>
         <image name="Event Details v3" width="375" height="1662"/>
         <image name="Invite Friends" width="375" height="667"/>
         <image name="Login" width="375" height="667"/>
-        <image name="Personalize - Bubbles" width="375" height="667"/>
+        <image name="Profile - Badges" width="375" height="667"/>
+        <image name="Profile - Following" width="375" height="667"/>
+        <image name="Profile - Non-Profits" width="375" height="667"/>
+        <image name="Profile - Stats" width="375" height="667"/>
+        <image name="Profile - User" width="375" height="1452"/>
+        <image name="Search Results - Cards Copy 4" width="375" height="667"/>
         <image name="Settings" width="375" height="667"/>
         <image name="Sign Up" width="375" height="667"/>
         <image name="Splash" width="375" height="667"/>
@@ -1125,6 +1238,5 @@
         <image name="icon_filters_20x14" width="20" height="14"/>
         <image name="icon_profile_24x24" width="24" height="24"/>
         <image name="icon_search_24x24" width="24" height="24"/>
-        <image name="profile_top" width="376" height="668"/>
     </resources>
 </document>
