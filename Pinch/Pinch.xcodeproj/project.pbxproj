@@ -49,6 +49,8 @@
 		126B730E1BD4CD910081CA0E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126B730D1BD4CD910081CA0E /* Location.swift */; };
 		126B73101BD4D38B0081CA0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 126B730F1BD4D38B0081CA0E /* Assets.xcassets */; };
 		12DB7DEA1BD2FEEF00C17FE4 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB7DE91BD2FEEF00C17FE4 /* Common.swift */; };
+		CB50A5DF1BD7901E0072C54C /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB50A5DE1BD7901E0072C54C /* FadeTransition.swift */; settings = {ASSET_TAGS = (); }; };
+		CB50A5E11BD790240072C54C /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB50A5E01BD790240072C54C /* BaseTransition.swift */; settings = {ASSET_TAGS = (); }; };
 		CE1463D21496567092D860C8 /* libPods-Pinch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91EB814D9B1AE6AFB4055E04 /* libPods-Pinch.a */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +121,8 @@
 		126B730F1BD4D38B0081CA0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12DB7DE91BD2FEEF00C17FE4 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Common.swift; path = Helpers/Common.swift; sourceTree = "<group>"; };
 		91EB814D9B1AE6AFB4055E04 /* libPods-Pinch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB50A5DE1BD7901E0072C54C /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
+		CB50A5E01BD790240072C54C /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
 		CD200BF1E73C5ACDBA11A16E /* Pods-Pinch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pinch/Pods-Pinch.debug.xcconfig"; sourceTree = "<group>"; };
 		FFE9900FE11AAFA44E22ABA7 /* Pods-Pinch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pinch/Pods-Pinch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +164,8 @@
 		121184DB1BD21B8D00C17136 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CB50A5E01BD790240072C54C /* BaseTransition.swift */,
+				CB50A5DE1BD7901E0072C54C /* FadeTransition.swift */,
 				12DB7DE91BD2FEEF00C17FE4 /* Common.swift */,
 				121184DC1BD21BD900C17136 /* Cause.swift */,
 				126B730D1BD4CD910081CA0E /* Location.swift */,
@@ -494,6 +500,7 @@
 				121648B61BD0DBB300852536 /* EventViewController.swift in Sources */,
 				121185011BD222EF00C17136 /* WelcomeViewController.swift in Sources */,
 				121648C21BD0DCED00852536 /* EditUserProfileViewController.swift in Sources */,
+				CB50A5E11BD790240072C54C /* BaseTransition.swift in Sources */,
 				121185121BD2243000C17136 /* UserOrgsViewController.swift in Sources */,
 				121648C91BD0E23900852536 /* Organization.swift in Sources */,
 				121185091BD2238000C17136 /* SearchFiltersViewController.swift in Sources */,
@@ -514,6 +521,7 @@
 				121648BA1BD0DC1C00852536 /* SearchResultsViewController.swift in Sources */,
 				121185051BD2230A00C17136 /* LogInViewController.swift in Sources */,
 				121648B41BD0DAC400852536 /* ActivityViewController.swift in Sources */,
+				CB50A5DF1BD7901E0072C54C /* FadeTransition.swift in Sources */,
 				121184F01BD221CE00C17136 /* EventLocationViewController.swift in Sources */,
 				121648BE1BD0DCB000852536 /* OrganizationProfileViewController.swift in Sources */,
 				121184FF1BD222BA00C17136 /* OnboardingFollowFriendsViewController.swift in Sources */,
