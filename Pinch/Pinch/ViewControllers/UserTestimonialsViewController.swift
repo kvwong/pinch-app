@@ -1,19 +1,23 @@
 //
-//  UserFollowersViewController.swift
+//  UserTestimonialsViewController.swift
 //  Pinch
 //
-//  Created by Cameron Wu on 10/16/15.
+//  Created by Cameron Wu on 10/21/15.
 //  Copyright © 2015 Team 2. All rights reserved.
 //
 
 import UIKit
 
-class UserFollowersViewController: UIViewController {
+class UserTestimonialsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

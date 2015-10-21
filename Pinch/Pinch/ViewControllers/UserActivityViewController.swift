@@ -1,14 +1,14 @@
 //
-//  UserOrgsViewController.swift
+//  UserActivityViewController.swift
 //  Pinch
 //
-//  Created by Cameron Wu on 10/16/15.
+//  Created by Cameron Wu on 10/21/15.
 //  Copyright © 2015 Team 2. All rights reserved.
 //
 
 import UIKit
 
-class UserOrgsViewController: UIViewController {
+class UserActivityViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
