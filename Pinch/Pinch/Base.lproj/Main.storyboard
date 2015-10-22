@@ -18,11 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Profile - User" id="JDm-zb-v7S">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1452"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <animations/>
-                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="LGV-70-C7J">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1686,7 +1681,6 @@
         <image name="Login" width="375" height="667"/>
         <image name="Profile - Badges" width="375" height="667"/>
         <image name="Profile - Stats" width="375" height="667"/>
-        <image name="Profile - User" width="375" height="1452"/>
         <image name="Search Results - Cards Copy 4" width="375" height="667"/>
         <image name="Settings" width="375" height="667"/>
         <image name="Sign Up" width="375" height="667"/>

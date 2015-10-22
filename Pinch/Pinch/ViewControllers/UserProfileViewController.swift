@@ -63,6 +63,8 @@ class UserProfileViewController: UIViewController, UIScrollViewDelegate {
         
         if profileScrollView.contentOffset.y > eventTabsViewInitialY {
            self.eventTabsView.frame.origin.y = profileScrollView.contentOffset.y
+        } else {
+            self.eventTabsView.frame.origin.y = eventTabsViewInitialY
         }
     }
     
