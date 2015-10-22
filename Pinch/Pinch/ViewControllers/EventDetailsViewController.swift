@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import SafariServices
 
 class EventDetailsViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var detailsView: UIImageView!
+    
+    var url = "http://www.gotrbayarea.org/race/51-girls-on-the-run-5k"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +29,10 @@ class EventDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onPressHomepage(sender: AnyObject) {
+        let sfViewController = SFSafariViewController(URL: NSURL(string: self.url)!, entersReaderIfAvailable: false)
+        self.presentViewController(sfViewController, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

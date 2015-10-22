@@ -29,7 +29,7 @@ class EventViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        wireframeImage.alpha = 0.1
+        wireframeImage.alpha = 1.0
         scrollView.contentSize.height = eventSummaryView.frame.size.height
         self.navigationController?.navigationBarHidden = true
         
