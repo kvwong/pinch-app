@@ -24,25 +24,41 @@ class EventViewController: UIViewController {
     @IBOutlet weak var eventFriendCountLabel: UILabel!
     @IBOutlet weak var eventDescriptionLabel: UILabel!
     
+    var eventSummary: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        wireframeImage.alpha = 0.0
-        
+        wireframeImage.alpha = 0.1
         scrollView.contentSize.height = eventSummaryView.frame.size.height
-        print(scrollView.contentSize.height)
-        print(eventSummaryView.frame.size.height)
+        self.navigationController?.navigationBarHidden = true
+        
+        eventSummaryView = eventSummary
+        
     }
 
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = true
+    }
+    override func viewWillDisappear(animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBarHidden = false
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
     
+    
     @IBAction func didPressCloseButton(sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
     }
 
+    
+    @IBAction func onBannerTap(sender: AnyObject) {
+        performSegueWithIdentifier("Expand Banner", sender: nil)
+    }
     /*
     // MARK: - Navigation
 

@@ -10,9 +10,14 @@ import UIKit
 
 class EventTestimonialsViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var testimonialView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        scrollView.contentSize = testimonialView.image!.size
+        
         // Do any additional setup after loading the view.
     }
 

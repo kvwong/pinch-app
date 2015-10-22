@@ -10,11 +10,15 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var eventView: UIView!
     @IBOutlet weak var searchButton: UIButton!
+    
+    var cardView: UIView!
+    var status: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        status = false
         // Do any additional setup after loading the view.
     }
 
@@ -28,14 +32,20 @@ class HomeViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func onTap(sender: AnyObject) {
+       
+        cardView = sender.view as UIView!
+        
+        performSegueWithIdentifier("eventDetailSegue", sender: nil)
+        
     }
-    */
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let nav = segue.destinationViewController as! UINavigationController
+        let eventDetailViewController = nav.topViewController as! EventViewController
+    
+        eventDetailViewController.eventSummary = cardView
+    }
+    
 
 }

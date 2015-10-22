@@ -10,9 +10,13 @@ import UIKit
 
 class EventDetailsViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var detailsView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        scrollView.contentSize = detailsView.image!.size
+        
         // Do any additional setup after loading the view.
     }
 
