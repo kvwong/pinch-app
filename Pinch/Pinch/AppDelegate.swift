@@ -16,14 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        // Output the names of fonts included
-        for family: String in UIFont.familyNames() {
+        // Output the names of fonts included, for debugging
+        /*for family: String in UIFont.familyNames() {
             print("\(family)")
             for names: String in UIFont.fontNamesForFamilyName(family)
             {
                 print("== \(names)")
             }
-        }
+        }*/
         
         // Custom navigation bar style
         UINavigationBar.appearance().barTintColor = UIColorFromRGB("47C6B2")
