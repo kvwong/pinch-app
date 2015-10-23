@@ -34,7 +34,8 @@ class UserProfileViewController: UIViewController, UIScrollViewDelegate, UITable
         eventsTableView.dataSource = self
         
         // Scroll view setup
-        profileScrollView.contentSize = CGSize(width: view.frame.width, height: 1800) // TO-DO: make height dynamic once table view pulls in data
+        profileScrollView.contentSize = CGSize(width: view.frame.width, height: eventsTableView.frame.origin.y +
+            eventsTableView.frame.size.height)
         profileScrollView.delegate = self
         
         // Default to Upcoming tab on load
@@ -46,11 +47,12 @@ class UserProfileViewController: UIViewController, UIScrollViewDelegate, UITable
         
         // Save initial eventTabsView.frame.origin.y position
         eventTabsViewInitialY = eventTabsView.frame.origin.y
+        
+        // Format table view
+        eventsTableView.separatorColor = colorBorderLight
     }
     
     override func viewWillAppear(animated: Bool) {
-        
-        //scrollView.contentSize = profileView.frame.size
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
     }
@@ -64,16 +66,16 @@ class UserProfileViewController: UIViewController, UIScrollViewDelegate, UITable
     // Scroll View Overrides ---------------------------
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        // The following code block is buggy and doesn't work yet.
-        /*if profileScrollView.contentOffset.y > 0 {
+        if profileScrollView.contentOffset.y > 0 {
             print("profileScrollView.content.y offset is: \(profileScrollView.contentOffset.y)")
+            self.title = "Annabel" // TO-DO: dynamically input user name
             self.navigationController?.setNavigationBarHidden(false, animated: true)
         } else {
             self.navigationController?.setNavigationBarHidden(true, animated: true)
-        }*/
+        }
         
-        if profileScrollView.contentOffset.y > eventTabsViewInitialY {
-           self.eventTabsView.frame.origin.y = profileScrollView.contentOffset.y
+        if profileScrollView.contentOffset.y + (navigationController?.navigationBar.frame.origin.y)! + (navigationController?.navigationBar.frame.height)! > eventTabsViewInitialY {
+           self.eventTabsView.frame.origin.y = profileScrollView.contentOffset.y + (navigationController?.navigationBar.frame.origin.y)! + (navigationController?.navigationBar.frame.height)!
         } else {
             self.eventTabsView.frame.origin.y = eventTabsViewInitialY
         }
@@ -147,12 +149,26 @@ class UserProfileViewController: UIViewController, UIScrollViewDelegate, UITable
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 3
         // TO-DO: return number of rows per upcoming time
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("UpcomingAndSavedEventsTableViewCell") as! UpcomingAndSavedEventsTableViewCell
+        let event = testEvents[0]
+        
+        //cell.eventImageView.image = TO-DO
+        cell.titleLabel.text = event.name
+        cell.attendeeCountLabel.text = "\(event.attendees.count) people are going"
+        
+        var attrString: NSMutableAttributedString = NSMutableAttributedString(string: event.description)
+        var style = NSMutableParagraphStyle()
+        style.lineSpacing = 4
+        attrString.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSMakeRange(0, attrString.length))
+        cell.descriptionLabel.attributedText = attrString;
+        
+        //eventsTableView.frame.size.height = eventsTableView.contentSize.height
+        profileScrollView.contentSize = CGSize(width: view.frame.width, height: profileScrollView.contentInset.top + eventsTableView.frame.origin.y + eventsTableView.frame.size.height)
         
         return cell
     }

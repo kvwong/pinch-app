@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-var testEvents: [Event]!
+var testEvents: [Event] = []
 
-func generateTestEvent() {
+func generateTestEvents() {
     testEvents.append(Event(
         id: 0,
         org: Organization(
@@ -28,7 +28,7 @@ func generateTestEvent() {
         addressCity: "San Francisco",
         addressState: "CA",
         addressZIP: "94103",
-        location: Location(latitude: -144, longitude: 133),
+        location: Location(latitude: -144.0, longitude: 133.0),
         contactNumber: "123456",
         websiteURL: "www.codeforamerica.org"))
 }

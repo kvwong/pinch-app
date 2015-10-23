@@ -11,17 +11,19 @@ import UIKit
 class UpcomingAndSavedEventsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var eventImageView: UIImageView!
-    @IBOutlet weak var eventTitleLabel: UILabel!
-    @IBOutlet weak var eventJoinButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var joinButton: UIButton!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var attendeeCountLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
-        eventJoinButton.layer.masksToBounds = true
-        eventJoinButton.layer.cornerRadius = 4.0
-        eventJoinButton.layer.borderWidth = 1.0
-        eventJoinButton.layer.borderColor = colorBrandGreen.CGColor
+        joinButton.layer.masksToBounds = true
+        joinButton.layer.cornerRadius = 4.0
+        joinButton.layer.borderWidth = 1.0
+        joinButton.layer.borderColor = colorBrandGreen.CGColor
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
