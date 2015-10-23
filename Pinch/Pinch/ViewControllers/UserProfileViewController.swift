@@ -55,6 +55,7 @@ class UserProfileViewController: UIViewController, UIScrollViewDelegate, UITable
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

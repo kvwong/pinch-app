@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Custom navigation bar style
         UINavigationBar.appearance().barTintColor = UIColorFromRGB("47C6B2")
         UINavigationBar.appearance().tintColor = UIColorFromRGB("FFFFFF")
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "Raleway-Bold", size: 17)!, NSForegroundColorAttributeName:UIColor.whiteColor()]
             
         UINavigationBar.appearance().translucent = false
         UINavigationBar.appearance().backIndicatorImage = UIImage(named: "icon_back_white_16x14")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal).imageWithAlignmentRectInsets(UIEdgeInsetsMake(0, 0, -3, 0))

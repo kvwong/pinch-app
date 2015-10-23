@@ -431,18 +431,27 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile - Stats" id="Thm-Dn-0fG">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" id="KsX-3j-5PX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                            </imageView>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="content_stats" id="Xyy-dN-tGb">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="451"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Your Stats" id="esJ-7l-x2l"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="statsImageView" destination="Xyy-dN-tGb" id="iW3-qX-mZE"/>
+                        <outlet property="statsScrollView" destination="KsX-3j-5PX" id="UWJ-5o-Bk3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERd-uR-Ud8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -807,7 +816,7 @@
                             </view>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.27843137254901962" green="0.77647058823529413" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="XH2-nX-lsZ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -826,12 +835,12 @@
             </objects>
             <point key="canvasLocation" x="651.5" y="347.5"/>
         </scene>
-        <!--Activity View Controller-->
+        <!--Activity-->
         <scene sceneID="PTX-dw-no2">
             <objects>
-                <viewController id="Ngy-vJ-zBg" customClass="ActivityViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Ngy-vJ-zBg" customClass="ActivityViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6af-40-ReT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Activity" id="P2d-xU-44e">
@@ -851,7 +860,8 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WaL-tE-4Wo"/>
+                    <navigationItem key="navigationItem" title="Activity" id="WaL-tE-4Wo"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YtO-M1-TVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1582,9 +1592,8 @@
         <!--Navigation Controller-->
         <scene sceneID="Sbx-6b-Zhz">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Bgu-z9-cIA" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bgu-z9-cIA" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gHr-H7-fuW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1915,7 +1924,6 @@
         <image name="Invite Friends" width="375" height="667"/>
         <image name="Login" width="375" height="667"/>
         <image name="Profile - Badges" width="375" height="667"/>
-        <image name="Profile - Stats" width="375" height="667"/>
         <image name="Search Results - Cards Copy 4" width="375" height="667"/>
         <image name="Settings" width="375" height="667"/>
         <image name="avatar_cameron" width="395" height="395"/>
@@ -1928,6 +1936,7 @@
         <image name="button_profile_menu_nonprofits" width="115" height="87"/>
         <image name="button_profile_menu_stats" width="115" height="87"/>
         <image name="button_profile_menu_testimonials" width="115" height="87"/>
+        <image name="content_stats" width="375" height="451"/>
         <image name="icon_activity_24x24" width="24" height="24"/>
         <image name="icon_close_14x14" width="14" height="14"/>
         <image name="icon_filters_20x14" width="20" height="14"/>
