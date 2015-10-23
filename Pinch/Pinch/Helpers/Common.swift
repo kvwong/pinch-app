@@ -56,3 +56,11 @@ func UIColorFromRGB(colorCode: String, alpha: Float = 1.0) -> UIColor {
     
     return UIColor(red: r, green: g, blue: b, alpha: CGFloat(alpha))
 }
+
+// Color from RGB -----
+
+func makeRGB(R: CGFloat, G: CGFloat, B: CGFloat, alpha: CGFloat) -> UIColor
+{
+    var color = UIColor(red: R/255.0, green: G/255.0, blue: B/255.0, alpha: alpha)
+    return color
+}
