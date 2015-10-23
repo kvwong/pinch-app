@@ -12,6 +12,7 @@ import MapKit
 class EventLocationViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var directionsButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,24 @@ class EventLocationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func pressDirections(sender: AnyObject) {
+        //GoogleMaps
+        if (UIApplication.sharedApplication().canOpenURL(NSURL(string:"comgooglemaps://")!)) {
+            UIApplication.sharedApplication().openURL(NSURL(string:
+                "comgooglemaps://?center=40.765819,-73.975866&zoom=14&views=traffic")!)
+        } else {
+            NSLog("Can't use Google Maps");
+        }
+        
+        //Apple Maps
+        if (UIApplication.sharedApplication().canOpenURL(NSURL(string:"http://maps.apple.com")!)) {
+            UIApplication.sharedApplication().openURL(NSURL(string:
+            "http://maps.apple.com/?daddr=San+Francisco,+CA&saddr=cupertino")!)
+        } else {
+            NSLog("Can't use Apple Maps");
+        }
+        
+    }
 
     /*
     // MARK: - Navigation

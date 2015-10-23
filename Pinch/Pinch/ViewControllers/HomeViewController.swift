@@ -13,13 +13,15 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var eventView: UIView!
     @IBOutlet weak var searchButton: UIButton!
     
+    var eventCardTransition: EventCardTransition!
     var cardView: UIView!
     var status: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         status = false
-        // Do any additional setup after loading the view.
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
