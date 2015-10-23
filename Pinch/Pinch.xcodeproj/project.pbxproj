@@ -53,6 +53,7 @@
 		12AA0DFB1BD787CC009DA8CB /* UserActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA0DFA1BD787CC009DA8CB /* UserActivityViewController.swift */; };
 		12AA0DFD1BD7885B009DA8CB /* UserTestimonialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA0DFC1BD7885B009DA8CB /* UserTestimonialsViewController.swift */; };
 		12AA0E091BD79202009DA8CB /* FollowingUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA0E081BD79202009DA8CB /* FollowingUserTableViewCell.swift */; };
+		12CD54711BDA99490027A3BB /* ExtensionUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CD54701BDA99490027A3BB /* ExtensionUIImage.swift */; settings = {ASSET_TAGS = (); }; };
 		12CDC1111BD9DD220087561B /* UpcomingAndSavedEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CDC1101BD9DD220087561B /* UpcomingAndSavedEventsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		12CDC1141BD9DE430087561B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CDC1131BD9DE430087561B /* Colors.swift */; settings = {ASSET_TAGS = (); }; };
 		12CDC1161BD9E79A0087561B /* TestEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CDC1151BD9E79A0087561B /* TestEvents.swift */; settings = {ASSET_TAGS = (); }; };
@@ -134,6 +135,7 @@
 		12AA0DFA1BD787CC009DA8CB /* UserActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserActivityViewController.swift; path = ViewControllers/UserActivityViewController.swift; sourceTree = "<group>"; };
 		12AA0DFC1BD7885B009DA8CB /* UserTestimonialsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTestimonialsViewController.swift; path = ViewControllers/UserTestimonialsViewController.swift; sourceTree = "<group>"; };
 		12AA0E081BD79202009DA8CB /* FollowingUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowingUserTableViewCell.swift; path = ViewControllers/UserProfileTableViews/FollowingUserTableViewCell.swift; sourceTree = "<group>"; };
+		12CD54701BDA99490027A3BB /* ExtensionUIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtensionUIImage.swift; path = Extensions/ExtensionUIImage.swift; sourceTree = "<group>"; };
 		12CDC1101BD9DD220087561B /* UpcomingAndSavedEventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpcomingAndSavedEventsTableViewCell.swift; path = ViewControllers/UserProfileTableViews/UpcomingAndSavedEventsTableViewCell.swift; sourceTree = "<group>"; };
 		12CDC1131BD9DE430087561B /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Helpers/Colors.swift; sourceTree = "<group>"; };
 		12CDC1151BD9E79A0087561B /* TestEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestEvents.swift; path = Helpers/TestEvents.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				121648B01BD0D85800852536 /* View Controllers */,
 				121648C31BD0DD8600852536 /* Classes */,
 				121184DB1BD21B8D00C17136 /* Helpers */,
+				12CD546F1BDA991F0027A3BB /* Extensions */,
 				121648821BD0D6AF00852536 /* AppDelegate.swift */,
 				126B730F1BD4D38B0081CA0E /* Assets.xcassets */,
 				121648841BD0D6AF00852536 /* ViewController.swift */,
@@ -350,6 +353,14 @@
 				1229B4B71BD796A8000A2B7D /* Raleway-Bold.ttf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		12CD546F1BDA991F0027A3BB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				12CD54701BDA99490027A3BB /* ExtensionUIImage.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		12CDC1121BD9DD350087561B /* TableView Cells */ = {
@@ -562,6 +573,7 @@
 				121648B81BD0DC0E00852536 /* SearchViewController.swift in Sources */,
 				12CDC1111BD9DD220087561B /* UpcomingAndSavedEventsTableViewCell.swift in Sources */,
 				1211850B1BD223BB00C17136 /* ChangePasswordViewController.swift in Sources */,
+				12CD54711BDA99490027A3BB /* ExtensionUIImage.swift in Sources */,
 				CB50A5E31BD794320072C54C /* EventInviteFriendsViewController.swift in Sources */,
 				121648BC1BD0DC7200852536 /* UserProfileViewController.swift in Sources */,
 				121185101BD223FA00C17136 /* UserStatsViewController.swift in Sources */,

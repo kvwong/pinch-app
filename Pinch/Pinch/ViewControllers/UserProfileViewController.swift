@@ -50,6 +50,7 @@ class UserProfileViewController: UIViewController, UIScrollViewDelegate, UITable
         
         // Format table view
         eventsTableView.separatorColor = colorBorderLight
+        eventsTableView.separatorInset.left = 80
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -71,8 +72,10 @@ class UserProfileViewController: UIViewController, UIScrollViewDelegate, UITable
             print("profileScrollView.content.y offset is: \(profileScrollView.contentOffset.y)")
             self.title = "Annabel" // TO-DO: dynamically input user name
             self.navigationController?.setNavigationBarHidden(false, animated: true)
+            UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
         } else {
             self.navigationController?.setNavigationBarHidden(true, animated: true)
+            UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
         }
         
         if profileScrollView.contentOffset.y + (navigationController?.navigationBar.frame.origin.y)! + (navigationController?.navigationBar.frame.height)! > eventTabsViewInitialY {
@@ -158,10 +161,11 @@ class UserProfileViewController: UIViewController, UIScrollViewDelegate, UITable
         let cell = tableView.dequeueReusableCellWithIdentifier("UpcomingAndSavedEventsTableViewCell") as! UpcomingAndSavedEventsTableViewCell
         let event = testEvents[0]
         
-        //cell.eventImageView.image = TO-DO
+        // TO-DO: cell.eventImageView.image
         cell.titleLabel.text = event.name
         cell.attendeeCountLabel.text = "\(event.attendees.count) people are going"
         
+        // Adjusted description line-height
         var attrString: NSMutableAttributedString = NSMutableAttributedString(string: event.description)
         var style = NSMutableParagraphStyle()
         style.lineSpacing = 4

@@ -20,10 +20,19 @@ class UpcomingAndSavedEventsTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
+        // Event image styles:
+        eventImageView.layer.masksToBounds = true
+        eventImageView.layer.cornerRadius = 4.0
+        
+        // Join button styles:
         joinButton.layer.masksToBounds = true
         joinButton.layer.cornerRadius = 4.0
         joinButton.layer.borderWidth = 1.0
         joinButton.layer.borderColor = colorBrandGreen.CGColor
+        
+        // TO-DO: button styles per state
+        joinButton.setBackgroundImage(UIImage.imageWithColor(UIColorFromRGB(colorBrandGreenCode, alpha: 0.25)), forState: .Highlighted)
+
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

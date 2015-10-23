@@ -10,17 +10,24 @@ import Foundation
 import UIKit
 
 // Brand Colors
-let colorBrandGreen         = UIColorFromRGB("47C6B2")
+let colorBrandGreenCode         = "47C6B2"
+let colorBrandGreen             = UIColorFromRGB(colorBrandGreenCode)
 
 // Text Colors
-let colorTextDark           = UIColorFromRGB("222F33")
-let colorTextMedium         = UIColorFromRGB("485B66")
-let colorTextLight          = UIColorFromRGB("A6ADB2")
-let colorTextWhite          = UIColor.whiteColor()
+let colorTextDarkCode           = "222F33"
+let colorTextDark               = UIColorFromRGB(colorTextDarkCode)
+let colorTextMediumCode         = "485B66"
+let colorTextMedium             = UIColorFromRGB(colorTextMediumCode)
+let colorTextLightCode          = "A6ADB2"
+let colorTextLight              = UIColorFromRGB(colorTextLightCode)
+let colorTextWhite              = UIColor.whiteColor()
 
 // Border Colors
-let colorBorderLight        = UIColorFromRGB("D8D8D8")
+let colorBorderLightCode        = "D8D8D8"
+let colorBorderLight            = UIColorFromRGB(colorBorderLightCode)
 
 // Background Colors
-let colorBackgroundMedium   = UIColorFromRGB("E9EFF3")
-let colorBackgroundLight    = UIColorFromRGB("F5F5F5")
+let colorBackgroundMediumCode   = "E9EFF3"
+let colorBackgroundMedium       = UIColorFromRGB(colorBackgroundMediumCode)
+let colorBackgroundLightCode    = "F5F5F5"
+let colorBackgroundLight        = UIColorFromRGB(colorBackgroundLightCode)
