@@ -43,10 +43,11 @@ class HomeViewController: UIViewController {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let nav = segue.destinationViewController as! UINavigationController
-        let eventDetailViewController = nav.topViewController as! EventViewController
-    
-        eventDetailViewController.eventSummary = cardView
+        if segue.identifier == "eventDetailSegue" {
+            let nav = segue.destinationViewController as! UINavigationController
+            let eventDetailViewController = nav.topViewController as! EventViewController
+            eventDetailViewController.eventSummary = cardView
+        }
     }
     
 

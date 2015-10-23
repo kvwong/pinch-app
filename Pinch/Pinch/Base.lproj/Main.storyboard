@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B38b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -8,8 +8,11 @@
             <string>Lato-Bold</string>
             <string>Lato-Bold</string>
             <string>Lato-Bold</string>
+            <string>Lato-Bold</string>
+            <string>Lato-Bold</string>
         </mutableArray>
         <mutableArray key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
@@ -36,6 +39,16 @@
                                     <view contentMode="scaleToFill" id="K6H-nD-Sq6">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GdB-qO-KdL">
+                                                <rect key="frame" x="124" y="83" width="44" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <animations/>
+                                                <connections>
+                                                    <segue destination="Bp7-Dk-6a9" kind="push" id="Fgd-tL-GIU"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -43,50 +56,56 @@
                                         <rect key="frame" x="0.0" y="220" width="375" height="174"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eiR-yN-jTE" userLabel="Badges">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="eiR-yN-jTE" userLabel="Badges">
                                                 <rect key="frame" x="16" y="0.0" width="115" height="87"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
+                                                <state key="normal" image="button_profile_menu_badges"/>
                                                 <connections>
                                                     <segue destination="ZdT-BO-QYW" kind="push" identifier="segueToBadges" id="IgE-GU-J6I"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XuS-pw-G3s" userLabel="Stats">
-                                                <rect key="frame" x="131" y="0.0" width="114" height="87"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="XuS-pw-G3s" userLabel="Stats">
+                                                <rect key="frame" x="130" y="0.0" width="115" height="87"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
+                                                <state key="normal" image="button_profile_menu_stats"/>
                                                 <connections>
                                                     <segue destination="8DO-nQ-gIj" kind="push" identifier="segueToStats" id="iQS-xq-zD9"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Fdq-vs-HkG" userLabel="Testimonials">
-                                                <rect key="frame" x="245" y="0.0" width="114" height="87"/>
+                                            <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="Fdq-vs-HkG" userLabel="Testimonials">
+                                                <rect key="frame" x="244" y="0.0" width="115" height="87"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
+                                                <state key="normal" image="button_profile_menu_testimonials"/>
                                                 <connections>
                                                     <segue destination="nco-lq-UFp" kind="push" identifier="segueToTestimonials" id="D2n-ba-YYU"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Igj-ze-6wq" userLabel="Activity">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="Igj-ze-6wq" userLabel="Activity">
                                                 <rect key="frame" x="16" y="87" width="115" height="87"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
+                                                <state key="normal" image="button_profile_menu_activity"/>
                                                 <connections>
                                                     <segue destination="24W-5S-PWr" kind="push" identifier="segueToActivity" id="70d-Ik-VbZ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qv2-NJ-mdw" userLabel="Non-Profits">
-                                                <rect key="frame" x="131" y="87" width="114" height="87"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="qv2-NJ-mdw" userLabel="Non-Profits">
+                                                <rect key="frame" x="130" y="87" width="115" height="87"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
+                                                <state key="normal" image="button_profile_menu_nonprofits"/>
                                                 <connections>
                                                     <segue destination="GKy-hA-A1V" kind="push" identifier="segueToOrgs" id="HsD-Be-IcX"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5SO-wn-lS4" userLabel="Following">
-                                                <rect key="frame" x="245" y="87" width="114" height="87"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="5SO-wn-lS4" userLabel="Following">
+                                                <rect key="frame" x="244" y="87" width="115" height="87"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
+                                                <state key="normal" image="button_profile_menu_following"/>
                                                 <connections>
                                                     <segue destination="n7v-Hh-x8C" kind="push" identifier="segueToFollowing" id="adb-lF-5As"/>
                                                 </connections>
@@ -95,21 +114,55 @@
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Oq5-Fl-jBA">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="117" sectionHeaderHeight="28" sectionFooterHeight="28" id="Oq5-Fl-jBA">
                                         <rect key="frame" x="0.0" y="448" width="375" height="752"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="DSz-Ge-7Xr">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UpcomingAndSavedEventsTableViewCell" rowHeight="111" id="DSz-Ge-7Xr" customClass="UpcomingAndSavedEventsTableViewCell" customModule="Pinch" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="111"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DSz-Ge-7Xr" id="cIg-IO-9ms">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="110.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="5Jl-ZL-VNh">
+                                                            <rect key="frame" x="16" y="16" width="52" height="52"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JS1-gW-wOQ">
+                                                            <rect key="frame" x="80" y="16" width="191" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                                                            <color key="textColor" red="0.13333333333333333" green="0.18431372549019609" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="meo-ef-o93">
+                                                            <rect key="frame" x="80" y="37" width="191" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                                            <color key="textColor" red="0.28235294117647058" green="0.35686274509803922" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7xx-QE-COw">
+                                                            <rect key="frame" x="303" y="16" width="58" height="28"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                                                            <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                                            <state key="normal" title="Join">
+                                                                <color key="titleColor" red="0.27843137254901962" green="0.77647058823529413" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                        </button>
+                                                    </subviews>
                                                     <animations/>
                                                 </tableViewCellContentView>
                                                 <animations/>
+                                                <connections>
+                                                    <outlet property="eventImageView" destination="5Jl-ZL-VNh" id="B12-9s-8Dc"/>
+                                                    <outlet property="eventJoinButton" destination="7xx-QE-COw" id="QLU-a2-f98"/>
+                                                    <outlet property="eventTitleLabel" destination="JS1-gW-wOQ" id="XM6-aK-bsd"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -118,7 +171,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" id="tCJ-h3-auP" userLabel="Divider">
-                                                <rect key="frame" x="0.0" y="44" width="375" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="43" width="375" height="1"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
                                                 <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
@@ -183,14 +236,6 @@
                                     <action selector="didPressCloseButton:" destination="ALl-jm-gkw" eventType="touchUpInside" id="IZy-PX-XiJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GdB-qO-KdL">
-                                <rect key="frame" x="132" y="222" width="44" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <connections>
-                                    <segue destination="Bp7-Dk-6a9" kind="push" id="Fgd-tL-GIU"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
@@ -203,6 +248,7 @@
                     <connections>
                         <outlet property="activeTabView" destination="Ecr-pb-pym" id="GjU-T9-N9F"/>
                         <outlet property="eventTabsView" destination="vua-co-7lb" id="li8-gs-OK2"/>
+                        <outlet property="eventsTableView" destination="Oq5-Fl-jBA" id="GGE-G7-PmA"/>
                         <outlet property="profileScrollView" destination="LGV-70-C7J" id="rTH-SV-SHU"/>
                         <outlet property="savedEventsTab" destination="uhU-Yv-wwq" id="QPU-zJ-IoL"/>
                         <outlet property="upcomingEventsTab" destination="Rg6-Ga-dSw" id="gLF-cB-HeI"/>
@@ -1726,6 +1772,12 @@
         <image name="avatar_jessie" width="390" height="320"/>
         <image name="avatar_kevin" width="331" height="331"/>
         <image name="banner_volunteering" width="512" height="384"/>
+        <image name="button_profile_menu_activity" width="115" height="87"/>
+        <image name="button_profile_menu_badges" width="115" height="87"/>
+        <image name="button_profile_menu_following" width="115" height="87"/>
+        <image name="button_profile_menu_nonprofits" width="115" height="87"/>
+        <image name="button_profile_menu_stats" width="115" height="87"/>
+        <image name="button_profile_menu_testimonials" width="115" height="87"/>
         <image name="icon_activity_24x24" width="24" height="24"/>
         <image name="icon_close_14x14" width="14" height="14"/>
         <image name="icon_filters_20x14" width="20" height="14"/>

@@ -8,16 +8,21 @@
 
 import UIKit
 
-class UserProfileViewController: UIViewController, UIScrollViewDelegate {
+class UserProfileViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
     // Outlets and Vars --------------------------------
     
     @IBOutlet weak var profileScrollView: UIScrollView!
+    
+    // Upcoming & Saved Event Tabs
     @IBOutlet weak var eventTabsView: UIView!
     @IBOutlet weak var upcomingEventsTab: UIButton!
     @IBOutlet weak var savedEventsTab: UIButton!
     @IBOutlet weak var activeTabView: UIView!
 
+    // Upcoming & Saved Event Table View
+    @IBOutlet weak var eventsTableView: UITableView!
+    
     var eventTabsViewInitialY: CGFloat!
     
     // Overrides ---------------------------------------
@@ -25,14 +30,19 @@ class UserProfileViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        eventsTableView.delegate = self
+        eventsTableView.dataSource = self
+        
         // Scroll view setup
         profileScrollView.contentSize = CGSize(width: view.frame.width, height: 1800) // TO-DO: make height dynamic once table view pulls in data
         profileScrollView.delegate = self
         
         // Default to Upcoming tab on load
         switchTabs("Upcoming")
-        upcomingEventsTab.setTitleColor(UIColorFromRGB("485B66"), forState: .Selected)
-        savedEventsTab.setTitleColor(UIColorFromRGB("485B66"), forState: .Selected)
+        upcomingEventsTab.setTitleColor(colorTextLight, forState: .Normal)
+        savedEventsTab.setTitleColor(colorTextLight, forState: .Normal)
+        upcomingEventsTab.setTitleColor(colorTextDark, forState: .Selected)
+        savedEventsTab.setTitleColor(colorTextDark, forState: .Selected)
         
         // Save initial eventTabsView.frame.origin.y position
         eventTabsViewInitialY = eventTabsView.frame.origin.y
@@ -54,12 +64,13 @@ class UserProfileViewController: UIViewController, UIScrollViewDelegate {
     // Scroll View Overrides ---------------------------
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        if profileScrollView.contentOffset.y > 0 {
+        // The following code block is buggy and doesn't work yet.
+        /*if profileScrollView.contentOffset.y > 0 {
             print("profileScrollView.content.y offset is: \(profileScrollView.contentOffset.y)")
             self.navigationController?.setNavigationBarHidden(false, animated: true)
         } else {
             self.navigationController?.setNavigationBarHidden(true, animated: true)
-        }
+        }*/
         
         if profileScrollView.contentOffset.y > eventTabsViewInitialY {
            self.eventTabsView.frame.origin.y = profileScrollView.contentOffset.y
@@ -128,6 +139,22 @@ class UserProfileViewController: UIViewController, UIScrollViewDelegate {
     func loadSavedEvents() {
         print("Loading saved evnts...")
         // TO-DO: load here
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+        // TO-DO: return number of sections by upcoming time
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+        // TO-DO: return number of rows per upcoming time
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("UpcomingAndSavedEventsTableViewCell") as! UpcomingAndSavedEventsTableViewCell
+        
+        return cell
     }
 
 }
