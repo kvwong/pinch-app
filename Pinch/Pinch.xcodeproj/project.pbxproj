@@ -54,6 +54,7 @@
 		12AA0DFD1BD7885B009DA8CB /* UserTestimonialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA0DFC1BD7885B009DA8CB /* UserTestimonialsViewController.swift */; };
 		12AA0E091BD79202009DA8CB /* FollowingUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA0E081BD79202009DA8CB /* FollowingUserTableViewCell.swift */; };
 		12DB7DEA1BD2FEEF00C17FE4 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB7DE91BD2FEEF00C17FE4 /* Common.swift */; };
+		40F31A111BD9E2A200C2884E /* PeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F31A101BD9E2A200C2884E /* PeopleCell.swift */; settings = {ASSET_TAGS = (); }; };
 		439B0A90EDAC7EB206EB98E3 /* Pods_Pinch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D9BEA7369A5037279544AF0 /* Pods_Pinch.framework */; };
 		CB3D28AD1BD8E67700AC1BBD /* EventCardTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D28AC1BD8E67700AC1BBD /* EventCardTransition.swift */; settings = {ASSET_TAGS = (); }; };
 		CB50A5DF1BD7901E0072C54C /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB50A5DE1BD7901E0072C54C /* FadeTransition.swift */; settings = {ASSET_TAGS = (); }; };
@@ -132,6 +133,7 @@
 		12AA0DFC1BD7885B009DA8CB /* UserTestimonialsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTestimonialsViewController.swift; path = ViewControllers/UserTestimonialsViewController.swift; sourceTree = "<group>"; };
 		12AA0E081BD79202009DA8CB /* FollowingUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowingUserTableViewCell.swift; path = ViewControllers/UserProfileTableViews/FollowingUserTableViewCell.swift; sourceTree = "<group>"; };
 		12DB7DE91BD2FEEF00C17FE4 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Common.swift; path = Helpers/Common.swift; sourceTree = "<group>"; };
+		40F31A101BD9E2A200C2884E /* PeopleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleCell.swift; sourceTree = "<group>"; };
 		8D9BEA7369A5037279544AF0 /* Pods_Pinch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pinch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3D28AC1BD8E67700AC1BBD /* EventCardTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventCardTransition.swift; path = Helpers/EventCardTransition.swift; sourceTree = "<group>"; };
 		CB50A5DE1BD7901E0072C54C /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				121184FC1BD2229100C17136 /* OnboardingCausesViewController.swift */,
 				121184FE1BD222BA00C17136 /* OnboardingFollowFriendsViewController.swift */,
 				121185171BD226F200C17136 /* OnboardingFinishViewController.swift */,
+				40F31A101BD9E2A200C2884E /* PeopleCell.swift */,
 			);
 			name = Onboarding;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				12AA0DFD1BD7885B009DA8CB /* UserTestimonialsViewController.swift in Sources */,
 				121185071BD2235C00C17136 /* EventFeedbackViewController.swift in Sources */,
 				126B730E1BD4CD910081CA0E /* Location.swift in Sources */,
+				40F31A111BD9E2A200C2884E /* PeopleCell.swift in Sources */,
 				121648C01BD0DCDC00852536 /* SettingsViewController.swift in Sources */,
 				121184DD1BD21BD900C17136 /* Cause.swift in Sources */,
 				12AA0E091BD79202009DA8CB /* FollowingUserTableViewCell.swift in Sources */,
