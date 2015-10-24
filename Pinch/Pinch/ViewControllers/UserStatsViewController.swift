@@ -10,14 +10,18 @@ import UIKit
 
 class UserStatsViewController: UIViewController {
 
+    @IBOutlet weak var statsScrollView: UIScrollView!
+    @IBOutlet weak var statsImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        statsScrollView.contentSize = statsImageView.image!.size
     }
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

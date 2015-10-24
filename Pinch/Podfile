@@ -5,6 +5,7 @@ use_frameworks!
 
 target 'Pinch' do
 	pod 'AFNetworking'
+	pod 'TTTAttributedLabel'
 end
 
 target 'PinchTests' do

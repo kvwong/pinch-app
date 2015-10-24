@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< HEAD
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="YdI-yE-BEW">
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+>>>>>>> origin/master
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+            <string>Lato-Bold</string>
+            <string>Lato-Bold</string>
             <string>Lato-Bold</string>
             <string>Lato-Bold</string>
             <string>Lato-Bold</string>
@@ -18,12 +25,15 @@
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
+<<<<<<< HEAD
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
+=======
+>>>>>>> origin/master
         </mutableArray>
         <mutableArray key="Raleway-Bold.ttf">
             <string>Raleway-Bold</string>
@@ -43,7 +53,7 @@
         <!--User Profile View Controller-->
         <scene sceneID="W4B-XP-fOv">
             <objects>
-                <viewController id="ALl-jm-gkw" customClass="UserProfileViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="ALl-jm-gkw" customClass="UserProfileViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MkQ-7A-2ZP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,6 +65,34 @@
                                     <view contentMode="scaleToFill" id="K6H-nD-Sq6">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="h6x-Ze-DDw">
+                                                <rect key="frame" x="32" y="24" width="92" height="92"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GdB-qO-KdL">
+                                                <rect key="frame" x="124" y="83" width="44" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <animations/>
+                                                <connections>
+                                                    <segue destination="Bp7-Dk-6a9" kind="push" id="Fgd-tL-GIU"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lxk-5f-mC9">
+                                                <rect key="frame" x="144" y="29" width="199" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                                <color key="textColor" red="0.13333333333333333" green="0.18431372549019609" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FIw-F3-bMd">
+                                                <rect key="frame" x="144" y="57" width="199" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                                <color key="textColor" red="0.28235294117647058" green="0.35686274509803922" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -62,50 +100,56 @@
                                         <rect key="frame" x="0.0" y="220" width="375" height="174"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eiR-yN-jTE" userLabel="Badges">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="eiR-yN-jTE" userLabel="Badges">
                                                 <rect key="frame" x="16" y="0.0" width="115" height="87"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
+                                                <state key="normal" image="button_profile_menu_badges"/>
                                                 <connections>
                                                     <segue destination="ZdT-BO-QYW" kind="push" identifier="segueToBadges" id="IgE-GU-J6I"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XuS-pw-G3s" userLabel="Stats">
-                                                <rect key="frame" x="131" y="0.0" width="114" height="87"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="XuS-pw-G3s" userLabel="Stats">
+                                                <rect key="frame" x="130" y="0.0" width="115" height="87"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
+                                                <state key="normal" image="button_profile_menu_stats"/>
                                                 <connections>
                                                     <segue destination="8DO-nQ-gIj" kind="push" identifier="segueToStats" id="iQS-xq-zD9"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Fdq-vs-HkG" userLabel="Testimonials">
-                                                <rect key="frame" x="245" y="0.0" width="114" height="87"/>
+                                            <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="Fdq-vs-HkG" userLabel="Testimonials">
+                                                <rect key="frame" x="244" y="0.0" width="115" height="87"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
+                                                <state key="normal" image="button_profile_menu_testimonials"/>
                                                 <connections>
                                                     <segue destination="nco-lq-UFp" kind="push" identifier="segueToTestimonials" id="D2n-ba-YYU"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Igj-ze-6wq" userLabel="Activity">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="Igj-ze-6wq" userLabel="Activity">
                                                 <rect key="frame" x="16" y="87" width="115" height="87"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
+                                                <state key="normal" image="button_profile_menu_activity"/>
                                                 <connections>
                                                     <segue destination="24W-5S-PWr" kind="push" identifier="segueToActivity" id="70d-Ik-VbZ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qv2-NJ-mdw" userLabel="Non-Profits">
-                                                <rect key="frame" x="131" y="87" width="114" height="87"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="qv2-NJ-mdw" userLabel="Non-Profits">
+                                                <rect key="frame" x="130" y="87" width="115" height="87"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
+                                                <state key="normal" image="button_profile_menu_nonprofits"/>
                                                 <connections>
                                                     <segue destination="GKy-hA-A1V" kind="push" identifier="segueToOrgs" id="HsD-Be-IcX"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5SO-wn-lS4" userLabel="Following">
-                                                <rect key="frame" x="245" y="87" width="114" height="87"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="5SO-wn-lS4" userLabel="Following">
+                                                <rect key="frame" x="244" y="87" width="115" height="87"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
+                                                <state key="normal" image="button_profile_menu_following"/>
                                                 <connections>
                                                     <segue destination="n7v-Hh-x8C" kind="push" identifier="segueToFollowing" id="adb-lF-5As"/>
                                                 </connections>
@@ -114,21 +158,65 @@
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Oq5-Fl-jBA">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="112" sectionHeaderHeight="28" sectionFooterHeight="28" id="Oq5-Fl-jBA">
                                         <rect key="frame" x="0.0" y="448" width="375" height="752"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="DSz-Ge-7Xr">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UpcomingAndSavedEventsTableViewCell" rowHeight="112" id="DSz-Ge-7Xr" customClass="UpcomingAndSavedEventsTableViewCell" customModule="Pinch" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="112"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DSz-Ge-7Xr" id="cIg-IO-9ms">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="111.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="5Jl-ZL-VNh">
+                                                            <rect key="frame" x="16" y="16" width="52" height="52"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="0.9137254901960784" green="0.93725490196078431" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JS1-gW-wOQ">
+                                                            <rect key="frame" x="80" y="16.5" width="191" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                                                            <color key="textColor" red="0.13333333333333333" green="0.18431372549019609" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cEP-sB-SmA">
+                                                            <rect key="frame" x="80" y="80" width="191" height="15"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                                            <color key="textColor" red="0.65098039215686276" green="0.67843137254901964" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hYL-Iq-vzg">
+                                                            <rect key="frame" x="80" y="37.5" width="191" height="40"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                                            <color key="textColor" red="0.28235294117647058" green="0.35686274509803922" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7xx-QE-COw">
+                                                            <rect key="frame" x="303" y="16.5" width="58" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                                                            <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                                            <state key="normal" title="Join">
+                                                                <color key="titleColor" red="0.27843137254901962" green="0.77647058823529413" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                        </button>
+                                                    </subviews>
                                                     <animations/>
                                                 </tableViewCellContentView>
                                                 <animations/>
+                                                <connections>
+                                                    <outlet property="attendeeCountLabel" destination="cEP-sB-SmA" id="MLJ-in-gJy"/>
+                                                    <outlet property="descriptionLabel" destination="hYL-Iq-vzg" id="hWl-Bd-UeU"/>
+                                                    <outlet property="eventImageView" destination="5Jl-ZL-VNh" id="DaZ-7G-QcM"/>
+                                                    <outlet property="joinButton" destination="7xx-QE-COw" id="sK2-0e-oxF"/>
+                                                    <outlet property="titleLabel" destination="JS1-gW-wOQ" id="RQU-yq-4Bn"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -137,7 +225,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" id="tCJ-h3-auP" userLabel="Divider">
-                                                <rect key="frame" x="0.0" y="44" width="375" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="43" width="375" height="1"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
                                                 <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
@@ -202,18 +290,11 @@
                                     <action selector="didPressCloseButton:" destination="ALl-jm-gkw" eventType="touchUpInside" id="IZy-PX-XiJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GdB-qO-KdL">
-                                <rect key="frame" x="132" y="222" width="44" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <connections>
-                                    <segue destination="Bp7-Dk-6a9" kind="push" id="Fgd-tL-GIU"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="Msn-f2-oQj"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -222,6 +303,7 @@
                     <connections>
                         <outlet property="activeTabView" destination="Ecr-pb-pym" id="GjU-T9-N9F"/>
                         <outlet property="eventTabsView" destination="vua-co-7lb" id="li8-gs-OK2"/>
+                        <outlet property="eventsTableView" destination="Oq5-Fl-jBA" id="GGE-G7-PmA"/>
                         <outlet property="profileScrollView" destination="LGV-70-C7J" id="rTH-SV-SHU"/>
                         <outlet property="savedEventsTab" destination="uhU-Yv-wwq" id="QPU-zJ-IoL"/>
                         <outlet property="upcomingEventsTab" destination="Rg6-Ga-dSw" id="gLF-cB-HeI"/>
@@ -231,12 +313,12 @@
             </objects>
             <point key="canvasLocation" x="116.5" y="-1988"/>
         </scene>
-        <!--Badges-->
+        <!--Your Badges-->
         <scene sceneID="BEv-b1-fNV">
             <objects>
                 <viewController id="ZdT-BO-QYW" customClass="UserBadgesViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xu8-f2-Fcu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile - Badges" id="SXH-6n-4TD">
@@ -248,7 +330,8 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Badges" id="mtC-eJ-5YY"/>
+                    <navigationItem key="navigationItem" title="Your Badges" id="mtC-eJ-5YY"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TD0-GG-aiA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -273,7 +356,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r9U-If-KPb" id="V8Q-pX-176">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -313,7 +396,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IdI-jo-wap" id="dE4-d6-GL0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -356,25 +439,35 @@
             </objects>
             <point key="canvasLocation" x="2097.5" y="-569.5"/>
         </scene>
-        <!--Stats-->
+        <!--Your Stats-->
         <scene sceneID="vSl-4Z-G5v">
             <objects>
                 <viewController id="8DO-nQ-gIj" customClass="UserStatsViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ulz-TH-2hA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile - Stats" id="Thm-Dn-0fG">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" id="KsX-3j-5PX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                            </imageView>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="content_stats" id="Xyy-dN-tGb">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="451"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Stats" id="esJ-7l-x2l"/>
+                    <navigationItem key="navigationItem" title="Your Stats" id="esJ-7l-x2l"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="statsImageView" destination="Xyy-dN-tGb" id="iW3-qX-mZE"/>
+                        <outlet property="statsScrollView" destination="KsX-3j-5PX" id="UWJ-5o-Bk3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERd-uR-Ud8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -398,7 +491,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UgM-n3-MKG" id="8rE-g3-3qh">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -739,7 +832,7 @@
                             </view>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.27843137254901962" green="0.77647058823529413" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="XH2-nX-lsZ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -758,12 +851,12 @@
             </objects>
             <point key="canvasLocation" x="1183.5" y="347.5"/>
         </scene>
-        <!--Activity View Controller-->
+        <!--Activity-->
         <scene sceneID="PTX-dw-no2">
             <objects>
-                <viewController id="Ngy-vJ-zBg" customClass="ActivityViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Ngy-vJ-zBg" customClass="ActivityViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6af-40-ReT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Activity" id="P2d-xU-44e">
@@ -783,7 +876,8 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WaL-tE-4Wo"/>
+                    <navigationItem key="navigationItem" title="Activity" id="WaL-tE-4Wo"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YtO-M1-TVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1514,9 +1608,8 @@
         <!--Navigation Controller-->
         <scene sceneID="Sbx-6b-Zhz">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Bgu-z9-cIA" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bgu-z9-cIA" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gHr-H7-fuW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2033,13 +2126,19 @@
         <image name="Event Details v3" width="375" height="1662"/>
         <image name="Login" width="375" height="667"/>
         <image name="Profile - Badges" width="375" height="667"/>
-        <image name="Profile - Stats" width="375" height="667"/>
         <image name="Search Results - Cards Copy 4" width="375" height="667"/>
         <image name="Settings" width="375" height="667"/>
         <image name="avatar_cameron" width="395" height="395"/>
         <image name="avatar_jessie" width="390" height="320"/>
         <image name="avatar_kevin" width="331" height="331"/>
         <image name="banner_volunteering" width="512" height="384"/>
+        <image name="button_profile_menu_activity" width="115" height="87"/>
+        <image name="button_profile_menu_badges" width="115" height="87"/>
+        <image name="button_profile_menu_following" width="115" height="87"/>
+        <image name="button_profile_menu_nonprofits" width="115" height="87"/>
+        <image name="button_profile_menu_stats" width="115" height="87"/>
+        <image name="button_profile_menu_testimonials" width="115" height="87"/>
+        <image name="content_stats" width="375" height="451"/>
         <image name="icon_activity_24x24" width="24" height="24"/>
         <image name="icon_close_14x14" width="14" height="14"/>
         <image name="icon_filters_20x14" width="20" height="14"/>

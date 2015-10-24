@@ -20,8 +20,10 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         status = false
-        
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,22 +34,19 @@ class HomeViewController: UIViewController {
     @IBAction func didPressSearchButton(sender: UIButton) {
         performSegueWithIdentifier("segueToSearch", sender: nil)
     }
-    
 
     @IBAction func onTap(sender: AnyObject) {
-       
         cardView = sender.view as UIView!
-        
         performSegueWithIdentifier("eventDetailSegue", sender: nil)
         
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let nav = segue.destinationViewController as! UINavigationController
-        let eventDetailViewController = nav.topViewController as! EventViewController
-    
-        eventDetailViewController.eventSummary = cardView
+        if segue.identifier == "eventDetailSegue" {
+            let nav = segue.destinationViewController as! UINavigationController
+            let eventDetailViewController = nav.topViewController as! EventViewController
+            eventDetailViewController.eventSummary = cardView
+        }
     }
     
-
 }

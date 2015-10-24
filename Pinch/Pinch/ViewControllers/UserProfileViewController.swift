@@ -8,16 +8,21 @@
 
 import UIKit
 
-class UserProfileViewController: UIViewController, UIScrollViewDelegate {
+class UserProfileViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
     // Outlets and Vars --------------------------------
     
     @IBOutlet weak var profileScrollView: UIScrollView!
+    
+    // Upcoming & Saved Event Tabs
     @IBOutlet weak var eventTabsView: UIView!
     @IBOutlet weak var upcomingEventsTab: UIButton!
     @IBOutlet weak var savedEventsTab: UIButton!
     @IBOutlet weak var activeTabView: UIView!
 
+    // Upcoming & Saved Event Table View
+    @IBOutlet weak var eventsTableView: UITableView!
+    
     var eventTabsViewInitialY: CGFloat!
     
     // Overrides ---------------------------------------
@@ -25,24 +30,33 @@ class UserProfileViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        eventsTableView.delegate = self
+        eventsTableView.dataSource = self
+        
         // Scroll view setup
-        profileScrollView.contentSize = CGSize(width: view.frame.width, height: 1800) // TO-DO: make height dynamic once table view pulls in data
+        profileScrollView.contentSize = CGSize(width: view.frame.width, height: eventsTableView.frame.origin.y +
+            eventsTableView.frame.size.height)
         profileScrollView.delegate = self
         
         // Default to Upcoming tab on load
         switchTabs("Upcoming")
-        upcomingEventsTab.setTitleColor(UIColorFromRGB("485B66"), forState: .Selected)
-        savedEventsTab.setTitleColor(UIColorFromRGB("485B66"), forState: .Selected)
+        upcomingEventsTab.setTitleColor(colorTextLight, forState: .Normal)
+        savedEventsTab.setTitleColor(colorTextLight, forState: .Normal)
+        upcomingEventsTab.setTitleColor(colorTextDark, forState: .Selected)
+        savedEventsTab.setTitleColor(colorTextDark, forState: .Selected)
         
         // Save initial eventTabsView.frame.origin.y position
         eventTabsViewInitialY = eventTabsView.frame.origin.y
+        
+        // Format table view
+        eventsTableView.separatorColor = colorBorderLight
+        eventsTableView.separatorInset.left = 80
     }
     
     override func viewWillAppear(animated: Bool) {
-        
-        //scrollView.contentSize = profileView.frame.size
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,13 +70,16 @@ class UserProfileViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView) {
         if profileScrollView.contentOffset.y > 0 {
             print("profileScrollView.content.y offset is: \(profileScrollView.contentOffset.y)")
+            self.title = "Annabel" // TO-DO: dynamically input user name
             self.navigationController?.setNavigationBarHidden(false, animated: true)
+            UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
         } else {
             self.navigationController?.setNavigationBarHidden(true, animated: true)
+            UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
         }
         
-        if profileScrollView.contentOffset.y > eventTabsViewInitialY {
-           self.eventTabsView.frame.origin.y = profileScrollView.contentOffset.y
+        if profileScrollView.contentOffset.y + (navigationController?.navigationBar.frame.origin.y)! + (navigationController?.navigationBar.frame.height)! > eventTabsViewInitialY {
+           self.eventTabsView.frame.origin.y = profileScrollView.contentOffset.y + (navigationController?.navigationBar.frame.origin.y)! + (navigationController?.navigationBar.frame.height)!
         } else {
             self.eventTabsView.frame.origin.y = eventTabsViewInitialY
         }
@@ -128,6 +145,37 @@ class UserProfileViewController: UIViewController, UIScrollViewDelegate {
     func loadSavedEvents() {
         print("Loading saved evnts...")
         // TO-DO: load here
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+        // TO-DO: return number of sections by upcoming time
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+        // TO-DO: return number of rows per upcoming time
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("UpcomingAndSavedEventsTableViewCell") as! UpcomingAndSavedEventsTableViewCell
+        let event = testEvents[0]
+        
+        // TO-DO: cell.eventImageView.image
+        cell.titleLabel.text = event.name
+        cell.attendeeCountLabel.text = "\(event.attendees.count) people are going"
+        
+        // Adjusted description line-height
+        var attrString: NSMutableAttributedString = NSMutableAttributedString(string: event.description)
+        var style = NSMutableParagraphStyle()
+        style.lineSpacing = 4
+        attrString.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSMakeRange(0, attrString.length))
+        cell.descriptionLabel.attributedText = attrString;
+        
+        //eventsTableView.frame.size.height = eventsTableView.contentSize.height
+        profileScrollView.contentSize = CGSize(width: view.frame.width, height: profileScrollView.contentInset.top + eventsTableView.frame.origin.y + eventsTableView.frame.size.height)
+        
+        return cell
     }
 
 }

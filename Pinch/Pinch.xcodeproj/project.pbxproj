@@ -53,6 +53,10 @@
 		12AA0DFB1BD787CC009DA8CB /* UserActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA0DFA1BD787CC009DA8CB /* UserActivityViewController.swift */; };
 		12AA0DFD1BD7885B009DA8CB /* UserTestimonialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA0DFC1BD7885B009DA8CB /* UserTestimonialsViewController.swift */; };
 		12AA0E091BD79202009DA8CB /* FollowingUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA0E081BD79202009DA8CB /* FollowingUserTableViewCell.swift */; };
+		12CD54711BDA99490027A3BB /* ExtensionUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CD54701BDA99490027A3BB /* ExtensionUIImage.swift */; settings = {ASSET_TAGS = (); }; };
+		12CDC1111BD9DD220087561B /* UpcomingAndSavedEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CDC1101BD9DD220087561B /* UpcomingAndSavedEventsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		12CDC1141BD9DE430087561B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CDC1131BD9DE430087561B /* Colors.swift */; settings = {ASSET_TAGS = (); }; };
+		12CDC1161BD9E79A0087561B /* TestEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CDC1151BD9E79A0087561B /* TestEvents.swift */; settings = {ASSET_TAGS = (); }; };
 		12DB7DEA1BD2FEEF00C17FE4 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB7DE91BD2FEEF00C17FE4 /* Common.swift */; };
 		40F31A111BD9E2A200C2884E /* PeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F31A101BD9E2A200C2884E /* PeopleCell.swift */; settings = {ASSET_TAGS = (); }; };
 		439B0A90EDAC7EB206EB98E3 /* Pods_Pinch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D9BEA7369A5037279544AF0 /* Pods_Pinch.framework */; };
@@ -132,6 +136,10 @@
 		12AA0DFA1BD787CC009DA8CB /* UserActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserActivityViewController.swift; path = ViewControllers/UserActivityViewController.swift; sourceTree = "<group>"; };
 		12AA0DFC1BD7885B009DA8CB /* UserTestimonialsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTestimonialsViewController.swift; path = ViewControllers/UserTestimonialsViewController.swift; sourceTree = "<group>"; };
 		12AA0E081BD79202009DA8CB /* FollowingUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowingUserTableViewCell.swift; path = ViewControllers/UserProfileTableViews/FollowingUserTableViewCell.swift; sourceTree = "<group>"; };
+		12CD54701BDA99490027A3BB /* ExtensionUIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtensionUIImage.swift; path = Extensions/ExtensionUIImage.swift; sourceTree = "<group>"; };
+		12CDC1101BD9DD220087561B /* UpcomingAndSavedEventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpcomingAndSavedEventsTableViewCell.swift; path = ViewControllers/UserProfileTableViews/UpcomingAndSavedEventsTableViewCell.swift; sourceTree = "<group>"; };
+		12CDC1131BD9DE430087561B /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Helpers/Colors.swift; sourceTree = "<group>"; };
+		12CDC1151BD9E79A0087561B /* TestEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestEvents.swift; path = Helpers/TestEvents.swift; sourceTree = "<group>"; };
 		12DB7DE91BD2FEEF00C17FE4 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Common.swift; path = Helpers/Common.swift; sourceTree = "<group>"; };
 		40F31A101BD9E2A200C2884E /* PeopleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleCell.swift; sourceTree = "<group>"; };
 		8D9BEA7369A5037279544AF0 /* Pods_Pinch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pinch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +194,8 @@
 				121184DC1BD21BD900C17136 /* Cause.swift */,
 				126B730D1BD4CD910081CA0E /* Location.swift */,
 				CB3D28AC1BD8E67700AC1BBD /* EventCardTransition.swift */,
+				12CDC1131BD9DE430087561B /* Colors.swift */,
+				12CDC1151BD9E79A0087561B /* TestEvents.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -247,7 +257,7 @@
 				121185151BD2244F00C17136 /* UserFollowingViewController.swift */,
 				12AA0DFA1BD787CC009DA8CB /* UserActivityViewController.swift */,
 				12AA0DFC1BD7885B009DA8CB /* UserTestimonialsViewController.swift */,
-				12AA0E081BD79202009DA8CB /* FollowingUserTableViewCell.swift */,
+				12CDC1121BD9DD350087561B /* TableView Cells */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -281,6 +291,7 @@
 				121648B01BD0D85800852536 /* View Controllers */,
 				121648C31BD0DD8600852536 /* Classes */,
 				121184DB1BD21B8D00C17136 /* Helpers */,
+				12CD546F1BDA991F0027A3BB /* Extensions */,
 				121648821BD0D6AF00852536 /* AppDelegate.swift */,
 				126B730F1BD4D38B0081CA0E /* Assets.xcassets */,
 				121648841BD0D6AF00852536 /* ViewController.swift */,
@@ -345,6 +356,23 @@
 				1229B4B71BD796A8000A2B7D /* Raleway-Bold.ttf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		12CD546F1BDA991F0027A3BB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				12CD54701BDA99490027A3BB /* ExtensionUIImage.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		12CDC1121BD9DD350087561B /* TableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				12AA0E081BD79202009DA8CB /* FollowingUserTableViewCell.swift */,
+				12CDC1101BD9DD220087561B /* UpcomingAndSavedEventsTableViewCell.swift */,
+			);
+			name = "TableView Cells";
 			sourceTree = "<group>";
 		};
 		7324368EC06D9F403993EBEB /* Pods */ = {
@@ -542,10 +570,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				121184F81BD2222800C17136 /* EventCoverMediaViewController.swift in Sources */,
+				12CDC1141BD9DE430087561B /* Colors.swift in Sources */,
 				121184F61BD2220700C17136 /* EventConfirmAttendanceViewController.swift in Sources */,
 				12AA0DFB1BD787CC009DA8CB /* UserActivityViewController.swift in Sources */,
 				121648B81BD0DC0E00852536 /* SearchViewController.swift in Sources */,
+				12CDC1111BD9DD220087561B /* UpcomingAndSavedEventsTableViewCell.swift in Sources */,
 				1211850B1BD223BB00C17136 /* ChangePasswordViewController.swift in Sources */,
+				12CD54711BDA99490027A3BB /* ExtensionUIImage.swift in Sources */,
 				CB50A5E31BD794320072C54C /* EventInviteFriendsViewController.swift in Sources */,
 				121648BC1BD0DC7200852536 /* UserProfileViewController.swift in Sources */,
 				121185101BD223FA00C17136 /* UserStatsViewController.swift in Sources */,
@@ -576,6 +607,7 @@
 				CB3D28AD1BD8E67700AC1BBD /* EventCardTransition.swift in Sources */,
 				121648BA1BD0DC1C00852536 /* SearchResultsViewController.swift in Sources */,
 				121185051BD2230A00C17136 /* LogInViewController.swift in Sources */,
+				12CDC1161BD9E79A0087561B /* TestEvents.swift in Sources */,
 				121648B41BD0DAC400852536 /* ActivityViewController.swift in Sources */,
 				CB50A5DF1BD7901E0072C54C /* FadeTransition.swift in Sources */,
 				121184F01BD221CE00C17136 /* EventLocationViewController.swift in Sources */,
