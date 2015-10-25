@@ -23,12 +23,6 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
         
-        // Save initial eventTabsView.frame.origin.y position
-        //eventTabsViewInitialY = eventTabsView.frame.origin.y
-        
-        // Format table view
-        //eventsTableView.separatorColor = colorBorderLight
-        //eventsTableView.separatorInset.left = 80
         eventsTableView.tableFooterView = UIView.init(frame: CGRectZero)
     }
     

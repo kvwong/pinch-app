@@ -60,6 +60,8 @@
 		12CDC1141BD9DE430087561B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CDC1131BD9DE430087561B /* Colors.swift */; settings = {ASSET_TAGS = (); }; };
 		12CDC1161BD9E79A0087561B /* TestEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CDC1151BD9E79A0087561B /* TestEvents.swift */; settings = {ASSET_TAGS = (); }; };
 		12DB7DEA1BD2FEEF00C17FE4 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB7DE91BD2FEEF00C17FE4 /* Common.swift */; };
+		12E03E3A1BDCB8C800195277 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12E03E391BDCB8A300195277 /* Raleway-Regular.ttf */; };
+		12E03E3D1BDCBB7300195277 /* SearchCausesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E03E3C1BDCBB7300195277 /* SearchCausesTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		40F31A111BD9E2A200C2884E /* PeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F31A101BD9E2A200C2884E /* PeopleCell.swift */; settings = {ASSET_TAGS = (); }; };
 		439B0A90EDAC7EB206EB98E3 /* Pods_Pinch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D9BEA7369A5037279544AF0 /* Pods_Pinch.framework */; };
 		CB3D28AD1BD8E67700AC1BBD /* EventCardTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D28AC1BD8E67700AC1BBD /* EventCardTransition.swift */; settings = {ASSET_TAGS = (); }; };
@@ -145,6 +147,8 @@
 		12CDC1131BD9DE430087561B /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Helpers/Colors.swift; sourceTree = "<group>"; };
 		12CDC1151BD9E79A0087561B /* TestEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestEvents.swift; path = Helpers/TestEvents.swift; sourceTree = "<group>"; };
 		12DB7DE91BD2FEEF00C17FE4 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Common.swift; path = Helpers/Common.swift; sourceTree = "<group>"; };
+		12E03E391BDCB8A300195277 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
+		12E03E3C1BDCBB7300195277 /* SearchCausesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchCausesTableViewCell.swift; path = ViewControllers/SearchTableViews/SearchCausesTableViewCell.swift; sourceTree = "<group>"; };
 		40F31A101BD9E2A200C2884E /* PeopleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleCell.swift; sourceTree = "<group>"; };
 		8D9BEA7369A5037279544AF0 /* Pods_Pinch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pinch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3D28AC1BD8E67700AC1BBD /* EventCardTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventCardTransition.swift; path = Helpers/EventCardTransition.swift; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 				121648B71BD0DC0E00852536 /* SearchViewController.swift */,
 				121648B91BD0DC1C00852536 /* SearchResultsViewController.swift */,
 				121185081BD2238000C17136 /* SearchFiltersViewController.swift */,
+				12E03E3B1BDCBB4E00195277 /* TableView Cells */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -357,6 +362,7 @@
 				1229B4B51BD796A8000A2B7D /* Lato-Bold.ttf */,
 				1229B4B61BD796A8000A2B7D /* Lato-Regular.ttf */,
 				1229B4B71BD796A8000A2B7D /* Raleway-Bold.ttf */,
+				12E03E391BDCB8A300195277 /* Raleway-Regular.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -377,6 +383,14 @@
 				124DBECA1BDC364600F2F283 /* UserProfileMenuTableViewCell.swift */,
 				124DBECE1BDC3F9E00F2F283 /* UserProfileEventTabsTableViewCell.swift */,
 				12CDC1101BD9DD220087561B /* UserProfileUpcomingAndSavedEventsTableViewCell.swift */,
+			);
+			name = "TableView Cells";
+			sourceTree = "<group>";
+		};
+		12E03E3B1BDCBB4E00195277 /* TableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				12E03E3C1BDCBB7300195277 /* SearchCausesTableViewCell.swift */,
 			);
 			name = "TableView Cells";
 			sourceTree = "<group>";
@@ -497,10 +511,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12E03E3A1BDCB8C800195277 /* Raleway-Regular.ttf in Resources */,
 				1229B4BA1BD796A8000A2B7D /* Raleway-Bold.ttf in Resources */,
-				1216488D1BD0D6AF00852536 /* LaunchScreen.storyboard in Resources */,
 				1229B4B91BD796A8000A2B7D /* Lato-Regular.ttf in Resources */,
 				1229B4B81BD796A8000A2B7D /* Lato-Bold.ttf in Resources */,
+				1216488D1BD0D6AF00852536 /* LaunchScreen.storyboard in Resources */,
 				126B73101BD4D38B0081CA0E /* Assets.xcassets in Resources */,
 				121648881BD0D6AF00852536 /* Main.storyboard in Resources */,
 			);
@@ -603,6 +618,7 @@
 				124DBECB1BDC364600F2F283 /* UserProfileMenuTableViewCell.swift in Sources */,
 				121184DD1BD21BD900C17136 /* Cause.swift in Sources */,
 				124DBECD1BDC368F00F2F283 /* UserProfileDetailsTableViewCell.swift in Sources */,
+				12E03E3D1BDCBB7300195277 /* SearchCausesTableViewCell.swift in Sources */,
 				12AA0E091BD79202009DA8CB /* FollowingTableViewCell.swift in Sources */,
 				121184EE1BD221C300C17136 /* EventTestimonialsViewController.swift in Sources */,
 				121648851BD0D6AF00852536 /* ViewController.swift in Sources */,

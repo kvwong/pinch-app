@@ -31,8 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "Raleway-Bold", size: 17)!, NSForegroundColorAttributeName:UIColor.whiteColor()]
             
         UINavigationBar.appearance().translucent = false
-        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "icon_back_white_16x14")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal).imageWithAlignmentRectInsets(UIEdgeInsetsMake(0, 0, -3, 0))
-        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "icon_back_white_16x14")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal).imageWithAlignmentRectInsets(UIEdgeInsetsMake(0, 0, -3, 0))
+        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "icon_back_arrow_white_23x14")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal).imageWithAlignmentRectInsets(UIEdgeInsetsMake(0, 0, -3, 0))
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "icon_back_arrow_white_23x14")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal).imageWithAlignmentRectInsets(UIEdgeInsetsMake(0, 0, -3, 0))
         
         generateTestEvents()
         

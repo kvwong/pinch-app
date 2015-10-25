@@ -23,6 +23,8 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
     }
 
@@ -38,7 +40,6 @@ class HomeViewController: UIViewController {
     @IBAction func onTap(sender: AnyObject) {
         cardView = sender.view as UIView!
         performSegueWithIdentifier("eventDetailSegue", sender: nil)
-        
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -48,5 +49,5 @@ class HomeViewController: UIViewController {
             eventDetailViewController.eventSummary = cardView
         }
     }
-    
+
 }

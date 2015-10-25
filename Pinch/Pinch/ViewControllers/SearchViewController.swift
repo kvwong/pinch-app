@@ -6,12 +6,14 @@
 //  Copyright © 2015 Team 2. All rights reserved.
 //
 
+import TTTAttributedLabel
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var searchTermField: UITextField!
     @IBOutlet weak var searchLocationField: UITextField!
+    @IBOutlet weak var causesTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,17 @@ class SearchViewController: UIViewController {
         searchLocationField.leftView?.frame = CGRectMake(0, 0, 28, 28)
         searchLocationField.leftView?.contentMode = UIViewContentMode.Center
         searchLocationField.leftViewMode = UITextFieldViewMode.Always
+        
+        // Causes table view
+        causesTableView.delegate = self
+        causesTableView.dataSource = self
+        causesTableView.tableFooterView = UIView.init(frame: CGRectZero)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,18 +51,26 @@ class SearchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func didPressCloseButton(sender: UIButton) {
+    @IBAction func didPressBackButton(sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
-    */
-
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Cause.allValues.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("SearchCausesTableView") as! SearchCausesTableViewCell
+        cell.causeButton.setTitle(Cause.allValues[indexPath.row].rawValue, forState: .Normal)
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        print("Hi")
+    }
 }
