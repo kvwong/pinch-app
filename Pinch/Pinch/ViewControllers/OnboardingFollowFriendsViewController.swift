@@ -10,8 +10,6 @@ import UIKit
 
 class OnboardingFollowFriendsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var navbarView: UIView!
-    @IBOutlet weak var navBar: UINavigationItem!
     @IBOutlet weak var facebookTab: UIButton!
     @IBOutlet weak var contactsTab: UIButton!
     @IBOutlet weak var activeTabView: UIView!
@@ -20,6 +18,9 @@ class OnboardingFollowFriendsViewController: UIViewController, UITableViewDelega
     @IBOutlet weak var peopleTabsView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var gradientLayerView: UIView!
+    
+    
+    // Overrides ---------------------------------------
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +52,14 @@ class OnboardingFollowFriendsViewController: UIViewController, UITableViewDelega
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+
+    // Facebook and Contacts Tabs ----------------------
     
     @IBAction func didPressFacebookTab(sender: UIButton) {
         switchTabs("facebook")
@@ -101,11 +110,6 @@ class OnboardingFollowFriendsViewController: UIViewController, UITableViewDelega
         cell.profileImageView.layer.cornerRadius = 20.0
         cell.profileImageView.clipsToBounds = true
         return cell
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }

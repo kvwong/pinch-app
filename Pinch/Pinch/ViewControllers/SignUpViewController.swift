@@ -10,17 +10,39 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
-    @IBOutlet weak var usernameField: UITextField!
-    @IBOutlet weak var nicknameField: UITextField!
+    @IBOutlet weak var field1: UIView!
+    @IBOutlet weak var field2: UIView!
+    @IBOutlet weak var field3: UIView!
+    @IBOutlet weak var field4: UIView!
+    @IBOutlet weak var firstNameField: UITextField!
+    @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var signUpButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Styling for text fields and button
+        field1.layer.masksToBounds = true
+        field1.layer.cornerRadius = 4.0
+        field2.layer.masksToBounds = true
+        field2.layer.cornerRadius = 4.0
+        field3.layer.masksToBounds = true
+        field3.layer.cornerRadius = 4.0
+        field4.layer.masksToBounds = true
+        field4.layer.cornerRadius = 4.0
+        signUpButton.layer.masksToBounds = true
+        signUpButton.layer.cornerRadius = 4.0
+        
         //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,9 +52,8 @@ class SignUpViewController: UIViewController {
     
     @IBAction func didPressSignup(sender: UIButton) {
         
-        
-        if usernameField.text == "" {
-            let alertController = UIAlertController(title: "Name Required", message: "Please enter your full name.", preferredStyle: .Alert)
+        if firstNameField.text == "" {
+            let alertController = UIAlertController(title: "First Name Required", message: "Please enter your first name.", preferredStyle: .Alert)
             
             // create an OK action
             let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
@@ -58,26 +79,27 @@ class SignUpViewController: UIViewController {
                 // optional code for what happens after the alert controller has finished presenting
             }
             
-            
-        }else if passwordField.text == ""{
+        } else if passwordField.text == "" {
             
             let alertController = UIAlertController(title: "Password Required", message: "Please enter a password.", preferredStyle: .Alert)
             
-            // create an OK action
+            // Create an OK action
             let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
                 // handle response here.
             }
-            // add the OK action to the alert controller
+            // Add the OK action to the alert controller
             alertController.addAction(OKAction)
             
             presentViewController(alertController, animated: true) {
                 // optional code for what happens after the alert controller has finished presenting
             }
-            
-            
-        }else{
-            self.performSegueWithIdentifier("signupSegue", sender: nil)
-        }}
+        } else {
+            self.performSegueWithIdentifier("segueToCauses", sender: nil)
+        }
+    }
     
+    @IBAction func didPressCancelButton(sender: UIButton) {
+        navigationController!.popViewControllerAnimated(true)
+    }
     
 }

@@ -46,7 +46,7 @@ class UserProfileEventTabsTableViewCell: UITableViewCell {
     }
     
     
-    // Upcoming and Saved Events -----------------------
+    // Upcoming and Saved Events Tabs ------------------
     
     func switchTabs(tabToSwitchTo: String) {
         if tabToSwitchTo == "Upcoming" {

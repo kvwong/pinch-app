@@ -10,18 +10,32 @@ import UIKit
 
 class LogInViewController: UIViewController {
     
-    
+    @IBOutlet weak var field1: UIView!
+    @IBOutlet weak var field2: UIView!
     @IBOutlet weak var usernameField: UITextField!
-    
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var logInButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Styling for text fields and button
+        field1.layer.masksToBounds = true
+        field1.layer.cornerRadius = 4.0
+        field2.layer.masksToBounds = true
+        field2.layer.cornerRadius = 4.0
+        logInButton.layer.masksToBounds = true
+        logInButton.layer.cornerRadius = 4.0
+        
         //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-        
-        
+
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,9 +45,7 @@ class LogInViewController: UIViewController {
     
     @IBAction func didPressLogin(sender: UIButton) {
         
-        
-        
-        if usernameField.text == ""{
+        if usernameField.text == "" {
             
             let alertController = UIAlertController(title: "Email Required", message: "Please enter your email address.", preferredStyle: .Alert)
             
@@ -47,9 +59,9 @@ class LogInViewController: UIViewController {
             presentViewController(alertController, animated: true) {
                 // optional code for what happens after the alert controller has finished presenting
             }
-        }else if passwordField.text == ""{
+        } else if passwordField.text == "" {
             
-            let alertController = UIAlertController(title: "Password Required", message: "Please enter a password for your Pinch account.", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: "Password Required", message: "Please enter your password.", preferredStyle: .Alert)
             
             // create an OK action
             let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
@@ -61,9 +73,8 @@ class LogInViewController: UIViewController {
             presentViewController(alertController, animated: true) {
                 // optional code for what happens after the alert controller has finished presenting
             }
-            
-            
-        } else if self.passwordField.text == "password"{
+   
+        } else if self.passwordField.text == "password" {
             
             print("signing in")
             //thinkingIndicator.startAnimating()
@@ -81,9 +92,8 @@ class LogInViewController: UIViewController {
                     self.performSegueWithIdentifier("loginSegue", sender: nil)
                     
                 })
-                
             }
-        }else {
+        } else {
             
             print("signing in")
             //thinkingIndicator.startAnimating()
@@ -110,15 +120,13 @@ class LogInViewController: UIViewController {
                     self.presentViewController(alertController, animated: true) {
                         // optional code for what happens after the alert controller has finished presenting
                     }
-                    
-                    
                 })
             }
-            
         }
     }
-    
-    
-    
+
+    @IBAction func didPressCancelButton(sender: UIButton) {
+        navigationController!.popViewControllerAnimated(true)
+    }
     
 }
