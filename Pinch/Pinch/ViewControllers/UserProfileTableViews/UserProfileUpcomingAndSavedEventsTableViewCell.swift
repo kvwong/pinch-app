@@ -1,5 +1,5 @@
 //
-//  UpcomingAndSavedEventsTableViewCell.swift
+//  UserProfileUpcomingAndSavedEventsTableViewCell.swift
 //  Pinch
 //
 //  Created by Cameron Wu on 10/22/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UpcomingAndSavedEventsTableViewCell: UITableViewCell {
+class UserProfileUpcomingAndSavedEventsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var eventImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
