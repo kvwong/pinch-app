@@ -1,5 +1,5 @@
 //
-//  FollowingUserTableViewCell.swift
+//  FollowingTableViewCell.swift
 //  Pinch
 //
 //  Created by Cameron Wu on 10/21/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FollowingUserTableViewCell: UITableViewCell {
+class FollowingTableViewCell: UITableViewCell {
     
     @IBOutlet weak var profilePicImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!

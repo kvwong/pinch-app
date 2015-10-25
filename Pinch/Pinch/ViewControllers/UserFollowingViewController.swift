@@ -11,7 +11,7 @@ import UIKit
 class UserFollowingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var followingTableView: UITableView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,7 +43,7 @@ class UserFollowingViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("FollowingUserTableViewCell") as! FollowingUserTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("FollowingTableViewCell") as! FollowingTableViewCell
         
         return cell
     }

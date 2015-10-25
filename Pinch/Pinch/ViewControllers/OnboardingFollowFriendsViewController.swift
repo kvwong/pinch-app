@@ -25,8 +25,8 @@ class OnboardingFollowFriendsViewController: UIViewController, UITableViewDelega
         super.viewDidLoad()
         
         //gradientLayerView.layerGradient()
-        let topColor = makeRGB(255, G: 255, B: 255, alpha: 0)
-        let bottomColor = makeRGB(255, G: 255, B: 255, alpha: 1)
+        let topColor = UIColorFromRGB("FFFFFF", alpha: 0)
+        let bottomColor = UIColorFromRGB("FFFFFF", alpha: 1)
         
         //let topColor = UIColor.redColor()
         //let bottomColor = UIColor.blueColor()
@@ -46,13 +46,17 @@ class OnboardingFollowFriendsViewController: UIViewController, UITableViewDelega
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+    }
+    
     @IBAction func didPressFacebookTab(sender: UIButton) {
-        
         switchTabs("facebook")
     }
     
     @IBAction func didPressContactsTab(sender: UIButton) {
-        
         switchTabs("contacts")
     }
     
@@ -70,7 +74,6 @@ class OnboardingFollowFriendsViewController: UIViewController, UITableViewDelega
             UIView.animateWithDuration(0.2, delay: 0.15, options: .CurveEaseInOut, animations: { () -> Void in
                 self.activeTabView.frame.size.width = self.view.frame.width/2
                 }, completion: nil)
-            
         } else if tabToSwitchTo == "contacts" {
             print("Switching tab to Contacts")
             facebookTab.userInteractionEnabled = true
@@ -84,43 +87,25 @@ class OnboardingFollowFriendsViewController: UIViewController, UITableViewDelega
                 self.activeTabView.frame.origin.x = self.view.frame.width/2
                 self.activeTabView.frame.size.width = self.view.frame.width/2
                 }, completion: nil)
-           
         } else {
             print("Invalid string \(tabToSwitchTo)")
         }
     }
-
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 20
-        
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         var cell = tableView.dequeueReusableCellWithIdentifier("PeopleCell", forIndexPath: indexPath) as! PeopleCell
-        
         cell.profileImageView.layer.cornerRadius = 20.0
         cell.profileImageView.clipsToBounds = true
-        
         return cell
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

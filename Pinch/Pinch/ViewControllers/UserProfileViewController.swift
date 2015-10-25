@@ -50,6 +50,24 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func didPressNonProfits(sender: UIButton) {
+        performSegueWithIdentifier("segueToFollowing", sender: "Non-Profits")
+    }
+    
+    @IBAction func didPressFollowing(sender: UIButton) {
+        performSegueWithIdentifier("segueToFollowing", sender: "Following")
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let destination = segue.destinationViewController as? UserFollowingViewController {
+            if sender as? String == "Non-Profits" {
+                destination.title = "Non-Profits"
+            } else {
+                destination.title = "Following"
+            }
+        }
+    }
+    
     
     // Scroll View Overrides ---------------------------
     

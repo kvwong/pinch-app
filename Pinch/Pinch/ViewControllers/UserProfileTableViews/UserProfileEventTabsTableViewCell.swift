@@ -83,12 +83,12 @@ class UserProfileEventTabsTableViewCell: UITableViewCell {
     }
     
     func loadUpcomingEvents() {
-        print("Loading upcoming evnts...")
+        print("Loading upcoming events...")
         // TO-DO: load here
     }
     
     func loadSavedEvents() {
-        print("Loading saved evnts...")
+        print("Loading saved events...")
         // TO-DO: load here
     }
 }

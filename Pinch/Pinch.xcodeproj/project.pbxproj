@@ -24,7 +24,6 @@
 		1211850B1BD223BB00C17136 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211850A1BD223BB00C17136 /* ChangePasswordViewController.swift */; };
 		1211850E1BD223F300C17136 /* UserBadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211850D1BD223F300C17136 /* UserBadgesViewController.swift */; };
 		121185101BD223FA00C17136 /* UserStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211850F1BD223FA00C17136 /* UserStatsViewController.swift */; };
-		121185121BD2243000C17136 /* UserOrgsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185111BD2243000C17136 /* UserOrgsViewController.swift */; };
 		121185161BD2244F00C17136 /* UserFollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185151BD2244F00C17136 /* UserFollowingViewController.swift */; };
 		121185181BD226F200C17136 /* OnboardingFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185171BD226F200C17136 /* OnboardingFinishViewController.swift */; };
 		121648831BD0D6AF00852536 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121648821BD0D6AF00852536 /* AppDelegate.swift */; };
@@ -55,7 +54,7 @@
 		126B73101BD4D38B0081CA0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 126B730F1BD4D38B0081CA0E /* Assets.xcassets */; };
 		12AA0DFB1BD787CC009DA8CB /* UserActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA0DFA1BD787CC009DA8CB /* UserActivityViewController.swift */; };
 		12AA0DFD1BD7885B009DA8CB /* UserTestimonialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA0DFC1BD7885B009DA8CB /* UserTestimonialsViewController.swift */; };
-		12AA0E091BD79202009DA8CB /* FollowingUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA0E081BD79202009DA8CB /* FollowingUserTableViewCell.swift */; };
+		12AA0E091BD79202009DA8CB /* FollowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA0E081BD79202009DA8CB /* FollowingTableViewCell.swift */; };
 		12CD54711BDA99490027A3BB /* ExtensionUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CD54701BDA99490027A3BB /* ExtensionUIImage.swift */; settings = {ASSET_TAGS = (); }; };
 		12CDC1111BD9DD220087561B /* UserProfileUpcomingAndSavedEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CDC1101BD9DD220087561B /* UserProfileUpcomingAndSavedEventsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		12CDC1141BD9DE430087561B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CDC1131BD9DE430087561B /* Colors.swift */; settings = {ASSET_TAGS = (); }; };
@@ -104,7 +103,6 @@
 		1211850A1BD223BB00C17136 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangePasswordViewController.swift; path = ViewControllers/ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		1211850D1BD223F300C17136 /* UserBadgesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserBadgesViewController.swift; path = ViewControllers/UserBadgesViewController.swift; sourceTree = "<group>"; };
 		1211850F1BD223FA00C17136 /* UserStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStatsViewController.swift; path = ViewControllers/UserStatsViewController.swift; sourceTree = "<group>"; };
-		121185111BD2243000C17136 /* UserOrgsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserOrgsViewController.swift; path = ViewControllers/UserOrgsViewController.swift; sourceTree = "<group>"; };
 		121185151BD2244F00C17136 /* UserFollowingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserFollowingViewController.swift; path = ViewControllers/UserFollowingViewController.swift; sourceTree = "<group>"; };
 		121185171BD226F200C17136 /* OnboardingFinishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingFinishViewController.swift; path = ViewControllers/OnboardingFinishViewController.swift; sourceTree = "<group>"; };
 		1216487F1BD0D6AF00852536 /* Pinch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,7 +139,7 @@
 		126B730F1BD4D38B0081CA0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12AA0DFA1BD787CC009DA8CB /* UserActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserActivityViewController.swift; path = ViewControllers/UserActivityViewController.swift; sourceTree = "<group>"; };
 		12AA0DFC1BD7885B009DA8CB /* UserTestimonialsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTestimonialsViewController.swift; path = ViewControllers/UserTestimonialsViewController.swift; sourceTree = "<group>"; };
-		12AA0E081BD79202009DA8CB /* FollowingUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowingUserTableViewCell.swift; path = ViewControllers/UserProfileTableViews/FollowingUserTableViewCell.swift; sourceTree = "<group>"; };
+		12AA0E081BD79202009DA8CB /* FollowingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowingTableViewCell.swift; path = ViewControllers/UserProfileTableViews/FollowingTableViewCell.swift; sourceTree = "<group>"; };
 		12CD54701BDA99490027A3BB /* ExtensionUIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtensionUIImage.swift; path = Extensions/ExtensionUIImage.swift; sourceTree = "<group>"; };
 		12CDC1101BD9DD220087561B /* UserProfileUpcomingAndSavedEventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileUpcomingAndSavedEventsTableViewCell.swift; path = ViewControllers/UserProfileTableViews/UserProfileUpcomingAndSavedEventsTableViewCell.swift; sourceTree = "<group>"; };
 		12CDC1131BD9DE430087561B /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Helpers/Colors.swift; sourceTree = "<group>"; };
@@ -259,7 +257,6 @@
 				121648BB1BD0DC7200852536 /* UserProfileViewController.swift */,
 				1211850D1BD223F300C17136 /* UserBadgesViewController.swift */,
 				1211850F1BD223FA00C17136 /* UserStatsViewController.swift */,
-				121185111BD2243000C17136 /* UserOrgsViewController.swift */,
 				121185151BD2244F00C17136 /* UserFollowingViewController.swift */,
 				12AA0DFA1BD787CC009DA8CB /* UserActivityViewController.swift */,
 				12AA0DFC1BD7885B009DA8CB /* UserTestimonialsViewController.swift */,
@@ -375,7 +372,7 @@
 		12CDC1121BD9DD350087561B /* TableView Cells */ = {
 			isa = PBXGroup;
 			children = (
-				12AA0E081BD79202009DA8CB /* FollowingUserTableViewCell.swift */,
+				12AA0E081BD79202009DA8CB /* FollowingTableViewCell.swift */,
 				124DBECC1BDC368F00F2F283 /* UserProfileDetailsTableViewCell.swift */,
 				124DBECA1BDC364600F2F283 /* UserProfileMenuTableViewCell.swift */,
 				124DBECE1BDC3F9E00F2F283 /* UserProfileEventTabsTableViewCell.swift */,
@@ -595,7 +592,6 @@
 				121185011BD222EF00C17136 /* WelcomeViewController.swift in Sources */,
 				121648C21BD0DCED00852536 /* EditUserProfileViewController.swift in Sources */,
 				CB50A5E11BD790240072C54C /* BaseTransition.swift in Sources */,
-				121185121BD2243000C17136 /* UserOrgsViewController.swift in Sources */,
 				121648C91BD0E23900852536 /* Organization.swift in Sources */,
 				121185091BD2238000C17136 /* SearchFiltersViewController.swift in Sources */,
 				1211850E1BD223F300C17136 /* UserBadgesViewController.swift in Sources */,
@@ -607,7 +603,7 @@
 				124DBECB1BDC364600F2F283 /* UserProfileMenuTableViewCell.swift in Sources */,
 				121184DD1BD21BD900C17136 /* Cause.swift in Sources */,
 				124DBECD1BDC368F00F2F283 /* UserProfileDetailsTableViewCell.swift in Sources */,
-				12AA0E091BD79202009DA8CB /* FollowingUserTableViewCell.swift in Sources */,
+				12AA0E091BD79202009DA8CB /* FollowingTableViewCell.swift in Sources */,
 				121184EE1BD221C300C17136 /* EventTestimonialsViewController.swift in Sources */,
 				121648851BD0D6AF00852536 /* ViewController.swift in Sources */,
 				121185161BD2244F00C17136 /* UserFollowingViewController.swift in Sources */,
