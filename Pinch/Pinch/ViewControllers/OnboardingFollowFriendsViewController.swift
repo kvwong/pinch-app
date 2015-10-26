@@ -35,15 +35,17 @@ class OnboardingFollowFriendsViewController: UIViewController, UITableViewDelega
         followAllButton.layer.borderColor = colorBrandGreen.CGColor
         finishButton.layer.masksToBounds = true
         finishButton.layer.cornerRadius = buttonCornerRadius
+        tableView.separatorColor = colorBorderLight
+        tableView.separatorInset.left = 68
         
         //gradientLayerView.layerGradient()
-        let topColor = UIColorFromRGB("FFFFFF", alpha: 0)
-        let bottomColor = UIColorFromRGB("FFFFFF", alpha: 1)
+        let gradientTopColor = UIColorFromRGB("FFFFFF", alpha: 0)
+        let gradientBottomColor = UIColorFromRGB("FFFFFF", alpha: 1)
         
         //let topColor = UIColor.redColor()
         //let bottomColor = UIColor.blueColor()
         
-        let gradientColors: [CGColor] = [topColor.CGColor, bottomColor.CGColor]
+        let gradientColors: [CGColor] = [gradientTopColor.CGColor, gradientBottomColor.CGColor]
         let gradientLocations: [Float] = [0.0 , 1.0]
         
         let gradientLayer: CAGradientLayer = CAGradientLayer()

@@ -18,6 +18,8 @@ class OnboardingCausesViewController: UIViewController {
         // Styling
         nextButton.layer.masksToBounds = true
         nextButton.layer.cornerRadius = buttonCornerRadius
+        nextButton.enabled = false
+        navigationItem.hidesBackButton = true
     }
     
     override func viewWillAppear(animated: Bool) {

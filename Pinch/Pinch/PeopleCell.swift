@@ -20,6 +20,8 @@ class PeopleCell: UITableViewCell {
         // Follow button styling
         followButton.layer.masksToBounds = true
         followButton.layer.cornerRadius = buttonCornerRadius
+        followButton.layer.borderWidth = buttonBorderWidth
+        followButton.layer.borderColor = colorBrandGreen.CGColor
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
