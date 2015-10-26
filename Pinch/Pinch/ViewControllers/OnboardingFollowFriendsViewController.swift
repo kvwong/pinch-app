@@ -25,12 +25,8 @@ class OnboardingFollowFriendsViewController: UIViewController, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //gradientLayerView.layerGradient()
         let topColor = UIColorFromRGB("FFFFFF", alpha: 0)
         let bottomColor = UIColorFromRGB("FFFFFF", alpha: 1)
-        
-        //let topColor = UIColor.redColor()
-        //let bottomColor = UIColor.blueColor()
         
         let gradientColors: [CGColor] = [topColor.CGColor, bottomColor.CGColor]
         let gradientLocations: [Float] = [0.0 , 1.0]
