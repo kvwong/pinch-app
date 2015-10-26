@@ -19,11 +19,22 @@ class OnboardingFollowFriendsViewController: UIViewController, UITableViewDelega
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var gradientLayerView: UIView!
     
+    @IBOutlet weak var followAllButton: UIButton!
+    @IBOutlet weak var finishButton: UIButton!
+    
     
     // Overrides ---------------------------------------
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Styling
+        followAllButton.layer.masksToBounds = true
+        followAllButton.layer.cornerRadius = buttonCornerRadius
+        followAllButton.layer.borderWidth = buttonBorderWidth
+        followAllButton.layer.borderColor = colorBrandGreen.CGColor
+        finishButton.layer.masksToBounds = true
+        finishButton.layer.cornerRadius = buttonCornerRadius
         
         //gradientLayerView.layerGradient()
         let topColor = UIColorFromRGB("FFFFFF", alpha: 0)
@@ -58,6 +69,13 @@ class OnboardingFollowFriendsViewController: UIViewController, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // Skip Button -------------------------------------
+    
+    @IBAction func didPressSkipButton(sender: UIButton) {
+        performSegueWithIdentifier("segueToFinishOnboarding", sender: nil)
+    }
+
 
     // Facebook and Contacts Tabs ----------------------
     

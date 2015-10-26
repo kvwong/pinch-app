@@ -24,6 +24,8 @@ class EventViewController: UIViewController {
     @IBOutlet weak var eventFriendCountLabel: UILabel!
     @IBOutlet weak var eventDescriptionLabel: UILabel!
     
+    @IBOutlet weak var rsvpButton: UIButton!
+    
     var eventSummary: UIView!
     
     override func viewDidLoad() {
@@ -35,19 +37,24 @@ class EventViewController: UIViewController {
         
         eventSummaryView = eventSummary
         
+        // Styling for RSVP button
+        rsvpButton.layer.masksToBounds = true
+        rsvpButton.layer.cornerRadius = buttonCornerRadius
     }
 
     override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
     }
-    override func viewWillDisappear(animated: Bool)
-    {
+    
+    override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBarHidden = false
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
     
     

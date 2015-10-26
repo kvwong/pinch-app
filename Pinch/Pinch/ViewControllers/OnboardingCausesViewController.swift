@@ -9,13 +9,15 @@
 import UIKit
 
 class OnboardingCausesViewController: UIViewController {
+    
+    @IBOutlet weak var nextButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let skipButton = UIBarButtonItem(title: "Skip", style: UIBarButtonItemStyle.Plain, target: self, action: "performSegue")
-        skipButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Lato-Bold", size: 15)!], forState: UIControlState.Normal)
-        self.navigationItem.rightBarButtonItem = skipButton
+        
+        // Styling
+        nextButton.layer.masksToBounds = true
+        nextButton.layer.cornerRadius = buttonCornerRadius
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -29,8 +31,8 @@ class OnboardingCausesViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func performSegue() {
+    @IBAction func didPressSkipButton(sender: UIButton) {
         performSegueWithIdentifier("segueToFollowFriends", sender: nil)
     }
-
+    
 }

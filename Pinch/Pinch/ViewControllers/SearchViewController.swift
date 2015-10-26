@@ -29,19 +29,23 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // Search Term field style
         searchTermField.layer.masksToBounds = true
-        searchTermField.layer.cornerRadius = 4.0
+        searchTermField.layer.cornerRadius = buttonCornerRadius
         searchTermField.leftView = UIImageView(image: UIImage(named: "icon_search_13x13"))
         searchTermField.leftView?.frame = CGRectMake(0, 0, 28, 28)
         searchTermField.leftView?.contentMode = UIViewContentMode.Center
         searchTermField.leftViewMode = UITextFieldViewMode.Always
+        searchTermField.attributedPlaceholder = NSAttributedString(string: "Search",
+            attributes:[NSForegroundColorAttributeName: UIColorFromRGB("FFFFFF", alpha: 0.5)])
         
         // Search Location field style
         searchLocationField.layer.masksToBounds = true
-        searchLocationField.layer.cornerRadius = 4.0
+        searchLocationField.layer.cornerRadius = buttonCornerRadius
         searchLocationField.leftView = UIImageView(image: UIImage(named: "icon_location_13x13"))
         searchLocationField.leftView?.frame = CGRectMake(0, 0, 28, 28)
         searchLocationField.leftView?.contentMode = UIViewContentMode.Center
         searchLocationField.leftViewMode = UITextFieldViewMode.Always
+        searchLocationField.attributedPlaceholder = NSAttributedString(string: "Location",
+            attributes:[NSForegroundColorAttributeName: UIColorFromRGB("FFFFFF", alpha: 0.5)])
         
         // Causes table view
         causesTableView.delegate = self
@@ -58,7 +62,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidAppear(animated: Bool) {
         searchTermField.becomeFirstResponder()
         
-        UIView.animateWithDuration(0.5, delay: 0.0, options: .CurveEaseOut, animations: { () -> Void in
+        UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseOut, animations: { () -> Void in
             self.searchFieldsView.frame.origin.y = 20
             self.searchFieldsView.alpha = 1
             //self.causesView.frame.origin.y = 128
@@ -67,7 +71,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // Custom animation for smoother effect (default Swift is too choppy)
         CATransaction.begin()
-        CATransaction.setValue(0.75, forKey: kCATransactionAnimationDuration)
+        CATransaction.setValue(0.5, forKey: kCATransactionAnimationDuration)
         self.causesView.frame.origin.y = 128
         let animatePosition = CAKeyframeAnimation.animationWithKeyPath("position", function: QuarticEaseOut, fromPoint: CGPoint(x: self.view.frame.width/2, y:self.view.frame.height + self.causesView.frame.height/2), toPoint: CGPoint(x: self.view.frame.width/2, y: 128.0 + self.causesView.frame.height/2)) as! CAAnimation
         let animateOpacity = CAKeyframeAnimation.animationWithKeyPath("opacity", function: LinearInterpolation, fromValue: 0, toValue: 1) as! CAAnimation

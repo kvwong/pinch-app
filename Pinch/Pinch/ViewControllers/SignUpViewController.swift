@@ -25,15 +25,24 @@ class SignUpViewController: UIViewController {
         
         // Styling for text fields and button
         field1.layer.masksToBounds = true
-        field1.layer.cornerRadius = 4.0
+        field1.layer.cornerRadius = buttonCornerRadius
         field2.layer.masksToBounds = true
-        field2.layer.cornerRadius = 4.0
+        field2.layer.cornerRadius = buttonCornerRadius
         field3.layer.masksToBounds = true
-        field3.layer.cornerRadius = 4.0
+        field3.layer.cornerRadius = buttonCornerRadius
         field4.layer.masksToBounds = true
-        field4.layer.cornerRadius = 4.0
+        field4.layer.cornerRadius = buttonCornerRadius
         signUpButton.layer.masksToBounds = true
-        signUpButton.layer.cornerRadius = 4.0
+        signUpButton.layer.cornerRadius = buttonCornerRadius
+        
+        firstNameField.attributedPlaceholder = NSAttributedString(string: "First Name",
+            attributes:[NSForegroundColorAttributeName: UIColorFromRGB("FFFFFF", alpha: 0.5)])
+        lastNameField.attributedPlaceholder = NSAttributedString(string: "Last Name",
+            attributes:[NSForegroundColorAttributeName: UIColorFromRGB("FFFFFF", alpha: 0.5)])
+        emailField.attributedPlaceholder = NSAttributedString(string: "Email",
+            attributes:[NSForegroundColorAttributeName: UIColorFromRGB("FFFFFF", alpha: 0.5)])
+        passwordField.attributedPlaceholder = NSAttributedString(string: "Password",
+            attributes:[NSForegroundColorAttributeName: UIColorFromRGB("FFFFFF", alpha: 0.5)])
         
         //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)

@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }*/
         
         // Custom navigation bar style
-        UINavigationBar.appearance().barTintColor = UIColorFromRGB("47C6B2")
+        UINavigationBar.appearance().barTintColor = colorBrandGreen
         UINavigationBar.appearance().tintColor = UIColorFromRGB("FFFFFF")
         UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "Raleway-Bold", size: 17)!, NSForegroundColorAttributeName:UIColor.whiteColor()]
             

@@ -12,7 +12,7 @@ class LogInViewController: UIViewController {
     
     @IBOutlet weak var field1: UIView!
     @IBOutlet weak var field2: UIView!
-    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var logInButton: UIButton!
     
@@ -21,11 +21,15 @@ class LogInViewController: UIViewController {
         
         // Styling for text fields and button
         field1.layer.masksToBounds = true
-        field1.layer.cornerRadius = 4.0
+        field1.layer.cornerRadius = buttonCornerRadius
         field2.layer.masksToBounds = true
-        field2.layer.cornerRadius = 4.0
+        field2.layer.cornerRadius = buttonCornerRadius
         logInButton.layer.masksToBounds = true
-        logInButton.layer.cornerRadius = 4.0
+        logInButton.layer.cornerRadius = buttonCornerRadius
+        emailField.attributedPlaceholder = NSAttributedString(string: "Email",
+            attributes:[NSForegroundColorAttributeName: UIColorFromRGB("FFFFFF", alpha: 0.5)])
+        passwordField.attributedPlaceholder = NSAttributedString(string: "Password",
+            attributes:[NSForegroundColorAttributeName: UIColorFromRGB("FFFFFF", alpha: 0.5)])
         
         //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
@@ -45,7 +49,7 @@ class LogInViewController: UIViewController {
     
     @IBAction func didPressLogin(sender: UIButton) {
         
-        if usernameField.text == "" {
+        if emailField.text == "" {
             
             let alertController = UIAlertController(title: "Email Required", message: "Please enter your email address.", preferredStyle: .Alert)
             
