@@ -10,7 +10,7 @@ import UIKit
 
 class SearchCausesTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var causeButton: UIButton!
+    @IBOutlet weak var causeButton: SearchCauseButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

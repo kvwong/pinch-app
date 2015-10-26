@@ -47,6 +47,7 @@
 		1229B4B81BD796A8000A2B7D /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1229B4B51BD796A8000A2B7D /* Lato-Bold.ttf */; settings = {ASSET_TAGS = (); }; };
 		1229B4B91BD796A8000A2B7D /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1229B4B61BD796A8000A2B7D /* Lato-Regular.ttf */; settings = {ASSET_TAGS = (); }; };
 		1229B4BA1BD796A8000A2B7D /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1229B4B71BD796A8000A2B7D /* Raleway-Bold.ttf */; settings = {ASSET_TAGS = (); }; };
+		12431A0D1BDDF4760020E1E3 /* SearchCauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12431A0C1BDDF4760020E1E3 /* SearchCauseButton.swift */; settings = {ASSET_TAGS = (); }; };
 		124DBECB1BDC364600F2F283 /* UserProfileMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124DBECA1BDC364600F2F283 /* UserProfileMenuTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		124DBECD1BDC368F00F2F283 /* UserProfileDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124DBECC1BDC368F00F2F283 /* UserProfileDetailsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		124DBECF1BDC3F9E00F2F283 /* UserProfileEventTabsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124DBECE1BDC3F9E00F2F283 /* UserProfileEventTabsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
@@ -134,6 +135,7 @@
 		1229B4B51BD796A8000A2B7D /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Bold.ttf"; path = "Fonts/Lato-Bold.ttf"; sourceTree = "<group>"; };
 		1229B4B61BD796A8000A2B7D /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "Fonts/Lato-Regular.ttf"; sourceTree = "<group>"; };
 		1229B4B71BD796A8000A2B7D /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Bold.ttf"; path = "Fonts/Raleway-Bold.ttf"; sourceTree = "<group>"; };
+		12431A0C1BDDF4760020E1E3 /* SearchCauseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchCauseButton.swift; path = Classes/SearchCauseButton.swift; sourceTree = "<group>"; };
 		124DBECA1BDC364600F2F283 /* UserProfileMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileMenuTableViewCell.swift; path = ViewControllers/UserProfileTableViews/UserProfileMenuTableViewCell.swift; sourceTree = "<group>"; };
 		124DBECC1BDC368F00F2F283 /* UserProfileDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileDetailsTableViewCell.swift; path = ViewControllers/UserProfileTableViews/UserProfileDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		124DBECE1BDC3F9E00F2F283 /* UserProfileEventTabsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileEventTabsTableViewCell.swift; path = ViewControllers/UserProfileTableViews/UserProfileEventTabsTableViewCell.swift; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 				121648C61BD0DDF400852536 /* Event.swift */,
 				121648C81BD0E23900852536 /* Organization.swift */,
 				121648CA1BD0E3B100852536 /* User.swift */,
+				12431A0C1BDDF4760020E1E3 /* SearchCauseButton.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				12CDC1111BD9DD220087561B /* UserProfileUpcomingAndSavedEventsTableViewCell.swift in Sources */,
 				1211850B1BD223BB00C17136 /* ChangePasswordViewController.swift in Sources */,
 				12CD54711BDA99490027A3BB /* ExtensionUIImage.swift in Sources */,
+				12431A0D1BDDF4760020E1E3 /* SearchCauseButton.swift in Sources */,
 				CB50A5E31BD794320072C54C /* EventInviteFriendsViewController.swift in Sources */,
 				121648BC1BD0DC7200852536 /* UserProfileViewController.swift in Sources */,
 				121185101BD223FA00C17136 /* UserStatsViewController.swift in Sources */,

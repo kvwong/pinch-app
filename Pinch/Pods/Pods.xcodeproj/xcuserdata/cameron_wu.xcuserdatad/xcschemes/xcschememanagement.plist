@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AHEasing.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Pinch.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,7 +27,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2E6F85B05FE1FDEFA5693C07E9C4E461</key>
+		<key>477130355AB3E42234B9DA30CE61A85D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -32,7 +37,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A0EA9F29276F52B2BAD4567B3D785D38</key>
+		<key>791ADB8FDECF8A6D6BD701001B998200</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF478A6058CC774D3EF46EA3F74CDC04</key>
 		<dict>
 			<key>primary</key>
 			<true/>
