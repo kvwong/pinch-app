@@ -37,6 +37,7 @@
             <string>Lato-Bold</string>
             <string>Lato-Bold</string>
             <string>Lato-Bold</string>
+            <string>Lato-Bold</string>
         </mutableArray>
         <mutableArray key="Lato-Regular.ttf">
             <string>Lato-Regular</string>
@@ -52,6 +53,8 @@
             <string>Lato-Regular</string>
         </mutableArray>
         <mutableArray key="Raleway-Bold.ttf">
+            <string>Raleway-Bold</string>
+            <string>Raleway-Bold</string>
             <string>Raleway-Bold</string>
             <string>Raleway-Bold</string>
             <string>Raleway-Bold</string>
@@ -1850,9 +1853,10 @@
                                 <rect key="frame" x="192" y="599" width="167" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.20784313730000001" green="0.74117647060000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
                                 <state key="normal" title="Log In">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.27843137254901962" green="0.77647058823529413" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="Shq-dw-DUg" kind="push" id="bjj-n8-G7I"/>
@@ -1862,9 +1866,10 @@
                                 <rect key="frame" x="16" y="599" width="168" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.20784313730000001" green="0.74117647060000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
                                 <state key="normal" title="Sign Up">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.27843137254901962" green="0.77647058823529413" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="9TS-fF-L9D" kind="push" id="CvB-uw-zFW"/>
@@ -1887,7 +1892,7 @@
                             </imageView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.2784313725" green="0.77647058820000003" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="GG5-qP-9D2"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -1926,6 +1931,22 @@
                                 <rect key="frame" x="16" y="180" width="343" height="308"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" id="CL1-og-J4j">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" id="qdi-f0-gQA">
+                                                <rect key="frame" x="16" y="0.0" width="311" height="52"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <animations/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                    </view>
                                     <view contentMode="scaleToFill" id="vrw-tx-EiV">
                                         <rect key="frame" x="0.0" y="60" width="343" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1987,22 +2008,6 @@
                                             <action selector="didPressSignup:" destination="9TS-fF-L9D" eventType="touchUpInside" id="D5n-vs-524"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" id="CL1-og-J4j">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="52"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" id="qdi-f0-gQA">
-                                                <rect key="frame" x="16" y="0.0" width="311" height="52"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <animations/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                        <animations/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
-                                    </view>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="0.20784313730000001" green="0.74117647060000003" blue="0.63921568630000003" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -2024,7 +2029,7 @@
                         <outlet property="lastNameField" destination="0a0-Ca-Tr0" id="ARg-y7-glt"/>
                         <outlet property="passwordField" destination="owi-mT-amT" id="7aG-X2-l8R"/>
                         <outlet property="signUpButton" destination="i2e-Rv-5Hg" id="Bn9-yR-6I4"/>
-                        <segue destination="B8T-uJ-7Xz" kind="push" identifier="segueToCauses" id="uCH-Sk-aEA"/>
+                        <segue destination="B8T-uJ-7Xz" kind="push" identifier="segueToCauses" id="xaN-ZT-ltU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3yV-e3-ACt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2145,44 +2150,41 @@
         <!--Personalize-->
         <scene sceneID="ToO-yE-fEa">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" id="B8T-uJ-7Xz" customClass="OnboardingCausesViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="B8T-uJ-7Xz" customClass="OnboardingCausesViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W4N-C7-KHm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="JV7-D3-uG7">
-                                <rect key="frame" x="0.0" y="165" width="377" height="425"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" id="2tI-Ic-T7y" customClass="JCTagListView">
-                                        <rect key="frame" x="40" y="-60" width="295" height="707"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which causes matter the most to you?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RWk-RL-A0V">
+                                        <rect key="frame" x="72" y="25" width="230" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="20"/>
+                                        <color key="textColor" red="0.28235294119999998" green="0.35686274509999999" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="0.28235294119999998" green="0.35686274509999999" blue="0.40000000000000002" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" id="2tI-Ic-T7y" customClass="JCTagListView">
+                                        <rect key="frame" x="16" y="98" width="343" height="505"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                                 <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <inset key="contentInset" minX="0.0" minY="0.0" maxX="0.0" maxY="76"/>
                             </scrollView>
                             <view contentMode="scaleToFill" id="PhJ-00-Poj">
-                                <rect key="frame" x="0.0" y="473" width="375" height="120"/>
+                                <rect key="frame" x="16" y="423" width="343" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kEo-Lu-3bc">
-                                <rect key="frame" x="15" y="663" width="347" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which causes matter the most to you?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RWk-RL-A0V">
-                                <rect key="frame" x="72" y="89" width="230" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="20"/>
-                                <color key="textColor" red="0.28235294119999998" green="0.35686274509999999" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="highlightedColor" red="0.28235294119999998" green="0.35686274509999999" blue="0.40000000000000002" alpha="0.0" colorSpace="calibratedRGB"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="coM-IT-DXg">
-                                <rect key="frame" x="16" y="607" width="344" height="44"/>
+                                <rect key="frame" x="16" y="543" width="344" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.20784313730000001" green="0.74117647060000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -2191,15 +2193,27 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Qki-Oa-Tg4" kind="push" identifier="segueToFollowFriends" animates="NO" id="gTI-h7-TI8"/>
+                                    <segue destination="Qki-Oa-Tg4" kind="push" identifier="segueToFollowFriends" id="gTI-h7-TI8"/>
                                 </connections>
                             </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <navigationItem key="navigationItem" title="Personalize" id="BFz-tq-XM2"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Personalize" id="BFz-tq-XM2">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="G8o-7x-2yC">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Z4I-9Q-gGv">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="15"/>
+                                <state key="normal" title="Skip"/>
+                                <connections>
+                                    <action selector="didPressSkipButton:" destination="B8T-uJ-7Xz" eventType="touchUpInside" id="krM-Gj-XGi"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -2211,7 +2225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A8q-T7-BbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="281.5" y="347.5"/>
+            <point key="canvasLocation" x="307.5" y="347.5"/>
         </scene>
         <!--Follow Friends-->
         <scene sceneID="MOZ-QA-AJU">

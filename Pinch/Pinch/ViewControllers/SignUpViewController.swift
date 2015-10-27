@@ -24,15 +24,10 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         
         // Styles for text fields and button
-        field1.layer.masksToBounds = true
         field1.layer.cornerRadius = buttonCornerRadius
-        field2.layer.masksToBounds = true
         field2.layer.cornerRadius = buttonCornerRadius
-        field3.layer.masksToBounds = true
         field3.layer.cornerRadius = buttonCornerRadius
-        field4.layer.masksToBounds = true
         field4.layer.cornerRadius = buttonCornerRadius
-        signUpButton.layer.masksToBounds = true
         signUpButton.layer.cornerRadius = buttonCornerRadius
         
         firstNameField.attributedPlaceholder = NSAttributedString(string: "First Name",

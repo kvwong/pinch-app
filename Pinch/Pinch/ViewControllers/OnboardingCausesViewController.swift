@@ -19,42 +19,42 @@ class OnboardingCausesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
         scrollView.contentSize = CGSizeMake(340, 600)
         
-        let topColor = UIColorFromRGB("FFFFFF", alpha: 0)
-        let bottomColor = UIColorFromRGB("FFFFFF", alpha: 1)
+        // Next button styles
+        nextButton.layer.cornerRadius = buttonCornerRadius
         
+        // Bottom gradient styles
+        let topColor = UIColorFromRGB("F5F5F5", alpha: 0)
+        let bottomColor = UIColorFromRGB("F5F5F5", alpha: 1)
         let gradientColors: [CGColor] = [topColor.CGColor, bottomColor.CGColor]
         let gradientLocations: [Float] = [0.0 , 1.0]
-        
         let gradientLayer: CAGradientLayer = CAGradientLayer()
         gradientLayer.colors = gradientColors
         gradientLayer.locations = gradientLocations
-        
         gradientLayer.frame = gradientLayerView.bounds
         gradientLayerView.layer.insertSublayer(gradientLayer, atIndex: 0)
         
+        // Tag cloud styles
         tagListView.canSeletedTags = true
-        tagListView.tagColor = UIColor.blueColor()
         tagListView.tagCornerRadius = 10
+        tagListView.collectionView.scrollEnabled = false
+        tagListView.collectionView.backgroundColor = colorBackgroundLight
         
-        tagListView.tags = ["Advocacy & Human Rights", "Animals", "Arts & Culture", "Board Development", "Children & Youth", "Crisis Support", "Disaster Relief", "Education & Literacy", "Emergency & Safety", "Employment", "Environment", "Faith", "Health & Medicine", "Homeless & Housing", "Hunger", "Immigration & Refugees", "International", "Justice & Legal", "LGBT", "Media & Broadcasting", "Disabilities", "Politics", "Race & Ethnicity", "Seniors", "Sports & Recreation", "Technology", "Veterans & Military Families", "Women"]
-        
-        tagListView.setCompletionBlockWithSeleted { (index) -> Void in
-            
-            print("Index: \(index)")
+        for cause in Cause.allValues {
+            tagListView.tags.addObject(cause.rawValue) // Populates the tag cloud from the Cause enum
+            //tagListView.collectionView.cellForItemAtIndexPath(NSIndexPath(forItem: cause.hashValue, inSection: 0))?.layer.backgroundColor = UIColor.redColor().CGColor
         }
         
-
-        let skipButton = UIBarButtonItem(title: "Skip", style: UIBarButtonItemStyle.Plain, target: self, action: "performSegue")
-        skipButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Lato-Bold", size: 15)!], forState: UIControlState.Normal)
-        self.navigationItem.rightBarButtonItem = skipButton
+        tagListView.setCompletionBlockWithSeleted { (index) -> Void in
+            print("Index: \(index)")
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationItem.hidesBackButton = true
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
     }
