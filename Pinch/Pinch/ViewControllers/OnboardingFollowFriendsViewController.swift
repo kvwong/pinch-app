@@ -19,16 +19,40 @@ class OnboardingFollowFriendsViewController: UIViewController, UITableViewDelega
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var gradientLayerView: UIView!
     
+    @IBOutlet weak var followAllButton: UIButton!
+    @IBOutlet weak var finishButton: UIButton!
+    
     
     // Overrides ---------------------------------------
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+<<<<<<< HEAD
         let topColor = UIColorFromRGB("FFFFFF", alpha: 0)
         let bottomColor = UIColorFromRGB("FFFFFF", alpha: 1)
         
         let gradientColors: [CGColor] = [topColor.CGColor, bottomColor.CGColor]
+=======
+        // Styling
+        followAllButton.layer.masksToBounds = true
+        followAllButton.layer.cornerRadius = buttonCornerRadius
+        followAllButton.layer.borderWidth = buttonBorderWidth
+        followAllButton.layer.borderColor = colorBrandGreen.CGColor
+        finishButton.layer.masksToBounds = true
+        finishButton.layer.cornerRadius = buttonCornerRadius
+        tableView.separatorColor = colorBorderLight
+        tableView.separatorInset.left = 68
+        
+        //gradientLayerView.layerGradient()
+        let gradientTopColor = UIColorFromRGB("FFFFFF", alpha: 0)
+        let gradientBottomColor = UIColorFromRGB("FFFFFF", alpha: 1)
+        
+        //let topColor = UIColor.redColor()
+        //let bottomColor = UIColor.blueColor()
+        
+        let gradientColors: [CGColor] = [gradientTopColor.CGColor, gradientBottomColor.CGColor]
+>>>>>>> origin/master
         let gradientLocations: [Float] = [0.0 , 1.0]
         
         let gradientLayer: CAGradientLayer = CAGradientLayer()
@@ -54,6 +78,13 @@ class OnboardingFollowFriendsViewController: UIViewController, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // Skip Button -------------------------------------
+    
+    @IBAction func didPressSkipButton(sender: UIButton) {
+        performSegueWithIdentifier("segueToFinishOnboarding", sender: nil)
+    }
+
 
     // Facebook and Contacts Tabs ----------------------
     

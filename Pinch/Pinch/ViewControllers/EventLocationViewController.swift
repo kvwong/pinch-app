@@ -42,7 +42,7 @@ class EventLocationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func pressDirections(sender: AnyObject) {
+    @IBAction func didPressDirectionsButton(sender: AnyObject) {
         //GoogleMaps
         if (UIApplication.sharedApplication().canOpenURL(NSURL(string:"comgooglemaps://")!)) {
             UIApplication.sharedApplication().openURL(NSURL(string:

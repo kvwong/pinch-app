@@ -24,7 +24,7 @@ class FollowingTableViewCell: UITableViewCell {
         
         // Following button styles:
         followingButton.layer.masksToBounds = true
-        followingButton.layer.cornerRadius = 4.0
+        followingButton.layer.cornerRadius = buttonCornerRadius
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

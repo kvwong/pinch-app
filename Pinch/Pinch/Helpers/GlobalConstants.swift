@@ -1,5 +1,5 @@
 //
-//  Colors.swift
+//  GlobalConstants.swift
 //  Pinch
 //
 //  Created by Cameron Wu on 10/22/15.
@@ -8,6 +8,9 @@
 
 import Foundation
 import UIKit
+
+
+// Colors ------------------------------------------
 
 // Brand Colors
 let colorBrandGreenCode         = "47C6B2"
@@ -31,3 +34,9 @@ let colorBackgroundMediumCode   = "E9EFF3"
 let colorBackgroundMedium       = UIColorFromRGB(colorBackgroundMediumCode)
 let colorBackgroundLightCode    = "F5F5F5"
 let colorBackgroundLight        = UIColorFromRGB(colorBackgroundLightCode)
+
+
+// Button Styles -----------------------------------
+
+let buttonCornerRadius          = CGFloat(4.0)
+let buttonBorderWidth           = CGFloat(1.0)

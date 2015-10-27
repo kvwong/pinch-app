@@ -22,12 +22,12 @@ class UserProfileUpcomingAndSavedEventsTableViewCell: UITableViewCell {
         
         // Event image styles:
         eventImageView.layer.masksToBounds = true
-        eventImageView.layer.cornerRadius = 4.0
+        eventImageView.layer.cornerRadius = buttonCornerRadius
         
         // Join button styles:
         joinButton.layer.masksToBounds = true
-        joinButton.layer.cornerRadius = 4.0
-        joinButton.layer.borderWidth = 1.0
+        joinButton.layer.cornerRadius = buttonCornerRadius
+        joinButton.layer.borderWidth = buttonBorderWidth
         joinButton.layer.borderColor = colorBrandGreen.CGColor
         
         // TO-DO: button styles per state
