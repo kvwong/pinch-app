@@ -248,7 +248,7 @@
 		677F5FB9F03DD0B0B0EFFCF6E21FAD84 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AFF76599DBC52C458A3A0464A6D87E1 /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
 		6CEEBCCF9C1217927F1248A7DC5CF73D /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = AFNetworking/AFURLConnectionOperation.h; sourceTree = "<group>"; };
-		704570D016B2D41DDCE48439317EE1D9 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		704570D016B2D41DDCE48439317EE1D9 /* TTTAttributedLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TTTAttributedLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7396BCFEB2168A905EACCAE6DE3C8BFF /* SKTag.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKTag.h; path = SKTagView/SKTag.h; sourceTree = "<group>"; };
 		74341D7CF6531F29CEB07EE26742CCFC /* TTTAttributedLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TTTAttributedLabel-dummy.m"; sourceTree = "<group>"; };
 		77026BDF70D2C8AE5143249C09AF7351 /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
@@ -578,7 +578,7 @@
 		70CF4D9DB0E62286EC89A18A0D083C9A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				704570D016B2D41DDCE48439317EE1D9 /* AFNetworking.framework */,
+				704570D016B2D41DDCE48439317EE1D9 /* TTTAttributedLabel.framework */,
 				D6BFCC0C7ABFBC297F7274782A060A84 /* AHEasing.framework */,
 				885AC8AC5D1E4DEE7908F18D470365CB /* JCTagListView.bundle */,
 				A9E121FDFDCE69F5C21125A90D94D3AF /* JCTagListView.framework */,
@@ -934,7 +934,7 @@
 			);
 			name = AFNetworking;
 			productName = AFNetworking;
-			productReference = 704570D016B2D41DDCE48439317EE1D9 /* AFNetworking.framework */;
+			productReference = 704570D016B2D41DDCE48439317EE1D9 /* TTTAttributedLabel.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		712A2573D438801F43A8174FB8BEE7A5 /* JCTagListView */ = {
@@ -1016,11 +1016,6 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
-				TargetAttributes = {
-					AF478A6058CC774D3EF46EA3F74CDC04 = {
-						DevelopmentTeam = SA69QT9UFQ;
-					};
-				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1291,7 +1286,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SKTagView/SKTagView.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SKTagView;
 				PRODUCT_NAME = TTTAttributedLabel;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -1405,7 +1399,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = AFNetworking;
 				PRODUCT_NAME = TTTAttributedLabel;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
