@@ -28,6 +28,7 @@ class OnboardingFollowFriendsViewController: UIViewController, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         // Styling
         followAllButton.layer.masksToBounds = true
         followAllButton.layer.cornerRadius = buttonCornerRadius
@@ -46,6 +47,7 @@ class OnboardingFollowFriendsViewController: UIViewController, UITableViewDelega
         //let bottomColor = UIColor.blueColor()
         
         let gradientColors: [CGColor] = [gradientTopColor.CGColor, gradientBottomColor.CGColor]
+
         let gradientLocations: [Float] = [0.0 , 1.0]
         
         let gradientLayer: CAGradientLayer = CAGradientLayer()

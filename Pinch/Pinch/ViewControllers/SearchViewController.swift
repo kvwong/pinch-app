@@ -8,7 +8,7 @@
 
 import UIKit
 import AHEasing
-import TTTAttributedLabel
+//import TTTAttributedLabel
 
 class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
 
