@@ -10,13 +10,18 @@ import UIKit
 import AHEasing
 import TTTAttributedLabel
 
-class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
 
+    // Outlets and Vars --------------------------------
+    
     @IBOutlet weak var searchFieldsView: UIView!
     @IBOutlet weak var searchTermField: UITextField!
     @IBOutlet weak var searchLocationField: UITextField!
     @IBOutlet weak var causesView: UIView!
     @IBOutlet weak var causesTableView: UITableView!
+    
+    
+    // Overrides ---------------------------------------
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +33,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         causesView.frame.origin.y = self.view.frame.height
         
         // Search Term field style
-        searchTermField.layer.masksToBounds = true
         searchTermField.layer.cornerRadius = buttonCornerRadius
         searchTermField.leftView = UIImageView(image: UIImage(named: "icon_search_13x13"))
         searchTermField.leftView?.frame = CGRectMake(0, 0, 28, 28)
@@ -38,7 +42,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             attributes:[NSForegroundColorAttributeName: UIColorFromRGB("FFFFFF", alpha: 0.5)])
         
         // Search Location field style
-        searchLocationField.layer.masksToBounds = true
         searchLocationField.layer.cornerRadius = buttonCornerRadius
         searchLocationField.leftView = UIImageView(image: UIImage(named: "icon_location_13x13"))
         searchLocationField.leftView?.frame = CGRectMake(0, 0, 28, 28)
@@ -51,6 +54,10 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         causesTableView.delegate = self
         causesTableView.dataSource = self
         causesTableView.tableFooterView = UIView.init(frame: CGRectZero)
+        
+        // Text field delegates
+        searchTermField.delegate = self
+        searchLocationField.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -65,7 +72,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseOut, animations: { () -> Void in
             self.searchFieldsView.frame.origin.y = 20
             self.searchFieldsView.alpha = 1
-            //self.causesView.frame.origin.y = 128
             self.causesView.alpha = 1
             }, completion: nil)
         
@@ -85,11 +91,17 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    
+    // Buttons -----------------------------------------
     
     @IBAction func didPressBackButton(sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
         hideKeyboard()
     }
+    
+    
+    // TableView Functions -----------------------------
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -111,7 +123,26 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func chooseCause(sender: SearchCauseButton) {
         searchTermField.text = Cause.allValues[sender.indexPath!.row].rawValue
         hideKeyboard()
+        dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
+    // Start Search ------------------------------------
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        if searchTermField.text == "" { // If the search term is empty, shake it!
+            // TO-DO: shaking animation goes here
+        } else { // If the search term isn't empty, run a search
+            hideKeyboard()
+            dismissViewControllerAnimated(true, completion: nil)
+            // TO-DO: pass info to home view controller
+        }
+        
+        return true
+    }
+
+    // Utility Functions -------------------------------
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         hideKeyboard()

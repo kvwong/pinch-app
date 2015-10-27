@@ -19,12 +19,9 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Styling for text fields and button
-        field1.layer.masksToBounds = true
+        // Styles for text fields and button
         field1.layer.cornerRadius = buttonCornerRadius
-        field2.layer.masksToBounds = true
         field2.layer.cornerRadius = buttonCornerRadius
-        logInButton.layer.masksToBounds = true
         logInButton.layer.cornerRadius = buttonCornerRadius
         emailField.attributedPlaceholder = NSAttributedString(string: "Email",
             attributes:[NSForegroundColorAttributeName: UIColorFromRGB("FFFFFF", alpha: 0.5)])

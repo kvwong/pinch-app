@@ -17,7 +17,8 @@ class EditUserProfileViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        // Do something
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,15 +26,8 @@ class EditUserProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func didPressCancelButton(sender: UIButton) {
+        navigationController?.popViewControllerAnimated(true)
     }
-    */
 
 }

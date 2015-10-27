@@ -17,6 +17,7 @@ class SettingsViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,12 +26,10 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func didPressProfile(sender: UIButton) {
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .Plain, target: nil, action: nil)
         performSegueWithIdentifier("segueToEditProfile", sender: nil)
     }
 
     @IBAction func didPressChangePassword(sender: UIButton) {
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .Plain, target: nil, action: nil)
         performSegueWithIdentifier("segueToChangePassword", sender: nil)
     }
     /*

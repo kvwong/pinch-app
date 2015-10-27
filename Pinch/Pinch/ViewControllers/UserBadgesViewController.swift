@@ -10,10 +10,13 @@ import UIKit
 
 class UserBadgesViewController: UIViewController {
 
+    @IBOutlet weak var badgesScrollView: UIScrollView!
+    @IBOutlet weak var badgesImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        badgesScrollView.contentSize = badgesImageView.image!.size
     }
     
     override func viewWillAppear(animated: Bool) {

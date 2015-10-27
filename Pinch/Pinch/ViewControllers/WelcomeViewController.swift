@@ -17,7 +17,7 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Styling
+        // Styles
         fbLoginButton.layer.masksToBounds = true
         fbLoginButton.layer.cornerRadius = buttonCornerRadius
         signUpButton.layer.masksToBounds = true

@@ -23,7 +23,7 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Styling for text fields and button
+        // Styles for text fields and button
         field1.layer.masksToBounds = true
         field1.layer.cornerRadius = buttonCornerRadius
         field2.layer.masksToBounds = true

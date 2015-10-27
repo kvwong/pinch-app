@@ -10,9 +10,14 @@ import UIKit
 
 class HomeViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
 
+    // Outlets and Vars --------------------------------
+    
     @IBOutlet weak var eventView: UIView!
     @IBOutlet weak var eventContentView: UIView!
+    
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var searchView: UIView!
+    @IBOutlet weak var searchField: UITextField!
     
     var eventCardTransition: EventCardTransition!
     var cardView: UIView!
@@ -20,17 +25,38 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
     
     var isPresenting: Bool = true
     
+    var isSearchEnabled: Bool = false
+    
+    
+    // Overrides ---------------------------------------
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         status = false
         
-        // Styling
+        // Event card styles
         eventView.layer.cornerRadius = buttonCornerRadius * 1.5
         eventContentView.layer.cornerRadius = eventView.layer.cornerRadius
         eventContentView.layer.masksToBounds = true
         eventView.layer.shadowOffset = CGSize(width: 0, height: 2)
         eventView.layer.shadowOpacity = 0.05
         eventView.layer.shadowRadius = 3
+        
+        // Search field styles
+        searchField.layer.cornerRadius = buttonCornerRadius
+        searchField.leftView = UIImageView(image: UIImage(named: "icon_search_13x13"))
+        searchField.leftView?.frame = CGRectMake(0, 0, 28, 28)
+        searchField.leftView?.contentMode = UIViewContentMode.Center
+        searchField.leftViewMode = UITextFieldViewMode.Always
+        searchField.attributedPlaceholder = NSAttributedString(string: "Search",
+            attributes:[NSForegroundColorAttributeName: UIColorFromRGB("FFFFFF", alpha: 0.5)])
+        
+        // Display search UIView if active
+        if isSearchEnabled {
+            searchView.hidden = false
+        } else {
+            searchView.hidden = true
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -43,16 +69,30 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    
+    // Search ------------------------------------------
     
     @IBAction func didPressSearchButton(sender: UIButton) {
         performSegueWithIdentifier("segueToSearch", sender: nil)
+    }
+    
+    @IBAction func didPressBackToSearchButton(sender: UIButton) {
+        performSegueWithIdentifier("segueToSearch", sender: nil)
+    }
+    
+    @IBAction func didPressFilterButton(sender: UIButton) {
+        performSegueWithIdentifier("segueToFilters", sender: nil)
     }
 
     @IBAction func onTap(sender: AnyObject) {
         cardView = sender.view as UIView!
         performSegueWithIdentifier("eventDetailSegue", sender: nil)
     }
+    
 
+    // Custom Transitions ------------------------------
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "eventDetailSegue" {
             let nav = segue.destinationViewController as! UINavigationController
