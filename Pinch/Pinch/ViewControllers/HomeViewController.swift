@@ -11,6 +11,7 @@ import UIKit
 class HomeViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
 
     @IBOutlet weak var eventView: UIView!
+    @IBOutlet weak var eventContentView: UIView!
     @IBOutlet weak var searchButton: UIButton!
     
     var eventCardTransition: EventCardTransition!
@@ -22,6 +23,14 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         status = false
+        
+        // Styling
+        eventView.layer.cornerRadius = buttonCornerRadius * 1.5
+        eventContentView.layer.cornerRadius = eventView.layer.cornerRadius
+        eventContentView.layer.masksToBounds = true
+        eventView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        eventView.layer.shadowOpacity = 0.05
+        eventView.layer.shadowRadius = 3
     }
     
     override func viewWillAppear(animated: Bool) {
