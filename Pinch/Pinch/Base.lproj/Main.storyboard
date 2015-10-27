@@ -2165,7 +2165,7 @@
                                 <state key="normal" title="Next">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-<<<<<<< HEAD
+
                                 <connections>
                                     <segue destination="Qki-Oa-Tg4" kind="push" identifier="segueToFollowFriends" animates="NO" id="gTI-h7-TI8"/>
                                 </connections>
@@ -2182,30 +2182,7 @@
                         <outlet property="gradientLayerView" destination="PhJ-00-Poj" id="kZ6-hd-Woe"/>
                         <outlet property="scrollView" destination="JV7-D3-uG7" id="34E-um-rAo"/>
                         <outlet property="tagListView" destination="2tI-Ic-T7y" id="xOk-L4-L01"/>
-=======
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Personalize" id="BFz-tq-XM2">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="rVY-hZ-UkX">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fEC-2b-JCr">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="15"/>
-                                <state key="normal" title="Skip"/>
-                                <connections>
-                                    <action selector="didPressSkipButton:" destination="B8T-uJ-7Xz" eventType="touchUpInside" id="uh4-Yv-OQD"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="nextButton" destination="coM-IT-DXg" id="HEM-qB-P0n"/>
-                        <segue destination="Qki-Oa-Tg4" kind="push" identifier="segueToFollowFriends" id="in4-M4-UVK"/>
->>>>>>> origin/master
+
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A8q-T7-BbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2230,11 +2207,10 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uOc-Hj-bmj" id="6hj-Lh-2S1">
-<<<<<<< HEAD
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
-=======
+
+
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
->>>>>>> origin/master
+
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_kevin" id="v0i-et-Djr">
@@ -2245,14 +2221,10 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sF8-bz-VdS">
                                                     <rect key="frame" x="291" y="14" width="68" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-<<<<<<< HEAD
-                                                    <animations/>
-                                                    <color key="backgroundColor" red="0.20784313730000001" green="0.74117647060000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
-=======
+
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
->>>>>>> origin/master
+
                                                     <state key="normal" title="Follow">
                                                         <color key="titleColor" red="0.2784313725" green="0.77647058820000003" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
@@ -2260,12 +2232,9 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kevin Wong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SAH-Xh-xQH">
                                                     <rect key="frame" x="68" y="8" width="200" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-<<<<<<< HEAD
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
-=======
+
                                                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
->>>>>>> origin/master
+
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -2302,18 +2271,12 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Tci-ze-rNq">
                                         <rect key="frame" x="271" y="14" width="88" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-<<<<<<< HEAD
-                                        <animations/>
-                                        <color key="backgroundColor" red="0.20784313730000001" green="0.74117647060000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
-                                        <state key="normal" title="Follow all">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-=======
+
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
                                         <state key="normal" title="Follow All">
                                             <color key="titleColor" red="0.2784313725" green="0.77647058820000003" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
->>>>>>> origin/master
+
                                         </state>
                                     </button>
                                 </subviews>
