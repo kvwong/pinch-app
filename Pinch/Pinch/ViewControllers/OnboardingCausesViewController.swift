@@ -20,7 +20,7 @@ class OnboardingCausesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-<<<<<<< HEAD
+
         scrollView.contentSize = CGSizeMake(340, 600)
         
         let topColor = UIColorFromRGB("FFFFFF", alpha: 0)
@@ -51,13 +51,6 @@ class OnboardingCausesViewController: UIViewController {
         let skipButton = UIBarButtonItem(title: "Skip", style: UIBarButtonItemStyle.Plain, target: self, action: "performSegue")
         skipButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Lato-Bold", size: 15)!], forState: UIControlState.Normal)
         self.navigationItem.rightBarButtonItem = skipButton
-=======
-        // Styling
-        nextButton.layer.masksToBounds = true
-        nextButton.layer.cornerRadius = buttonCornerRadius
-        nextButton.enabled = false
-        navigationItem.hidesBackButton = true
->>>>>>> origin/master
     }
     
     override func viewWillAppear(animated: Bool) {
