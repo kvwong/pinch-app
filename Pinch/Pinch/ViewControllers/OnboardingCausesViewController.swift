@@ -18,7 +18,7 @@ class OnboardingCausesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scrollView.contentSize = CGSizeMake(320, 600)
+        scrollView.contentSize = CGSizeMake(340, 600)
         
         let topColor = UIColorFromRGB("FFFFFF", alpha: 0)
         let bottomColor = UIColorFromRGB("FFFFFF", alpha: 1)
