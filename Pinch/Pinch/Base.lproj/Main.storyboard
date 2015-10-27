@@ -51,6 +51,7 @@
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
         </mutableArray>
         <mutableArray key="Raleway-Bold.ttf">
             <string>Raleway-Bold</string>
@@ -963,7 +964,7 @@
                         <outlet property="eventContentView" destination="gOO-qC-CRx" id="dat-ah-ty8"/>
                         <outlet property="eventView" destination="Xci-5X-qh1" id="YdR-20-dKp"/>
                         <outlet property="searchButton" destination="EBb-mb-NY1" id="xUv-YZ-SMG"/>
-                        <outlet property="searchField" destination="cZH-yK-caV" id="c6M-2k-0ng"/>
+                        <outlet property="searchTermField" destination="cZH-yK-caV" id="zDT-Lw-LuT"/>
                         <outlet property="searchView" destination="K2g-lL-FaE" id="Ihz-hD-xL4"/>
                         <segue destination="a33-VI-cXc" kind="modal" identifier="segueToSearch" id="IpB-f2-AkE"/>
                         <segue destination="2tw-d2-BlQ" kind="modal" identifier="eventDetailSegue" id="LnD-c2-Zty"/>
@@ -1043,6 +1044,7 @@
                                         <state key="normal" image="icon_back_arrow_white_15x14"/>
                                         <connections>
                                             <action selector="didPressBackButton:" destination="a33-VI-cXc" eventType="touchUpInside" id="SR3-NT-wiR"/>
+                                            <segue destination="Xg3-97-HJE" kind="unwind" unwindAction="unwindFromSearch:" id="iiS-S4-rCK"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" id="GUi-FQ-V1i">
@@ -1143,6 +1145,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J73-fc-R79" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Xg3-97-HJE" userLabel="Exit" sceneMemberID="exit"/>
                 <searchDisplayController id="t4u-hO-X2t">
                     <connections>
                         <outlet property="delegate" destination="a33-VI-cXc" id="Rry-Xh-hsk"/>
@@ -1939,6 +1942,7 @@
                                                 <rect key="frame" x="16" y="0.0" width="311" height="52"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -1955,6 +1959,7 @@
                                                 <rect key="frame" x="16" y="0.0" width="311" height="52"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -1971,6 +1976,7 @@
                                                 <rect key="frame" x="16" y="0.0" width="311" height="52"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -1987,6 +1993,7 @@
                                                 <rect key="frame" x="16" y="0.0" width="311" height="52"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -2062,6 +2069,7 @@
                                                 <rect key="frame" x="16" y="0.0" width="311" height="52"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -2078,6 +2086,7 @@
                                                 <rect key="frame" x="16" y="0.0" width="311" height="52"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -2168,11 +2177,18 @@
                                         <color key="highlightedColor" red="0.28235294119999998" green="0.35686274509999999" blue="0.40000000000000002" alpha="0.0" colorSpace="calibratedRGB"/>
                                     </label>
                                     <view contentMode="scaleToFill" id="2tI-Ic-T7y" customClass="JCTagListView">
-                                        <rect key="frame" x="16" y="98" width="343" height="505"/>
+                                        <rect key="frame" x="16" y="123" width="343" height="480"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose as many as you wish." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lpg-BI-K1W">
+                                        <rect key="frame" x="50" y="81" width="275" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                        <color key="textColor" red="0.28235294119999998" green="0.35686274509999999" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="0.28235294119999998" green="0.35686274509999999" blue="0.40000000000000002" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </label>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

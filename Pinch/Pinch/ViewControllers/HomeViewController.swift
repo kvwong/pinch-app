@@ -17,14 +17,13 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
     
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var searchView: UIView!
-    @IBOutlet weak var searchField: UITextField!
+    @IBOutlet weak var searchTermField: UITextField!
     
     var eventCardTransition: EventCardTransition!
     var cardView: UIView!
     var status: Bool!
     
     var isPresenting: Bool = true
-    
     var isSearchEnabled: Bool = false
     
     
@@ -43,12 +42,12 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         eventView.layer.shadowRadius = 3
         
         // Search field styles
-        searchField.layer.cornerRadius = buttonCornerRadius
-        searchField.leftView = UIImageView(image: UIImage(named: "icon_search_13x13"))
-        searchField.leftView?.frame = CGRectMake(0, 0, 28, 28)
-        searchField.leftView?.contentMode = UIViewContentMode.Center
-        searchField.leftViewMode = UITextFieldViewMode.Always
-        searchField.attributedPlaceholder = NSAttributedString(string: "Search",
+        searchTermField.layer.cornerRadius = buttonCornerRadius
+        searchTermField.leftView = UIImageView(image: UIImage(named: "icon_search_13x13"))
+        searchTermField.leftView?.frame = CGRectMake(0, 0, 28, 28)
+        searchTermField.leftView?.contentMode = UIViewContentMode.Center
+        searchTermField.leftViewMode = UITextFieldViewMode.Always
+        searchTermField.attributedPlaceholder = NSAttributedString(string: "Search",
             attributes:[NSForegroundColorAttributeName: UIColorFromRGB("FFFFFF", alpha: 0.5)])
         
         // Display search UIView if active
@@ -99,9 +98,27 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
             let eventDetailViewController = nav.topViewController as! EventViewController
             eventDetailViewController.eventSummary = cardView
         } else if segue.identifier == "segueToSearch" {
-            let destinationVC = segue.destinationViewController as UIViewController
-            destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
-            destinationVC.transitioningDelegate = self
+            let destinationViewController = segue.destinationViewController as! SearchViewController
+            destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+            destinationViewController.transitioningDelegate = self
+            if searchTermField.text != "" {
+                destinationViewController.searchTerm = searchTermField.text! // Assumes search is never empty
+            }
+        }
+    }
+    
+    @IBAction func unwindFromSearch(segue: UIStoryboardSegue) {
+        print(segue.destinationViewController)
+        let fromViewController = segue.sourceViewController as! SearchViewController
+        if fromViewController.searchTermField.text! != "" {
+            print("Search Term Field contains: \(fromViewController.searchTermField.text!)")
+            isSearchEnabled = true
+            searchView.hidden = false
+            searchTermField.text = fromViewController.searchTermField.text!
+        } else {
+            print("Search Term Field is empty.")
+            isSearchEnabled = false
+            searchView.hidden = true
         }
     }
     

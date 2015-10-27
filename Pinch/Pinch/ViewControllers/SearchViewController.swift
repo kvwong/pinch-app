@@ -20,6 +20,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     @IBOutlet weak var causesView: UIView!
     @IBOutlet weak var causesTableView: UITableView!
     
+    var searchTerm: String = ""
+    
     
     // Overrides ---------------------------------------
     
@@ -58,6 +60,9 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         // Text field delegates
         searchTermField.delegate = self
         searchLocationField.delegate = self
+        
+        // Set search term to variable. This may be set by the HomeViewController before a transition
+        searchTermField.text = searchTerm
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -96,10 +101,9 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     // Buttons -----------------------------------------
     
     @IBAction func didPressBackButton(sender: UIButton) {
-        dismissViewControllerAnimated(true, completion: nil)
+        //dismissViewControllerAnimated(true, completion: nil)
         hideKeyboard()
     }
-    
     
     // TableView Functions -----------------------------
     
