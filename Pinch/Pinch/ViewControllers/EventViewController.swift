@@ -68,6 +68,11 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         performSegueWithIdentifier("Expand Banner", sender: nil)
     }
     
+    @IBAction func onPressPhone(sender: AnyObject) {
+        UIApplication.sharedApplication().openURL(NSURL(string: "tel://14153214567")!)
+        print("dialing")
+    }
+    
     @IBAction func onComposeEmail(sender: AnyObject) {
         let mailComposeViewController = configuredMailComposeViewController()
         if MFMailComposeViewController.canSendMail() {
