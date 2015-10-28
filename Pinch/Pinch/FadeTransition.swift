@@ -12,6 +12,14 @@ class FadeTransition: BaseTransition {
     
     override func presentTransition(containerView: UIView, fromViewController: UIViewController, toViewController: UIViewController) {
         
+        let eventDetailViewController = toViewController as! EventViewController
+        let homeViewController = fromViewController as! HomeViewController
+        
+        let destinationFrame = eventDetailViewController.view
+
+        eventDetailViewController.eventSummaryView = homeViewController.cardView
+        
+        
         toViewController.view.alpha = 0
         UIView.animateWithDuration(duration, animations: {
             toViewController.view.alpha = 1

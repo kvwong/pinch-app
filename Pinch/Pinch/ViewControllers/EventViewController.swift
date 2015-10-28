@@ -59,6 +59,8 @@ class EventViewController: UIViewController {
     @IBAction func onBannerTap(sender: AnyObject) {
         performSegueWithIdentifier("Expand Banner", sender: nil)
     }
+    
+    
     /*
     // MARK: - Navigation
 
