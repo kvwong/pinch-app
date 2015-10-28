@@ -27,6 +27,7 @@
 		<string>Lato-Bold.ttf</string>
 		<string>Lato-Regular.ttf</string>
 		<string>Raleway-Bold.ttf</string>
+		<string>Raleway-Regular.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
@@ -49,5 +50,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>

@@ -21,7 +21,7 @@ class SearchResultsViewController: UIViewController, UITextFieldDelegate {
         
         // Search Term field style
         searchTermField.layer.masksToBounds = true
-        searchTermField.layer.cornerRadius = 4.0
+        searchTermField.layer.cornerRadius = buttonCornerRadius
         searchTermField.leftView = UIImageView(image: UIImage(named: "icon_search_13x13"))
         searchTermField.leftView?.frame = CGRectMake(0, 0, 28, 28)
         searchTermField.leftView?.contentMode = UIViewContentMode.Center
@@ -29,11 +29,17 @@ class SearchResultsViewController: UIViewController, UITextFieldDelegate {
         
         // Search Location field style
         searchLocationField.layer.masksToBounds = true
-        searchLocationField.layer.cornerRadius = 4.0
+        searchLocationField.layer.cornerRadius = buttonCornerRadius
         searchLocationField.leftView = UIImageView(image: UIImage(named: "icon_location_13x13"))
         searchLocationField.leftView?.frame = CGRectMake(0, 0, 28, 28)
         searchLocationField.leftView?.contentMode = UIViewContentMode.Center
         searchLocationField.leftViewMode = UITextFieldViewMode.Always
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

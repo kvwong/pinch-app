@@ -8,21 +8,99 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>AHEasing.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>JCTagListView-JCTagListView.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>JCTagListView.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>Masonry.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 		<key>Pods-Pinch.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>SKTagView.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>TTTAttributedLabel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>030A9823F6C8AE7586F7FAD410A3DF9E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>14B220A857E01F9F02BC7C315251A8E3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3560B847B6B586EE9B13E628743E8286</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>477130355AB3E42234B9DA30CE61A85D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4878C70B21CA37D7CB8A476BF986741B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DBC46146340B5D8EF0F644353B4D6C19</key>
+		<key>712A2573D438801F43A8174FB8BEE7A5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>75CEAE4414F4463092098B295EC23A4C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>791ADB8FDECF8A6D6BD701001B998200</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A9A83F63385AA43314397B8DD375464B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF478A6058CC774D3EF46EA3F74CDC04</key>
 		<dict>
 			<key>primary</key>
 			<true/>

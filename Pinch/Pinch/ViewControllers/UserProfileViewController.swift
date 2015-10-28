@@ -8,64 +8,33 @@
 
 import UIKit
 
-class UserProfileViewController: UIViewController, UIScrollViewDelegate {
+class UserProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    // Outlets and Vars --------------------------------
+    // Upcoming & Saved Event Table View
+    @IBOutlet weak var eventsTableView: UITableView!
     
-    @IBOutlet weak var profileScrollView: UIScrollView!
-    @IBOutlet weak var eventTabsView: UIView!
-    @IBOutlet weak var upcomingEventsTab: UIButton!
-    @IBOutlet weak var savedEventsTab: UIButton!
-    @IBOutlet weak var activeTabView: UIView!
-
-    var eventTabsViewInitialY: CGFloat!
+    //var eventTabsViewInitialY: CGFloat!
     
     // Overrides ---------------------------------------
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Scroll view setup
-        profileScrollView.contentSize = CGSize(width: view.frame.width, height: 1800) // TO-DO: make height dynamic once table view pulls in data
-        profileScrollView.delegate = self
+        eventsTableView.delegate = self
+        eventsTableView.dataSource = self
         
-        // Default to Upcoming tab on load
-        switchTabs("Upcoming")
-        upcomingEventsTab.setTitleColor(UIColorFromRGB("485B66"), forState: .Selected)
-        savedEventsTab.setTitleColor(UIColorFromRGB("485B66"), forState: .Selected)
-        
-        // Save initial eventTabsView.frame.origin.y position
-        eventTabsViewInitialY = eventTabsView.frame.origin.y
+        eventsTableView.tableFooterView = UIView.init(frame: CGRectZero)
     }
     
     override func viewWillAppear(animated: Bool) {
-        
-        //scrollView.contentSize = profileView.frame.size
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    
-    // Scroll View Overrides ---------------------------
-    
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        if profileScrollView.contentOffset.y > 0 {
-            print("profileScrollView.content.y offset is: \(profileScrollView.contentOffset.y)")
-            self.navigationController?.setNavigationBarHidden(false, animated: true)
-        } else {
-            self.navigationController?.setNavigationBarHidden(true, animated: true)
-        }
-        
-        if profileScrollView.contentOffset.y > eventTabsViewInitialY {
-           self.eventTabsView.frame.origin.y = profileScrollView.contentOffset.y
-        } else {
-            self.eventTabsView.frame.origin.y = eventTabsViewInitialY
-        }
     }
     
     
@@ -75,59 +44,135 @@ class UserProfileViewController: UIViewController, UIScrollViewDelegate {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func didPressUpcomingEventsTab(sender: UIButton) {
-        switchTabs("Upcoming")
-    }
-
-    @IBAction func didPressSavedEventsTab(sender: UIButton) {
-        switchTabs("Saved")
+    @IBAction func didPressNonProfits(sender: UIButton) {
+        performSegueWithIdentifier("segueToFollowing", sender: "Non-Profits")
     }
     
+    @IBAction func didPressFollowing(sender: UIButton) {
+        performSegueWithIdentifier("segueToFollowing", sender: "Following")
+    }
     
-    // Upcoming and Saved Events -----------------------
-
-    func switchTabs(tabToSwitchTo: String) {
-        if tabToSwitchTo == "Upcoming" {
-            print("Switching tab to Upcoming Events")
-            upcomingEventsTab.userInteractionEnabled = false
-            savedEventsTab.userInteractionEnabled = true
-            upcomingEventsTab.selected = true
-            savedEventsTab.selected = false
-            UIView.animateWithDuration(0.1, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
-                self.activeTabView.frame.origin.x = 0
-                self.activeTabView.frame.size.width = self.view.frame.width
-                }, completion: nil)
-            UIView.animateWithDuration(0.2, delay: 0.15, options: .CurveEaseInOut, animations: { () -> Void in
-                self.activeTabView.frame.size.width = self.view.frame.width/2
-                }, completion: nil)
-            loadUpcomingEvents()
-        } else if tabToSwitchTo == "Saved" {
-            print("Switching tab to Saved Events")
-            upcomingEventsTab.userInteractionEnabled = true
-            savedEventsTab.userInteractionEnabled = false
-            upcomingEventsTab.selected = false
-            savedEventsTab.selected = true
-            UIView.animateWithDuration(0.1, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
-                self.activeTabView.frame.size.width = self.view.frame.width
-                }, completion: nil)
-            UIView.animateWithDuration(0.2, delay: 0.15, options: .CurveEaseInOut, animations: { () -> Void in
-                self.activeTabView.frame.origin.x = self.view.frame.width/2
-                self.activeTabView.frame.size.width = self.view.frame.width/2
-                }, completion: nil)
-            loadSavedEvents()
-        } else {
-            print("Invalid string \(tabToSwitchTo)")
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let destination = segue.destinationViewController as? UserFollowingViewController {
+            if sender as? String == "Non-Profits" {
+                destination.title = "Non-Profits"
+            } else {
+                destination.title = "Following"
+            }
         }
     }
     
-    func loadUpcomingEvents() {
-        print("Loading upcoming evnts...")
-        // TO-DO: load here
+    
+    // Scroll View Overrides ---------------------------
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if eventsTableView.contentOffset.y > 0 {
+            print("eventsTableView.content.y offset is: \(eventsTableView.contentOffset.y)")
+            self.title = "Annabel" // TO-DO: dynamically input user name
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+            UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+        } else {
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
+            UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
+        }
+        
+        /*
+        if eventsTableView.contentOffset.y + (navigationController?.navigationBar.frame.origin.y)! + (navigationController?.navigationBar.frame.height)! > eventTabsViewInitialY {
+           self.eventTabsView.frame.origin.y = profileScrollView.contentOffset.y + (navigationController?.navigationBar.frame.origin.y)! + (navigationController?.navigationBar.frame.height)!
+        } else {
+            self.eventTabsView.frame.origin.y = eventTabsViewInitialY
+        }*/
     }
     
-    func loadSavedEvents() {
-        print("Loading saved evnts...")
-        // TO-DO: load here
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 3
+        // TO-DO: return number of sections by upcoming time
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 2
+        } else if section == 1 {
+            return 0
+        } else {
+            return 8
+            // TO-DO: return number of rows per upcoming time
+        }
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if indexPath.section < 2 {
+            if indexPath.row == 0 {
+                let row = tableView.dequeueReusableCellWithIdentifier("UserProfileDetailsTableViewCell") as! UserProfileDetailsTableViewCell
+                return row
+            } else {
+                let row = tableView.dequeueReusableCellWithIdentifier("UserProfileMenuTableViewCell") as! UserProfileMenuTableViewCell
+                return row
+            }
+        } else {
+            let row = tableView.dequeueReusableCellWithIdentifier("UserProfileUpcomingAndSavedEventsTableViewCell") as! UserProfileUpcomingAndSavedEventsTableViewCell
+            let event = testEvents[0]
+            
+            // TO-DO: download an image into cell.eventImageView.image
+            row.titleLabel.text = event.name
+            row.attendeeCountLabel.text = "\(event.attendees.count) people are going"
+            
+            // Adjusted description line-height
+            var attrString: NSMutableAttributedString = NSMutableAttributedString(string: event.description)
+            var style = NSMutableParagraphStyle()
+            style.lineSpacing = 4
+            attrString.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSMakeRange(0, attrString.length))
+            row.descriptionLabel.attributedText = attrString;
+            
+            /*
+            profileScrollView.contentSize = CGSize(width: view.frame.width, height: profileScrollView.contentInset.top + eventsTableView.frame.origin.y + eventsTableView.frame.height)
+            */
+            
+            return row
+        }
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 1 {
+            let header = tableView.dequeueReusableCellWithIdentifier("UserProfileEventTabsTableViewCell") as! UserProfileEventTabsTableViewCell
+            return header
+        } else {
+            return nil
+        }
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 1 {
+            return nil
+        } else {
+            return nil
+        }
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        var height: CGFloat!
+        
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                height = 220
+            } else if indexPath.row == 1 {
+                height = 184
+            }
+        } else {
+            height = 111.5
+        }
+        
+        return height
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 1 {
+            return 44
+        } else if section == 2 {
+            return 44
+        } else {
+            return 0
+        }
     }
 
 }

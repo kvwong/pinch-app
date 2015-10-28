@@ -85,7 +85,17 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Pinch/AFNetworking.framework"
+  install_framework "Pods-Pinch/AHEasing.framework"
+  install_framework "Pods-Pinch/JCTagListView.framework"
+  install_framework "Pods-Pinch/Masonry.framework"
+  install_framework "Pods-Pinch/SKTagView.framework"
+  install_framework "Pods-Pinch/TTTAttributedLabel.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Pinch/AFNetworking.framework"
+  install_framework "Pods-Pinch/AHEasing.framework"
+  install_framework "Pods-Pinch/JCTagListView.framework"
+  install_framework "Pods-Pinch/Masonry.framework"
+  install_framework "Pods-Pinch/SKTagView.framework"
+  install_framework "Pods-Pinch/TTTAttributedLabel.framework"
 fi

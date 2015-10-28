@@ -10,10 +10,26 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
+    @IBOutlet weak var fbLoginButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var logInButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Styles
+        fbLoginButton.layer.masksToBounds = true
+        fbLoginButton.layer.cornerRadius = buttonCornerRadius
+        signUpButton.layer.masksToBounds = true
+        signUpButton.layer.cornerRadius = buttonCornerRadius
+        logInButton.layer.masksToBounds = true
+        logInButton.layer.cornerRadius = buttonCornerRadius
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
