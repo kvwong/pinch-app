@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="7ke-9G-asA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
@@ -658,6 +658,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="c0z-lb-RaY"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="push" identifier="LoadHomeSegue" id="1qe-yk-Nty"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0o4-xi-2x1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -908,6 +911,7 @@
                         <color key="backgroundColor" red="0.27843137254901962" green="0.77647058823529413" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="XH2-nX-lsZ"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="eventContentView" destination="gOO-qC-CRx" id="dat-ah-ty8"/>
@@ -943,7 +947,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Activity" id="P2d-xU-44e">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="-64" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <animations/>
                             </imageView>
@@ -952,6 +956,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Activity" id="WaL-tE-4Wo">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="oNc-1a-xh6"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="B3Q-9q-8F5">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UsC-tP-6vS">
                                 <rect key="frame" x="16" y="15" width="14" height="14"/>
@@ -1421,12 +1426,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Event Details - More Info" id="z5V-1X-Knk">
-                                        <rect key="frame" x="0.0" y="-49" width="375" height="1319"/>
+                                        <rect key="frame" x="0.0" y="-64" width="375" height="1353"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <animations/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RIq-nD-K5C">
-                                        <rect key="frame" x="0.0" y="1203" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="1246" width="375" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <animations/>
                                         <connections>
@@ -1434,12 +1439,20 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Yp3-5r-pOa">
-                                        <rect key="frame" x="0.0" y="1144" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="1199" width="375" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <animations/>
                                         <connections>
                                             <action selector="onComposeEmail:" destination="q8K-ZH-XbN" eventType="touchUpInside" id="Q7Y-W8-iWr"/>
-                                            <action selector="onPressHomepage:" destination="q8K-ZH-XbN" eventType="touchUpInside" id="3eb-EH-o9b"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2up-UO-VTK">
+                                        <rect key="frame" x="0.0" y="1156" width="375" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                        <connections>
+                                            <action selector="onComposeEmail:" destination="q8K-ZH-XbN" eventType="touchUpInside" id="1Lf-L6-KlN"/>
+                                            <action selector="onPressNPOProfile:" destination="q8K-ZH-XbN" eventType="touchUpInside" id="eQS-50-GTs"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1456,7 +1469,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Event Details" id="5hA-eq-aMf"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="detailsView" destination="z5V-1X-Knk" id="IRi-Pw-A1y"/>
                         <outlet property="scrollView" destination="6kA-yf-Ha1" id="fKR-JA-QVZ"/>
@@ -1527,6 +1541,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rm0-yx-kSD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1753,7 +1768,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Search Results - Cards Copy 4" id="YfT-rI-Uwb">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="-64" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                             </imageView>
@@ -2041,6 +2056,7 @@
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                             </view>
                                         </subviews>
+                                        <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="i2e-Rv-5Hg">
@@ -2156,6 +2172,7 @@
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                             </view>
                                         </subviews>
+                                        <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DSD-mK-H0e">
@@ -2606,4 +2623,7 @@
         <image name="icon_search_24x24" width="24" height="24"/>
         <image name="icon_settings_20x20" width="20" height="20"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="1qe-yk-Nty"/>
+    </inferredMetricsTieBreakers>
 </document>

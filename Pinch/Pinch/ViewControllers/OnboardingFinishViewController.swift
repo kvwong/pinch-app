@@ -12,7 +12,9 @@ class OnboardingFinishViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        performSegueWithIdentifier("LoadHomeSegue", sender: nil)
+        
         // Do any additional setup after loading the view.
     }
 

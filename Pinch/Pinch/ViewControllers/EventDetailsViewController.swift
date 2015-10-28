@@ -30,6 +30,9 @@ class EventDetailsViewController: UIViewController, MFMailComposeViewControllerD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func onPressNPOProfile(sender: AnyObject) {
+        // Perform segue to NPO Profile
+    }
     
     @IBAction func onPressHomepage(sender: AnyObject) {
         let sfViewController = SFSafariViewController(URL: NSURL(string: self.url)!, entersReaderIfAvailable: false)
