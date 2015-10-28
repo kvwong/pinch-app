@@ -10,9 +10,14 @@ import UIKit
 
 class EventAttendeesViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var peopleView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        scrollView.contentSize = peopleView.image!.size
+        
         // Do any additional setup after loading the view.
     }
 
