@@ -105,6 +105,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         hideKeyboard()
     }
     
+    
     // TableView Functions -----------------------------
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -127,7 +128,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     func chooseCause(sender: SearchCauseButton) {
         searchTermField.text = Cause.allValues[sender.indexPath!.row].rawValue
         hideKeyboard()
-        dismissViewControllerAnimated(true, completion: nil)
+        //dismissViewControllerAnimated(true, completion: nil)
+        performSegueWithIdentifier("unwindToHome", sender: nil)
     }
     
     
@@ -139,7 +141,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
             // TO-DO: shaking animation goes here
         } else { // If the search term isn't empty, run a search
             hideKeyboard()
-            dismissViewControllerAnimated(true, completion: nil)
+            //dismissViewControllerAnimated(true, completion: nil)
+            performSegueWithIdentifier("unwindToHome", sender: nil)
             // TO-DO: pass info to home view controller
         }
         

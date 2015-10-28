@@ -8,8 +8,10 @@
 
 import UIKit
 
-class SearchFiltersViewController: UIViewController {
+class SearchFiltersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var filtersTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,6 +35,34 @@ class SearchFiltersViewController: UIViewController {
 
     @IBAction func didPressApplyButton(sender: UIButton) {
         navigationController?.popViewControllerAnimated(true)
+    }
+    
+    
+    // TableView Functions -----------------------------
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 4
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        print(indexPath.section)
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("EventSegmentedControlCell") as! SearchFiltersSegmentedControlTableViewCell
+            return cell
+        } else if indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("EventLengthCell") as! SearchFiltersEventLengthTableViewCell
+            return cell
+        } else if indexPath.section == 2 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("EventDistanceCell") as! SearchFiltersEventDistanceTableViewCell
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("EventDistanceCell") as! SearchFiltersEventDistanceTableViewCell
+            return cell
+        }
     }
     
 }
