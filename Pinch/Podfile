@@ -8,7 +8,9 @@ target 'Pinch' do
 	pod 'TTTAttributedLabel'
 	pod 'AHEasing'
 	pod 'JCTagListView'
-	pod 'SKTagView'
+	pod 'SwiftValidator'
+	pod 'UIView+Shake'
+	pod 'Parse'
 end
 
 target 'PinchTests' do

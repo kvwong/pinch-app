@@ -1922,79 +1922,86 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="nab-l1-tin">
-                                <rect key="frame" x="16" y="180" width="343" height="308"/>
+                                <rect key="frame" x="32" y="200" width="311" height="268"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" id="CL1-og-J4j">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="52"/>
+                                    <view contentMode="scaleToFill" id="Yzw-iv-Ib3">
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" id="qdi-f0-gQA">
-                                                <rect key="frame" x="16" y="0.0" width="311" height="52"/>
+                                            <view contentMode="scaleToFill" id="CL1-og-J4j">
+                                                <rect key="frame" x="0.0" y="0.0" width="311" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" id="qdi-f0-gQA">
+                                                        <rect key="frame" x="16" y="0.0" width="279" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <animations/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
+                                                    </textField>
+                                                </subviews>
                                                 <animations/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                        <animations/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" id="vrw-tx-EiV">
-                                        <rect key="frame" x="0.0" y="60" width="343" height="52"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" id="0a0-Ca-Tr0">
-                                                <rect key="frame" x="16" y="0.0" width="311" height="52"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" id="vrw-tx-EiV">
+                                                <rect key="frame" x="0.0" y="52" width="311" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" id="0a0-Ca-Tr0">
+                                                        <rect key="frame" x="16" y="0.0" width="279" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <animations/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
+                                                    </textField>
+                                                </subviews>
                                                 <animations/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                        <animations/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" id="8Vt-v5-P7N">
-                                        <rect key="frame" x="0.0" y="120" width="343" height="52"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" id="HWQ-kp-pZM">
-                                                <rect key="frame" x="16" y="0.0" width="311" height="52"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" id="8Vt-v5-P7N">
+                                                <rect key="frame" x="0.0" y="104" width="311" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" id="HWQ-kp-pZM">
+                                                        <rect key="frame" x="16" y="0.0" width="279" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <animations/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                                                    </textField>
+                                                </subviews>
                                                 <animations/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                        <animations/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" id="zbP-KJ-Irr">
-                                        <rect key="frame" x="0.0" y="180" width="343" height="52"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" id="owi-mT-amT">
-                                                <rect key="frame" x="16" y="0.0" width="311" height="52"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" id="zbP-KJ-Irr">
+                                                <rect key="frame" x="0.0" y="156" width="311" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" id="owi-mT-amT">
+                                                        <rect key="frame" x="16" y="0.0" width="279" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <animations/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES"/>
+                                                    </textField>
+                                                </subviews>
                                                 <animations/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                            </textField>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                            </view>
                                         </subviews>
-                                        <animations/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="i2e-Rv-5Hg">
-                                        <rect key="frame" x="0.0" y="256" width="343" height="52"/>
+                                        <rect key="frame" x="0.0" y="224" width="311" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <animations/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2024,9 +2031,11 @@
                         <outlet property="field3" destination="8Vt-v5-P7N" id="m2v-GQ-d5R"/>
                         <outlet property="field4" destination="zbP-KJ-Irr" id="BP4-FM-wO0"/>
                         <outlet property="firstNameField" destination="qdi-f0-gQA" id="3yA-0r-lRY"/>
+                        <outlet property="formView" destination="nab-l1-tin" id="z7p-gp-B8a"/>
                         <outlet property="lastNameField" destination="0a0-Ca-Tr0" id="ARg-y7-glt"/>
                         <outlet property="passwordField" destination="owi-mT-amT" id="7aG-X2-l8R"/>
                         <outlet property="signUpButton" destination="i2e-Rv-5Hg" id="Bn9-yR-6I4"/>
+                        <outlet property="textFieldsView" destination="Yzw-iv-Ib3" id="IIr-d2-Bt8"/>
                         <segue destination="B8T-uJ-7Xz" kind="push" identifier="segueToCauses" id="xaN-ZT-ltU"/>
                     </connections>
                 </viewController>
@@ -2048,46 +2057,66 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="51W-CU-T94">
+                                <rect key="frame" x="148" y="623" width="78" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="15"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressCancelButton:" destination="9TS-fF-L9D" eventType="touchUpInside" id="Zl8-YC-KvJ"/>
+                                    <action selector="didPressCancelButton:" destination="Shq-dw-DUg" eventType="touchUpInside" id="rr9-co-0vd"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" id="4dg-aO-bhh">
-                                <rect key="frame" x="16" y="250" width="343" height="232"/>
+                                <rect key="frame" x="32" y="250" width="311" height="208"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" id="dry-Mp-YDZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="52"/>
+                                    <view contentMode="scaleToFill" id="snm-Uf-gbx">
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="96"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" id="7v2-6q-bqP">
-                                                <rect key="frame" x="16" y="0.0" width="311" height="52"/>
+                                            <view contentMode="scaleToFill" id="dry-Mp-YDZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="311" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" id="7v2-6q-bqP">
+                                                        <rect key="frame" x="16" y="0.0" width="279" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <animations/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                                                    </textField>
+                                                </subviews>
                                                 <animations/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                        <animations/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" id="Hef-54-QA3">
-                                        <rect key="frame" x="0.0" y="60" width="343" height="52"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" id="4xA-jC-fRM">
-                                                <rect key="frame" x="16" y="0.0" width="311" height="52"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" id="Hef-54-QA3">
+                                                <rect key="frame" x="0.0" y="52" width="311" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" id="4xA-jC-fRM">
+                                                        <rect key="frame" x="16" y="0.0" width="279" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <animations/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                                    </textField>
+                                                </subviews>
                                                 <animations/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                            </textField>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                            </view>
                                         </subviews>
-                                        <animations/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DSD-mK-H0e">
-                                        <rect key="frame" x="0.0" y="136" width="345" height="52"/>
+                                        <rect key="frame" x="0.0" y="120" width="311" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2100,7 +2129,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="j2U-rM-gsH">
-                                        <rect key="frame" x="86" y="188" width="173" height="44"/>
+                                        <rect key="frame" x="70" y="164" width="173" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="15"/>
@@ -2115,19 +2144,6 @@
                                 <animations/>
                                 <color key="backgroundColor" red="0.27843137254901962" green="0.77647058823529413" blue="0.69803921568627447" alpha="0.0" colorSpace="calibratedRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="51W-CU-T94">
-                                <rect key="frame" x="148" y="623" width="78" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="15"/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="didPressCancelButton:" destination="9TS-fF-L9D" eventType="touchUpInside" id="Zl8-YC-KvJ"/>
-                                    <action selector="didPressCancelButton:" destination="Shq-dw-DUg" eventType="touchUpInside" id="rr9-co-0vd"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.27843137254901962" green="0.77647058823529413" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
@@ -2138,8 +2154,10 @@
                         <outlet property="emailField" destination="7v2-6q-bqP" id="sBP-ld-Uyn"/>
                         <outlet property="field1" destination="dry-Mp-YDZ" id="iri-QR-kDY"/>
                         <outlet property="field2" destination="Hef-54-QA3" id="Qfi-Ra-rtP"/>
+                        <outlet property="formView" destination="4dg-aO-bhh" id="Lct-dd-USR"/>
                         <outlet property="logInButton" destination="DSD-mK-H0e" id="Vav-rJ-lSI"/>
                         <outlet property="passwordField" destination="4xA-jC-fRM" id="CT3-N3-8yU"/>
+                        <outlet property="textFieldsView" destination="snm-Uf-gbx" id="SkT-9l-lO1"/>
                         <segue destination="BYZ-38-t0r" kind="push" identifier="loginSegue" id="RZ9-8W-qHW"/>
                     </connections>
                 </viewController>

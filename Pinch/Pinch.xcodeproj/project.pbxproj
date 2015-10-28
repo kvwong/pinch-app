@@ -139,6 +139,7 @@
 		124DBECA1BDC364600F2F283 /* UserProfileMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileMenuTableViewCell.swift; path = ViewControllers/UserProfileTableViews/UserProfileMenuTableViewCell.swift; sourceTree = "<group>"; };
 		124DBECC1BDC368F00F2F283 /* UserProfileDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileDetailsTableViewCell.swift; path = ViewControllers/UserProfileTableViews/UserProfileDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		124DBECE1BDC3F9E00F2F283 /* UserProfileEventTabsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileEventTabsTableViewCell.swift; path = ViewControllers/UserProfileTableViews/UserProfileEventTabsTableViewCell.swift; sourceTree = "<group>"; };
+		125517A01BE0CB2B00774722 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		126B730D1BD4CD910081CA0E /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Helpers/Location.swift; sourceTree = "<group>"; };
 		126B730F1BD4D38B0081CA0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12AA0DFA1BD787CC009DA8CB /* UserActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserActivityViewController.swift; path = ViewControllers/UserActivityViewController.swift; sourceTree = "<group>"; };
@@ -308,6 +309,7 @@
 				121648861BD0D6AF00852536 /* Main.storyboard */,
 				1216488B1BD0D6AF00852536 /* LaunchScreen.storyboard */,
 				1216488E1BD0D6AF00852536 /* Info.plist */,
+				125517A01BE0CB2B00774722 /* Header.h */,
 			);
 			path = Pinch;
 			sourceTree = "<group>";

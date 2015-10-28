@@ -21,25 +21,31 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - AHEasing (1.2)
+  - Bolts/Tasks (1.4.0)
   - JCTagListView (0.0.4)
-  - Masonry (0.6.3)
-  - SKTagView (0.7):
-    - Masonry
+  - Parse (1.9.1):
+    - Bolts/Tasks (>= 1.4.0)
+  - SwiftValidator (3.0.1)
   - TTTAttributedLabel (1.13.4)
+  - UIView+Shake (1.1.2)
 
 DEPENDENCIES:
   - AFNetworking
   - AHEasing
   - JCTagListView
-  - SKTagView
+  - Parse
+  - SwiftValidator
   - TTTAttributedLabel
+  - UIView+Shake
 
 SPEC CHECKSUMS:
   AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
   AHEasing: 847f583bcd83a2bb850e38ccdb26d22e2593f34d
+  Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
   JCTagListView: e267bb1e2f44555093d4d5ff5b95939c12ebd5ad
-  Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
-  SKTagView: 1e89c1ce2292cf890610901d3621c55d1ed82379
+  Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
+  SwiftValidator: c59223144754045d7691febdc3b3ecc2e73b609c
   TTTAttributedLabel: 0a2ac7b2dd726d32a070dafb01446026b11e624f
+  UIView+Shake: bfbc9bed7776d8db3e3cab61be96e1eb875e62d3
 
 COCOAPODS: 0.39.0

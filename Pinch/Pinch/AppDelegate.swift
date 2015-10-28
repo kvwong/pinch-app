@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("== \(names)")
             }
         }*/
+        
+        Parse.setApplicationId("4RZ12Y8iVbZ6ZsH2EGCp5PeJPMJ9Sc9e1mTFhW2T",
+            clientKey: "8qrF3DKGjQbmRv3nFgSw7YU1K9AKaQ8zsO567qvb")
         
         // Custom navigation bar style
         UINavigationBar.appearance().barTintColor = colorBrandGreen

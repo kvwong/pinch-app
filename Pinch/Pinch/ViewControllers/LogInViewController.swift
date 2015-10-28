@@ -7,14 +7,22 @@
 //
 
 import UIKit
+import Parse
+import SwiftValidator
+import UIView_Shake
 
-class LogInViewController: UIViewController {
+class LogInViewController: UIViewController, ValidationDelegate {
     
+    @IBOutlet weak var formView: UIView!
+    @IBOutlet weak var textFieldsView: UIView!
     @IBOutlet weak var field1: UIView!
     @IBOutlet weak var field2: UIView!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var logInButton: UIButton!
+    
+    var formInitialY: CGFloat! // Store initial position of form
+    let validator = Validator() // Validation for text fields
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +36,15 @@ class LogInViewController: UIViewController {
         passwordField.attributedPlaceholder = NSAttributedString(string: "Password",
             attributes:[NSForegroundColorAttributeName: UIColorFromRGB("FFFFFF", alpha: 0.5)])
         
-        //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-
+        formInitialY = formView.frame.origin.y
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
+        
+        validator.registerField(emailField, rules: [EmailRule()])
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -45,89 +59,83 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func didPressLogin(sender: UIButton) {
-        
         if emailField.text == "" {
-            
-            let alertController = UIAlertController(title: "Email Required", message: "Please enter your email address.", preferredStyle: .Alert)
-            
-            // create an OK action
-            let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-                // handle response here.
+            self.field1.shake()
+        }
+        if passwordField.text == "" {
+            self.field2.shake()
+        }
+        if emailField.text != "" && passwordField.text != "" {
+            validator.validate(self)
+        }
+    }
+    
+    func validationSuccessful() {
+        print("Logging in...")
+        PFUser.logInWithUsernameInBackground(emailField.text!, password: passwordField.text!) {
+            (user: PFUser?, error: NSError?) -> Void in
+            if user != nil {
+                self.performSegueWithIdentifier("loginSegue", sender: self)
+            } else {
+                self.textFieldsView.shake()
+                self.emailField.text = ""
+                self.passwordField.text = ""
             }
-            // add the OK action to the alert controller
-            alertController.addAction(OKAction)
-            
-            presentViewController(alertController, animated: true) {
-                // optional code for what happens after the alert controller has finished presenting
-            }
-        } else if passwordField.text == "" {
-            
-            let alertController = UIAlertController(title: "Password Required", message: "Please enter your password.", preferredStyle: .Alert)
-            
-            // create an OK action
-            let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-                // handle response here.
-            }
-            // add the OK action to the alert controller
-            alertController.addAction(OKAction)
-            
-            presentViewController(alertController, animated: true) {
-                // optional code for what happens after the alert controller has finished presenting
-            }
-   
-        } else if self.passwordField.text == "password" {
-            
-            print("signing in")
-            //thinkingIndicator.startAnimating()
-            
-            let alertController = UIAlertController(title: "Logging in...", message: nil, preferredStyle: .Alert)
-            
-            self.presentViewController(alertController, animated: true) {
-                // optional code for what happens after the alert controller has finished presenting
-                
-                delay(2, closure: { () ->
-                    () in
-                    alertController.dismissViewControllerAnimated(true, completion: nil)
-                    // self.thinkingIndicator.stopAnimating()
-                    
-                    self.performSegueWithIdentifier("loginSegue", sender: nil)
-                    
-                })
-            }
-        } else {
-            
-            print("signing in")
-            //thinkingIndicator.startAnimating()
-            
-            let alertController = UIAlertController(title: "Logging in...", message: nil, preferredStyle: .Alert)
-            
-            self.presentViewController(alertController, animated: true) {
-                // optional code for what happens after the alert controller has finished presenting
-                
-                delay(2, closure: { () ->
-                    () in
-                    alertController.dismissViewControllerAnimated(true, completion: nil)
-                    //self.thinkingIndicator.stopAnimating()
-                    
-                    let alertController = UIAlertController(title: "Log In Failed", message: "Incorrect email or password.", preferredStyle: .Alert)
-                    
-                    // create an OK action
-                    let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-                        // handle response here.
-                    }
-                    // add the OK action to the alert controller
-                    alertController.addAction(OKAction)
-                    
-                    self.presentViewController(alertController, animated: true) {
-                        // optional code for what happens after the alert controller has finished presenting
-                    }
-                })
+        }
+    }
+    
+    func validationFailed(errors:[UITextField:ValidationError]) {
+        for (field, error) in validator.errors {
+            if error.errorMessage == "Must be a valid email address" {
+                let alertController = UIAlertController(title: "Invalid Email Address", message: "Oops! A typo maybe? Please enter a valid email address.", preferredStyle: .Alert)
+                let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(OKAction)
+                self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
     }
 
     @IBAction func didPressCancelButton(sender: UIButton) {
         navigationController!.popViewControllerAnimated(true)
+    }
+    
+    
+    // Keyboard Hide/Show Functions --------------------
+    
+    func keyboardWillHide(notification: NSNotification!) {
+        var userInfo = notification.userInfo!
+        
+        // Get the keyboard height and width from the notification
+        // Size varies depending on OS, language, orientation
+        let kbSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue().size
+        var durationValue = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber
+        var animationDuration = durationValue.doubleValue
+        var curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber
+        var animationCurve = curveValue.integerValue
+        
+        UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions(rawValue: UInt(animationCurve << 16)), animations: {
+            self.formView.frame.origin.y = self.formInitialY
+            }, completion: nil)
+    }
+    
+    func keyboardWillShow(notification: NSNotification!) {
+        var userInfo = notification.userInfo!
+        
+        // Get the keyboard height and width from the notification
+        // Size varies depending on OS, language, orientation
+        var kbSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue().size
+        var durationValue = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber
+        var animationDuration = durationValue.doubleValue
+        var curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber
+        var animationCurve = curveValue.integerValue
+        
+        UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions(rawValue: UInt(animationCurve << 16)), animations: {
+            self.formView.frame.origin.y = (self.view.frame.height - kbSize.height)/2 - self.formView.frame.height/2 + UIApplication.sharedApplication().statusBarFrame.size.height/2
+            }, completion: nil)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
     
 }
