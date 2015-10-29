@@ -833,6 +833,21 @@
 		8654C3D576BFC81761511E7A30840BBE /* PFObjectSubclassingController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFObjectSubclassingController.h; path = Parse/Internal/Object/Subclassing/PFObjectSubclassingController.h; sourceTree = "<group>"; };
 		866B037E48068C0FE3BDEF12CBAF7ACE /* ViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Validator/ViewController.swift; sourceTree = "<group>"; };
 		879D744114BEDC435CB4EC4366692095 /* PFRESTObjectCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFRESTObjectCommand.h; path = Parse/Internal/Commands/PFRESTObjectCommand.h; sourceTree = "<group>"; };
+		646EBBA1AF877257CE044FBBD127DBB2 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		677F5FB9F03DD0B0B0EFFCF6E21FAD84 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AFF76599DBC52C458A3A0464A6D87E1 /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
+		6CEEBCCF9C1217927F1248A7DC5CF73D /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = AFNetworking/AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		704570D016B2D41DDCE48439317EE1D9 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7396BCFEB2168A905EACCAE6DE3C8BFF /* SKTag.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKTag.h; path = SKTagView/SKTag.h; sourceTree = "<group>"; };
+		74341D7CF6531F29CEB07EE26742CCFC /* TTTAttributedLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TTTAttributedLabel-dummy.m"; sourceTree = "<group>"; };
+		77026BDF70D2C8AE5143249C09AF7351 /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
+		7757B0ECCED8DDAEB9AC0BAB05902E29 /* Masonry.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.xcconfig; sourceTree = "<group>"; };
+		778A5E7001CA7C4C69A771CA32B5C0B1 /* JCTagCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JCTagCell.m; path = Pod/Classes/JCTagCell.m; sourceTree = "<group>"; };
+		7835B20977FF0172D3AF51B1B9D13B42 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		7B57DDFF516E124A39704B8DC9C380B5 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		8041ABFE736CC7D0FEC16DD05868843F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8095E0D704FAD47698E0C750470102C1 /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
+		860619328365826BE8523C66BB27E3CB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		8821EE6E6A0D44C001699A02929C92EB /* Pods-Pinch-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Pinch-acknowledgements.plist"; sourceTree = "<group>"; };
 		88489F14CF5F5583D0FF1D0CBBBFA1B2 /* PFInstallationConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFInstallationConstants.m; path = Parse/Internal/Installation/Constants/PFInstallationConstants.m; sourceTree = "<group>"; };
 		885991F3170F85565913AA2C222D3A29 /* PFInternalUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFInternalUtils.m; path = Parse/Internal/PFInternalUtils.m; sourceTree = "<group>"; };
@@ -1369,6 +1384,14 @@
 				EC55BB8F9AC71474822246945B8E007D /* SwiftValidator.framework */,
 				F6DE190E44625DB540871D8E3E32980F /* TTTAttributedLabel.framework */,
 				48F0EFE94FB720DE122AA615138BF6A2 /* UIView_Shake.framework */,
+				704570D016B2D41DDCE48439317EE1D9 /* AFNetworking.framework */,
+				D6BFCC0C7ABFBC297F7274782A060A84 /* AHEasing.framework */,
+				885AC8AC5D1E4DEE7908F18D470365CB /* JCTagListView.bundle */,
+				A9E121FDFDCE69F5C21125A90D94D3AF /* JCTagListView.framework */,
+				B362D5C8AD56EA9394B9878720A937BF /* Masonry.framework */,
+				8F1D4CB0DD38B0B842C77B682FF3D389 /* Pods_Pinch.framework */,
+				3824B191E7504A86A66F94FE2FE58D1C /* SKTagView.framework */,
+				F073FC7005167C1269AC07218A34C362 /* TTTAttributedLabel.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2355,6 +2378,7 @@
 			name = Bolts;
 			productName = Bolts;
 			productReference = 114B1F159AEAAEDCD1A36C394FB2786B /* Bolts.framework */;
+			productReference = 704570D016B2D41DDCE48439317EE1D9 /* AFNetworking.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		712A2573D438801F43A8174FB8BEE7A5 /* JCTagListView */ = {
@@ -2905,6 +2929,7 @@
 				MODULEMAP_FILE = "Target Support Files/UIView+Shake/UIView+Shake.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = UIView_Shake;
+				PRODUCT_NAME = SKTagView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
