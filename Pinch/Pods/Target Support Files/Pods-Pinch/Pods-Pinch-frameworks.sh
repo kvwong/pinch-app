@@ -91,6 +91,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Pinch/Parse.framework"
   install_framework "Pods-Pinch/SwiftValidator.framework"
   install_framework "Pods-Pinch/TTTAttributedLabel.framework"
+  install_framework "Pods-Pinch/UIImageEffects.framework"
   install_framework "Pods-Pinch/UIView_Shake.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -101,5 +102,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Pinch/Parse.framework"
   install_framework "Pods-Pinch/SwiftValidator.framework"
   install_framework "Pods-Pinch/TTTAttributedLabel.framework"
+  install_framework "Pods-Pinch/UIImageEffects.framework"
   install_framework "Pods-Pinch/UIView_Shake.framework"
 fi

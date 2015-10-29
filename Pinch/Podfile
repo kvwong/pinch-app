@@ -7,15 +7,11 @@ target 'Pinch' do
 	pod 'AFNetworking'
 	pod 'TTTAttributedLabel'
 	pod 'AHEasing'
-<<<<<<< Updated upstream
-	pod 'JCTagListView'
 	pod 'SwiftValidator'
+	pod 'UIImageEffects'
 	pod 'UIView+Shake'
 	pod 'Parse'
-=======
     pod 'JCTagListView', :git => "git@github.com:flamencoflsh/JCTagListView.git"
-	pod 'SKTagView'
->>>>>>> Stashed changes
 end
 
 target 'PinchTests' do
