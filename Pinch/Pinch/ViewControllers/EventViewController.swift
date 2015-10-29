@@ -9,7 +9,12 @@
 import UIKit
 import MessageUI
 
-class EventViewController: UIViewController, MFMailComposeViewControllerDelegate {
+let offset_HeaderStop:CGFloat = 40.0 // At this offset the Header stops its transformations
+let offset_B_LabelHeader:CGFloat = 95.0 // At this offset the Black label reaches the Header
+let distance_W_LabelHeader:CGFloat = 35.0 // The distance between the bottom of the Header and the top of the White Label
+
+
+class EventViewController: UIViewController, MFMailComposeViewControllerDelegate, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var eventSummaryView: UIView!
@@ -26,8 +31,13 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     @IBOutlet weak var eventDescriptionLabel: UILabel!
     
     @IBOutlet weak var rsvpButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
+    
+    @IBOutlet weak var tagButton1: UIButton!
+    @IBOutlet weak var tagButton2: UIButton!
     
     var eventSummary: UIView!
+    var summaryBannerImage: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +45,15 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         wireframeImage.alpha = 1.0
         scrollView.contentSize.height = eventSummaryView.frame.size.height
         self.navigationController?.navigationBarHidden = true
+        scrollView.delegate = self
+        eventBannerImage.clipsToBounds = true
+        eventBannerImage.clipsToBounds = true
         
         eventSummaryView = eventSummary
+        eventBannerImage.image = summaryBannerImage
+        
+        tagButton1.layer.cornerRadius = 3
+        tagButton2.layer.cornerRadius = 3
         
         // Styling for RSVP button
         rsvpButton.layer.masksToBounds = true
@@ -58,11 +75,93 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         super.didReceiveMemoryWarning()
     }
     
+    /*func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+        let offset = scrollView.contentOffset.y
+        var avatarTransform = CATransform3DIdentity
+        var headerTransform = CATransform3DIdentity
+        
+        // PULL DOWN -----------------
+        
+        if offset < 0 {
+            
+            let headerScaleFactor:CGFloat = -(offset) / eventBannerImage.bounds.height
+            let headerSizevariation = ((eventBannerImage.bounds.height * (1.0 + headerScaleFactor)) - eventBannerImage.bounds.height)/2.0
+            headerTransform = CATransform3DTranslate(headerTransform, 0, headerSizevariation, 0)
+            headerTransform = CATransform3DScale(headerTransform, 1.0 + headerScaleFactor, 1.0 + headerScaleFactor, 0)
+            
+            eventBannerImage.layer.transform = headerTransform
+        }
+            
+            // SCROLL UP/DOWN ------------
+            
+        else {
+            
+            // Header -----------
+            
+            headerTransform = CATransform3DTranslate(headerTransform, 0, max(-offset_HeaderStop, -offset), 0)
+            
+            //  ------------ Label
+            
+            let labelTransform = CATransform3DMakeTranslation(0, max(-distance_W_LabelHeader, offset_B_LabelHeader - offset), 0)
+            eventTitleLabel.layer.transform = labelTransform
+            
+            //  ------------ Blur
+            
+            //headerBlurImageView?.alpha = min (1.0, (offset - offset_B_LabelHeader)/distance_W_LabelHeader)
+            
+            // Avatar -----------
+            /*
+            let avatarScaleFactor = (min(offset_HeaderStop, offset)) / avatarImage.bounds.height / 1.4 // Slow down the animation
+            let avatarSizeVariation = ((avatarImage.bounds.height * (1.0 + avatarScaleFactor)) - avatarImage.bounds.height) / 2.0
+            avatarTransform = CATransform3DTranslate(avatarTransform, 0, avatarSizeVariation, 0)
+            avatarTransform = CATransform3DScale(avatarTransform, 1.0 - avatarScaleFactor, 1.0 - avatarScaleFactor, 0)
+            
+            if offset <= offset_HeaderStop {
+                
+                if avatarImage.layer.zPosition < header.layer.zPosition{
+                    header.layer.zPosition = 0
+                }
+                
+            }else {
+                if avatarImage.layer.zPosition >= header.layer.zPosition{
+                    header.layer.zPosition = 2
+                }
+            }
+            */
+        }
+        
+        // Apply Transformations
+        
+        eventBannerImage.layer.transform = headerTransform
+        //avatarImage.layer.transform = avatarTransform
+    }*/
     
     @IBAction func didPressCloseButton(sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
     }
 
+    @IBAction func didPressShare(sender: AnyObject) {
+        // Show actionsheet
+        var sharingItems = [AnyObject]()
+        sharingItems.append("A real URL would go here.")
+        
+        let activityViewController = UIActivityViewController(activityItems: sharingItems, applicationActivities: nil)
+        self.presentViewController(activityViewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func onPressSaved(sender: AnyObject) {
+        if saveButton.selected == false {
+            saveButton.selected = true
+            saveButton.transform = CGAffineTransformMakeScale(0.2, 0.2)
+            UIView .animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 7.0, options: .CurveEaseInOut, animations: { () -> Void in
+                self.saveButton.transform = CGAffineTransformIdentity
+                }, completion: nil)
+    
+        } else if saveButton.selected == true {
+            saveButton.selected = false
+        }
+    }
     
     @IBAction func onBannerTap(sender: AnyObject) {
         performSegueWithIdentifier("Expand Banner", sender: nil)
@@ -85,11 +184,9 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
-        
         mailComposerVC.setToRecipients(["runningbuddy@gotsrf.org"])
         mailComposerVC.setSubject("Message About Girls on the Run")
         mailComposerVC.setMessageBody("", isHTML: false)
-        
         return mailComposerVC
     }
     

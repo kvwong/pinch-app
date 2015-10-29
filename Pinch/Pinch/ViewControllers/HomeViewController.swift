@@ -18,15 +18,19 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var searchTermField: UITextField!
+    @IBOutlet weak var summaryBannerImage: UIImageView!
     
     var eventCardTransition: EventCardTransition!
     var cardView: UIView!
     var status: Bool!
     var initialY: CGFloat!
+    var fadeTransition: FadeTransition!
     
     var isPresenting: Bool = true
     var isSearchEnabled: Bool = false
     
+    @IBOutlet weak var tagButton1: UIButton!
+    @IBOutlet weak var tagButton2: UIButton!
     
     // Overrides ---------------------------------------
     
@@ -50,6 +54,9 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         searchTermField.leftViewMode = UITextFieldViewMode.Always
         searchTermField.attributedPlaceholder = NSAttributedString(string: "Search",
             attributes:[NSForegroundColorAttributeName: UIColorFromRGB("FFFFFF", alpha: 0.5)])
+        
+        tagButton1.layer.cornerRadius = 3
+        tagButton2.layer.cornerRadius = 3
         
         // Display search UIView if active
         if isSearchEnabled {
@@ -102,13 +109,13 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         } else if sender.state == UIGestureRecognizerState.Changed {
             eventView.frame.origin.y = initialY + translation.y
             
-            print(translation.y)
             let multipleX = (abs(translation.y)/75) + 1.0
             let multipleY = (abs(translation.y)/75) + 1.0
             
             if velocity.y < 0 {
                 eventView.transform = CGAffineTransformMakeScale(multipleX, multipleY)
             }
+            
             
         } else if sender.state == UIGestureRecognizerState.Ended {
             if eventView.frame.origin.y > 10 {
@@ -124,9 +131,18 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "eventDetailSegue" {
+            
             let nav = segue.destinationViewController as! UINavigationController
             let eventDetailViewController = nav.topViewController as! EventViewController
+            
+            fadeTransition = FadeTransition()
+            eventDetailViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+            eventDetailViewController.transitioningDelegate = fadeTransition
+            fadeTransition.duration = 2.0
+            
             eventDetailViewController.eventSummary = cardView
+            eventDetailViewController.summaryBannerImage = summaryBannerImage.image
+        
         } else if segue.identifier == "segueToSearch" {
             let destinationViewController = segue.destinationViewController as! SearchViewController
             destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
