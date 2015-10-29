@@ -1,0 +1,21 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
+
+use_frameworks!
+
+target 'Pinch' do
+	pod 'AFNetworking'
+	pod 'TTTAttributedLabel'
+	pod 'AHEasing'
+	pod 'JCTagListView'
+	pod 'SKTagView'
+end
+
+target 'PinchTests' do
+
+end
+
+target 'PinchUITests' do
+
+end
+

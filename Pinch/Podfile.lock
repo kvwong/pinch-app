@@ -32,11 +32,25 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - AHEasing
+<<<<<<< Updated upstream
   - JCTagListView
   - Parse
   - SwiftValidator
+=======
+  - JCTagListView (from `git@github.com:flamencoflsh/JCTagListView.git`)
+  - SKTagView
+>>>>>>> Stashed changes
   - TTTAttributedLabel
   - UIView+Shake
+
+EXTERNAL SOURCES:
+  JCTagListView:
+    :git: git@github.com:flamencoflsh/JCTagListView.git
+
+CHECKOUT OPTIONS:
+  JCTagListView:
+    :commit: feafd32a623f94d0019933437439a5aa1bb5b4ed
+    :git: git@github.com:flamencoflsh/JCTagListView.git
 
 SPEC CHECKSUMS:
   AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
