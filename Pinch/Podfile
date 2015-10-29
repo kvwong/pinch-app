@@ -7,10 +7,11 @@ target 'Pinch' do
 	pod 'AFNetworking'
 	pod 'TTTAttributedLabel'
 	pod 'AHEasing'
-	pod 'JCTagListView'
 	pod 'SwiftValidator'
+	pod 'UIImageEffects'
 	pod 'UIView+Shake'
 	pod 'Parse'
+    pod 'JCTagListView', :git => "git@github.com:flamencoflsh/JCTagListView.git"
 end
 
 target 'PinchTests' do

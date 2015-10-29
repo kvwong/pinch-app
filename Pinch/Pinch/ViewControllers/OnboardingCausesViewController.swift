@@ -9,7 +9,7 @@
 import UIKit
 import JCTagListView
 
-class OnboardingCausesViewController: UIViewController {
+class OnboardingCausesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var nextButton: UIButton!
 
@@ -19,6 +19,9 @@ class OnboardingCausesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        
+//        tagListView.collectionView.dataSource = self
+//        tagListView.collectionView.delegate = self
 
         scrollView.contentSize = CGSizeMake(340, 600)
         
@@ -47,10 +50,44 @@ class OnboardingCausesViewController: UIViewController {
             //tagListView.collectionView.cellForItemAtIndexPath(NSIndexPath(forItem: cause.hashValue, inSection: 0))?.layer.backgroundColor = UIColor.redColor().CGColor
         }
         
+
+        
+//        var cell = tagListView.collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath)
+        
+        
+        //tagListView.collectionView.cellForItemAtIndexPath(NSIndexPath(index: 0))?.layer.backgroundColor = UIColor.redColor().CGColor
+        
         tagListView.setCompletionBlockWithSeleted { (index) -> Void in
             print("Index: \(index)")
         }
     }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        //return tagListView.tags.count
+        return 100
+    }
+    
+   
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath
+        indexPath: NSIndexPath) -> UICollectionViewCell {
+            
+            let cell = tagListView.collectionView.dequeueReusableCellWithReuseIdentifier("cell",
+                forIndexPath: indexPath)
+            
+           return cell
+            
+    }
+    
+//    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath
+//        indexPath: NSIndexPath) {
+//            
+//            var cell = collectionView.cellForItemAtIndexPath(indexPath)
+//            
+//            
+//            cell!.backgroundView!.backgroundColor = UIColor.redColor()
+//            cell!.selectedBackgroundView!.backgroundColor = UIColor.blueColor()
+//            
+//    }
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)

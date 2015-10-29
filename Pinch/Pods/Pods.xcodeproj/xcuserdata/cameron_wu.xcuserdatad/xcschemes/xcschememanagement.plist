@@ -49,6 +49,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>UIImageEffects.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>UIView+Shake.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,7 +62,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2A4258BC20B60B3112B38BACD7A496AC</key>
+		<key>2F3D44D5E09AC127ED6D610D34E7F4D8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,17 +72,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>361FA7CEE96516C5370CDE6523871C00</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4878C70B21CA37D7CB8A476BF986741B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>49FF5417381A49252BBC99F7EF7F04D9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>640D4C3CDAB682A4BCA05C40D0BE4D81</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,12 +97,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9FAA2E6CA0320D2E718B9F38F00D7918</key>
+		<key>B34D6B4E6719E9BA5A1A305B772DCAFC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B8A759F57254B6094CF99273E5ECEE8B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D64B2BD10FC9978FB183E4BCFB86EC84</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F89FEA18477D0E1E505A31A369C950E3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

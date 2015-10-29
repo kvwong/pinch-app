@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UIImageEffects
 
 class HomeViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
 
@@ -185,31 +186,49 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        print("animating transition")
+        print("Animating transition...")
         let containerView = transitionContext.containerView()!
         let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
         let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
+        
+        let animationTime = 0.3
         
         if (isPresenting) {
             containerView.addSubview(toViewController.view)
             toViewController.view.alpha = 0
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 toViewController.view.alpha = 1
-                /*var blurredImage = originalImage.applyBlurWithRadius(
-                    CGFloat(radius),
-                    tintColor: nil,
-                    saturationDeltaFactor: 1.0,
-                    maskImage: nil
-                )*/
                 }) { (finished: Bool) -> Void in
                     transitionContext.completeTransition(true)
             }
+            if self.isSearchEnabled {
+                UIView.animateWithDuration(animationTime, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
+                    self.searchTermField.frame.origin = CGPoint(x: 16, y: 44)
+                    self.searchTermField.frame.size.width = 343
+                    }, completion: nil)
+            }
+            /*
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            let blurredImage = image.applyBlurWithRadius(
+            CGFloat(5),
+            tintColor: nil,
+            saturationDeltaFactor: 1.0,
+            maskImage: nil
+            )
+            */
         } else {
-            UIView.animateWithDuration(0.3, animations: { () -> Void in
+            containerView.addSubview(searchTermField) // Not working yet
+            UIView.animateWithDuration(animationTime, animations: { () -> Void in
                 fromViewController.view.alpha = 0
                 }) { (finished: Bool) -> Void in
                     transitionContext.completeTransition(true)
                     fromViewController.view.removeFromSuperview()
+            }
+            if self.isSearchEnabled {
+                UIView.animateWithDuration(animationTime, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
+                    self.searchTermField.frame.origin = CGPoint(x: 52, y: 8)
+                    self.searchTermField.frame.size.width = 271
+                    }, completion: nil)
             }
         }
     }

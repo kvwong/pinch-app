@@ -101,7 +101,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     // Buttons -----------------------------------------
     
     @IBAction func didPressBackButton(sender: UIButton) {
-        //dismissViewControllerAnimated(true, completion: nil)
         hideKeyboard()
     }
     
@@ -128,7 +127,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     func chooseCause(sender: SearchCauseButton) {
         searchTermField.text = Cause.allValues[sender.indexPath!.row].rawValue
         hideKeyboard()
-        //dismissViewControllerAnimated(true, completion: nil)
         performSegueWithIdentifier("unwindToHome", sender: nil)
     }
     
@@ -137,11 +135,10 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
-        if searchTermField.text == "" { // If the search term is empty, shake it!
-            // TO-DO: shaking animation goes here
+        if searchTermField.text == "" {
+            searchTermField.shake()
         } else { // If the search term isn't empty, run a search
             hideKeyboard()
-            //dismissViewControllerAnimated(true, completion: nil)
             performSegueWithIdentifier("unwindToHome", sender: nil)
             // TO-DO: pass info to home view controller
         }
