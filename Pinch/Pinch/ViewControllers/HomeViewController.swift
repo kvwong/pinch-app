@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UIImageEffects
 
 class HomeViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
 
@@ -169,7 +170,7 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        print("animating transition")
+        print("Animating transition...")
         let containerView = transitionContext.containerView()!
         let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
         let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
@@ -179,12 +180,13 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
             toViewController.view.alpha = 0
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 toViewController.view.alpha = 1
-                /*var blurredImage = originalImage.applyBlurWithRadius(
-                    CGFloat(radius),
+                var image = UIGraphicsGetImageFromCurrentImageContext()
+                var blurredImage = image.applyBlurWithRadius(
+                    CGFloat(5),
                     tintColor: nil,
                     saturationDeltaFactor: 1.0,
                     maskImage: nil
-                )*/
+                )
                 }) { (finished: Bool) -> Void in
                     transitionContext.completeTransition(true)
             }

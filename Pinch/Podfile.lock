@@ -27,20 +27,17 @@ PODS:
     - Bolts/Tasks (>= 1.4.0)
   - SwiftValidator (3.0.1)
   - TTTAttributedLabel (1.13.4)
+  - UIImageEffects (0.0.1)
   - UIView+Shake (1.1.2)
 
 DEPENDENCIES:
   - AFNetworking
   - AHEasing
-<<<<<<< Updated upstream
-  - JCTagListView
+  - JCTagListView (from `git@github.com:flamencoflsh/JCTagListView.git`)
   - Parse
   - SwiftValidator
-=======
-  - JCTagListView (from `git@github.com:flamencoflsh/JCTagListView.git`)
-  - SKTagView
->>>>>>> Stashed changes
   - TTTAttributedLabel
+  - UIImageEffects
   - UIView+Shake
 
 EXTERNAL SOURCES:
@@ -60,6 +57,7 @@ SPEC CHECKSUMS:
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
   SwiftValidator: c59223144754045d7691febdc3b3ecc2e73b609c
   TTTAttributedLabel: 0a2ac7b2dd726d32a070dafb01446026b11e624f
+  UIImageEffects: 37b99fa461e4965f332ca82e92f2c22a1075ee84
   UIView+Shake: bfbc9bed7776d8db3e3cab61be96e1eb875e62d3
 
 COCOAPODS: 0.39.0

@@ -8,11 +8,17 @@
 
 import UIKit
 
-class SearchFiltersEventDistanceTableViewCell: UITableViewCell {
+@IBDesignable class SearchFiltersEventDistanceTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var dot1View: UIView!
+    @IBOutlet weak var dot2View: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        // Styles
+        dot1View.layer.cornerRadius = dot1View.frame.height/2
+        dot2View.layer.cornerRadius = dot2View.frame.height/2
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

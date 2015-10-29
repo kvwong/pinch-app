@@ -1,8 +1,8 @@
 EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/AFNetworking.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/AHEasing.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Bolts.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/JCTagListView.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Parse.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/SwiftValidator.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/TTTAttributedLabel.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/UIView_Shake.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "AFNetworking" -framework "AHEasing" -framework "Bolts" -framework "JCTagListView" -framework "Parse" -framework "SwiftValidator" -framework "TTTAttributedLabel" -framework "UIView_Shake"
+OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/AFNetworking.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/AHEasing.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Bolts.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/JCTagListView.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Parse.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/SwiftValidator.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/TTTAttributedLabel.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/UIImageEffects.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/UIView_Shake.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "AFNetworking" -framework "AHEasing" -framework "Bolts" -framework "JCTagListView" -framework "Parse" -framework "SwiftValidator" -framework "TTTAttributedLabel" -framework "UIImageEffects" -framework "UIView_Shake"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-Pinch
 PODS_ROOT = ${SRCROOT}/Pods
