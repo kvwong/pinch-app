@@ -20,7 +20,7 @@
 		121185031BD2230000C17136 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185021BD2230000C17136 /* SignUpViewController.swift */; };
 		121185051BD2230A00C17136 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185041BD2230A00C17136 /* LogInViewController.swift */; };
 		121185071BD2235C00C17136 /* EventFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185061BD2235C00C17136 /* EventFeedbackViewController.swift */; };
-		121185091BD2238000C17136 /* SearchFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185081BD2238000C17136 /* SearchFiltersViewController.swift */; };
+		121185091BD2238000C17136 /* SearchFiltersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121185081BD2238000C17136 /* SearchFiltersTableViewController.swift */; };
 		1211850B1BD223BB00C17136 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211850A1BD223BB00C17136 /* ChangePasswordViewController.swift */; };
 		1211850E1BD223F300C17136 /* UserBadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211850D1BD223F300C17136 /* UserBadgesViewController.swift */; };
 		121185101BD223FA00C17136 /* UserStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211850F1BD223FA00C17136 /* UserStatsViewController.swift */; };
@@ -105,7 +105,7 @@
 		121185021BD2230000C17136 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = ViewControllers/SignUpViewController.swift; sourceTree = "<group>"; };
 		121185041BD2230A00C17136 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = ViewControllers/LogInViewController.swift; sourceTree = "<group>"; };
 		121185061BD2235C00C17136 /* EventFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventFeedbackViewController.swift; path = ViewControllers/EventFeedbackViewController.swift; sourceTree = "<group>"; };
-		121185081BD2238000C17136 /* SearchFiltersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchFiltersViewController.swift; path = ViewControllers/SearchFiltersViewController.swift; sourceTree = "<group>"; };
+		121185081BD2238000C17136 /* SearchFiltersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchFiltersTableViewController.swift; path = ViewControllers/SearchFiltersTableViewController.swift; sourceTree = "<group>"; };
 		1211850A1BD223BB00C17136 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangePasswordViewController.swift; path = ViewControllers/ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		1211850D1BD223F300C17136 /* UserBadgesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserBadgesViewController.swift; path = ViewControllers/UserBadgesViewController.swift; sourceTree = "<group>"; };
 		1211850F1BD223FA00C17136 /* UserStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStatsViewController.swift; path = ViewControllers/UserStatsViewController.swift; sourceTree = "<group>"; };
@@ -238,7 +238,7 @@
 			children = (
 				121648B71BD0DC0E00852536 /* SearchViewController.swift */,
 				121648B91BD0DC1C00852536 /* SearchResultsViewController.swift */,
-				121185081BD2238000C17136 /* SearchFiltersViewController.swift */,
+				121185081BD2238000C17136 /* SearchFiltersTableViewController.swift */,
 				12E03E3B1BDCBB4E00195277 /* TableView Cells */,
 			);
 			name = Search;
@@ -631,7 +631,7 @@
 				121648C21BD0DCED00852536 /* EditUserProfileViewController.swift in Sources */,
 				CB50A5E11BD790240072C54C /* BaseTransition.swift in Sources */,
 				121648C91BD0E23900852536 /* Organization.swift in Sources */,
-				121185091BD2238000C17136 /* SearchFiltersViewController.swift in Sources */,
+				121185091BD2238000C17136 /* SearchFiltersTableViewController.swift in Sources */,
 				1211850E1BD223F300C17136 /* UserBadgesViewController.swift in Sources */,
 				12AA0DFD1BD7885B009DA8CB /* UserTestimonialsViewController.swift in Sources */,
 				121185071BD2235C00C17136 /* EventFeedbackViewController.swift in Sources */,
