@@ -35,9 +35,21 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     
     @IBOutlet weak var tagButton1: UIButton!
     @IBOutlet weak var tagButton2: UIButton!
+    @IBOutlet weak var friend1: UIImageView!
+    @IBOutlet weak var friend2: UIImageView!
+    @IBOutlet weak var friend3: UIImageView!
     
     var eventSummary: UIView!
     var summaryBannerImage: UIImage!
+    var titleLabel: String!
+    var scheduleDate: String!
+    var addressLabel: String!
+    var npoLabel: String!
+    var friend1Image: UIImage!
+    var friend2Image: UIImage!
+    var friend3Image: UIImage!
+    var descriptionLabel: String!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +63,15 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         
         eventSummaryView = eventSummary
         eventBannerImage.image = summaryBannerImage
+        eventTitleLabel.text = titleLabel
+        eventTimeAndDateLabel.text = scheduleDate
+        eventAddressLabel.text = addressLabel
+        eventNPOLabel.text = npoLabel
+        eventDescriptionLabel.text = descriptionLabel
+        friend1.image = friend1Image
+        friend2.image = friend2Image
+        friend3.image = friend3Image
+        
         
         tagButton1.layer.cornerRadius = 3
         tagButton2.layer.cornerRadius = 3
@@ -75,6 +96,9 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func onTapNPO(sender: AnyObject) {
+        //performSegueWithIdentifier("NPO Profile", sender: nil)
+    }
     /*func scrollViewDidScroll(scrollView: UIScrollView) {
         
         let offset = scrollView.contentOffset.y
