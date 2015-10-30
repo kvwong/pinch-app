@@ -19,7 +19,14 @@ class NPOProfileTabsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        switchTabs("About")
+        aboutTab.setTitleColor(colorTextLight, forState: .Normal)
+        upcomingTab.setTitleColor(colorTextLight, forState: .Normal)
+        followersTab.setTitleColor(colorTextLight, forState: .Normal)
+        aboutTab.setTitleColor(colorTextDark, forState: .Selected)
+        upcomingTab.setTitleColor(colorTextDark, forState: .Selected)
+        followersTab.setTitleColor(colorTextDark, forState: .Selected)
     }
 
     @IBAction func didPressAbout(sender: AnyObject) {
@@ -71,9 +78,9 @@ class NPOProfileTabsTableViewCell: UITableViewCell {
         case 0:
             print("case 0")
             print("Switching to Upcoming from About")
-            upcomingTab.userInteractionEnabled = true
+            upcomingTab.userInteractionEnabled = false
             followersTab.userInteractionEnabled = true
-            aboutTab.userInteractionEnabled = false
+            aboutTab.userInteractionEnabled = true
             upcomingTab.selected = true
             aboutTab.selected = false
             followersTab.selected = false
