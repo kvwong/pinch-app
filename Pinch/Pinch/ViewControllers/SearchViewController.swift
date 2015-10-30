@@ -72,7 +72,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     }
     
     override func viewDidAppear(animated: Bool) {
-        searchTermField.becomeFirstResponder()
+        self.searchTermField.becomeFirstResponder()
         
         UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseOut, animations: { () -> Void in
             self.searchFieldsView.frame.origin.y = 20
@@ -101,7 +101,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     // Buttons -----------------------------------------
     
     @IBAction func didPressBackButton(sender: UIButton) {
-        //dismissViewControllerAnimated(true, completion: nil)
         hideKeyboard()
     }
     
@@ -118,17 +117,13 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("SearchCausesTableView") as! SearchCausesTableViewCell
-        cell.causeButton.setTitle(Cause.allValues[indexPath.row].rawValue, forState: .Normal)
-        cell.causeButton.indexPath = indexPath
-        cell.causeButton.addTarget(self, action: "chooseCause:", forControlEvents: UIControlEvents.TouchUpInside)
+        cell.textLabel?.attributedText = NSAttributedString(string: Cause.allValues[indexPath.row].rawValue, attributes:[NSFontAttributeName: UIFont(name: "Raleway", size: 24)!, NSForegroundColorAttributeName: UIColor.whiteColor()])
         return cell
     }
     
-    // When a button is pressed in the table view, fill the search term field
-    func chooseCause(sender: SearchCauseButton) {
-        searchTermField.text = Cause.allValues[sender.indexPath!.row].rawValue
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.searchTermField.text = Cause.allValues[indexPath.row].rawValue
         hideKeyboard()
-        //dismissViewControllerAnimated(true, completion: nil)
         performSegueWithIdentifier("unwindToHome", sender: nil)
     }
     
@@ -137,13 +132,11 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
-        if searchTermField.text == "" { // If the search term is empty, shake it!
-            // TO-DO: shaking animation goes here
+        if self.searchTermField.text == "" {
+            searchTermField.shake()
         } else { // If the search term isn't empty, run a search
             hideKeyboard()
-            //dismissViewControllerAnimated(true, completion: nil)
             performSegueWithIdentifier("unwindToHome", sender: nil)
-            // TO-DO: pass info to home view controller
         }
         
         return true
@@ -156,7 +149,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     }
     
     func hideKeyboard() {
-        searchTermField.resignFirstResponder()
-        searchLocationField.resignFirstResponder()
+        self.searchTermField.resignFirstResponder()
+        self.searchLocationField.resignFirstResponder()
     }
 }

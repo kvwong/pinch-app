@@ -52,17 +52,22 @@
 		<key>SwiftValidator.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>11</integer>
+			<integer>9</integer>
 		</dict>
 		<key>TTTAttributedLabel.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
+		<key>UIImageEffects.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
 		<key>UIView+Shake.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>11</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -82,7 +87,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>2F3D44D5E09AC127ED6D610D34E7F4D8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3560B847B6B586EE9B13E628743E8286</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>361FA7CEE96516C5370CDE6523871C00</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,12 +157,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>B34D6B4E6719E9BA5A1A305B772DCAFC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B8A759F57254B6094CF99273E5ECEE8B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>D64B2BD10FC9978FB183E4BCFB86EC84</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>DBC46146340B5D8EF0F644353B4D6C19</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F89FEA18477D0E1E505A31A369C950E3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
