@@ -9,16 +9,22 @@
 import UIKit
 import UIImageEffects
 
-class HomeViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
+class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
 
     // Outlets and Vars --------------------------------
     
-    @IBOutlet weak var eventView: UIView!
-    @IBOutlet weak var eventContentView: UIView!
-    
+    // Search
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var searchTermField: UITextField!
+    
+    var isSearchEnabled: Bool = false
+    var searchTerm = ""
+    var searchLocation = ""
+    
+    // Events
+    @IBOutlet weak var eventView: UIView!
+    @IBOutlet weak var eventContentView: UIView!
     @IBOutlet weak var summaryBannerImage: UIImageView!
     @IBOutlet weak var scheduledDate: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
@@ -29,21 +35,18 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
     @IBOutlet weak var friend3: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var tagButton1: UIButton!
+    @IBOutlet weak var tagButton2: UIButton!
     
     var eventCardTransition: EventCardTransition!
+    var interactiveTransition: UIPercentDrivenInteractiveTransition!
     var cardView: UIView!
     var status: Bool!
     var initialY: CGFloat!
     var fadeTransition: FadeTransition!
     
     var isPresenting: Bool = true
-    var isSearchEnabled: Bool = false
-    var interactiveTransition: UIPercentDrivenInteractiveTransition!
-    var searchTerm = ""
-    var searchLocation = ""
     
-    @IBOutlet weak var tagButton1: UIButton!
-    @IBOutlet weak var tagButton2: UIButton!
     
     // Overrides ---------------------------------------
     
@@ -67,6 +70,7 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         searchTermField.leftViewMode = UITextFieldViewMode.Always
         searchTermField.attributedPlaceholder = NSAttributedString(string: "Search",
             attributes:[NSForegroundColorAttributeName: UIColorFromRGB("FFFFFF", alpha: 0.5)])
+        searchTermField.delegate = self
         
         tagButton1.layer.cornerRadius = 3
         tagButton2.layer.cornerRadius = 3
@@ -100,6 +104,7 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
     }
     */
     
+    
     // Search ------------------------------------------
     
     @IBAction func didPressSearchButton(sender: UIButton) {
@@ -112,6 +117,20 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
     
     @IBAction func didPressFilterButton(sender: UIButton) {
         performSegueWithIdentifier("segueToFilters", sender: nil)
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        performSegueWithIdentifier("segueToSearch", sender: nil)
+    }
+    
+    func textFieldShouldClear(textField: UITextField) -> Bool {
+        print("Clearing textfield...")
+        searchTermField.resignFirstResponder()
+        isSearchEnabled = false
+        UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
+            self.searchView.frame.origin.y = 0 - self.searchView.frame.height
+            }, completion: nil)
+        return false
     }
     
     
@@ -166,12 +185,14 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         }
     }
     
+    /*
     func interactionControllerForPresentation(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         interactiveTransition = UIPercentDrivenInteractiveTransition()
         //Setting the completion speed gets rid of a weird bounce effect bug when transitions complete
         interactiveTransition.completionSpeed = 0.99
         return interactiveTransition
-    }
+    }*/
+    
     
     // Custom Transitions ------------------------------
     
@@ -216,6 +237,7 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         if fromViewController.searchTermField.text! != "" {
             print("Search Term Field contains: \(fromViewController.searchTermField.text!)")
             isSearchEnabled = true
+            self.searchView.frame.origin.y = 20
             self.searchView.hidden = false
             self.searchTermField.text = fromViewController.searchTermField.text!
             searchTerm = fromViewController.searchTermField.text!
@@ -255,6 +277,7 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
                 containerView.addSubview(toViewController.view)
                 
                 if self.isSearchEnabled {
+                    print("Search is enabled.")
                     print("Building `tempTextField`...")
                     let window = UIApplication.sharedApplication().keyWindow
                     let tempSearchTermField = UITextField(frame: CGRectMake(52, 28, 271, 28))
@@ -286,10 +309,18 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
                     let toVC = toViewController as! SearchViewController
                     toVC.searchTermField.alpha = 0
                     toVC.searchLocationField.alpha = 0
-                    toVC.view.backgroundColor = UIColorFromRGB(colorBrandGreenCode, alpha: 0)
-                    
+                    toVC.backgroundView.alpha = 0
+                    self.searchTermField.alpha = 0
+                    /*
+                    let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light)) as UIVisualEffectView
+                    visualEffectView.frame = self.view.bounds
+                    containerView.insertSubview(visualEffectView, atIndex: 0)
+                    */
                     transitionContext.completeTransition(true)
                     
+                    UIView.animateWithDuration(animationTime, animations: { () -> Void in
+                        toVC.backgroundView.alpha = 1
+                    })
                     UIView.animateWithDuration(animationTime, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
                         print("Animating `tempTextField`...")
                         tempSearchTermField.frame.origin = CGPoint(x: 16, y: 64)
@@ -301,26 +332,20 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
                             tempSearchLocationField.removeFromSuperview()
                             toVC.searchTermField.alpha = 1
                             toVC.searchLocationField.alpha = 1
-                            toVC.view.backgroundColor = UIColorFromRGB(colorBrandGreenCode, alpha: 1)
                     }
                 } else {
                     toViewController.view.alpha = 0
+                    print("Search is not enabled.")
+                    let toVC = toViewController as! SearchViewController
+                    toVC.searchTermField.text = ""
+                    
                     UIView.animateWithDuration(animationTime, animations: { () -> Void in
                         toViewController.view.alpha = 1
                         }) { (finished: Bool) -> Void in
                             transitionContext.completeTransition(true)
                     }
                 }
-                /*
-                let image = UIGraphicsGetImageFromCurrentImageContext()
-                let blurredImage = image.applyBlurWithRadius(
-                CGFloat(5),
-                tintColor: nil,
-                saturationDeltaFactor: 1.0,
-                maskImage: nil
-                )
-                */
-            } else {
+            } else if toViewController.isKindOfClass(EventDetailsViewController) {
                 // DO SOMETHING!!!
             }
         } else {
@@ -333,6 +358,7 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
                     }) { (finished: Bool) -> Void in
                         transitionContext.completeTransition(true)
                         fromViewController.view.removeFromSuperview()
+                        containerView.removeFromSuperview()
                 }
                 if self.isSearchEnabled {
                     print("Building `tempTextField`...")
@@ -372,8 +398,11 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
                         }) { (finished: Bool) -> Void in
                             tempSearchTermField.removeFromSuperview()
                             tempSearchLocationField.removeFromSuperview()
+                            self.searchTermField.alpha = 1
                     }
                 }
+            } else if fromViewController.isKindOfClass(EventDetailsViewController) {
+                // DO SOMETHING!!!
             }
         }
     }

@@ -14,6 +14,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
 
     // Outlets and Vars --------------------------------
     
+    @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var searchFieldsView: UIView!
     @IBOutlet weak var searchTermField: UITextField!
     @IBOutlet weak var searchLocationField: UITextField!
@@ -131,7 +132,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     // Start Search ------------------------------------
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        
         if self.searchTermField.text == "" {
             searchTermField.shake()
         } else { // If the search term isn't empty, run a search

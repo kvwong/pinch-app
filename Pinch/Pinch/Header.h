@@ -10,5 +10,6 @@
 #define Header_h
 #import "UIView+Shake.h"
 #import <Parse/Parse.h>
+#import <Parse/PFObject+Subclass.h>
 
 #endif /* Header_h */
