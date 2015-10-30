@@ -37,6 +37,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tagButton1: UIButton!
     @IBOutlet weak var tagButton2: UIButton!
+    @IBOutlet weak var logoImage: UIImageView!
     
     var eventCardTransition: EventCardTransition!
     var interactiveTransition: UIPercentDrivenInteractiveTransition!
@@ -192,21 +193,21 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         interactiveTransition.completionSpeed = 0.99
         return interactiveTransition
     }*/
-    
+
     
     // Custom Transitions ------------------------------
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "eventDetailSegue" {
-            
-            let nav = segue.destinationViewController as! UINavigationController
-            let eventDetailViewController = nav.topViewController as! EventViewController
-            
+
             fadeTransition = FadeTransition()
 
+            //let nav = segue.destinationViewController as! UINavigationController
+            //let eventDetailViewController = nav.topViewController as! EventViewController
+            let eventDetailViewController = segue.destinationViewController as! EventViewController
             eventDetailViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
             eventDetailViewController.transitioningDelegate = fadeTransition
-            //fadeTransition.duration = 2.0
+            fadeTransition.duration = 0.4
             
             // Pass data to Destination Event View Controller
             eventDetailViewController.eventSummary = cardView
@@ -219,6 +220,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
             eventDetailViewController.friend2Image = friend2.image
             eventDetailViewController.friend3Image = friend3.image
             eventDetailViewController.descriptionLabel = descriptionLabel.text
+            
         
         } else if segue.identifier == "segueToSearch" {
             let destinationViewController = segue.destinationViewController as! SearchViewController
@@ -327,6 +329,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                         tempSearchTermField.frame.size.width = 343
                         tempSearchLocationField.frame.origin = CGPoint(x: 16, y: 100)
                         tempSearchLocationField.frame.size.width = 343
+                        self.logoImage.alpha = 0
+                        self.logoImage.frame.origin.y = 667
                         }) { (finished: Bool) -> Void in
                             tempSearchTermField.removeFromSuperview()
                             tempSearchLocationField.removeFromSuperview()
@@ -345,8 +349,18 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                             transitionContext.completeTransition(true)
                     }
                 }
-            } else if toViewController.isKindOfClass(EventDetailsViewController) {
+            } else if toViewController.isKindOfClass(EventViewController) {
                 // DO SOMETHING!!!
+                print("Animate TO Card")
+                containerView.addSubview(toViewController.view)
+                
+                UIView.animateWithDuration(animationTime, animations: { () -> Void in
+                    toViewController.view.alpha = 1
+                    }) { (finished: Bool) -> Void in
+                        transitionContext.completeTransition(true)
+                }
+                
+                
             }
         } else {
             if fromViewController.isKindOfClass(SearchViewController) { // Animate FROM SearchViewController
@@ -395,14 +409,18 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                         tempSearchTermField.frame.size.width = 271
                         tempSearchLocationField.frame.origin = CGPoint(x: 52, y: 28)
                         tempSearchLocationField.frame.size.width = 271
+                        self.logoImage.alpha = 1
+                        self.logoImage.frame.origin.y = 627
                         }) { (finished: Bool) -> Void in
                             tempSearchTermField.removeFromSuperview()
                             tempSearchLocationField.removeFromSuperview()
                             self.searchTermField.alpha = 1
                     }
                 }
-            } else if fromViewController.isKindOfClass(EventDetailsViewController) {
+            } else if fromViewController.isKindOfClass(EventViewController) {
                 // DO SOMETHING!!!
+                print("Animate FROM Card")
+                
             }
         }
     }
