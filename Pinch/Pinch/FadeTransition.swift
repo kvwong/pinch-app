@@ -20,8 +20,6 @@ class FadeTransition: BaseTransition {
         //let destinationFrame = eventDetailViewController.view
 
         eventDetailViewController.eventSummaryView = homeViewController.cardView
-        print("WOWOWOWOWO")
-        
         eventDetailViewController.view.alpha = 0
         eventDetailViewController.view.transform = CGAffineTransformMakeScale(0.746667, 0.746667)
         UIView.animateWithDuration(duration, animations: {
