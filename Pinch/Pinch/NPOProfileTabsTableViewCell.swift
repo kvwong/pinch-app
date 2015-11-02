@@ -14,11 +14,25 @@ class NPOProfileTabsTableViewCell: UITableViewCell {
     @IBOutlet weak var upcomingTab: UIButton!
     @IBOutlet weak var followersTab: UIButton!
     @IBOutlet weak var activeTabView: UIView!
+    @IBOutlet weak var displayView: UIView!
+
+    var aboutViewController: UIViewController!
+    var upcomingViewController: UIViewController!
+    var followersViewController: UIViewController!
+
     
     var previousTab = "Upcoming"
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        aboutViewController = storyboard.instantiateViewControllerWithIdentifier("AboutViewController")
+        
+        upcomingViewController = storyboard.instantiateViewControllerWithIdentifier("UpcomingViewController")
+        
+        followersViewController = storyboard.instantiateViewControllerWithIdentifier("FollowersViewController")
         
         switchTabs("About")
         aboutTab.setTitleColor(colorTextLight, forState: .Normal)
@@ -27,6 +41,7 @@ class NPOProfileTabsTableViewCell: UITableViewCell {
         aboutTab.setTitleColor(colorTextDark, forState: .Selected)
         upcomingTab.setTitleColor(colorTextDark, forState: .Selected)
         followersTab.setTitleColor(colorTextDark, forState: .Selected)
+        
     }
 
     @IBAction func didPressAbout(sender: AnyObject) {
@@ -43,17 +58,28 @@ class NPOProfileTabsTableViewCell: UITableViewCell {
     
     func loadUpcoming() {
         print("Loading upcoming events...")
-        // TO-DO: load here
+        //call viewWillLoad
+       // upcomingViewController.willMoveToParentViewController(self)
+        
+        upcomingViewController.view.frame = displayView.frame
+        displayView.addSubview(upcomingViewController.view)
+        
+        //call viewDidLoad. Put in animation completion bloc
+      //  upcomingViewController.didMoveToParentViewController(self)
     }
     
     func loadAbout() {
         print("Loading about page...")
-        // TO-DO: load here
+        aboutViewController.view.frame = displayView.frame
+        displayView.addSubview(aboutViewController.view)
+
     }
     
     func loadFollowers() {
         print("Loading followers list...")
-        // TO-DO: load here
+        followersViewController.view.frame = displayView.frame
+        displayView.addSubview(followersViewController.view)
+
     }
     
     func switchTabs(tabToSwitchTo: String) {
