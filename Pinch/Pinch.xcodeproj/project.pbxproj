@@ -63,8 +63,6 @@
 		12CDC1161BD9E79A0087561B /* TestEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CDC1151BD9E79A0087561B /* TestEvents.swift */; };
 		12DB7DEA1BD2FEEF00C17FE4 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB7DE91BD2FEEF00C17FE4 /* Common.swift */; };
 		12E03E3D1BDCBB7300195277 /* SearchCausesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E03E3C1BDCBB7300195277 /* SearchCausesTableViewCell.swift */; };
-		40EAAC651BE72FCB00631BFE /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EAAC641BE72FCB00631BFE /* HeaderCell.swift */; };
-		40EAAC691BE73B1500631BFE /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EAAC681BE73B1500631BFE /* ContentCell.swift */; };
 		40EAAC711BE77F5500631BFE /* NPO Profile in Resources */ = {isa = PBXBuildFile; fileRef = 40EAAC701BE77F5500631BFE /* NPO Profile */; };
 		40EAAC731BE7818500631BFE /* Onboarding in Resources */ = {isa = PBXBuildFile; fileRef = 40EAAC721BE7818500631BFE /* Onboarding */; };
 		439B0A90EDAC7EB206EB98E3 /* Pods_Pinch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D9BEA7369A5037279544AF0 /* Pods_Pinch.framework */; };
@@ -156,8 +154,6 @@
 		12CDC1151BD9E79A0087561B /* TestEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestEvents.swift; path = Helpers/TestEvents.swift; sourceTree = "<group>"; };
 		12DB7DE91BD2FEEF00C17FE4 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Common.swift; path = Helpers/Common.swift; sourceTree = "<group>"; };
 		12E03E3C1BDCBB7300195277 /* SearchCausesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchCausesTableViewCell.swift; path = ViewControllers/SearchTableViews/SearchCausesTableViewCell.swift; sourceTree = "<group>"; };
-		40EAAC641BE72FCB00631BFE /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
-		40EAAC681BE73B1500631BFE /* ContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
 		40EAAC701BE77F5500631BFE /* NPO Profile */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "NPO Profile"; path = "ViewControllers/NPO Profile"; sourceTree = "<group>"; };
 		40EAAC721BE7818500631BFE /* Onboarding */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Onboarding; path = ViewControllers/Onboarding; sourceTree = "<group>"; };
 		8D9BEA7369A5037279544AF0 /* Pods_Pinch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pinch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -305,8 +301,6 @@
 				126B730F1BD4D38B0081CA0E /* Assets.xcassets */,
 				121648841BD0D6AF00852536 /* ViewController.swift */,
 				121648861BD0D6AF00852536 /* Main.storyboard */,
-				40EAAC681BE73B1500631BFE /* ContentCell.swift */,
-				40EAAC641BE72FCB00631BFE /* HeaderCell.swift */,
 				CB106ADC1BE30DCB00AABA50 /* ResultsCollectionViewCell.swift */,
 				1216488B1BD0D6AF00852536 /* LaunchScreen.storyboard */,
 				1216488E1BD0D6AF00852536 /* Info.plist */,
@@ -640,12 +634,10 @@
 				121648CB1BD0E3B100852536 /* User.swift in Sources */,
 				121184F41BD221F500C17136 /* EventAttendeesViewController.swift in Sources */,
 				121184F21BD221E100C17136 /* EventDetailsViewController.swift in Sources */,
-				40EAAC691BE73B1500631BFE /* ContentCell.swift in Sources */,
 				121648831BD0D6AF00852536 /* AppDelegate.swift in Sources */,
 				121648B21BD0D88000852536 /* HomeViewController.swift in Sources */,
 				CB3D28AD1BD8E67700AC1BBD /* EventCardTransition.swift in Sources */,
 				121648BA1BD0DC1C00852536 /* SearchResultsViewController.swift in Sources */,
-				40EAAC651BE72FCB00631BFE /* HeaderCell.swift in Sources */,
 				121185051BD2230A00C17136 /* LogInViewController.swift in Sources */,
 				12CDC1161BD9E79A0087561B /* TestEvents.swift in Sources */,
 				121648B41BD0DAC400852536 /* ActivityViewController.swift in Sources */,
