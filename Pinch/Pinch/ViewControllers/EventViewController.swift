@@ -102,7 +102,7 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     
     @IBAction func onTapNPO(sender: AnyObject) {
         print("NPO Profile")
-        performSegueWithIdentifier("NPO Profile", sender: nil)
+        performSegueWithIdentifier("segueToOrganization", sender: nil)
     }
     /*func scrollViewDidScroll(scrollView: UIScrollView) {
         

@@ -10,16 +10,13 @@ import UIKit
 import Parse
 import AFNetworking
 
-class EventPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate {
+class EventPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate, UIGestureRecognizerDelegate {
 
     var index = 0
     var nextIndex = 0
     var events: [PFObject] = []
     var eventViewControllers: [UIViewController]! = []
-    var lastContentOffset: CGFloat = 0
     var viewInitialXPosition: CGFloat = 0
-    //var toVC: EventViewController!
-    var direction = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +27,8 @@ class EventPageViewController: UIPageViewController, UIPageViewControllerDataSou
         // Look for a UIScrollView inside the PageViewController
         for view in self.view.subviews {
             if view.isKindOfClass(UIScrollView) {
-                (view as! UIScrollView).delegate = self
+                let scrollView = view as! UIScrollView
+                scrollView.delegate = self
             }
         }
         
@@ -67,6 +65,10 @@ class EventPageViewController: UIPageViewController, UIPageViewControllerDataSou
         // Dispose of any resources that can be recreated.
     }
     
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
     
     // Build EventView Controllers for H-Scroll --------
     
@@ -74,6 +76,7 @@ class EventPageViewController: UIPageViewController, UIPageViewControllerDataSou
         
         let event = self.storyboard!.instantiateViewControllerWithIdentifier("EventViewController") as! EventViewController
         event.index = index
+        //event.scrollView.delegate = self
         
         // Populate data from Parse
         
@@ -119,42 +122,47 @@ class EventPageViewController: UIPageViewController, UIPageViewControllerDataSou
     
     func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [UIViewController]) {
         self.nextIndex = (pendingViewControllers[0] as! EventViewController).index
-        print("nextIndex: \(nextIndex)")
     }
     
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        self.index = self.nextIndex
+        if completed {
+            self.index = self.nextIndex
+        }
     }
     
     
     // Parallax Animation ------------------------------
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        //self.lastContentOffset = scrollView.contentOffset.x;
+        print("nextIndex: \(nextIndex)")
         self.viewInitialXPosition = scrollView.contentOffset.x;
     }
     
     // Parallax scroll the header from the next/previous EventViewController
     func scrollViewDidScroll(scrollView: UIScrollView) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         if eventViewControllers.count > 0 { // Check if there are view controllers to animate, or it'll crash
-            let currentHeader = (eventViewControllers[index] as! EventViewController).eventBannerImage
-            let nextHeader = (eventViewControllers[nextIndex] as! EventViewController).eventBannerImage
-            let partialPage = scrollView.contentOffset.x / scrollView.frame.size.width;
-            let exactPage = CGFloat(floor(partialPage))
-            let percentage = partialPage - exactPage
-            if self.viewInitialXPosition < scrollView.contentOffset.x { // Pan left
-                currentHeader.center.x = (375/2) * percentage
-                nextHeader.center.x = (375/2) * percentage
-            } else { // Pan right
-                currentHeader.center.x = 375 - ((375/2) * percentage)
-                nextHeader.center.x = 375 - ((375/2) * percentage)
+            if index != nextIndex {
+                let currentHeader = (eventViewControllers[index] as! EventViewController).eventBannerImage
+                let nextHeader = (eventViewControllers[nextIndex] as! EventViewController).eventBannerImage
+                let partialPage = scrollView.contentOffset.x / scrollView.frame.size.width;
+                let exactPage = CGFloat(floor(partialPage))
+                let percentage = partialPage - exactPage
+                if self.viewInitialXPosition < scrollView.contentOffset.x { // Pan left
+                    currentHeader.center.x = 375/2 + ((375/2) * percentage)
+                    nextHeader.center.x = (375/2) * percentage
+                } else { // Pan right (PERCENTAGE IS REVERSED)
+                    currentHeader.center.x = 375/2 - ((375/2) * (1 - percentage))
+                    nextHeader.center.x = 375 - (375/2) * (1 - percentage)
+                }
             }
         }
     }
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         if eventViewControllers.count > 0 {
-            (eventViewControllers[index] as! EventViewController).eventBannerImage.center.x = self.view.bounds.width/2
+            (eventViewControllers[index] as! EventViewController).eventBannerImage.center.x = 375/2
+            (eventViewControllers[nextIndex] as! EventViewController).eventBannerImage.center.x = 375/2
         }
     }
 
