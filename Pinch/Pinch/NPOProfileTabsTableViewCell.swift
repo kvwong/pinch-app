@@ -229,3 +229,4 @@ class NPOProfileTabsTableViewCell: UITableViewCell {
     }
 
 }
+
