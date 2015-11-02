@@ -139,7 +139,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
 
     @IBAction func onTap(sender: AnyObject) {
         cardView = sender.view as UIView!
-        performSegueWithIdentifier("eventDetailSegue", sender: nil)
+        //performSegueWithIdentifier("eventDetailSegue", sender: nil)
         //eventView.frame.origin.y = 104
         //eventView.transform = CGAffineTransformMakeScale(1.0, 1.0)
     }
@@ -148,27 +148,21 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     // Gesture Interaction for Card
     @IBAction func panEventCard(sender: AnyObject) {
         let translation = sender.translationInView(view)
-        //let velocity = sender.velocityInView(view)
+        let velocity = sender.velocityInView(view)
         
         if sender.state == UIGestureRecognizerState.Began {
             initialY = eventView.frame.origin.y
-            //performSegueWithIdentifier("eventDetailSegue", sender: self)
+            performSegueWithIdentifier("eventDetailSegue", sender: self)
             print("gesture began")
             
         } else if sender.state == UIGestureRecognizerState.Changed {
-
+            print("gesture changing")
+            let distance = abs(initialY-(abs(translation.y)))
             eventView.frame.origin.y = initialY + translation.y
-            print(eventView.frame.origin.y)
-            
-            //interactiveTransition.updateInteractiveTransition((abs(translation.y)/104))
+            print(distance)
+            print(velocity.y)
+            interactiveTransition.updateInteractiveTransition((distance/104))
 
-            /*
-            let multipleX = (abs(translation.y)/75) + 1.0
-            let multipleY = (abs(translation.y)/75) + 1.0
-            if velocity.y < 0 {
-                eventView.transform = CGAffineTransformMakeScale(multipleX, multipleY)
-            }
-            */
             
         } else if sender.state == UIGestureRecognizerState.Ended {
             if eventView.frame.origin.y > 10 {                
@@ -178,11 +172,11 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
             }
             print("gesture ended")
             print(eventView.frame.origin.y)
-            /*if velocity.y > 0.0 {
+            if velocity.y < 0.0 {
                 interactiveTransition.finishInteractiveTransition()
             } else {
                 interactiveTransition.cancelInteractiveTransition()
-            }*/
+            }
         }
     }
     
@@ -201,12 +195,12 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         if segue.identifier == "eventDetailSegue" {
 
             fadeTransition = FadeTransition()
-
-            //let nav = segue.destinationViewController as! UINavigationController
-            //let eventDetailViewController = nav.topViewController as! EventViewController
-            let eventDetailViewController = segue.destinationViewController as! EventViewController
+            print("1")
+            let nav = segue.destinationViewController as! UINavigationController
+            let eventDetailViewController = nav.topViewController as! EventViewController
+            //let eventDetailViewController = segue.destinationViewController as! EventViewController
             eventDetailViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
-            eventDetailViewController.transitioningDelegate = fadeTransition
+            nav.transitioningDelegate = fadeTransition
             fadeTransition.duration = 0.4
             
             // Pass data to Destination Event View Controller
