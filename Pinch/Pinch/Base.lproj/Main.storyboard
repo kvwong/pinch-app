@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="V8y-lG-Mwc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="7ke-9G-asA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
@@ -618,7 +618,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UgM-n3-MKG" id="8rE-g3-3qh">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -1044,8 +1044,8 @@
                         <outlet property="tagButton2" destination="NNa-Ry-YpH" id="aBo-Lc-41d"/>
                         <outlet property="titleLabel" destination="gnC-SF-XRO" id="8oC-7J-WVN"/>
                         <segue destination="a33-VI-cXc" kind="modal" identifier="segueToSearch" id="IpB-f2-AkE"/>
-                        <segue destination="2tw-d2-BlQ" kind="modal" identifier="eventDetailSegue" id="LnD-c2-Zty"/>
                         <segue destination="Qa2-pn-ssx" kind="push" identifier="segueToFilters" id="XQw-wu-u7a"/>
+                        <segue destination="SMa-wJ-N8l" kind="modal" identifier="eventDetailSegue" id="eI9-dz-3JM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
