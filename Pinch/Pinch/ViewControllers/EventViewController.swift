@@ -39,6 +39,8 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     @IBOutlet weak var friend2: UIImageView!
     @IBOutlet weak var friend3: UIImageView!
     
+    var index: Int! // Tracks which view is being horizontally scrolled
+    
     var eventSummary: UIView!
     var summaryBannerImage: UIImage!
     var titleLabel: String!
@@ -67,7 +69,9 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         eventTimeAndDateLabel.text = scheduleDate
         eventAddressLabel.text = addressLabel
         eventNPOLabel.text = npoLabel
-        eventDescriptionLabel.text = descriptionLabel
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 4
+        eventDescriptionLabel.attributedText = NSAttributedString(string: descriptionLabel, attributes:[NSFontAttributeName: UIFont(name: "Lato-Regular", size: 14)!, NSForegroundColorAttributeName: colorTextMedium, NSParagraphStyleAttributeName: paragraphStyle])
         friend1.image = friend1Image
         friend2.image = friend2Image
         friend3.image = friend3Image
