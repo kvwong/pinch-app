@@ -20,6 +20,7 @@ class NPOProfileTabsTableViewCell: UITableViewCell {
     var upcomingViewController: UIViewController!
     var followersViewController: UIViewController!
 
+    var organizationProfileViewController: OrganizationProfileViewController!
     
     var previousTab = "Upcoming"
     
@@ -59,30 +60,46 @@ class NPOProfileTabsTableViewCell: UITableViewCell {
     func loadUpcoming() {
         print("Loading upcoming events...")
         //call viewWillLoad
-       // upcomingViewController.willMoveToParentViewController(self)
+        upcomingViewController.willMoveToParentViewController(organizationProfileViewController)
         
         upcomingViewController.view.frame = displayView.frame
         displayView.addSubview(upcomingViewController.view)
         
         //call viewDidLoad. Put in animation completion bloc
-      //  upcomingViewController.didMoveToParentViewController(self)
+        upcomingViewController.didMoveToParentViewController(organizationProfileViewController)
     }
     
     func loadAbout() {
         print("Loading about page...")
+        //call viewWillLoad
+        aboutViewController.willMoveToParentViewController(organizationProfileViewController)
+        
         aboutViewController.view.frame = displayView.frame
         displayView.addSubview(aboutViewController.view)
+        
+        //call viewDidLoad. Put in animation completion bloc
+        aboutViewController.didMoveToParentViewController(organizationProfileViewController)
 
     }
     
     func loadFollowers() {
         print("Loading followers list...")
+        //call viewWillLoad
+        followersViewController.willMoveToParentViewController(organizationProfileViewController)
+        
         followersViewController.view.frame = displayView.frame
         displayView.addSubview(followersViewController.view)
+        
+        //call viewDidLoad. Put in animation completion bloc
+        followersViewController.didMoveToParentViewController(organizationProfileViewController)
 
     }
     
     func switchTabs(tabToSwitchTo: String) {
+        
+        for subview in displayView.subviews {
+            subview.removeFromSuperview()
+        }
         
         var situation: Int!
         

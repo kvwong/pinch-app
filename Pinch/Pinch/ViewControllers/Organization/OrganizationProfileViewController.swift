@@ -49,13 +49,14 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             let cell =  tableView.dequeueReusableCellWithIdentifier("NPOImageTableViewCell") as! NPOImageTableViewCell
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-                return cell
+            return cell
         }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 1 {
         let headerCell =  tableView.dequeueReusableCellWithIdentifier("NPOProfileTabsTableViewCell") as! NPOProfileTabsTableViewCell
         headerCell.selectionStyle = UITableViewCellSelectionStyle.None
+            headerCell.organizationProfileViewController = self
         return headerCell
         } else {
             return nil
