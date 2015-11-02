@@ -343,7 +343,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                             transitionContext.completeTransition(true)
                     }
                 }
-            } else if toViewController.isKindOfClass(EventViewController) {
+            } else if toViewController.isKindOfClass(EventViewController) { // Animate TO EventViewController
                 // DO SOMETHING!!!
                 print("Animate TO Card")
                 containerView.addSubview(toViewController.view)
@@ -353,8 +353,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                     }) { (finished: Bool) -> Void in
                         transitionContext.completeTransition(true)
                 }
-                
-                
             }
         } else {
             if fromViewController.isKindOfClass(SearchViewController) { // Animate FROM SearchViewController
@@ -411,7 +409,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                             self.searchTermField.alpha = 1
                     }
                 }
-            } else if fromViewController.isKindOfClass(EventViewController) {
+            } else if fromViewController.isKindOfClass(EventViewController) { // Animate FROM EventViewController
                 // DO SOMETHING!!!
                 print("Animate FROM Card")
                 

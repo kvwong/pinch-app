@@ -20,7 +20,8 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
         tableView.delegate = self
         tableView.dataSource = self
         
-             
+        tableView.estimatedRowHeight = 220
+        tableView.rowHeight = UITableViewAutomaticDimension
         
     }
 
