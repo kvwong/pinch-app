@@ -1312,7 +1312,7 @@
         <!--Event Page View Controller-->
         <scene sceneID="qqs-4f-Tga">
             <objects>
-                <pageViewController storyboardIdentifier="EventPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="20" navigationOrientation="horizontal" spineLocation="none" id="2LU-UP-Fe6" customClass="EventPageViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="EventPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="10" navigationOrientation="horizontal" spineLocation="none" id="2LU-UP-Fe6" customClass="EventPageViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A4R-uS-lb9" userLabel="First Responder" sceneMemberID="firstResponder"/>
