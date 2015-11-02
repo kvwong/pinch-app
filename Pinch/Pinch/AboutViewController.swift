@@ -18,9 +18,8 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.dataSource = self
         tableView.delegate = self
         
-
+//        tableView.estimatedRowHeight = 220
 //        tableView.rowHeight = UITableViewAutomaticDimension
-//        tableView.estimatedRowHeight = 500.0
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -81,12 +80,16 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         var height: CGFloat!
         
+       
+        
         if indexPath.section == 0 {
-            height = 325
+             var storycellHeight = defaults.integerForKey("storycell_height")
+            height = CGFloat(storycellHeight)
         } else if indexPath.section == 1 {
-            height = 287
+            var programscellHeight = defaults.integerForKey("programscell_height")
+            height = CGFloat(programscellHeight)
         }else {
-            height = 1000
+            height = 980
         }
         
         return height
