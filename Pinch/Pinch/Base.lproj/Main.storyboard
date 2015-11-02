@@ -2010,11 +2010,9 @@
                             <tableViewSection headerTitle="Event Length" id="0Cw-4V-7Yg">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="74" id="Ngo-M5-yh4" customClass="SearchFiltersEventLengthTableViewCell" customModule="Pinch" customModuleProvider="target">
-<<<<<<< HEAD
-                                        <rect key="frame" x="0.0" y="160" width="375" height="74"/>
-=======
+
                                         <rect key="frame" x="0.0" y="161" width="375" height="74"/>
->>>>>>> origin/master
+
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ngo-M5-yh4" id="nYY-CU-0QG">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
