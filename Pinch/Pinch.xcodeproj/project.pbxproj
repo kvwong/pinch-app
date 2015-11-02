@@ -69,7 +69,6 @@
 		12CDC1161BD9E79A0087561B /* TestEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CDC1151BD9E79A0087561B /* TestEvents.swift */; };
 		12DB7DEA1BD2FEEF00C17FE4 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB7DE91BD2FEEF00C17FE4 /* Common.swift */; };
 		12E03E3D1BDCBB7300195277 /* SearchCausesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E03E3C1BDCBB7300195277 /* SearchCausesTableViewCell.swift */; };
-		40D94B871BE2AB7B0022B4E8 /* NPOProfileTabsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D94B861BE2AB7B0022B4E8 /* NPOProfileTabsTableViewCell.swift */; };
 		40D94B891BE2AD0C0022B4E8 /* NPOImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D94B881BE2AD0C0022B4E8 /* NPOImageTableViewCell.swift */; };
 		40EAAC591BE7049300631BFE /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EAAC581BE7049300631BFE /* AboutViewController.swift */; };
 		40EAAC5D1BE705C600631BFE /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EAAC5C1BE705C600631BFE /* UpcomingViewController.swift */; };
@@ -79,6 +78,7 @@
 		40EAAC651BE72FCB00631BFE /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EAAC641BE72FCB00631BFE /* HeaderCell.swift */; };
 		40EAAC671BE7344500631BFE /* PhotosAndVideosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EAAC661BE7344500631BFE /* PhotosAndVideosCell.swift */; };
 		40EAAC691BE73B1500631BFE /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EAAC681BE73B1500631BFE /* ContentCell.swift */; };
+		40EAAC6B1BE776B300631BFE /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EAAC6A1BE776B300631BFE /* UpcomingViewController.swift */; };
 		40F31A111BD9E2A200C2884E /* PeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F31A101BD9E2A200C2884E /* PeopleCell.swift */; };
 		439B0A90EDAC7EB206EB98E3 /* Pods_Pinch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D9BEA7369A5037279544AF0 /* Pods_Pinch.framework */; };
 		CB106ADD1BE30DCB00AABA50 /* ResultsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB106ADC1BE30DCB00AABA50 /* ResultsCollectionViewCell.swift */; };
@@ -185,6 +185,7 @@
 		40EAAC641BE72FCB00631BFE /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		40EAAC661BE7344500631BFE /* PhotosAndVideosCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosAndVideosCell.swift; sourceTree = "<group>"; };
 		40EAAC681BE73B1500631BFE /* ContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
+		40EAAC6A1BE776B300631BFE /* UpcomingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 		40F31A101BD9E2A200C2884E /* PeopleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleCell.swift; sourceTree = "<group>"; };
 		8D9BEA7369A5037279544AF0 /* Pods_Pinch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pinch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB106ADC1BE30DCB00AABA50 /* ResultsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultsCollectionViewCell.swift; path = Classes/ResultsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -375,6 +376,7 @@
 			children = (
 				121185001BD222EF00C17136 /* WelcomeViewController.swift */,
 				121185021BD2230000C17136 /* SignUpViewController.swift */,
+				40EAAC6A1BE776B300631BFE /* UpcomingViewController.swift */,
 				121185041BD2230A00C17136 /* LogInViewController.swift */,
 				121648B11BD0D88000852536 /* HomeViewController.swift */,
 				121648B31BD0DAC400852536 /* ActivityViewController.swift */,
@@ -441,7 +443,6 @@
 		12E03E3B1BDCBB4E00195277 /* TableView Cells */ = {
 			isa = PBXGroup;
 			children = (
-				CB106ADC1BE30DCB00AABA50 /* ResultsCollectionViewCell.swift */,
 				12E03E3C1BDCBB7300195277 /* SearchCausesTableViewCell.swift */,
 				125517A11BE0D91B00774722 /* SearchFiltersSegmentedControlTableViewCell.swift */,
 				125517A31BE0D93900774722 /* SearchFiltersEventLengthTableViewCell.swift */,
@@ -724,6 +725,7 @@
 				CB3D28AD1BD8E67700AC1BBD /* EventCardTransition.swift in Sources */,
 				121648BA1BD0DC1C00852536 /* SearchResultsViewController.swift in Sources */,
 				40EAAC5D1BE705C600631BFE /* UpcomingViewController.swift in Sources */,
+				40EAAC6B1BE776B300631BFE /* UpcomingViewController.swift in Sources */,
 				40EAAC631BE72A9000631BFE /* ProgramsCell.swift in Sources */,
 				40EAAC651BE72FCB00631BFE /* HeaderCell.swift in Sources */,
 				121185051BD2230A00C17136 /* LogInViewController.swift in Sources */,
