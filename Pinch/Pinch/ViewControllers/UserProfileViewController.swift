@@ -223,6 +223,18 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
            pastEventsLabel.hidden = true
         }
         
+        if scrollView.contentOffset.x != 0{
+           
+            print("horizontal scrolled!!")
+            var inset: UIEdgeInsets = eventsTableView.contentInset
+            inset.top = 208
+            eventsTableView.contentInset = inset
+            print("contentInset: \(eventsTableView.contentInset.top)")
+            eventsTableView.contentOffset.y = -208
+            
+            pastEventsLabel.hidden = false
+        }
+        
         // Calculate the final offset when fully scrolled
         let finalOffset = CGFloat(58)
         
