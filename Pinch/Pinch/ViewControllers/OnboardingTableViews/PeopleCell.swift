@@ -30,4 +30,14 @@ class PeopleCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func onPressedFollow(sender: AnyObject) {
+        if followButton.selected == false {
+            followButton.selected = true
+            followButton.backgroundColor = colorBrandGreen
+        } else {
+            followButton.selected = false
+            followButton.backgroundColor = UIColor.whiteColor()
+        }
+        
+    }
 }

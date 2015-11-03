@@ -74,6 +74,9 @@ class OnboardingFollowFriendsViewController: UIViewController, UITableViewDelega
         performSegueWithIdentifier("segueToFinishOnboarding", sender: nil)
     }
 
+    @IBAction func didPressFinish(sender: UIButton) {
+        performSegueWithIdentifier("segueToFinishOnboarding", sender: nil)
+    }
 
     // Facebook and Contacts Tabs ----------------------
     

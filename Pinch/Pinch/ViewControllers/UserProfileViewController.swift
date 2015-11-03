@@ -13,12 +13,6 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
     
     // Upcoming & Saved Event Table View
     @IBOutlet weak var eventsTableView: UITableView!
-<<<<<<< HEAD
-    
-    @IBOutlet weak var cardsView: UIView!
-    
-=======
->>>>>>> origin/master
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var scrollViewContent: UIView!
     
@@ -35,23 +29,16 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         eventsTableView.dataSource = self
         
         eventsTableView.tableFooterView = UIView.init(frame: CGRectZero)
-        
-<<<<<<< HEAD
-         scrollView.contentSize = cardsView.frame.size
-        
-        print(cardsView.frame.size)
-=======
         scrollView.delegate = self
         scrollView.contentSize.width = scrollViewContent.frame.width + 32
         
         if currentUser != nil {
             // do stuff with the user
-            print("Hello, I'm \(currentUser!["firstName"])")
+            //print("Hello, I'm \(currentUser!["firstName"])")
             self.title = currentUser!["firstName"] as! String
         } else {
             // show the signup or login screen
         }
->>>>>>> origin/master
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -135,7 +122,8 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             if indexPath.row == 0 {
                 let row = tableView.dequeueReusableCellWithIdentifier("UserProfileDetailsTableViewCell") as! UserProfileDetailsTableViewCell
                 row.nameLabel.text = currentUser!["firstName"] as! String
-                row.locationLabel.text = "\(currentUser!["city"] as! String), \(currentUser!["state"] as! String)"
+                //row.locationLabel.text = "\(currentUser!["city"] as! String), \(currentUser!["state"] as! String)"
+                    //"\(currentUser!["city"] as! String), \(currentUser!["state"] as! String)"
                 row.bioLabel.text = currentUser!["bio"] as! String
                 return row
             } else {
