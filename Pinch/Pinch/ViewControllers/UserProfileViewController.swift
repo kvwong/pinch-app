@@ -204,6 +204,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             eventsTableView.contentInset = inset
         }
         
+        
         // Get the offset as scrollview scrolls in the y direction
         var currentOffset = -1*scrollView.contentOffset.y - 150
         if currentOffset < 0 {
