@@ -142,8 +142,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         cardView = sender.view as UIView!
         performSegueWithIdentifier("eventDetailSegue", sender: nil)
         fadeTransition.finish()
-        //eventView.frame.origin.y = 104
-        //eventView.transform = CGAffineTransformMakeScale(1.0, 1.0)
+        eventView.frame.origin.y = 104
+        eventView.transform = CGAffineTransformMakeScale(1.0, 1.0)
     }
     
 
@@ -160,13 +160,16 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         } else if sender.state == UIGestureRecognizerState.Changed {
             //print("gesture changing")
             //let distance = initialY-(abs(translation.y))
-            //print(abs(translation.y))
+            //print(translation.y)
             //print(distance)
             //print(velocity.y)
             //print(distance/104)
             //interactiveTransition.updateInteractiveTransition((distance/104))
             
             eventView.frame.origin.y = initialY + translation.y
+            //eventView.transform = CGAffineTransformMakeScale(1.0+abs(translation.y/208), 1.0+abs(translation.y/208))
+
+            
             if eventView.frame.origin.y < 104 && eventView.frame.origin.y > 0 {
                 fadeTransition.percentComplete = abs(translation.y)/104
             } else {
@@ -176,6 +179,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
             
         } else if sender.state == UIGestureRecognizerState.Ended {
             eventView.frame.origin.y = 104
+            eventView.transform = CGAffineTransformMakeScale(1.0, 1.0)
             if velocity.y < 0.0 {
                 fadeTransition.finish()
             } else {
