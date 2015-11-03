@@ -11,6 +11,9 @@ import UIKit
 class UserProfileDetailsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var profilePicImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var bioLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
