@@ -13,20 +13,39 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
     
     // Upcoming & Saved Event Table View
     @IBOutlet weak var eventsTableView: UITableView!
-<<<<<<< HEAD
-    
-    @IBOutlet weak var cardsView: UIView!
-    
-=======
->>>>>>> origin/master
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var scrollViewContent: UIView!
+    @IBOutlet weak var housingCardView: UIImageView!
+    @IBOutlet weak var youthCardView: UIImageView!
+    @IBOutlet weak var medicineCardView: UIImageView!
+    @IBOutlet weak var reliefCardView: UIView!
+    @IBOutlet weak var artCardView: UIImageView!
+    @IBOutlet weak var environmentCardView: UIView!
+    @IBOutlet weak var internationalCardView: UIView!
     
     let currentUser = PFUser.currentUser()
     
+    struct Card{
+        var startOrigin: CGPoint
+        var endOrigin: CGPoint
+        var startRotation: CGFloat
+        var endRotation: CGFloat
+    }
+    
+    var card1 = Card(startOrigin: CGPoint(x: 20, y: 60), endOrigin: CGPoint(x: 20, y: 60), startRotation: radian(-9), endRotation: 0)
+    var card2 = Card(startOrigin: CGPoint(x: 40, y: 60), endOrigin: CGPoint(x: 135, y: 60), startRotation: radian(-9), endRotation: 0)
+    var card3 = Card(startOrigin: CGPoint(x: 60, y: 60), endOrigin: CGPoint(x: 250, y: 60), startRotation: radian(9), endRotation: 0)
+    var card4 = Card(startOrigin: CGPoint(x: 80, y: 60), endOrigin: CGPoint(x: 365, y: 60), startRotation: radian(-10), endRotation: 0)
+    var card5 = Card(startOrigin: CGPoint(x: 100, y: 60), endOrigin: CGPoint(x: 480, y: 60), startRotation: radian(9), endRotation: 0)
+    var card6 = Card(startOrigin: CGPoint(x: 120, y: 60), endOrigin: CGPoint(x: 595, y: 60), startRotation: radian(11), endRotation: 0)
+    var card7 = Card(startOrigin: CGPoint(x: 140, y: 60), endOrigin: CGPoint(x: 710, y: 60), startRotation: radian(11), endRotation: 0)
+    
+    
+
     //var eventTabsViewInitialY: CGFloat!
     
     // Overrides ---------------------------------------
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +55,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         
         eventsTableView.tableFooterView = UIView.init(frame: CGRectZero)
         
-<<<<<<< HEAD
-         scrollView.contentSize = cardsView.frame.size
-        
-        print(cardsView.frame.size)
-=======
+
         scrollView.delegate = self
         scrollView.contentSize.width = scrollViewContent.frame.width + 32
         
@@ -51,8 +66,32 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         } else {
             // show the signup or login screen
         }
->>>>>>> origin/master
+        
+        //Initialize Cards
+        housingCardView.frame.origin = card1.startOrigin
+        housingCardView.transform = CGAffineTransformMakeRotation(card1.startRotation)
+        
+        youthCardView.frame.origin = card2.startOrigin
+        youthCardView.transform = CGAffineTransformMakeRotation(card2.startRotation)
+        
+        medicineCardView.frame.origin = card3.startOrigin
+        medicineCardView.transform = CGAffineTransformMakeRotation(card3.startRotation)
+        
+        reliefCardView.frame.origin = card4.startOrigin
+        reliefCardView.transform = CGAffineTransformMakeRotation(card4.startRotation)
+        
+        artCardView.frame.origin = card5.startOrigin
+        artCardView.transform = CGAffineTransformMakeRotation(card5.startRotation)
+        
+        environmentCardView.frame.origin = card6.startOrigin
+        environmentCardView.transform = CGAffineTransformMakeRotation(card6.startRotation)
+        
+        internationalCardView.frame.origin = card7.startOrigin
+        internationalCardView.transform = CGAffineTransformMakeRotation(card7.startRotation)
+        
     }
+    
+    
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
@@ -106,6 +145,94 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
         }
         
+        // Get the offset as scrollview scrolls in the y direction
+        let currentOffset = scrollView.contentOffset.y
+        
+        // Calculate the final offset when fully scrolled
+        let finalOffset = CGFloat(117)
+        
+        print("A: Current Offset \(currentOffset) Final Offset \(finalOffset)")
+        
+        // Set the distance you want the item to move
+        //let translation = CGFloat(200)
+        
+        // Calculate how far you have scrolled as a percent of the total scroll
+        let percentScroll = currentOffset / finalOffset
+        
+        // Move the object based on the percentage you have scrolled
+        // Note: Add the difference to the object's initial position (set up top as an instance variable
+        // or the object will go zooming off the screen! :D
+        //image1View.center.x = image1ViewCenter.x + percentScroll*translation
+        
+        print("PERCENTSCROLL: \(percentScroll)")
+        
+        //STEP 2
+        let TX1 = (card1.endOrigin.x - card1.startOrigin.x) * percentScroll
+        let TX2 = (card2.endOrigin.x - card2.startOrigin.x) * percentScroll
+        let TX3 = (card3.endOrigin.x - card3.startOrigin.x) * percentScroll
+        let TX4 = (card4.endOrigin.x - card4.startOrigin.x) * percentScroll
+        let TX5 = (card5.endOrigin.x - card5.startOrigin.x) * percentScroll
+        let TX6 = (card6.endOrigin.x - card6.startOrigin.x) * percentScroll
+        let TX7 = (card7.endOrigin.x - card7.startOrigin.x) * percentScroll
+        
+        
+        print("TX1: \(TX1)")
+        
+        //STEP 3
+        let TY1 = (card1.endOrigin.y - card1.startOrigin.y) * percentScroll
+        let TY2 = (card2.endOrigin.y - card2.startOrigin.y) * percentScroll
+        let TY3 = (card3.endOrigin.y - card3.startOrigin.y) * percentScroll
+        let TY4 = (card4.endOrigin.y - card4.startOrigin.y) * percentScroll
+        let TY5 = (card5.endOrigin.y - card5.startOrigin.y) * percentScroll
+        let TY6 = (card6.endOrigin.y - card6.startOrigin.y) * percentScroll
+        let TY7 = (card7.endOrigin.y - card7.startOrigin.y) * percentScroll
+        
+        //image2View.transform = CGAffineTransformMakeTranslation(TX2, TY2)
+        //image3View.transform = CGAffineTransformMakeTranslation(TX3, TX3)
+        
+        print("TY1: \(TY1)")
+        
+        //STEP 4
+        let R1 = (card1.endRotation - card1.startRotation) * percentScroll
+        let R2 = (card2.endRotation - card2.startRotation) * percentScroll
+        let R3 = (card3.endRotation - card3.startRotation) * percentScroll
+        let R4 = (card4.endRotation - card4.startRotation) * percentScroll
+        let R5 = (card5.endRotation - card5.startRotation) * percentScroll
+        let R6 = (card6.endRotation - card6.startRotation) * percentScroll
+        let R7 = (card7.endRotation - card7.startRotation) * percentScroll
+        
+        print("R1: \(R1)")
+        
+        //image2View.transform = CGAffineTransformMakeRotation(photo2.startRotation + R2)
+        
+        //STEP 5
+        let transform1 = CGAffineTransformMakeRotation(card1.startRotation + R1)
+        let transform2 = CGAffineTransformMakeRotation(card2.startRotation + R2)
+        let transform3 = CGAffineTransformMakeRotation(card3.startRotation + R3)
+        let transform4 = CGAffineTransformMakeRotation(card4.startRotation + R4)
+        let transform5 = CGAffineTransformMakeRotation(card5.startRotation + R5)
+        let transform6 = CGAffineTransformMakeRotation(card6.startRotation + R6)
+        let transform7 = CGAffineTransformMakeRotation(card7.startRotation + R7)
+        
+        
+        //STEP 9
+        let translationTransform1 = CGAffineTransformTranslate(transform1, TX1, TY1)
+        let translationTransform2 = CGAffineTransformTranslate(transform2, TX2, TY2)
+        let translationTransform3 = CGAffineTransformTranslate(transform3, TX3, TY3)
+        let translationTransform4 = CGAffineTransformTranslate(transform4, TX4, TY4)
+        let translationTransform5 = CGAffineTransformTranslate(transform5, TX5, TY5)
+        let translationTransform6 = CGAffineTransformTranslate(transform6, TX6, TY6)
+        let translationTransform7 = CGAffineTransformTranslate(transform7, TX7, TY7)
+        
+        //STEP 10
+        housingCardView.transform = translationTransform1
+        youthCardView.transform = translationTransform2
+        medicineCardView.transform = translationTransform3
+        reliefCardView.transform = translationTransform4
+        artCardView.transform = translationTransform5
+        environmentCardView.transform = translationTransform6
+        internationalCardView.transform = translationTransform7
+        
         /*
         if eventsTableView.contentOffset.y + (navigationController?.navigationBar.frame.origin.y)! + (navigationController?.navigationBar.frame.height)! > eventTabsViewInitialY {
            self.eventTabsView.frame.origin.y = profileScrollView.contentOffset.y + (navigationController?.navigationBar.frame.origin.y)! + (navigationController?.navigationBar.frame.height)!
@@ -134,9 +261,9 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         if indexPath.section < 2 {
             if indexPath.row == 0 {
                 let row = tableView.dequeueReusableCellWithIdentifier("UserProfileDetailsTableViewCell") as! UserProfileDetailsTableViewCell
-                row.nameLabel.text = currentUser!["firstName"] as! String
-                row.locationLabel.text = "\(currentUser!["city"] as! String), \(currentUser!["state"] as! String)"
-                row.bioLabel.text = currentUser!["bio"] as! String
+           //     row.nameLabel.text = currentUser!["firstName"] as! String
+           //     row.locationLabel.text = "\(currentUser!["city"] as! String), \(currentUser!["state"] as! String)"
+           //     row.bioLabel.text = currentUser!["bio"] as! String
                 return row
             } else {
                 let row = tableView.dequeueReusableCellWithIdentifier("UserProfileMenuTableViewCell") as! UserProfileMenuTableViewCell

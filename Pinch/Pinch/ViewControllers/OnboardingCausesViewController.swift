@@ -9,7 +9,7 @@
 import UIKit
 import JCTagListView
 
-class OnboardingCausesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class OnboardingCausesViewController: UIViewController {
     
     @IBOutlet weak var nextButton: UIButton!
 
@@ -62,21 +62,21 @@ class OnboardingCausesViewController: UIViewController, UICollectionViewDelegate
         }
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //return tagListView.tags.count
-        return 100
-    }
-    
-   
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath
-        indexPath: NSIndexPath) -> UICollectionViewCell {
-            
-            let cell = tagListView.collectionView.dequeueReusableCellWithReuseIdentifier("cell",
-                forIndexPath: indexPath)
-            
-           return cell
-            
-    }
+//    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        //return tagListView.tags.count
+//        return 100
+//    }
+//    
+//   
+//    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath
+//        indexPath: NSIndexPath) -> UICollectionViewCell {
+//            
+//            let cell = tagListView.collectionView.dequeueReusableCellWithReuseIdentifier("cell",
+//                forIndexPath: indexPath)
+//            
+//           return cell
+//            
+//    }
     
 //    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath
 //        indexPath: NSIndexPath) {

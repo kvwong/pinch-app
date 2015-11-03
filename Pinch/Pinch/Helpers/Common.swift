@@ -71,3 +71,10 @@ extension UIButton {
     }}
 
 
+// Get radian value for angle
+func radian(value: CGFloat) -> CGFloat{
+    var angle =  CGFloat(value * CGFloat(M_PI/180))
+    return angle
+}
+
+
