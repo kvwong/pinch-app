@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import Parse
 
-class UserProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class UserProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
     // Upcoming & Saved Event Table View
     @IBOutlet weak var eventsTableView: UITableView!
-    
-    
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollViewContent: UIView!
+    
+    let currentUser = PFUser.currentUser()
     
     //var eventTabsViewInitialY: CGFloat!
     
@@ -28,7 +30,16 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         
         eventsTableView.tableFooterView = UIView.init(frame: CGRectZero)
         
-         scrollView.contentSize = CGSizeMake(775, 205)
+        scrollView.delegate = self
+        scrollView.contentSize.width = scrollViewContent.frame.width + 32
+        
+        if currentUser != nil {
+            // do stuff with the user
+            print("Hello, I'm \(currentUser!["firstName"])")
+            self.title = currentUser!["firstName"] as! String
+        } else {
+            // show the signup or login screen
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -40,6 +51,10 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 
     // Button Actions ----------------------------------
@@ -72,7 +87,6 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
     func scrollViewDidScroll(scrollView: UIScrollView) {
         if eventsTableView.contentOffset.y > 0 {
             print("eventsTableView.content.y offset is: \(eventsTableView.contentOffset.y)")
-            self.title = "Annabel" // TO-DO: dynamically input user name
             self.navigationController?.setNavigationBarHidden(false, animated: true)
             UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
         } else {
@@ -108,6 +122,9 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         if indexPath.section < 2 {
             if indexPath.row == 0 {
                 let row = tableView.dequeueReusableCellWithIdentifier("UserProfileDetailsTableViewCell") as! UserProfileDetailsTableViewCell
+                row.nameLabel.text = currentUser!["firstName"] as! String
+                row.locationLabel.text = "\(currentUser!["city"] as! String), \(currentUser!["state"] as! String)"
+                row.bioLabel.text = currentUser!["bio"] as! String
                 return row
             } else {
                 let row = tableView.dequeueReusableCellWithIdentifier("UserProfileMenuTableViewCell") as! UserProfileMenuTableViewCell
