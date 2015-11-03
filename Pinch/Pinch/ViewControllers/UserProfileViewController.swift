@@ -137,8 +137,33 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     // Scroll View Overrides ---------------------------
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+         print("C: contentOffset: \(eventsTableView.contentOffset)")
+        if (!decelerate){
+        if eventsTableView.contentOffset.y > -208 && eventsTableView.contentOffset.y < 0 {
+             var inset: UIEdgeInsets = eventsTableView.contentInset
+            inset.top = 125
+            eventsTableView.contentInset = inset
+            print("contentInset: \(eventsTableView.contentInset.top)")
+            //eventsTableView.frame.origin.y = 125
+
+            }}
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+         print("B: contentOffset: \(eventsTableView.contentOffset)")
+        if eventsTableView.contentOffset.y > -208 && eventsTableView.contentOffset.y < 0 {
+            var inset: UIEdgeInsets = eventsTableView.contentInset
+            inset.top = 125
+            eventsTableView.contentInset = inset
+            print("contentInset: \(eventsTableView.contentInset.top)")
+            //eventsTableView.frame.origin.y = 125
+        }
+    }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
+        print("A: contentOffset: \(eventsTableView.contentOffset)")
+        
         if eventsTableView.contentOffset.y > 0 {
             print("eventsTableView.content.y offset is: \(eventsTableView.contentOffset.y)")
             self.navigationController?.setNavigationBarHidden(false, animated: true)
@@ -273,9 +298,9 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         if indexPath.section < 2 {
             if indexPath.row == 0 {
                 let row = tableView.dequeueReusableCellWithIdentifier("UserProfileDetailsTableViewCell") as! UserProfileDetailsTableViewCell
-                row.nameLabel.text = currentUser!["firstName"] as! String
-                row.locationLabel.text = "\(currentUser!["city"] as! String), \(currentUser!["state"] as! String)"
-                row.bioLabel.text = currentUser!["bio"] as! String
+          //      row.nameLabel.text = currentUser!["firstName"] as! String
+           //     row.locationLabel.text = "\(currentUser!["city"] as! String), \(currentUser!["state"] as! String)"
+         //       row.bioLabel.text = currentUser!["bio"] as! String
                 return row
             } else {
                 let row = tableView.dequeueReusableCellWithIdentifier("UserProfileMenuTableViewCell") as! UserProfileMenuTableViewCell

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="7ke-9G-asA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="V8y-lG-Mwc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
@@ -2167,6 +2167,7 @@
                                                 <view contentMode="scaleToFill" id="2gd-jZ-EzZ">
                                                     <rect key="frame" x="16" y="19" width="18" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
                                                     <color key="backgroundColor" red="0.2784313725" green="0.77647058820000003" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
                                             </subviews>
@@ -2231,6 +2232,7 @@
                                                 <view contentMode="scaleToFill" id="aQG-um-fpQ">
                                                     <rect key="frame" x="16" y="19" width="18" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
                                                     <color key="backgroundColor" red="0.2784313725" green="0.77647058820000003" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
                                             </subviews>
@@ -2838,7 +2840,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uOc-Hj-bmj" id="6hj-Lh-2S1">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_kevin" id="v0i-et-Djr">
