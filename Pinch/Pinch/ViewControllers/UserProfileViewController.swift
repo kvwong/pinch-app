@@ -13,6 +13,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
     // Upcoming & Saved Event Table View
     @IBOutlet weak var eventsTableView: UITableView!
     
+    @IBOutlet weak var cardsView: UIView!
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -28,7 +29,9 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         
         eventsTableView.tableFooterView = UIView.init(frame: CGRectZero)
         
-         scrollView.contentSize = CGSizeMake(775, 205)
+         scrollView.contentSize = cardsView.frame.size
+        
+        print(cardsView.frame.size)
     }
     
     override func viewWillAppear(animated: Bool) {
