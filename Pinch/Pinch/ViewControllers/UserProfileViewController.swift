@@ -148,6 +148,22 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
         }
         
+        if eventsTableView.contentOffset.y > 0 {
+            var inset: UIEdgeInsets = eventsTableView.contentInset
+            let rect: CGRect = eventsTableView.convertRect(eventsTableView.rectForHeaderInSection(1), toView: eventsTableView.superview)
+            if rect.origin.y <= 64 {
+                inset.top = 64 + rect.height
+                // lock header here??
+            } else {
+                inset.top = 0
+            }
+            eventsTableView.contentInset = inset
+        } else {
+            var inset: UIEdgeInsets = eventsTableView.contentInset
+            inset.top = 208
+            eventsTableView.contentInset = inset
+        }
+        
         // Get the offset as scrollview scrolls in the y direction
         let currentOffset = scrollView.contentOffset.y
         
@@ -235,15 +251,6 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         artCardView.transform = translationTransform5
         environmentCardView.transform = translationTransform6
         internationalCardView.transform = translationTransform7
-        
-        /*
-        if eventsTableView.contentOffset.y + (navigationController?.navigationBar.frame.origin.y)! + (navigationController?.navigationBar.frame.height)! > eventTabsViewInitialY {
-           self.eventTabsView.frame.origin.y = profileScrollView.contentOffset.y + (navigationController?.navigationBar.frame.origin.y)! + (navigationController?.navigationBar.frame.height)!
-        } else {
-            var inset: UIEdgeInsets = eventsTableView.contentInset
-            inset.top = 208
-            eventsTableView.contentInset = inset
-        }*/
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -266,11 +273,9 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         if indexPath.section < 2 {
             if indexPath.row == 0 {
                 let row = tableView.dequeueReusableCellWithIdentifier("UserProfileDetailsTableViewCell") as! UserProfileDetailsTableViewCell
-
-           //     row.nameLabel.text = currentUser!["firstName"] as! String
-           //     row.locationLabel.text = "\(currentUser!["city"] as! String), \(currentUser!["state"] as! String)"
-           //     row.bioLabel.text = currentUser!["bio"] as! String
-
+                row.nameLabel.text = currentUser!["firstName"] as! String
+                row.locationLabel.text = "\(currentUser!["city"] as! String), \(currentUser!["state"] as! String)"
+                row.bioLabel.text = currentUser!["bio"] as! String
                 return row
             } else {
                 let row = tableView.dequeueReusableCellWithIdentifier("UserProfileMenuTableViewCell") as! UserProfileMenuTableViewCell
@@ -290,10 +295,6 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             style.lineSpacing = 4
             attrString.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSMakeRange(0, attrString.length))
             row.descriptionLabel.attributedText = attrString;
-            
-            /*
-            profileScrollView.contentSize = CGSize(width: view.frame.width, height: profileScrollView.contentInset.top + eventsTableView.frame.origin.y + eventsTableView.frame.height)
-            */
             
             return row
         }
