@@ -12,6 +12,7 @@ import UIKit
     
     @IBOutlet weak var dot1View: UIView!
     @IBOutlet weak var dot2View: UIView!
+    @IBOutlet weak var dragger: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,6 +20,7 @@ import UIKit
         // Styles
         dot1View.layer.cornerRadius = dot1View.frame.height/2
         dot2View.layer.cornerRadius = dot2View.frame.height/2
+        dragger.layer.cornerRadius = dragger.frame.height/2
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

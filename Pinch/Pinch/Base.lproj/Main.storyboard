@@ -98,6 +98,8 @@
             <string>Raleway-Bold</string>
             <string>Raleway-Bold</string>
             <string>Raleway-Bold</string>
+            <string>Raleway-Bold</string>
+            <string>Raleway-Bold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -2030,7 +2032,7 @@
         <scene sceneID="e6e-Ua-lX9">
             <objects>
                 <tableViewController id="Qa2-pn-ssx" customClass="SearchFiltersTableViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="KEO-13-rdH">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="KEO-13-rdH">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
@@ -2178,6 +2180,7 @@
                                             <outlet property="dot4View" destination="xhQ-9m-z8z" id="Yfg-3g-FAa"/>
                                             <outlet property="dot5View" destination="8KZ-Px-egC" id="nal-8A-xtF"/>
                                             <outlet property="dot6View" destination="GXb-p3-fdB" id="OSS-Pp-Bb1"/>
+                                            <outlet property="dragger" destination="2gd-jZ-EzZ" id="Sua-RR-VO6"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -2237,6 +2240,7 @@
                                         <connections>
                                             <outlet property="dot1View" destination="aTO-SD-q5w" id="wq7-o3-vdO"/>
                                             <outlet property="dot2View" destination="GbX-gC-H4E" id="kf2-8Y-e6s"/>
+                                            <outlet property="dragger" destination="aQG-um-fpQ" id="eKC-E9-dr8"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -2478,11 +2482,13 @@
                                 <rect key="frame" x="32" y="130" width="311" height="338"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Create Account" id="Vza-MO-E4h">
-                                        <rect key="frame" x="24" y="0.0" width="263" height="40"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <animations/>
-                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sPN-R0-BTy">
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <view contentMode="scaleToFill" id="Yzw-iv-Ib3">
                                         <rect key="frame" x="0.0" y="70" width="311" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2627,32 +2633,10 @@
                                 <rect key="frame" x="32" y="179" width="311" height="279"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Welcome Back!" id="5iQ-JC-hWy">
-                                        <rect key="frame" x="11" y="0.0" width="288" height="41"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <animations/>
-                                    </imageView>
                                     <view contentMode="scaleToFill" id="snm-Uf-gbx">
                                         <rect key="frame" x="0.0" y="71" width="311" height="96"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" id="dry-Mp-YDZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="311" height="44"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" id="7v2-6q-bqP">
-                                                        <rect key="frame" x="16" y="0.0" width="279" height="44"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <animations/>
-                                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
-                                                    </textField>
-                                                </subviews>
-                                                <animations/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
-                                            </view>
                                             <view contentMode="scaleToFill" id="Hef-54-QA3">
                                                 <rect key="frame" x="0.0" y="52" width="311" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2665,6 +2649,23 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                                    </textField>
+                                                </subviews>
+                                                <animations/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" id="dry-Mp-YDZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="311" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" id="7v2-6q-bqP">
+                                                        <rect key="frame" x="16" y="0.0" width="279" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <animations/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                                     </textField>
                                                 </subviews>
                                                 <animations/>
@@ -2699,6 +2700,13 @@
                                             <action selector="didPressCancelButton:" destination="9TS-fF-L9D" eventType="touchUpInside" id="G7x-XO-ahP"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2yD-CT-yUq">
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="0.27843137254901962" green="0.77647058823529413" blue="0.69803921568627447" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -2717,7 +2725,6 @@
                         <outlet property="logInButton" destination="DSD-mK-H0e" id="Vav-rJ-lSI"/>
                         <outlet property="passwordField" destination="4xA-jC-fRM" id="CT3-N3-8yU"/>
                         <outlet property="textFieldsView" destination="snm-Uf-gbx" id="SkT-9l-lO1"/>
-                        <outlet property="welcomeImage" destination="5iQ-JC-hWy" id="a4v-fU-NfM"/>
                         <segue destination="BYZ-38-t0r" kind="push" identifier="loginSegue" id="RZ9-8W-qHW"/>
                     </connections>
                 </viewController>
@@ -3506,7 +3513,6 @@
     </scenes>
     <resources>
         <image name="Activity" width="375" height="667"/>
-        <image name="Create Account" width="261" height="28"/>
         <image name="Event Details - Confirmed - Step 1" width="375" height="717"/>
         <image name="Event Details - Confirmed - Step 2" width="375" height="667"/>
         <image name="Event Details - Feedback 1" width="375" height="667"/>
@@ -3516,7 +3522,6 @@
         <image name="Event Details - Testimonials" width="375" height="1047"/>
         <image name="Event Details v3" width="375" height="1662"/>
         <image name="Splash" width="375" height="667"/>
-        <image name="Welcome Back!" width="265" height="28"/>
         <image name="avatar_cameron" width="395" height="395"/>
         <image name="avatar_jessie" width="390" height="320"/>
         <image name="avatar_kevin" width="331" height="331"/>
