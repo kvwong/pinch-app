@@ -22,6 +22,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var artCardView: UIImageView!
     @IBOutlet weak var environmentCardView: UIView!
     @IBOutlet weak var internationalCardView: UIView!
+    @IBOutlet weak var pastEventsLabel: UILabel!
     
     let currentUser = PFUser.currentUser()
     
@@ -32,13 +33,20 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         var endRotation: CGFloat
     }
     
-    var card1 = Card(startOrigin: CGPoint(x: 20, y: 60), endOrigin: CGPoint(x: 20, y: 60), startRotation: radian(-9), endRotation: 0)
-    var card2 = Card(startOrigin: CGPoint(x: 40, y: 60), endOrigin: CGPoint(x: 135, y: 60), startRotation: radian(-9), endRotation: 0)
-    var card3 = Card(startOrigin: CGPoint(x: 60, y: 60), endOrigin: CGPoint(x: 250, y: 60), startRotation: radian(9), endRotation: 0)
-    var card4 = Card(startOrigin: CGPoint(x: 80, y: 60), endOrigin: CGPoint(x: 365, y: 60), startRotation: radian(-10), endRotation: 0)
-    var card5 = Card(startOrigin: CGPoint(x: 100, y: 60), endOrigin: CGPoint(x: 480, y: 60), startRotation: radian(9), endRotation: 0)
-    var card6 = Card(startOrigin: CGPoint(x: 120, y: 60), endOrigin: CGPoint(x: 595, y: 60), startRotation: radian(11), endRotation: 0)
-    var card7 = Card(startOrigin: CGPoint(x: 140, y: 60), endOrigin: CGPoint(x: 710, y: 60), startRotation: radian(11), endRotation: 0)
+    //blue
+    var card1 = Card(startOrigin: CGPoint(x: 90, y: 30), endOrigin: CGPoint(x: 20, y: 60), startRotation: radian(-39), endRotation: 0)
+    //green
+    var card2 = Card(startOrigin: CGPoint(x: 20, y: 60), endOrigin: CGPoint(x: 135, y: 60), startRotation: radian(-70), endRotation: 0)
+    //red
+    var card3 = Card(startOrigin: CGPoint(x: 204, y: 92), endOrigin: CGPoint(x: 250, y: 60), startRotation: radian(79), endRotation: 0)
+    //yellow
+    var card4 = Card(startOrigin: CGPoint(x: 158, y: 57), endOrigin: CGPoint(x: 365, y: 60), startRotation: radian(14), endRotation: 0)
+    //purple
+    var card5 = Card(startOrigin: CGPoint(x: 71, y: 92), endOrigin: CGPoint(x: 480, y: 60), startRotation: radian(-23), endRotation: 0)
+    //dark green
+    var card6 = Card(startOrigin: CGPoint(x: 279, y: 92), endOrigin: CGPoint(x: 595, y: 60), startRotation: radian(57), endRotation: 0)
+    //dark purple
+    var card7 = Card(startOrigin: CGPoint(x: 209, y: 34), endOrigin: CGPoint(x: 710, y: 60), startRotation: radian(18), endRotation: 0)
     
     
 
@@ -52,6 +60,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
+        pastEventsLabel.hidden = true
         
         eventsTableView.tableFooterView = UIView.init(frame: CGRectZero)
 
@@ -69,6 +78,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         }
 
         //Initialize Cards
+        print("Initalizing Cards")
         housingCardView.frame.origin = card1.startOrigin
         housingCardView.transform = CGAffineTransformMakeRotation(card1.startRotation)
         
@@ -89,7 +99,6 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         
         internationalCardView.frame.origin = card7.startOrigin
         internationalCardView.transform = CGAffineTransformMakeRotation(card7.startRotation)
-        
 
     }
     
@@ -142,10 +151,12 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         if (!decelerate){
         if eventsTableView.contentOffset.y > -208 && eventsTableView.contentOffset.y < 0 {
              var inset: UIEdgeInsets = eventsTableView.contentInset
-            inset.top = 125
+            inset.top = 150
             eventsTableView.contentInset = inset
             print("contentInset: \(eventsTableView.contentInset.top)")
-            //eventsTableView.frame.origin.y = 125
+            eventsTableView.contentOffset.y = -150
+     
+            //eventsTableView.frame.origin.y = 150
 
             }}
     }
@@ -154,15 +165,18 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
          print("B: contentOffset: \(eventsTableView.contentOffset)")
         if eventsTableView.contentOffset.y > -208 && eventsTableView.contentOffset.y < 0 {
             var inset: UIEdgeInsets = eventsTableView.contentInset
-            inset.top = 125
+            inset.top = 150
             eventsTableView.contentInset = inset
             print("contentInset: \(eventsTableView.contentInset.top)")
-            //eventsTableView.frame.origin.y = 125
+            eventsTableView.contentOffset.y = -150
+
+            //eventsTableView.frame.origin.y = 150
         }
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         print("A: contentOffset: \(eventsTableView.contentOffset)")
+        
         
         if eventsTableView.contentOffset.y > 0 {
             print("eventsTableView.content.y offset is: \(eventsTableView.contentOffset.y)")
@@ -183,6 +197,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
                 inset.top = 0
             }
             eventsTableView.contentInset = inset
+            
         } else {
             var inset: UIEdgeInsets = eventsTableView.contentInset
             inset.top = 208
@@ -190,10 +205,21 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         }
         
         // Get the offset as scrollview scrolls in the y direction
-        let currentOffset = scrollView.contentOffset.y
+        var currentOffset = -1*scrollView.contentOffset.y - 150
+        if currentOffset < 0 {
+            currentOffset = 0
+            pastEventsLabel.hidden = true
+        } else if currentOffset > 58 {
+            currentOffset = 58
+            pastEventsLabel.hidden = false
+        } else if currentOffset > 50 {
+            pastEventsLabel.hidden = false
+        } else {
+           pastEventsLabel.hidden = true
+        }
         
         // Calculate the final offset when fully scrolled
-        let finalOffset = CGFloat(117)
+        let finalOffset = CGFloat(58)
         
         print("A: Current Offset \(currentOffset) Final Offset \(finalOffset)")
         
