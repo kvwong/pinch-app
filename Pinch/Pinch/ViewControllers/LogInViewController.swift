@@ -20,6 +20,7 @@ class LogInViewController: UIViewController, ValidationDelegate {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var logInButton: UIButton!
+    @IBOutlet weak var welcomeImage: UIImageView!
     
     var formInitialY: CGFloat! // Store initial position of form
     let validator = Validator() // Validation for text fields

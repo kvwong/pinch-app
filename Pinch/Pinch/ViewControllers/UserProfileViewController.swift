@@ -29,7 +29,6 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         eventsTableView.dataSource = self
         
         eventsTableView.tableFooterView = UIView.init(frame: CGRectZero)
-        
         scrollView.delegate = self
         scrollView.contentSize.width = scrollViewContent.frame.width + 32
         scrollView.userInteractionEnabled = false
@@ -37,7 +36,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         
         if currentUser != nil {
             // do stuff with the user
-            print("Hello, I'm \(currentUser!["firstName"])")
+            //print("Hello, I'm \(currentUser!["firstName"])")
             self.title = currentUser!["firstName"] as! String
         } else {
             // show the signup or login screen
@@ -135,7 +134,8 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             if indexPath.row == 0 {
                 let row = tableView.dequeueReusableCellWithIdentifier("UserProfileDetailsTableViewCell") as! UserProfileDetailsTableViewCell
                 row.nameLabel.text = currentUser!["firstName"] as! String
-                row.locationLabel.text = "\(currentUser!["city"] as! String), \(currentUser!["state"] as! String)"
+                //row.locationLabel.text = "\(currentUser!["city"] as! String), \(currentUser!["state"] as! String)"
+                    //"\(currentUser!["city"] as! String), \(currentUser!["state"] as! String)"
                 row.bioLabel.text = currentUser!["bio"] as! String
                 return row
             } else {
