@@ -235,6 +235,8 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             pastEventsLabel.hidden = false
         }
         
+//        scrollView.contentOffset.x = convertValue(eventsTableView.contentOffset.y, r1Min: -208, r1Max: 0, r2Min: scrollView.contentOffset.x, r2Max: 0)
+        
         // Calculate the final offset when fully scrolled
         let finalOffset = CGFloat(58)
         
