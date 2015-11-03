@@ -143,7 +143,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         performSegueWithIdentifier("eventDetailSegue", sender: nil)
         fadeTransition.finish()
         eventView.frame.origin.y = 104
-        eventView.transform = CGAffineTransformMakeScale(1.0, 1.0)
+        //eventView.transform = CGAffineTransformMakeScale(1.0, 1.0)
     }
     
 
@@ -154,7 +154,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         
         if sender.state == UIGestureRecognizerState.Began {
             initialY = eventView.frame.origin.y
-            performSegueWithIdentifier("eventDetailSegue", sender: self)
+            performSegueWithIdentifier("eventDetailSegue", sender: nil)
             print("gesture began")
             
         } else if sender.state == UIGestureRecognizerState.Changed {

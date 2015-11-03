@@ -54,18 +54,24 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         eventsTableView.dataSource = self
         
         eventsTableView.tableFooterView = UIView.init(frame: CGRectZero)
+<<<<<<< HEAD
         
 
+=======
+>>>>>>> origin/master
         scrollView.delegate = self
         scrollView.contentSize.width = scrollViewContent.frame.width + 32
+        scrollView.userInteractionEnabled = false
+        self.view.addGestureRecognizer(scrollView.panGestureRecognizer)
         
         if currentUser != nil {
             // do stuff with the user
-            print("Hello, I'm \(currentUser!["firstName"])")
+            //print("Hello, I'm \(currentUser!["firstName"])")
             self.title = currentUser!["firstName"] as! String
         } else {
             // show the signup or login screen
         }
+<<<<<<< HEAD
         
         //Initialize Cards
         housingCardView.frame.origin = card1.startOrigin
@@ -89,6 +95,8 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         internationalCardView.frame.origin = card7.startOrigin
         internationalCardView.transform = CGAffineTransformMakeRotation(card7.startRotation)
         
+=======
+>>>>>>> origin/master
     }
     
     
@@ -107,6 +115,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
+    
 
     // Button Actions ----------------------------------
     
@@ -145,6 +154,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
         }
         
+<<<<<<< HEAD
         // Get the offset as scrollview scrolls in the y direction
         let currentOffset = scrollView.contentOffset.y
         
@@ -236,9 +246,23 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         /*
         if eventsTableView.contentOffset.y + (navigationController?.navigationBar.frame.origin.y)! + (navigationController?.navigationBar.frame.height)! > eventTabsViewInitialY {
            self.eventTabsView.frame.origin.y = profileScrollView.contentOffset.y + (navigationController?.navigationBar.frame.origin.y)! + (navigationController?.navigationBar.frame.height)!
+=======
+        if eventsTableView.contentOffset.y > 0 {
+            var inset: UIEdgeInsets = eventsTableView.contentInset
+            let rect: CGRect = eventsTableView.convertRect(eventsTableView.rectForHeaderInSection(1), toView: eventsTableView.superview)
+            if rect.origin.y <= 64 {
+                inset.top = 64 + rect.height
+                // lock header here??
+            } else {
+                inset.top = 0
+            }
+            eventsTableView.contentInset = inset
+>>>>>>> origin/master
         } else {
-            self.eventTabsView.frame.origin.y = eventTabsViewInitialY
-        }*/
+            var inset: UIEdgeInsets = eventsTableView.contentInset
+            inset.top = 208
+            eventsTableView.contentInset = inset
+        }
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -261,9 +285,16 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         if indexPath.section < 2 {
             if indexPath.row == 0 {
                 let row = tableView.dequeueReusableCellWithIdentifier("UserProfileDetailsTableViewCell") as! UserProfileDetailsTableViewCell
+<<<<<<< HEAD
            //     row.nameLabel.text = currentUser!["firstName"] as! String
            //     row.locationLabel.text = "\(currentUser!["city"] as! String), \(currentUser!["state"] as! String)"
            //     row.bioLabel.text = currentUser!["bio"] as! String
+=======
+                row.nameLabel.text = currentUser!["firstName"] as! String
+                //row.locationLabel.text = "\(currentUser!["city"] as! String), \(currentUser!["state"] as! String)"
+                    //"\(currentUser!["city"] as! String), \(currentUser!["state"] as! String)"
+                row.bioLabel.text = currentUser!["bio"] as! String
+>>>>>>> origin/master
                 return row
             } else {
                 let row = tableView.dequeueReusableCellWithIdentifier("UserProfileMenuTableViewCell") as! UserProfileMenuTableViewCell
