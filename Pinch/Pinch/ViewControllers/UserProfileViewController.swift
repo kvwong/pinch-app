@@ -32,6 +32,8 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         
         scrollView.delegate = self
         scrollView.contentSize.width = scrollViewContent.frame.width + 32
+        scrollView.userInteractionEnabled = false
+        self.view.addGestureRecognizer(scrollView.panGestureRecognizer)
         
         if currentUser != nil {
             // do stuff with the user
@@ -56,6 +58,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
+    
 
     // Button Actions ----------------------------------
     
@@ -94,12 +97,21 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
         }
         
-        /*
-        if eventsTableView.contentOffset.y + (navigationController?.navigationBar.frame.origin.y)! + (navigationController?.navigationBar.frame.height)! > eventTabsViewInitialY {
-           self.eventTabsView.frame.origin.y = profileScrollView.contentOffset.y + (navigationController?.navigationBar.frame.origin.y)! + (navigationController?.navigationBar.frame.height)!
+        if eventsTableView.contentOffset.y > 0 {
+            var inset: UIEdgeInsets = eventsTableView.contentInset
+            let rect: CGRect = eventsTableView.convertRect(eventsTableView.rectForHeaderInSection(1), toView: eventsTableView.superview)
+            if rect.origin.y <= 64 {
+                inset.top = 64 + rect.height
+                // lock header here??
+            } else {
+                inset.top = 0
+            }
+            eventsTableView.contentInset = inset
         } else {
-            self.eventTabsView.frame.origin.y = eventTabsViewInitialY
-        }*/
+            var inset: UIEdgeInsets = eventsTableView.contentInset
+            inset.top = 208
+            eventsTableView.contentInset = inset
+        }
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
