@@ -207,7 +207,11 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         
         // Get the offset as scrollview scrolls in the y direction
         var currentOffset = -1*scrollView.contentOffset.y - 150
-        if currentOffset < 0 {
+        print("A2: Current Offset \(currentOffset)")
+        
+        if currentOffset == -150 {
+            currentOffset = 58
+        }else if currentOffset < 0 {
             currentOffset = 0
             pastEventsLabel.hidden = true
         } else if currentOffset > 58 {
@@ -222,7 +226,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         // Calculate the final offset when fully scrolled
         let finalOffset = CGFloat(58)
         
-        print("A: Current Offset \(currentOffset) Final Offset \(finalOffset)")
+        print("A3: Current Offset \(currentOffset) Final Offset \(finalOffset)")
         
         // Set the distance you want the item to move
         //let translation = CGFloat(200)
@@ -247,7 +251,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         let TX7 = (card7.endOrigin.x - card7.startOrigin.x) * percentScroll
         
         
-        print("TX1: \(TX1)")
+        //print("TX1: \(TX1)")
         
         //STEP 3
         let TY1 = (card1.endOrigin.y - card1.startOrigin.y) * percentScroll
@@ -261,7 +265,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         //image2View.transform = CGAffineTransformMakeTranslation(TX2, TY2)
         //image3View.transform = CGAffineTransformMakeTranslation(TX3, TX3)
         
-        print("TY1: \(TY1)")
+        //print("TY1: \(TY1)")
         
         //STEP 4
         let R1 = (card1.endRotation - card1.startRotation) * percentScroll
@@ -272,7 +276,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         let R6 = (card6.endRotation - card6.startRotation) * percentScroll
         let R7 = (card7.endRotation - card7.startRotation) * percentScroll
         
-        print("R1: \(R1)")
+        //print("R1: \(R1)")
         
         //image2View.transform = CGAffineTransformMakeRotation(photo2.startRotation + R2)
         
