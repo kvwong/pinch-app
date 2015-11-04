@@ -484,6 +484,8 @@
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
                         <outlet property="artCardView" destination="19s-lI-gc2" id="Iv7-eA-FNw"/>
+                        <outlet property="cardsScrollView" destination="iMS-03-qTd" id="n0s-xF-JIB"/>
+                        <outlet property="cardsScrollViewContent" destination="ly4-vn-9kI" id="Wt7-Q9-p2e"/>
                         <outlet property="environmentCardView" destination="eiD-JU-BeO" id="Q7i-P3-fbX"/>
                         <outlet property="eventsTableView" destination="Oq5-Fl-jBA" id="GGE-G7-PmA"/>
                         <outlet property="housingCardView" destination="AOA-As-Ajh" id="M6I-73-zfl"/>
@@ -491,8 +493,6 @@
                         <outlet property="medicineCardView" destination="Eh6-Pf-6pk" id="pQs-AT-bxp"/>
                         <outlet property="pastEventsLabel" destination="Y0Z-L8-lw1" id="cUk-bt-dax"/>
                         <outlet property="reliefCardView" destination="pJg-yJ-s4X" id="5Nf-Tf-tSV"/>
-                        <outlet property="scrollView" destination="iMS-03-qTd" id="kcV-lZ-t5F"/>
-                        <outlet property="scrollViewContent" destination="ly4-vn-9kI" id="JvU-5u-Dpp"/>
                         <outlet property="youthCardView" destination="m1Q-Jz-npi" id="F8A-7r-g5E"/>
                         <segue destination="n7v-Hh-x8C" kind="push" identifier="segueToFollowing" id="O7t-Rq-kzQ"/>
                     </connections>
