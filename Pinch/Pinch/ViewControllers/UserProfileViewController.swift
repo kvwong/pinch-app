@@ -11,6 +11,8 @@ import Parse
 
 class UserProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, UIGestureRecognizerDelegate {
     
+    // Outlets & Vars ----------------------------------
+    
     // Upcoming & Saved Event Table View
     @IBOutlet weak var eventsTableView: UITableView!
     @IBOutlet weak var cardsScrollView: UIScrollView!
@@ -34,72 +36,83 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         var endOrigin: CGPoint
         var startRotation: CGFloat
         var endRotation: CGFloat
-        //var view: UIImageView
+        var view: UIImageView
     }
-    /*
-    let cards = [
-        Card(startOrigin: CGPoint(x: 90, y: 30), endOrigin: CGPoint(x: 20, y: 60), startRotation: radian(-39), endRotation: 0, view: housingCardView) // blue
-    ]*/
     
-    //blue
-    var card1 = Card(startOrigin: CGPoint(x: 90, y: 30), endOrigin: CGPoint(x: 20, y: 60), startRotation: radian(-39), endRotation: 0)
-    //green
-    var card2 = Card(startOrigin: CGPoint(x: 20, y: 60), endOrigin: CGPoint(x: 135, y: 60), startRotation: radian(-70), endRotation: 0)
-    //red
-    var card3 = Card(startOrigin: CGPoint(x: 204, y: 92), endOrigin: CGPoint(x: 250, y: 60), startRotation: radian(79), endRotation: 0)
-    //yellow
-    var card4 = Card(startOrigin: CGPoint(x: 158, y: 57), endOrigin: CGPoint(x: 365, y: 60), startRotation: radian(14), endRotation: 0)
-    //purple
-    var card5 = Card(startOrigin: CGPoint(x: 71, y: 92), endOrigin: CGPoint(x: 480, y: 60), startRotation: radian(-23), endRotation: 0)
-    //dark green
-    var card6 = Card(startOrigin: CGPoint(x: 279, y: 92), endOrigin: CGPoint(x: 595, y: 60), startRotation: radian(57), endRotation: 0)
-    //dark purple
-    var card7 = Card(startOrigin: CGPoint(x: 209, y: 34), endOrigin: CGPoint(x: 710, y: 60), startRotation: radian(18), endRotation: 0)
+    lazy var cards: [Card] = [
+        Card( // blue
+            startOrigin: CGPoint(x: 90, y: 30),
+            endOrigin: CGPoint(x: 16, y: 64),
+            startRotation: radian(-39),
+            endRotation: 0,
+            view: self.housingCardView),
+        Card( // green
+            startOrigin: CGPoint(x: 20, y: 60),
+            endOrigin: CGPoint(x: 134, y: 64),
+            startRotation: radian(-70),
+            endRotation: 0,
+            view: self.youthCardView),
+        Card( // red
+            startOrigin: CGPoint(x: 204, y: 92),
+            endOrigin: CGPoint(x: 252, y: 64),
+            startRotation: radian(79),
+            endRotation: 0,
+            view: self.medicineCardView),
+        Card( // yellow
+            startOrigin: CGPoint(x: 158, y: 57),
+            endOrigin: CGPoint(x: 370, y: 64),
+            startRotation: radian(14),
+            endRotation: 0,
+            view: self.reliefCardView),
+        Card( // yellow
+            startOrigin: CGPoint(x: 71, y: 92),
+            endOrigin: CGPoint(x: 488, y: 64),
+            startRotation: radian(-23),
+            endRotation: 0,
+            view: self.artCardView),
+        Card( // dark green
+            startOrigin: CGPoint(x: 279, y: 92),
+            endOrigin: CGPoint(x: 606, y: 64),
+            startRotation: radian(57),
+            endRotation: 0,
+            view: self.environmentCardView),
+        Card( // dark purple
+            startOrigin: CGPoint(x: 209, y: 34),
+            endOrigin: CGPoint(x: 724, y: 64),
+            startRotation: radian(18),
+            endRotation: 0,
+            view: self.internationalCardView),
+    ]
     
     var eventTabsView: UserProfileEventTabsTableViewCell!
     var eventTabsViewInitialY: CGFloat!
     
-    // Overrides ---------------------------------------
+    var cardsScrollViewInitialX: CGFloat!
     
+    
+    // Overrides ---------------------------------------
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
-        
-        eventsTableView.tableFooterView = UIView.init(frame: CGRectZero)
+        eventsTableView.frame = self.view.frame
 
         cardsScrollView.delegate = self
-        cardsScrollView.contentSize.width = cardsScrollViewContent.frame.width + 32
-        
-        //scrollView.userInteractionEnabled = false
-        //self.view.addGestureRecognizer(scrollView.panGestureRecognizer)
-        
-        //scrollView.panGestureRecognizer.delegate = self
+        cardsScrollView.contentSize.width = 847
 
-        // Initialize cards
-        print("Initalizing Cards")
-        housingCardView.frame.origin = card1.startOrigin
-        housingCardView.transform = CGAffineTransformMakeRotation(card1.startRotation)
-        
-        youthCardView.frame.origin = card2.startOrigin
-        youthCardView.transform = CGAffineTransformMakeRotation(card2.startRotation)
-        
-        medicineCardView.frame.origin = card3.startOrigin
-        medicineCardView.transform = CGAffineTransformMakeRotation(card3.startRotation)
-        
-        reliefCardView.frame.origin = card4.startOrigin
-        reliefCardView.transform = CGAffineTransformMakeRotation(card4.startRotation)
-        
-        artCardView.frame.origin = card5.startOrigin
-        artCardView.transform = CGAffineTransformMakeRotation(card5.startRotation)
-        
-        environmentCardView.frame.origin = card6.startOrigin
-        environmentCardView.transform = CGAffineTransformMakeRotation(card6.startRotation)
-        
-        internationalCardView.frame.origin = card7.startOrigin
-        internationalCardView.transform = CGAffineTransformMakeRotation(card7.startRotation)
+        // Initialize and style cards
+        print("Initalizing cards...")
+        for card in cards {
+            card.view.frame.origin = card.startOrigin
+            card.view.transform = CGAffineTransformMakeRotation(card.startRotation)
+            card.view.clipsToBounds = false
+            card.view.layer.cornerRadius = 8
+            card.view.layer.shadowOffset = CGSize(width: 0, height: 2)
+            card.view.layer.shadowOpacity = 0.15
+            card.view.layer.shadowRadius = 4
+        }
         
         eventTabsView = eventsTableView.dequeueReusableCellWithIdentifier("UserProfileEventTabsTableViewCell") as! UserProfileEventTabsTableViewCell
         eventTabsViewInitialY = 404
@@ -110,16 +123,6 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         pastEventsLabel.alpha = 0
         eventsTableView.showsVerticalScrollIndicator = false
         
-        /*
-
-eventView.layer.cornerRadius = buttonCornerRadius * 1.5
-eventContentView.layer.cornerRadius = eventView.layer.cornerRadius
-eventContentView.layer.masksToBounds = true
-eventView.layer.shadowOffset = CGSize(width: 0, height: 2)
-eventView.layer.shadowOpacity = 0.05
-eventView.layer.shadowRadius = 3
-*/
-
         // Download data from Parse
         if currentUser != nil {
             var name = currentUser!["firstName"] as! String
@@ -128,17 +131,6 @@ eventView.layer.shadowRadius = 3
             pastEventsLabel.text = "\(name)'s Past Events"
         }
 
-    }
-    
-    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
-        let panGestureRecognizer = gestureRecognizer as! UIPanGestureRecognizer
-        
-        let location = panGestureRecognizer.locationInView(view)
-        if location.y < scrollViewOpenY {
-            return true
-        }
-        
-        return false
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -186,6 +178,7 @@ eventView.layer.shadowRadius = 3
     
     // Automatically snap eventsTableView
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+<<<<<<< HEAD
         let middlePoint = (scrollViewOpenY - scrollViewClosedY)/2
         if eventsTableView.contentOffset.y < -scrollViewClosedY && eventsTableView.contentOffset.y > -(scrollViewClosedY + middlePoint) {
             print("Returning eventsTableView to CLOSED POSITION")
@@ -210,6 +203,32 @@ eventView.layer.shadowRadius = 3
             self.eventsTableView.contentInset.top = self.scrollViewOpenY
             self.eventsTableView.contentOffset.y = -self.scrollViewOpenY
             self.pastEventsLabel.alpha = 1
+=======
+        if scrollView == eventsTableView {
+            let middlePoint = (scrollViewOpenY - scrollViewClosedY)/2
+            if eventsTableView.contentOffset.y < -scrollViewClosedY + 50 && eventsTableView.contentOffset.y > -(scrollViewClosedY + middlePoint) {
+                print("Returning eventsTableView to CLOSED POSITION")
+                UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
+                    self.eventsTableView.contentInset.top = self.scrollViewClosedY
+                    self.eventsTableView.contentOffset.y = -self.scrollViewClosedY
+                    self.pastEventsLabel.alpha = 0
+                    }, completion: nil)
+            } else if eventsTableView.contentOffset.y < -(scrollViewClosedY + middlePoint) && eventsTableView.contentOffset.y > -scrollViewOpenY {
+                print("Returning eventsTableView to OPEN POSITION")
+                UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
+                    self.eventsTableView.contentInset.top = self.scrollViewOpenY
+                    self.eventsTableView.contentOffset.y = -self.scrollViewOpenY
+                    self.pastEventsLabel.alpha = 1
+                    }, completion: nil)
+            }
+            self.view.sendSubviewToBack(cardsScrollView)
+        }
+    }
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        if scrollView == eventsTableView {
+            cardsScrollViewInitialX = self.cardsScrollView.contentOffset.x
+>>>>>>> origin/master
         }
     }
     
@@ -244,11 +263,8 @@ eventView.layer.shadowRadius = 3
                     inset.top = 0
                 }
                 eventsTableView.contentInset = inset
-                
             } else {
-                var inset: UIEdgeInsets = eventsTableView.contentInset
-                inset.top = scrollViewOpenY
-                eventsTableView.contentInset = inset
+                eventsTableView.contentInset.top = scrollViewOpenY
             }
             
             // Adjust cards and past events label based on scroll position
@@ -257,12 +273,11 @@ eventView.layer.shadowRadius = 3
             if eventsTableView.contentOffset.y < -scrollViewClosedY && eventsTableView.contentOffset.y > -scrollViewOpenY {
                 percentScroll = (currentOffset / finalOffset)
                 self.view.sendSubviewToBack(cardsScrollView)
+                self.view.sendSubviewToBack(pastEventsLabel)
             } else if eventsTableView.contentOffset.y >= -scrollViewClosedY { // Above closed position
                 percentScroll = 0
                 self.view.sendSubviewToBack(cardsScrollView)
-                /*UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
-                scrollView.contentOffset.x = 0
-                }, completion: nil)*/
+                self.view.sendSubviewToBack(pastEventsLabel)
             } else { // Below open position
                 percentScroll = 1
                 self.view.bringSubviewToFront(cardsScrollView)
@@ -270,69 +285,20 @@ eventView.layer.shadowRadius = 3
             
             print("percentScroll: \(percentScroll)")
             
-            /*
-            if scrollView.contentOffset.x != 0{
-            print("horizontal scrolled!!")
-            eventsTableView.contentInset.top = scrollViewOpenY
-            print("contentInset: \(eventsTableView.contentInset.top)")
-            eventsTableView.contentOffset.y = -scrollViewOpenY
-            }*/
+            // Return cardsScrollView to origin if left offset
+            cardsScrollView.contentOffset.x = cardsScrollViewInitialX * percentScroll
             
             pastEventsLabel.alpha = percentScroll
             
-            //STEP 2
-            let TX1 = (card1.endOrigin.x - card1.startOrigin.x) * percentScroll
-            let TX2 = (card2.endOrigin.x - card2.startOrigin.x) * percentScroll
-            let TX3 = (card3.endOrigin.x - card3.startOrigin.x) * percentScroll
-            let TX4 = (card4.endOrigin.x - card4.startOrigin.x) * percentScroll
-            let TX5 = (card5.endOrigin.x - card5.startOrigin.x) * percentScroll
-            let TX6 = (card6.endOrigin.x - card6.startOrigin.x) * percentScroll
-            let TX7 = (card7.endOrigin.x - card7.startOrigin.x) * percentScroll
+            for card in cards {
+                let tx = (card.endOrigin.x - card.startOrigin.x) * percentScroll
+                let ty = (card.endOrigin.y - card.startOrigin.y) * percentScroll
+                let r = (card.endRotation - card.startRotation) * percentScroll
+                let transform = CGAffineTransformMakeRotation(card.startRotation + r)
+                let translationTransform = CGAffineTransformTranslate(transform, tx, ty)
+                card.view.transform = translationTransform
+            }
             
-            //STEP 3
-            let TY1 = (card1.endOrigin.y - card1.startOrigin.y) * percentScroll
-            let TY2 = (card2.endOrigin.y - card2.startOrigin.y) * percentScroll
-            let TY3 = (card3.endOrigin.y - card3.startOrigin.y) * percentScroll
-            let TY4 = (card4.endOrigin.y - card4.startOrigin.y) * percentScroll
-            let TY5 = (card5.endOrigin.y - card5.startOrigin.y) * percentScroll
-            let TY6 = (card6.endOrigin.y - card6.startOrigin.y) * percentScroll
-            let TY7 = (card7.endOrigin.y - card7.startOrigin.y) * percentScroll
-            
-            //STEP 4
-            let R1 = (card1.endRotation - card1.startRotation) * percentScroll
-            let R2 = (card2.endRotation - card2.startRotation) * percentScroll
-            let R3 = (card3.endRotation - card3.startRotation) * percentScroll
-            let R4 = (card4.endRotation - card4.startRotation) * percentScroll
-            let R5 = (card5.endRotation - card5.startRotation) * percentScroll
-            let R6 = (card6.endRotation - card6.startRotation) * percentScroll
-            let R7 = (card7.endRotation - card7.startRotation) * percentScroll
-            
-            //STEP 5
-            let transform1 = CGAffineTransformMakeRotation(card1.startRotation + R1)
-            let transform2 = CGAffineTransformMakeRotation(card2.startRotation + R2)
-            let transform3 = CGAffineTransformMakeRotation(card3.startRotation + R3)
-            let transform4 = CGAffineTransformMakeRotation(card4.startRotation + R4)
-            let transform5 = CGAffineTransformMakeRotation(card5.startRotation + R5)
-            let transform6 = CGAffineTransformMakeRotation(card6.startRotation + R6)
-            let transform7 = CGAffineTransformMakeRotation(card7.startRotation + R7)
-            
-            //STEP 9
-            let translationTransform1 = CGAffineTransformTranslate(transform1, TX1, TY1)
-            let translationTransform2 = CGAffineTransformTranslate(transform2, TX2, TY2)
-            let translationTransform3 = CGAffineTransformTranslate(transform3, TX3, TY3)
-            let translationTransform4 = CGAffineTransformTranslate(transform4, TX4, TY4)
-            let translationTransform5 = CGAffineTransformTranslate(transform5, TX5, TY5)
-            let translationTransform6 = CGAffineTransformTranslate(transform6, TX6, TY6)
-            let translationTransform7 = CGAffineTransformTranslate(transform7, TX7, TY7)
-            
-            //STEP 10
-            housingCardView.transform = translationTransform1
-            youthCardView.transform = translationTransform2
-            medicineCardView.transform = translationTransform3
-            reliefCardView.transform = translationTransform4
-            artCardView.transform = translationTransform5
-            environmentCardView.transform = translationTransform6
-            internationalCardView.transform = translationTransform7
             
         }
     }
