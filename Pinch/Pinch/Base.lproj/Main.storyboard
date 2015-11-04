@@ -127,41 +127,41 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="ly4-vn-9kI">
-                                        <rect key="frame" x="-6" y="0.0" width="917" height="235"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="829" height="235"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="card_youth" id="m1Q-Jz-npi">
-                                                <rect key="frame" x="135" y="60" width="107" height="128"/>
+                                                <rect key="frame" x="131" y="64" width="107" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
                                             </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="card_housing" id="AOA-As-Ajh">
-                                                <rect key="frame" x="20" y="60" width="107" height="128"/>
+                                                <rect key="frame" x="16" y="64" width="107" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
                                             </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="card_international" id="43w-CV-yJj">
-                                                <rect key="frame" x="710" y="60" width="107" height="128"/>
+                                                <rect key="frame" x="706" y="64" width="107" height="128"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <animations/>
                                             </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="card_relief" id="pJg-yJ-s4X">
-                                                <rect key="frame" x="365" y="60" width="107" height="128"/>
+                                                <rect key="frame" x="361" y="64" width="107" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
                                             </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="card_art_culture" id="19s-lI-gc2">
-                                                <rect key="frame" x="480" y="60" width="107" height="128"/>
+                                                <rect key="frame" x="476" y="64" width="107" height="128"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <animations/>
                                             </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="card_medicine" id="Eh6-Pf-6pk">
-                                                <rect key="frame" x="250" y="60" width="107" height="128"/>
+                                                <rect key="frame" x="246" y="64" width="107" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
                                             </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="card_environment" id="eiD-JU-BeO">
-                                                <rect key="frame" x="595" y="60" width="107" height="128"/>
+                                                <rect key="frame" x="591" y="64" width="107" height="128"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <animations/>
                                             </imageView>
@@ -466,7 +466,6 @@
                         <animations/>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="Msn-f2-oQj">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="ro1-ca-y7Q">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ii7-FH-jB4">
