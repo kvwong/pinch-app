@@ -33,7 +33,7 @@ class StoryCell: UITableViewCell {
         defaults.setInteger(height, forKey: "storycell_height")
         defaults.synchronize()
         
-        //storyImage.file = Organization["storyImage"] as? PFFile
+
         
        // storyImage.file = organization["storyImage"] as? PFFile
         
