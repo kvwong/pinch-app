@@ -71,7 +71,9 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         eventNPOLabel.text = npoLabel
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 4
-        eventDescriptionLabel.attributedText = NSAttributedString(string: descriptionLabel, attributes:[NSFontAttributeName: UIFont(name: "Lato-Regular", size: 14)!, NSForegroundColorAttributeName: colorTextMedium, NSParagraphStyleAttributeName: paragraphStyle])
+      //  eventDescriptionLabel.attributedText = NSAttributedString(string: descriptionLabel, attributes:[NSFontAttributeName: UIFont(name: "Lato-Regular", size: 14)!, NSForegroundColorAttributeName: colorTextMedium, NSParagraphStyleAttributeName: paragraphStyle])
+        
+        
         friend1.image = friend1Image
         friend2.image = friend2Image
         friend3.image = friend3Image

@@ -43,15 +43,17 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
     
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1 + aboutViewController.numberOfSectionsInTableView(activeViewController.tableView)
+        return 2 + aboutViewController.numberOfSectionsInTableView(activeViewController.tableView)
         // TO-DO: return number of sections by upcoming time
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
+        }else if section == 1 {
+            return 0
         } else {
-            return activeViewController.tableView(activeViewController.tableView, numberOfRowsInSection: section - 1)
+            return activeViewController.tableView(activeViewController.tableView, numberOfRowsInSection: section - 2)
             
 //            return aboutViewController.tableView(aboutViewController.tableView, numberOfRowsInSection: section + 1)
         }            // TO-DO: return number of rows by upcoming tim
@@ -59,12 +61,12 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
+        if indexPath.section == 0 || indexPath.section == 1 {
             let cell =  tableView.dequeueReusableCellWithIdentifier("NPOImageTableViewCell") as! NPOImageTableViewCell
             cell.selectionStyle = UITableViewCellSelectionStyle.None
             return cell
         } else {
-            let contentIndexPath = NSIndexPath(forRow: indexPath.row, inSection: indexPath.section - 1)
+            let contentIndexPath = NSIndexPath(forRow: indexPath.row, inSection: indexPath.section - 2)
 //            let contentIndexPath = NSIndexPath(forRow: indexPath.row, inSection: indexPath.section + 1)
             return activeViewController.tableView(activeViewController.tableView, cellForRowAtIndexPath: contentIndexPath)
         }
@@ -72,11 +74,11 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        if section == 0 {
+        if section <= 1 {
             return nil
         } else {
           
-            return activeViewController.tableView!(activeViewController.tableView, viewForHeaderInSection: section - 1)
+            return activeViewController.tableView!(activeViewController.tableView, viewForHeaderInSection: section - 2)
             
             //            return aboutViewController.tableView(aboutViewController.tableView, numberOfRowsInSection: section + 1)
         }
@@ -96,8 +98,10 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
         
         if indexPath.section == 0 {
             height = 220
-        } else {
-            let contentIndexPath = NSIndexPath(forRow: indexPath.row, inSection: indexPath.section - 1)
+        } else if indexPath.section == 1 {
+            height = 0
+        }else {
+            let contentIndexPath = NSIndexPath(forRow: indexPath.row, inSection: indexPath.section - 2)
             height = activeViewController.tableView!(activeViewController.tableView, heightForRowAtIndexPath: contentIndexPath)
         }
         
@@ -109,7 +113,9 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
         if section == 0 {
             return 0
             
-        } else {
+        } else if section == 1 {
+            return 44
+        }else {
         
             return 50
         }
