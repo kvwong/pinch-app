@@ -352,9 +352,11 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         if indexPath.section < 2 {
             if indexPath.row == 0 {
                 let row = tableView.dequeueReusableCellWithIdentifier("UserProfileDetailsTableViewCell") as! UserProfileDetailsTableViewCell
-          //      row.nameLabel.text = currentUser!["firstName"] as! String
-           //     row.locationLabel.text = "\(currentUser!["city"] as! String), \(currentUser!["state"] as! String)"
-         //       row.bioLabel.text = currentUser!["bio"] as! String
+                if currentUser != nil {
+                    row.nameLabel.text = currentUser!["firstName"] as! String
+                    row.locationLabel.text = "\(currentUser!["city"] as! String), \(currentUser!["state"] as! String)"
+                    row.bioLabel.text = currentUser!["bio"] as! String
+                }
                 return row
             } else {
                 let row = tableView.dequeueReusableCellWithIdentifier("UserProfileMenuTableViewCell") as! UserProfileMenuTableViewCell
