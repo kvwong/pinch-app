@@ -40,7 +40,7 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
        // tabsView = tableView.dequeueReusableCellWithIdentifier("UserProfileEventTabsTableViewCell") as! UserProfileEventTabsTableViewCell
 //tabsViewInitialY = 404
        // tabsView.frame.origin.y = eventTabsViewInitialY - eventsTableView.contentOffset.y
-        view.addSubview(tabsView)
+//        view.addSubview(tabsView)
 
 
     }
