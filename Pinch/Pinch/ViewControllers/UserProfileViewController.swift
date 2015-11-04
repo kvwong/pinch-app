@@ -48,9 +48,8 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
     //dark purple
     var card7 = Card(startOrigin: CGPoint(x: 209, y: 34), endOrigin: CGPoint(x: 710, y: 60), startRotation: radian(18), endRotation: 0)
     
-    
-
-    //var eventTabsViewInitialY: CGFloat!
+    var eventTabsView: UserProfileEventTabsTableViewCell!
+    var eventTabsViewInitialY: CGFloat!
     
     // Overrides ---------------------------------------
     
@@ -99,6 +98,11 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         
         internationalCardView.frame.origin = card7.startOrigin
         internationalCardView.transform = CGAffineTransformMakeRotation(card7.startRotation)
+        
+        eventTabsView = eventsTableView.dequeueReusableCellWithIdentifier("UserProfileEventTabsTableViewCell") as! UserProfileEventTabsTableViewCell
+        eventTabsViewInitialY = 404
+        eventTabsView.frame.origin.y = eventTabsViewInitialY - eventsTableView.contentOffset.y
+        view.addSubview(eventTabsView)
 
     }
     
@@ -177,6 +181,11 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
     func scrollViewDidScroll(scrollView: UIScrollView) {
         print("A: contentOffset: \(eventsTableView.contentOffset)")
         
+        if eventsTableView.contentOffset.y > 340 {
+            eventTabsView.frame.origin.y = 64
+        } else {
+            eventTabsView.frame.origin.y = eventTabsViewInitialY - eventsTableView.contentOffset.y
+        }
         
         if eventsTableView.contentOffset.y > 0 {
             print("eventsTableView.content.y offset is: \(eventsTableView.contentOffset.y)")
@@ -372,8 +381,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 1 {
-            let header = tableView.dequeueReusableCellWithIdentifier("UserProfileEventTabsTableViewCell") as! UserProfileEventTabsTableViewCell
-            return header
+            return nil
         } else {
             return nil
         }
