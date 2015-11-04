@@ -17,7 +17,7 @@ class NPOProfileTabsTableViewCell: UITableViewCell {
 
     var organizationProfileViewController: OrganizationProfileViewController!
     
-    var previousTab = "Upcoming"
+    var previousTab = "About"
     
     override func awakeFromNib() {
         super.awakeFromNib()

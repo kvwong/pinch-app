@@ -42,6 +42,7 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
         
         tabsView = tableView.dequeueReusableCellWithIdentifier("NPOProfileTabsTableViewCell") as! NPOProfileTabsTableViewCell
         tabsView.organizationProfileViewController = self
+        tabsView.selectionStyle = UITableViewCellSelectionStyle.None
         
         tabsViewInitialY = 220
         tabsView.frame.origin.y = tabsViewInitialY - tableView.contentOffset.y
@@ -56,8 +57,8 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
         followersViewController = storyboard.instantiateViewControllerWithIdentifier("FollowersViewController") as! FollowersViewController
         followersViewController.view.layoutIfNeeded()
         
-        //activeViewController = aboutViewController
-        activeViewController = upcomingViewController
+        activeViewController = aboutViewController
+        //activeViewController = upcomingViewController
 
     }
     
@@ -106,7 +107,10 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
         } else {
             let contentIndexPath = NSIndexPath(forRow: indexPath.row, inSection: indexPath.section - 2)
 //            let contentIndexPath = NSIndexPath(forRow: indexPath.row, inSection: indexPath.section + 1)
-            return activeViewController.tableView(activeViewController.tableView, cellForRowAtIndexPath: contentIndexPath)
+            let cell = activeViewController.tableView(activeViewController.tableView, cellForRowAtIndexPath: contentIndexPath)
+            //cell.selectionStyle = UITableViewCellSelectionStyle.None
+            
+            return cell
         }
     }
     
