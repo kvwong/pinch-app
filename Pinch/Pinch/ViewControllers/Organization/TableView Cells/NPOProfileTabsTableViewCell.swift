@@ -15,27 +15,13 @@ class NPOProfileTabsTableViewCell: UITableViewCell {
     @IBOutlet weak var followersTab: UIButton!
     @IBOutlet weak var activeTabView: UIView!
 
-    var aboutViewController: UIViewController!
-    var upcomingViewController: UIViewController!
-    var followersViewController: UIViewController!
-
     var organizationProfileViewController: OrganizationProfileViewController!
     
     var previousTab = "Upcoming"
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        
-//        aboutViewController = storyboard.instantiateViewControllerWithIdentifier("AboutViewController")
-//        
-//        upcomingViewController = storyboard.instantiateViewControllerWithIdentifier("UpcomingViewController")
-//        
-//        followersViewController = storyboard.instantiateViewControllerWithIdentifier("FollowersViewController")
-//        
-//        switchTabs("About")
-        
+
         aboutTab.setTitleColor(colorTextLight, forState: .Normal)
         upcomingTab.setTitleColor(colorTextLight, forState: .Normal)
         followersTab.setTitleColor(colorTextLight, forState: .Normal)
@@ -58,6 +44,8 @@ class NPOProfileTabsTableViewCell: UITableViewCell {
     }
     
     func loadUpcoming() {
+    organizationProfileViewController.activeViewController = organizationProfileViewController.upcomingViewController
+        
 //        print("Loading upcoming events...")
 //        //call viewWillLoad
 //        upcomingViewController.willMoveToParentViewController(organizationProfileViewController)
@@ -70,6 +58,8 @@ class NPOProfileTabsTableViewCell: UITableViewCell {
     }
     
     func loadAbout() {
+        organizationProfileViewController.activeViewController = organizationProfileViewController.aboutViewController
+        
 //        print("Loading about page...")
 //        //call viewWillLoad
 //        aboutViewController.willMoveToParentViewController(organizationProfileViewController)
@@ -83,6 +73,9 @@ class NPOProfileTabsTableViewCell: UITableViewCell {
     }
     
     func loadFollowers() {
+        
+        organizationProfileViewController.activeViewController = organizationProfileViewController.followersViewController
+        
         print("Loading followers list...")
 //        //call viewWillLoad
 //        followersViewController.willMoveToParentViewController(organizationProfileViewController)

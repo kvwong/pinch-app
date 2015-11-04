@@ -15,8 +15,16 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
     var previousTab: String!
     
     var aboutViewController: AboutViewController!
+    var upcomingViewController: UpcomingViewController!
+    var followersViewController: FollowersViewController!
     
-    var activeViewController: TabTableViewController!
+    var activeViewController: TabTableViewController! {
+        didSet {
+            if tableView != nil {
+                tableView.reloadData()
+            }
+        }
+    }
     
     var tabsView: NPOProfileTabsTableViewCell!
     var tabsViewInitialY: CGFloat!
@@ -29,22 +37,32 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
         
         tableView.estimatedRowHeight = 220
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.showsVerticalScrollIndicator = false
+        
+        
+        tabsView = tableView.dequeueReusableCellWithIdentifier("NPOProfileTabsTableViewCell") as! NPOProfileTabsTableViewCell
+        tabsView.organizationProfileViewController = self
+        
+        tabsViewInitialY = 220
+        tabsView.frame.origin.y = tabsViewInitialY - tableView.contentOffset.y
+        view.addSubview(tabsView)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         aboutViewController = storyboard.instantiateViewControllerWithIdentifier("AboutViewController") as! AboutViewController
         aboutViewController.view.layoutIfNeeded()
+        upcomingViewController = storyboard.instantiateViewControllerWithIdentifier("UpcomingViewController") as! UpcomingViewController
+        upcomingViewController.view.layoutIfNeeded()
+        followersViewController = storyboard.instantiateViewControllerWithIdentifier("FollowersViewController") as! FollowersViewController
+        followersViewController.view.layoutIfNeeded()
         
-        activeViewController = aboutViewController
-        
-        tabsView = tableView.dequeueReusableCellWithIdentifier("NPOProfileTabsTableViewCell") as! NPOProfileTabsTableViewCell
-        
-        tabsViewInitialY = 220
-        tabsView.frame.origin.y = tabsViewInitialY - tableView.contentOffset.y
-        view.addSubview(tabsView)
-
+        //activeViewController = aboutViewController
+        activeViewController = upcomingViewController
 
     }
+    
+    
+    
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         
@@ -63,7 +81,7 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
     
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2 + aboutViewController.numberOfSectionsInTableView(activeViewController.tableView)
+        return 2 + activeViewController.numberOfSectionsInTableView!(activeViewController.tableView)
         // TO-DO: return number of sections by upcoming time
     }
     
@@ -137,7 +155,7 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
             return 44
         }else {
         
-            return 50
+            return activeViewController.tableView!(activeViewController.tableView, heightForHeaderInSection: section - 2)
         }
     }
 }

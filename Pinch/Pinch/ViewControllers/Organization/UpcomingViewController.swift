@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UpcomingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class UpcomingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TabTableViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,6 +19,10 @@ class UpcomingViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.delegate = self
         tableView.dataSource = self
         
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,6 +49,19 @@ class UpcomingViewController: UIViewController, UITableViewDelegate, UITableView
 
         
     }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return nil
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 111.5
+    }
+    
     
 //    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 //  

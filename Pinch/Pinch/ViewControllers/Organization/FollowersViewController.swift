@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FollowersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FollowersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TabTableViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -37,6 +37,19 @@ class FollowersViewController: UIViewController, UITableViewDataSource, UITableV
         let cell = tableView.dequeueReusableCellWithIdentifier("FollowingTableViewCell") as! FollowingTableViewCell
         
         return cell
+    }
+
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return nil
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 55
     }
 
 
