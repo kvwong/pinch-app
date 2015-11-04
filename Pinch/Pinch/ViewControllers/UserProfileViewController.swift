@@ -189,18 +189,27 @@ eventView.layer.shadowRadius = 3
         let middlePoint = (scrollViewOpenY - scrollViewClosedY)/2
         if eventsTableView.contentOffset.y < -scrollViewClosedY && eventsTableView.contentOffset.y > -(scrollViewClosedY + middlePoint) {
             print("Returning eventsTableView to CLOSED POSITION")
-            UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
-                self.eventsTableView.contentInset.top = self.scrollViewClosedY
-                self.eventsTableView.contentOffset.y = -self.scrollViewClosedY
-                self.pastEventsLabel.alpha = 0
-                }, completion: nil)
+//            UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
+//                self.eventsTableView.contentInset.top = self.scrollViewClosedY
+//                self.eventsTableView.contentOffset.y = -self.scrollViewClosedY
+//                self.pastEventsLabel.alpha = 0
+//                }, completion: nil)
+            
+            self.eventsTableView.contentInset.top = self.scrollViewClosedY
+            self.eventsTableView.contentOffset.y = -self.scrollViewClosedY
+            self.pastEventsLabel.alpha = 0
+            
         } else if eventsTableView.contentOffset.y < -(scrollViewClosedY + middlePoint) && eventsTableView.contentOffset.y > -scrollViewOpenY {
             print("Returning eventsTableView to OPEN POSITION")
-            UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
-                self.eventsTableView.contentInset.top = self.scrollViewOpenY
-                self.eventsTableView.contentOffset.y = -self.scrollViewOpenY
-                self.pastEventsLabel.alpha = 1
-                }, completion: nil)
+//            UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
+//                self.eventsTableView.contentInset.top = self.scrollViewOpenY
+//                self.eventsTableView.contentOffset.y = -self.scrollViewOpenY
+//                self.pastEventsLabel.alpha = 1
+//                }, completion: nil)
+            
+            self.eventsTableView.contentInset.top = self.scrollViewOpenY
+            self.eventsTableView.contentOffset.y = -self.scrollViewOpenY
+            self.pastEventsLabel.alpha = 1
         }
     }
     
@@ -243,8 +252,10 @@ eventView.layer.shadowRadius = 3
             }
             
             // Adjust cards and past events label based on scroll position
+            var currentOffset = -1*eventsTableView.contentOffset.y - scrollViewClosedY
+            var finalOffset = CGFloat(scrollViewOpenY - scrollViewClosedY)
             if eventsTableView.contentOffset.y < -scrollViewClosedY && eventsTableView.contentOffset.y > -scrollViewOpenY {
-                percentScroll = (-eventsTableView.contentOffset.y - scrollViewClosedY) / CGFloat(scrollViewOpenY - scrollViewClosedY)
+                percentScroll = (currentOffset / finalOffset)
                 self.view.sendSubviewToBack(cardsScrollView)
             } else if eventsTableView.contentOffset.y >= -scrollViewClosedY { // Above closed position
                 percentScroll = 0

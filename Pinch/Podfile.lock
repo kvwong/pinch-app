@@ -25,6 +25,9 @@ PODS:
   - JCTagListView (0.0.4)
   - Parse (1.9.1):
     - Bolts/Tasks (>= 1.4.0)
+  - ParseUI (1.1.6):
+    - Bolts/Tasks (~> 1.2)
+    - Parse (~> 1.8)
   - SwiftValidator (3.0.1)
   - TTTAttributedLabel (1.13.4)
   - UIImageEffects (0.0.1)
@@ -35,6 +38,7 @@ DEPENDENCIES:
   - AHEasing
   - JCTagListView (from `git@github.com:flamencoflsh/JCTagListView.git`)
   - Parse
+  - ParseUI
   - SwiftValidator
   - TTTAttributedLabel
   - UIImageEffects
@@ -55,6 +59,7 @@ SPEC CHECKSUMS:
   Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
   JCTagListView: e267bb1e2f44555093d4d5ff5b95939c12ebd5ad
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
+  ParseUI: 8a22e448c03f825203d8c379c80523517f68baa3
   SwiftValidator: c59223144754045d7691febdc3b3ecc2e73b609c
   TTTAttributedLabel: 0a2ac7b2dd726d32a070dafb01446026b11e624f
   UIImageEffects: 37b99fa461e4965f332ca82e92f2c22a1075ee84

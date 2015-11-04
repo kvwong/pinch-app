@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import ParseUI
+import Parse
+import AFNetworking
 
 class StoryCell: UITableViewCell {
 
     @IBOutlet weak var storyLabel: UILabel!
-    @IBOutlet weak var storyImage: UIImageView!
-  
+    @IBOutlet weak var storyImage: PFImageView!
+
     var height: Int!
     
     override func awakeFromNib() {
@@ -29,6 +32,12 @@ class StoryCell: UITableViewCell {
         
         defaults.setInteger(height, forKey: "storycell_height")
         defaults.synchronize()
+        
+        //storyImage.file = Organization["storyImage"] as? PFFile
+        
+       // storyImage.file = organization["storyImage"] as? PFFile
+        
+        //     imageView.loadInBackground()
         
     }
 

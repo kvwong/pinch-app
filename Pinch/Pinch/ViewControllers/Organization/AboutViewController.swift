@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
 protocol TabTableViewController : UITableViewDataSource, UITableViewDelegate {
     weak var tableView: UITableView! { get set }
@@ -22,6 +24,16 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.dataSource = self
         tableView.delegate = self
         
+        let query = PFQuery(className: "Organization")
+        query.includeKey("eve")
+//        
+//        let userImageFile = Organization["storyImage"] as PFFile
+//        userImageFile.getDataInBackgroundWithBlock {
+//            (imageData: NSData!, error: NSError!) -> Void in
+//            if !error {
+//                let image = UIImage(data:imageData)
+//            }
+//        }
 //        tableView.estimatedRowHeight = 220
 //        tableView.rowHeight = UITableViewAutomaticDimension
     }

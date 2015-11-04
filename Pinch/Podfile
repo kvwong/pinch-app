@@ -11,6 +11,7 @@ target 'Pinch' do
 	pod 'UIImageEffects'
 	pod 'UIView+Shake'
 	pod 'Parse'
+	pod 'ParseUI'
     pod 'JCTagListView', :git => "git@github.com:flamencoflsh/JCTagListView.git"
 end
 

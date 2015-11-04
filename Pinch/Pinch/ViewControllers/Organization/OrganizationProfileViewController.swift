@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ParseUI
 
 class OrganizationProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
