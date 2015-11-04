@@ -201,7 +201,6 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             let rect: CGRect = eventsTableView.convertRect(eventsTableView.rectForHeaderInSection(1), toView: eventsTableView.superview)
             if rect.origin.y <= 64 {
                 inset.top = 64 + rect.height
-                // lock header here??
             } else {
                 inset.top = 0
             }

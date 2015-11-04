@@ -18,6 +18,9 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
     
     var activeViewController: TabTableViewController!
     
+    var tabsView: NPOProfileTabsTableViewCell!
+    var tabsViewInitialY: CGFloat!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +36,13 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
         aboutViewController.view.layoutIfNeeded()
         
         activeViewController = aboutViewController
+        
+       // tabsView = tableView.dequeueReusableCellWithIdentifier("UserProfileEventTabsTableViewCell") as! UserProfileEventTabsTableViewCell
+//tabsViewInitialY = 404
+       // tabsView.frame.origin.y = eventTabsViewInitialY - eventsTableView.contentOffset.y
+        view.addSubview(tabsView)
+
+
     }
     
     
