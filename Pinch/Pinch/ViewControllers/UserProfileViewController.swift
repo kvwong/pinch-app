@@ -11,6 +11,8 @@ import Parse
 
 class UserProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, UIGestureRecognizerDelegate {
     
+    // Outlets & Vars ----------------------------------
+    
     // Upcoming & Saved Event Table View
     @IBOutlet weak var eventsTableView: UITableView!
     @IBOutlet weak var cardsScrollView: UIScrollView!
@@ -108,8 +110,8 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             card.view.clipsToBounds = false
             card.view.layer.cornerRadius = 8
             card.view.layer.shadowOffset = CGSize(width: 0, height: 2)
-            card.view.layer.shadowOpacity = 0.10
-            card.view.layer.shadowRadius = 3
+            card.view.layer.shadowOpacity = 0.15
+            card.view.layer.shadowRadius = 4
         }
         
         eventTabsView = eventsTableView.dequeueReusableCellWithIdentifier("UserProfileEventTabsTableViewCell") as! UserProfileEventTabsTableViewCell
