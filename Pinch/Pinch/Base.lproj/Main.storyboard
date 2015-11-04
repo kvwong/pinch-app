@@ -737,11 +737,11 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="NPOProfileTabsTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="NPOProfileTabsTableViewCell" rowHeight="50" id="9NS-6s-qBU" userLabel="NPOProfileTabsTableViewCell" customClass="NPOProfileTabsTableViewCell" customModule="Pinch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="234" width="375" height="50"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="NPOProfileTabsTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="NPOProfileTabsTableViewCell" rowHeight="48" id="9NS-6s-qBU" userLabel="NPOProfileTabsTableViewCell" customClass="NPOProfileTabsTableViewCell" customModule="Pinch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="234" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9NS-6s-qBU" id="zsb-9J-1ht">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" id="wJG-oc-UpQ" userLabel="Divider">

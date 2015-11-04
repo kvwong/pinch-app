@@ -37,14 +37,24 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
         
         activeViewController = aboutViewController
         
-       // tabsView = tableView.dequeueReusableCellWithIdentifier("UserProfileEventTabsTableViewCell") as! UserProfileEventTabsTableViewCell
-//tabsViewInitialY = 404
-       // tabsView.frame.origin.y = eventTabsViewInitialY - eventsTableView.contentOffset.y
-//        view.addSubview(tabsView)
+        tabsView = tableView.dequeueReusableCellWithIdentifier("NPOProfileTabsTableViewCell") as! NPOProfileTabsTableViewCell
+        
+        tabsViewInitialY = 220
+        tabsView.frame.origin.y = tabsViewInitialY - tableView.contentOffset.y
+        view.addSubview(tabsView)
 
 
     }
     
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+        if tableView.contentOffset.y > 220 {
+            tabsView.frame.origin.y = 0
+        } else {
+            tabsView.frame.origin.y = tabsViewInitialY - tableView.contentOffset.y
+        }
+
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
