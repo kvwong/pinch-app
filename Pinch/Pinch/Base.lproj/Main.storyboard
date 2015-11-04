@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="V8y-lG-Mwc">
+
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
@@ -112,8 +114,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[User]'s Past Events" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y0Z-L8-lw1">
+                                <rect key="frame" x="59" y="20" width="257" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="14"/>
+                                <color key="textColor" red="0.65098039215686276" green="0.67843137254901964" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="iMS-03-qTd">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="208"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="ly4-vn-9kI">
@@ -155,14 +165,6 @@
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <animations/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Annabel's Past Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y0Z-L8-lw1">
-                                                <rect key="frame" x="116" y="30" width="257" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="14"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -175,10 +177,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <inset key="contentInset" minX="0.0" minY="125" maxX="0.0" maxY="0.0"/>
+                                <inset key="contentInset" minX="0.0" minY="150" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserProfileDetailsTableViewCell" rowHeight="220" id="3aa-zM-iKJ" customClass="UserProfileDetailsTableViewCell" customModule="Pinch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="153" width="375" height="220"/>
+                                        <rect key="frame" x="0.0" y="178" width="375" height="220"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3aa-zM-iKJ" id="sgH-Ar-IRj">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
@@ -238,7 +240,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserProfileMenuTableViewCell" rowHeight="184" id="mB4-lb-GfI" customClass="UserProfileMenuTableViewCell" customModule="Pinch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="373" width="375" height="184"/>
+                                        <rect key="frame" x="0.0" y="398" width="375" height="184"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mB4-lb-GfI" id="NmL-7a-ffI">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="184"/>
@@ -318,7 +320,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserProfileEventTabsTableViewCell" rowHeight="44" id="zoX-iG-IQ3" customClass="UserProfileEventTabsTableViewCell" customModule="Pinch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="557" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="582" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zoX-iG-IQ3" id="B7k-w4-reD">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -385,7 +387,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserProfileUpcomingAndSavedEventsTableViewCell" rowHeight="112" id="DSz-Ge-7Xr" customClass="UserProfileUpcomingAndSavedEventsTableViewCell" customModule="Pinch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="601" width="375" height="112"/>
+                                        <rect key="frame" x="0.0" y="626" width="375" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DSz-Ge-7Xr" id="cIg-IO-9ms">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
@@ -484,6 +486,8 @@
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
                         <outlet property="artCardView" destination="19s-lI-gc2" id="Iv7-eA-FNw"/>
+                        <outlet property="cardsScrollView" destination="iMS-03-qTd" id="n0s-xF-JIB"/>
+                        <outlet property="cardsScrollViewContent" destination="ly4-vn-9kI" id="Wt7-Q9-p2e"/>
                         <outlet property="environmentCardView" destination="eiD-JU-BeO" id="Q7i-P3-fbX"/>
                         <outlet property="eventsTableView" destination="Oq5-Fl-jBA" id="GGE-G7-PmA"/>
                         <outlet property="housingCardView" destination="AOA-As-Ajh" id="M6I-73-zfl"/>
@@ -491,8 +495,6 @@
                         <outlet property="medicineCardView" destination="Eh6-Pf-6pk" id="pQs-AT-bxp"/>
                         <outlet property="pastEventsLabel" destination="Y0Z-L8-lw1" id="cUk-bt-dax"/>
                         <outlet property="reliefCardView" destination="pJg-yJ-s4X" id="5Nf-Tf-tSV"/>
-                        <outlet property="scrollView" destination="iMS-03-qTd" id="kcV-lZ-t5F"/>
-                        <outlet property="scrollViewContent" destination="ly4-vn-9kI" id="JvU-5u-Dpp"/>
                         <outlet property="youthCardView" destination="m1Q-Jz-npi" id="F8A-7r-g5E"/>
                         <segue destination="n7v-Hh-x8C" kind="push" identifier="segueToFollowing" id="O7t-Rq-kzQ"/>
                     </connections>
