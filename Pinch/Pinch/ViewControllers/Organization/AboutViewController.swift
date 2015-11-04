@@ -8,7 +8,11 @@
 
 import UIKit
 
-class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+protocol TabTableViewController : UITableViewDataSource, UITableViewDelegate {
+    weak var tableView: UITableView! { get set }
+}
+
+class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TabTableViewController {
 
     @IBOutlet weak var tableView: UITableView!
     

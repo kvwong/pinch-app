@@ -9,10 +9,14 @@
 import UIKit
 
 class OrganizationProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var previousTab: String!
+    
+    var aboutViewController: AboutViewController!
+    
+    var activeViewController: TabTableViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,17 +27,23 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
         tableView.estimatedRowHeight = 220
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        aboutViewController = storyboard.instantiateViewControllerWithIdentifier("AboutViewController") as! AboutViewController
+        aboutViewController.view.layoutIfNeeded()
+        
+        activeViewController = aboutViewController
     }
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
- 
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 1 + aboutViewController.numberOfSectionsInTableView(activeViewController.tableView)
         // TO-DO: return number of sections by upcoming time
     }
     
@@ -41,35 +51,54 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
         if section == 0 {
             return 1
         } else {
-            return 0
+            return activeViewController.tableView(activeViewController.tableView, numberOfRowsInSection: section - 1)
+            
+//            return aboutViewController.tableView(aboutViewController.tableView, numberOfRowsInSection: section + 1)
         }            // TO-DO: return number of rows by upcoming tim
-
+        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
             let cell =  tableView.dequeueReusableCellWithIdentifier("NPOImageTableViewCell") as! NPOImageTableViewCell
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
+            cell.selectionStyle = UITableViewCellSelectionStyle.None
             return cell
-        }
-    
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 1 {
-        let headerCell =  tableView.dequeueReusableCellWithIdentifier("NPOProfileTabsTableViewCell") as! NPOProfileTabsTableViewCell
-        headerCell.selectionStyle = UITableViewCellSelectionStyle.None
-            headerCell.organizationProfileViewController = self
-        return headerCell
         } else {
-            return nil
+            let contentIndexPath = NSIndexPath(forRow: indexPath.row, inSection: indexPath.section - 1)
+//            let contentIndexPath = NSIndexPath(forRow: indexPath.row, inSection: indexPath.section + 1)
+            return activeViewController.tableView(activeViewController.tableView, cellForRowAtIndexPath: contentIndexPath)
         }
     }
-
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        if section == 0 {
+            return nil
+        } else {
+          
+            return activeViewController.tableView!(activeViewController.tableView, viewForHeaderInSection: section - 1)
+            
+            //            return aboutViewController.tableView(aboutViewController.tableView, numberOfRowsInSection: section + 1)
+        }
+        
+//        if section == 1 {
+//            let headerCell =  tableView.dequeueReusableCellWithIdentifier("NPOProfileTabsTableViewCell") as! NPOProfileTabsTableViewCell
+//            headerCell.selectionStyle = UITableViewCellSelectionStyle.None
+//            headerCell.organizationProfileViewController = self
+//            return headerCell
+//        } else {
+//            return nil
+//        }
+    }
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         var height: CGFloat!
         
         if indexPath.section == 0 {
-           height = 220
+            height = 220
         } else {
-            height = 0
+            let contentIndexPath = NSIndexPath(forRow: indexPath.row, inSection: indexPath.section - 1)
+            height = activeViewController.tableView!(activeViewController.tableView, heightForRowAtIndexPath: contentIndexPath)
         }
         
         print("height \(height)")
@@ -77,13 +106,14 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 1 {
-            return 1000
+        if section == 0 {
+            return 0
             
         } else {
-            return 0
+        
+            return 50
         }
-}
+    }
 }
 
 
