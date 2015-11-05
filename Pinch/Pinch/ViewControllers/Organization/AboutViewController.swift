@@ -17,6 +17,7 @@ protocol TabTableViewController : UITableViewDataSource, UITableViewDelegate {
 class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TabTableViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var organizations: [PFObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,15 +26,27 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.delegate = self
         
         let query = PFQuery(className: "Organization")
-        query.includeKey("eve")
-//        
-//        let userImageFile = Organization["storyImage"] as PFFile
-//        userImageFile.getDataInBackgroundWithBlock {
-//            (imageData: NSData!, error: NSError!) -> Void in
-//            if !error {
-//                let image = UIImage(data:imageData)
-//            }
-//        }
+        //query.includeKey("events") //Include Events class
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) organizations.")
+                // Do something with the found objects
+                if let objects = objects as? [PFObject]? {
+                    for (index, object) in objects!.enumerate() {
+                        print("\(index): \(object.objectId!)")
+                        self.organizations.append(object)
+                    }
+                   
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+
 //        tableView.estimatedRowHeight = 220
 //        tableView.rowHeight = UITableViewAutomaticDimension
     }

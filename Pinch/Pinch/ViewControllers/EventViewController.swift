@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageUI
+import Parse
 
 let offset_HeaderStop:CGFloat = 40.0 // At this offset the Header stops its transformations
 let offset_B_LabelHeader:CGFloat = 95.0 // At this offset the Black label reaches the Header
@@ -51,7 +52,11 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     var friend2Image: UIImage!
     var friend3Image: UIImage!
     var descriptionLabel: String!
-    
+
+    //var eventObjectID: String!
+    var event: PFObject!
+    //var descriptionIndex: String.CharacterView.Index!
+    var npo: PFObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,11 +73,22 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         eventTitleLabel.text = titleLabel
         eventTimeAndDateLabel.text = scheduleDate
         eventAddressLabel.text = addressLabel
-        eventNPOLabel.text = npoLabel
+        //eventNPOLabel.text = npoLabel
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 4
-      //  eventDescriptionLabel.attributedText = NSAttributedString(string: descriptionLabel, attributes:[NSFontAttributeName: UIFont(name: "Lato-Regular", size: 14)!, NSForegroundColorAttributeName: colorTextMedium, NSParagraphStyleAttributeName: paragraphStyle])
+    
+        eventDescriptionLabel.text = event!["description"] as! NSString as String
         
+        eventDescriptionLabel.attributedText = NSAttributedString(string: eventDescriptionLabel.text!, attributes:[NSFontAttributeName: UIFont(name: "Lato-Regular", size: 14)!, NSForegroundColorAttributeName: colorTextMedium, NSParagraphStyleAttributeName: paragraphStyle])
+//        descriptionIndex = String.CharacterView.Index(5000)
+//        
+//        if eventDescriptionLabel.text?.characters.count > 5000{
+//            eventDescriptionLabel.text = eventDescriptionLabel.text?.substringToIndex(descriptionIndex) + "..."
+//        }
+        
+        npo = event.valueForKey("organization") as! PFObject
+        print("npo: \(npo.valueForKey("name")!)")
+        eventNPOLabel.text = npo.valueForKey("name")! as! String
         
         friend1.image = friend1Image
         friend2.image = friend2Image

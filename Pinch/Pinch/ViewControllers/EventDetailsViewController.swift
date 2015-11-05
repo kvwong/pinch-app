@@ -15,6 +15,8 @@ class EventDetailsViewController: UIViewController, MFMailComposeViewControllerD
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var detailsView: UIImageView!
     
+    var objectID: Int!
+    
     // TO-DO: pull this from Parse
     var url = "http://www.gotrbayarea.org/race/51-girls-on-the-run-5k"
     

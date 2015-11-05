@@ -35,9 +35,9 @@ class StoryCell: UITableViewCell {
         
 
         
-       // storyImage.file = organization["storyImage"] as? PFFile
+    //    storyImage.file = organization["storyImage"] as? PFFile
         
-        //     imageView.loadInBackground()
+     //   imageView.loadInBackground()
         
     }
 

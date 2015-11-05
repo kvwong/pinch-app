@@ -8,6 +8,8 @@
 
 import UIKit
 import UIImageEffects
+import Parse
+
 
 class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
 
@@ -49,6 +51,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     var isPresenting: Bool = true
     var wasTapped: Bool = true
     
+    var events: [PFObject] = []
+    
     // Overrides ---------------------------------------
     
     override func viewDidLoad() {
@@ -82,6 +86,32 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         } else {
             searchView.hidden = true
         }
+        
+        // Download events from Parse
+        let query = PFQuery(className:"Event")
+        query.includeKey("organization") // Include Organization class
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) events.")
+                // Do something with the found objects
+                if let objects = objects as? [PFObject]? {
+                    for (index, object) in objects!.enumerate() {
+                        print("\(index): \(object.objectId!)")
+                        self.events.append(object)
+                    }
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+        
+        //Temp Text
+        descriptionLabel.text = "This is the text from the Home View Controller"
+
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -225,7 +255,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
             eventDetailViewController.friend2Image = friend2.image
             eventDetailViewController.friend3Image = friend3.image
             eventDetailViewController.descriptionLabel = descriptionLabel.text
-            
+            //eventDetailViewController.eventObjectID = events[0].objectId
+            eventDetailViewController.event = events[0]
         
         } else if segue.identifier == "segueToSearch" {
             let destinationViewController = segue.destinationViewController as! SearchViewController

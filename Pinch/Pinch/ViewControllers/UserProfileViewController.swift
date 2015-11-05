@@ -178,7 +178,6 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
     
     // Automatically snap eventsTableView
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-<<<<<<< HEAD
         let middlePoint = (scrollViewOpenY - scrollViewClosedY)/2
         if eventsTableView.contentOffset.y < -scrollViewClosedY && eventsTableView.contentOffset.y > -(scrollViewClosedY + middlePoint) {
             print("Returning eventsTableView to CLOSED POSITION")
@@ -203,32 +202,6 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             self.eventsTableView.contentInset.top = self.scrollViewOpenY
             self.eventsTableView.contentOffset.y = -self.scrollViewOpenY
             self.pastEventsLabel.alpha = 1
-=======
-        if scrollView == eventsTableView {
-            let middlePoint = (scrollViewOpenY - scrollViewClosedY)/2
-            if eventsTableView.contentOffset.y < -scrollViewClosedY + 50 && eventsTableView.contentOffset.y > -(scrollViewClosedY + middlePoint) {
-                print("Returning eventsTableView to CLOSED POSITION")
-                UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
-                    self.eventsTableView.contentInset.top = self.scrollViewClosedY
-                    self.eventsTableView.contentOffset.y = -self.scrollViewClosedY
-                    self.pastEventsLabel.alpha = 0
-                    }, completion: nil)
-            } else if eventsTableView.contentOffset.y < -(scrollViewClosedY + middlePoint) && eventsTableView.contentOffset.y > -scrollViewOpenY {
-                print("Returning eventsTableView to OPEN POSITION")
-                UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
-                    self.eventsTableView.contentInset.top = self.scrollViewOpenY
-                    self.eventsTableView.contentOffset.y = -self.scrollViewOpenY
-                    self.pastEventsLabel.alpha = 1
-                    }, completion: nil)
-            }
-            self.view.sendSubviewToBack(cardsScrollView)
-        }
-    }
-    
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        if scrollView == eventsTableView {
-            cardsScrollViewInitialX = self.cardsScrollView.contentOffset.x
->>>>>>> origin/master
         }
     }
     
