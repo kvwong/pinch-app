@@ -106,7 +106,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
 
     }
     
-    
+
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
@@ -118,11 +118,6 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return true
-    }
-    
 
     // Button Actions ----------------------------------
     
