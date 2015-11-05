@@ -32,11 +32,37 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
     
     var tabsView: NPOProfileTabsTableViewCell!
     var tabsViewInitialY: CGFloat!
+    var users: [PFObject] = []
+ 
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = npo.valueForKey("name") as! String
+        
+        // Download Users from Parse
+        let query = PFQuery(className:"_User")
+        //query.includeKey("organization") // Include Organization class
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) users.")
+                // Do something with the found objects
+                if let objects = objects as? [PFObject]? {
+                    for (index, object) in objects!.enumerate() {
+                        print("\(index): \(object.objectId!)")
+                        self.users.append(object)
+                    }
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -45,9 +71,10 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.showsVerticalScrollIndicator = false
         
-        
         tabsView = tableView.dequeueReusableCellWithIdentifier("NPOProfileTabsTableViewCell") as! NPOProfileTabsTableViewCell
         tabsView.organizationProfileViewController = self
+        print("OrgVC users: \(users)")
+        tabsView.users = users
         tabsView.selectionStyle = UITableViewCellSelectionStyle.None
         
         tabsViewInitialY = 220
@@ -58,17 +85,21 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
         
         aboutViewController = storyboard.instantiateViewControllerWithIdentifier("AboutViewController") as! AboutViewController
         aboutViewController.organizationProfileViewController = self
+        aboutViewController.users = users
         aboutViewController.view.layoutIfNeeded()
         upcomingViewController = storyboard.instantiateViewControllerWithIdentifier("UpcomingViewController") as! UpcomingViewController
         upcomingViewController.organizationProfileViewController = self
+        upcomingViewController.users = users
         upcomingViewController.view.layoutIfNeeded()
         followersViewController = storyboard.instantiateViewControllerWithIdentifier("FollowersViewController") as! FollowersViewController
         followersViewController.organizationProfileViewController = self
+        followersViewController.users = users
         followersViewController.view.layoutIfNeeded()
         
         activeViewController = aboutViewController
         //activeViewController = upcomingViewController
 
+        
     }
     
     
@@ -125,6 +156,13 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
             print("cell.orgVC set in OrgVC: \(cell.organizationProfileViewController)")
             
             cell.selectionStyle = UITableViewCellSelectionStyle.None
+            
+//            if activeViewController.vcType == "followers" {
+//                
+//                activeViewController.users = users
+//                print("\(activeViewController.users)")
+//                
+//            }
             
             return cell
         }

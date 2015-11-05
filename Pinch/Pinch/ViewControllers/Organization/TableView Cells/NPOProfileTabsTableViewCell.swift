@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
 class NPOProfileTabsTableViewCell: UITableViewCell {
 
@@ -16,6 +18,7 @@ class NPOProfileTabsTableViewCell: UITableViewCell {
     @IBOutlet weak var activeTabView: UIView!
 
     var organizationProfileViewController: OrganizationProfileViewController!
+    var users: [PFObject]!
     
     var previousTab = "About"
     
@@ -30,7 +33,7 @@ class NPOProfileTabsTableViewCell: UITableViewCell {
         followersTab.setTitleColor(colorTextDark, forState: .Selected)
         aboutTab.selected = true
         aboutTab.userInteractionEnabled = false
-        
+        //users = organizationProfileViewController.users
     }
 
     @IBAction func didPressAbout(sender: AnyObject) {
@@ -75,8 +78,9 @@ class NPOProfileTabsTableViewCell: UITableViewCell {
     }
     
     func loadFollowers() {
-        
+        print("Tabs users: \(users)")
         organizationProfileViewController.activeViewController = organizationProfileViewController.followersViewController
+        organizationProfileViewController.activeViewController.users = organizationProfileViewController.users
         
         print("Loading followers list...")
 //        //call viewWillLoad

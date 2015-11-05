@@ -13,13 +13,19 @@ import ParseUI
 protocol TabTableViewController : UITableViewDataSource, UITableViewDelegate {
     weak var tableView: UITableView! { get set }
     var organizationProfileViewController: OrganizationProfileViewController! { get set }
+    var vcType: String! { get set }
+    var users: [PFObject]! { get set }
 }
 
 class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TabTableViewController {
 
+    //fulfill TablesDataCell protocol
+    var users: [PFObject]!
+    
     @IBOutlet weak var tableView: UITableView!
     
     var organizationProfileViewController: OrganizationProfileViewController!
+    var vcType: String!
     
    // var organizations: [PFObject] = []
     
@@ -28,6 +34,8 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         tableView.dataSource = self
         tableView.delegate = self
+        vcType = "about"
+        users = []
         
     
 //        tableView.estimatedRowHeight = 220
