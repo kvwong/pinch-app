@@ -695,21 +695,10 @@
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="content_yourtestimonials" id="4KP-Eu-779">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="370"/>
                                         <autoresizingMask key="autoresizingMask"/>
-<<<<<<< HEAD
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UgM-n3-MKG" id="8rE-g3-3qh">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <animations/>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-=======
+
                                     </imageView>
                                 </subviews>
                             </scrollView>
->>>>>>> origin/master
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
