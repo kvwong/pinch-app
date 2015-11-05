@@ -16,7 +16,6 @@ class EventPageViewController: UIPageViewController, UIPageViewControllerDataSou
     var nextIndex = 0
     var events: [PFObject] = []
     var eventViewControllers: [UIViewController]! = []
-    var navigationControllers: [UINavigationController]! = []
     var viewInitialXPosition: CGFloat = 0
 
     override func viewDidLoad() {
@@ -50,13 +49,10 @@ class EventPageViewController: UIPageViewController, UIPageViewControllerDataSou
                         self.events.append(object)
                         
                         let viewController = self.viewControllerAtIndex(index)
-                        self.navigationControllers.append(viewController)
-                        
-                        let eventViewController = viewController.topViewController as! EventViewController
-                        self.eventViewControllers.append(eventViewController)
+                        self.eventViewControllers.append(viewController)
                     }
                     
-                    self.setViewControllers([self.navigationControllers[0]], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+                    self.setViewControllers([self.eventViewControllers[0]], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
                 }
             } else {
                 // Log details of the failure
@@ -77,11 +73,9 @@ class EventPageViewController: UIPageViewController, UIPageViewControllerDataSou
     
     // Build EventView Controllers for H-Scroll --------
     
-    func viewControllerAtIndex(index: Int) -> UINavigationController! {
+    func viewControllerAtIndex(index: Int) -> EventViewController! {
         
-        let navigationController = self.storyboard?.instantiateViewControllerWithIdentifier("EventNavigationController") as! UINavigationController
-        
-        let event = navigationController.topViewController as! EventViewController
+        let event = self.storyboard!.instantiateViewControllerWithIdentifier("EventViewController") as! EventViewController
         event.index = index
         
         
@@ -111,13 +105,13 @@ class EventPageViewController: UIPageViewController, UIPageViewControllerDataSou
         event.event = self.events[index]
         
         print("Event \(event) created at index \(index)")
-        return navigationController
+        return event
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         // Don't return a view controller out of bounds
         if index >= 0 && index < events.count - 1 {
-            return self.navigationControllers[index + 1]
+            return self.eventViewControllers[index + 1]
         } else {
             return nil
         }
@@ -125,14 +119,14 @@ class EventPageViewController: UIPageViewController, UIPageViewControllerDataSou
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         if index > 0 && index <= events.count - 1 {
-            return self.navigationControllers[index - 1]
+            return self.eventViewControllers[index - 1]
         } else {
             return nil
         }
     }
     
     func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [UIViewController]) {
-        self.nextIndex = navigationControllers.indexOf(pendingViewControllers[0] as! UINavigationController)!
+        self.nextIndex = (pendingViewControllers[0] as! EventViewController).index
     }
     
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
