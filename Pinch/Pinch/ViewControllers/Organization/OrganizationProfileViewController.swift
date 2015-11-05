@@ -34,28 +34,31 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
     var tabsViewInitialY: CGFloat!
     var users: [PFObject] = []
  
-    
+    var events: [PFObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = npo.valueForKey("name") as! String
+    
+        
+  
         
         // Download Users from Parse
-        let query = PFQuery(className:"_User")
-        //query.includeKey("organization") // Include Organization class
+        let query = PFQuery(className:"Event")
+        query.includeKey("organization") // Include Organization class
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             
             if error == nil {
                 // The find succeeded.
-                print("Successfully retrieved \(objects!.count) users.")
+                print("Successfully retrieved \(objects!.count) events.")
                 // Do something with the found objects
                 if let objects = objects as? [PFObject]? {
                     for (index, object) in objects!.enumerate() {
                         print("\(index): \(object.objectId!)")
-                        self.users.append(object)
+                        self.events.append(object)
                     }
+                    self.tableView.reloadData()
                 }
             } else {
                 // Log details of the failure
@@ -63,6 +66,9 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
             }
         }
 
+        npo = events[0].valueForKey("organization") as! PFObject
+        
+         self.title = npo.valueForKey("name") as! String
         
         tableView.delegate = self
         tableView.dataSource = self
