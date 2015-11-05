@@ -242,24 +242,29 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     }*/
     
     func onPanCard(sender: UIPanGestureRecognizer) {
-        print(sender.view!)
         let translation = sender.translationInView(view)
         let velocity = sender.velocityInView(view)
-        /*
-        initialY = convertPoint(sender.view!.center.y, toCoordinateSpace coordinateSpace: self)
+        let middlePoint: CGFloat = UIScreen.mainScreen().bounds.height/2
+        
+        
+        //***************************************
+        //***       NOT WORKING RIGHT      ******
+        //***************************************
+        
         if sender.state == UIGestureRecognizerState.Began {
             initialY = sender.view!.center.y
+            print("initialY is: \(initialY)")
         } else if sender.state == UIGestureRecognizerState.Changed {
             print(initialY + translation.y)
-            if initialY + translation.y <= view.bounds.height/2 {
+            if initialY + translation.y <= middlePoint {
                 sender.view!.center.y = initialY + translation.y
-                let difference = UIScreen.mainScreen().bounds.height/2 - sender.view!.center.y
-                let percentagePan = difference / (UIScreen.mainScreen().bounds.height/2)
+                let difference = middlePoint - sender.view!.center.y
+                let percentagePan = difference / middlePoint
                 print("percentagePan is: \(percentagePan)")
                 var scale = 0.7466 + percentagePan * (1 - 0.7466)
-                sender.view!.transform = CGAffineTransformMakeScale (scale, scale)
+                sender.view!.transform = CGAffineTransformMakeScale(scale, scale)
             } else {
-                sender.view!.center.y = view.bounds.height/2
+                sender.view!.center.y = middlePoint
             }
         } else if sender.state == UIGestureRecognizerState.Ended {
             /*if velocity.y < 0 && eventContainerView.frame.origin.y < initialY {
@@ -283,7 +288,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
             if velocity.y > 0 && eventContainerView.frame.origin.y == 0 {
                 //eventContainerView.frame.origin.y = 0
             }*/
-        }*/
+        }
     }
     
     /*
