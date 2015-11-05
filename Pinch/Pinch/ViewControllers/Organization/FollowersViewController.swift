@@ -37,6 +37,8 @@ class FollowersViewController: UIViewController, UITableViewDataSource, UITableV
         // Download Users from Parse
         let query = PFQuery(className:"_User")
         //query.includeKey("organization") // Include Organization class
+        
+      
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             
@@ -48,7 +50,6 @@ class FollowersViewController: UIViewController, UITableViewDataSource, UITableV
                     for (index, object) in objects!.enumerate() {
                         print("\(index): \(object.objectId!)")
                         self.users.append(object)
-                      
                     }
                     self.tableView.reloadData()
                 }
@@ -57,6 +58,13 @@ class FollowersViewController: UIViewController, UITableViewDataSource, UITableV
                 print("Error: \(error!) \(error!.userInfo)")
             }
         }
+        
+//        UIView.animateWithDuration(NSTimeInterval, animations: { () -> Void in
+//            <#code#>
+//            }) { (<#Bool#>) -> Void in
+//                <#code#>
+//        }
+        
         
         print("users AAA: \(users)")
     }
