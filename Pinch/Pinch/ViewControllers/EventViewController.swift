@@ -19,7 +19,6 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var eventSummaryView: UIView!
-    @IBOutlet weak var wireframeImage: UIImageView!
     
     @IBOutlet weak var eventBannerImage: UIImageView!
     @IBOutlet weak var eventTitleLabel: UILabel!
@@ -42,7 +41,6 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     
     var index: Int! // Tracks which view is being horizontally scrolled
     
-    var eventSummary: UIView!
     var summaryBannerImage: UIImage!
     var titleLabel: String!
     var scheduleDate: String!
@@ -61,14 +59,12 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        wireframeImage.alpha = 1.0
         scrollView.contentSize.height = eventSummaryView.frame.size.height
         self.navigationController?.navigationBarHidden = true
         scrollView.delegate = self
         eventBannerImage.clipsToBounds = true
         eventBannerImage.clipsToBounds = true
         
-        eventSummaryView = eventSummary
         eventBannerImage.image = summaryBannerImage
         eventTitleLabel.text = titleLabel
         eventTimeAndDateLabel.text = scheduleDate
@@ -78,7 +74,7 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         paragraphStyle.lineSpacing = 4
         
 
-        eventDescriptionLabel.text = event!["description"] as! NSString as String
+        //eventDescriptionLabel.text = event!["description"] as! NSString as String // Not pulling data yet
 
         
         eventDescriptionLabel.attributedText = NSAttributedString(string: eventDescriptionLabel.text!, attributes:[NSFontAttributeName: UIFont(name: "Lato-Regular", size: 14)!, NSForegroundColorAttributeName: colorTextMedium, NSParagraphStyleAttributeName: paragraphStyle])
@@ -89,9 +85,9 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         //        }
         
 
-        npo = event.valueForKey("organization") as! PFObject
-        print("npo: \(npo.valueForKey("name")!)")
-        eventNPOLabel.text = npo.valueForKey("name")! as! String
+        //npo = event.valueForKey("organization") as! PFObject
+        //print("npo: \(npo.valueForKey("name")!)")
+        //eventNPOLabel.text = npo.valueForKey("name")! as! String
 
         friend1.image = friend1Image
         friend2.image = friend2Image
