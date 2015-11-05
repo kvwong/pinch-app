@@ -7,18 +7,26 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
 class UpcomingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TabTableViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    //fulfill TablesDataCell protocol
+    var users: [PFObject]!
+    
     var organizationProfileViewController: OrganizationProfileViewController!
+    var vcType: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
+        vcType = "upcoming"
+        users = []
         
     }
     
