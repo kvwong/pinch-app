@@ -8,10 +8,13 @@
 
 import UIKit
 import Parse
+import AFNetworking
 
 class UserProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, UIGestureRecognizerDelegate {
     
     // Outlets & Vars ----------------------------------
+    
+    @IBOutlet weak var closeButton: UIButton!
     
     // Upcoming & Saved Event Table View
     @IBOutlet weak var eventsTableView: UITableView!
@@ -125,18 +128,16 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         
         // Download data from Parse
         if currentUser != nil {
-            var name = currentUser!["firstName"] as! String
+            let name = currentUser!["firstName"] as! String
             //print("Hello, I'm \(name)")
             self.title = name
             pastEventsLabel.text = "\(name)'s Past Events"
         }
-
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
-        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
+        navBarHideOrReveal()
     }
 
     override func didReceiveMemoryWarning() {
@@ -178,34 +179,28 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
     
     // Automatically snap eventsTableView
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        let middlePoint = (scrollViewOpenY - scrollViewClosedY)/2
-        if eventsTableView.contentOffset.y < -scrollViewClosedY + 80 && eventsTableView.contentOffset.y > -(scrollViewClosedY + middlePoint) {
-            print("Returning eventsTableView to CLOSED POSITION")
-            UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
-                self.eventsTableView.contentInset.top = self.scrollViewClosedY
-                self.eventsTableView.contentOffset.y = -self.scrollViewClosedY
-                self.pastEventsLabel.alpha = 0
-                }, completion: nil)
-            
-//                self.eventsTableView.contentInset.top = self.scrollViewClosedY
-//                self.eventsTableView.contentOffset.y = -self.scrollViewClosedY
-//                self.pastEventsLabel.alpha = 0
-            
-            
-        } else if eventsTableView.contentOffset.y < -(scrollViewClosedY + middlePoint) && eventsTableView.contentOffset.y > -scrollViewOpenY {
-            print("Returning eventsTableView to OPEN POSITION")
-            UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
-                self.eventsTableView.contentInset.top = self.scrollViewOpenY
-                self.eventsTableView.contentOffset.y = -self.scrollViewOpenY
-                self.pastEventsLabel.alpha = 1
-                }, completion: nil)
-            
-//            self.eventsTableView.contentInset.top = self.scrollViewOpenY
-//            self.eventsTableView.contentOffset.y = -self.scrollViewOpenY
-//            self.pastEventsLabel.alpha = 1
-
+        if scrollView == eventsTableView {
+            let middlePoint = (scrollViewOpenY - scrollViewClosedY)/2
+            if eventsTableView.contentOffset.y < -scrollViewClosedY + 80 && eventsTableView.contentOffset.y > -(scrollViewClosedY + middlePoint) {
+                print("Returning eventsTableView to CLOSED POSITION")
+                UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
+                    //self.eventsTableView.contentInset.top = self.scrollViewClosedY
+                    self.eventsTableView.contentOffset.y = -self.scrollViewClosedY
+                    self.pastEventsLabel.alpha = 0
+                    }, completion: nil)
+            } else if eventsTableView.contentOffset.y < -(scrollViewClosedY + middlePoint) && eventsTableView.contentOffset.y > -scrollViewOpenY {
+                print("Returning eventsTableView to OPEN POSITION")
+                UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
+                    //self.eventsTableView.contentInset.top = self.scrollViewOpenY
+                    self.eventsTableView.contentOffset.y = -self.scrollViewOpenY
+                    self.pastEventsLabel.alpha = 1
+                    }, completion: { Void in
+                        self.view.bringSubviewToFront(self.cardsScrollView)
+                        self.view.bringSubviewToFront(self.closeButton)
+                })
+            }
+            self.view.sendSubviewToBack(cardsScrollView)
         }
-        self.view.sendSubviewToBack(cardsScrollView)
     }
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
@@ -225,15 +220,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
                 eventTabsView.frame.origin.y = eventTabsViewInitialY - eventsTableView.contentOffset.y
             }
             
-            // Hide or reveal the nav bar
-            if eventsTableView.contentOffset.y > 0 {
-                print("eventsTableView.content.y offset is: \(eventsTableView.contentOffset.y)")
-                self.navigationController?.setNavigationBarHidden(false, animated: true)
-                UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
-            } else {
-                self.navigationController?.setNavigationBarHidden(true, animated: true)
-                UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
-            }
+            navBarHideOrReveal()
             
             // Reposition contentInset if eventsTableView is scrolling off screen
             if eventsTableView.contentOffset.y > 0 {
@@ -263,6 +250,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             } else { // Below open position
                 percentScroll = 1
                 self.view.bringSubviewToFront(cardsScrollView)
+                self.view.bringSubviewToFront(closeButton)
             }
             
             print("percentScroll: \(percentScroll)")
@@ -270,6 +258,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             // Return cardsScrollView to origin if left offset
             cardsScrollView.contentOffset.x = cardsScrollViewInitialX * percentScroll
             
+            // Change past events label alpha by scroll position
             pastEventsLabel.alpha = percentScroll
             
             for card in cards {
@@ -305,9 +294,29 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             if indexPath.row == 0 {
                 let row = tableView.dequeueReusableCellWithIdentifier("UserProfileDetailsTableViewCell") as! UserProfileDetailsTableViewCell
                 if currentUser != nil {
-                    row.nameLabel.text = currentUser!["firstName"] as! String
-                    row.locationLabel.text = "\(currentUser!["city"] as! String), \(currentUser!["state"] as! String)"
-                    row.bioLabel.text = currentUser!["bio"] as! String
+                    
+                    // Profile image
+                    if currentUser!["profileImageURL"] != nil {
+                        let imageURL = currentUser!["profileImageURL"] as! String
+                        let imageData = NSData(contentsOfURL: NSURL(string: imageURL)!)
+                        row.profilePicImageView.image = UIImage(data: imageData!)
+                    }
+                    
+                    // Name
+                    if currentUser!["firstName"] != nil {
+                        row.nameLabel.text = currentUser!["firstName"] as! String
+                    }
+                    
+                    // Location
+                    if currentUser!["city"] != nil && currentUser!["state"] != nil {
+                        row.locationLabel.text = "\(currentUser!["city"] as! String), \(currentUser!["state"] as! String)"
+                    }
+                    
+                    // Bio
+                    if currentUser!["bio"] != nil {
+                        row.bioLabel.text = currentUser!["bio"] as! String
+                    }
+                    
                 }
                 return row
             } else {
@@ -374,5 +383,17 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             return 0
         }
     }
-
+    
+    
+    // Hide or Reveal Nav Bar --------------------------
+    
+    func navBarHideOrReveal() {
+        if eventsTableView.contentOffset.y > -64 {
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+            UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+        } else {
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
+            UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
+        }
+    }
 }
