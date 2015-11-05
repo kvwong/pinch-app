@@ -15,12 +15,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     
     // Outlets and Vars --------------------------------
     
-    @IBOutlet weak var containerScrollView: UIScrollView!
-    @IBOutlet weak var eventContainerView: UIView!
-    @IBOutlet weak var bottomNavView: UIView!
-    @IBOutlet weak var eventCloseButton: UIButton!
-
-
     // Search
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var searchView: UIView!
@@ -46,15 +40,17 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     @IBOutlet weak var tagButton1: UIButton!
     @IBOutlet weak var tagButton2: UIButton!
     @IBOutlet weak var logoImage: UIImageView!
+    @IBOutlet weak var bottomNavView: UIView!
+    @IBOutlet weak var containerScrollView: UIScrollView!
+    @IBOutlet weak var eventCloseButton: UIButton!
+    @IBOutlet weak var eventContainerView: UIView!
     
-    var pageViewController: UIPageViewController!
     
     var eventCardTransition: EventCardTransition!
     var interactiveTransition: UIPercentDrivenInteractiveTransition!
     var cardView: UIView!
     var status: Bool!
     var initialY: CGFloat!
-    var initialX: CGFloat!
     var fadeTransition: FadeTransition!
     
     var isPresenting: Bool = true
@@ -353,9 +349,9 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
             fadeTransition.isInteractive = true
             print("1")
             let nav = segue.destinationViewController as! UINavigationController
-            
             let eventDetailViewController = nav.topViewController as! EventViewController
-
+            //let pageViewController = nav.topViewController as! EventPageViewController
+            //let eventDetailViewController = segue.destinationViewController as! EventViewController
             eventDetailViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
             nav.transitioningDelegate = fadeTransition
             fadeTransition.duration = 0.5
@@ -373,11 +369,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
             eventDetailViewController.descriptionLabel = descriptionLabel.text
             //eventDetailViewController.eventObjectID = events[0].objectId
             eventDetailViewController.event = events[0]
-            
-
-            //let eventDetailViewController = page.topViewController as! EventViewController
-            //let pageViewController = nav.topViewController as! EventPageViewController
-            //let eventDetailViewController = segue.destinationViewController as! EventViewController
             
         } else if segue.identifier == "segueToSearch" {
             let destinationViewController = segue.destinationViewController as! SearchViewController
@@ -433,8 +424,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         
         if (isPresenting) {
             if toViewController.isKindOfClass(SearchViewController) { // Animate TO SearchViewController
-                eventCloseButton.alpha = 0
                 containerView.addSubview(toViewController.view)
+                
                 if self.isSearchEnabled {
                     print("Search is enabled.")
                     print("Building `tempTextField`...")
@@ -479,7 +470,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                     
                     UIView.animateWithDuration(animationTime, animations: { () -> Void in
                         toVC.backgroundView.alpha = 1
-                        
                     })
                     UIView.animateWithDuration(animationTime, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
                         print("Animating `tempTextField`...")
@@ -487,18 +477,20 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                         tempSearchTermField.frame.size.width = 343
                         tempSearchLocationField.frame.origin = CGPoint(x: 16, y: 100)
                         tempSearchLocationField.frame.size.width = 343
+                        self.logoImage.alpha = 0
+                        self.logoImage.frame.origin.y = 667
                         }) { (finished: Bool) -> Void in
                             tempSearchTermField.removeFromSuperview()
                             tempSearchLocationField.removeFromSuperview()
                             toVC.searchTermField.alpha = 1
                             toVC.searchLocationField.alpha = 1
-                            self.eventCloseButton.alpha = 0
                     }
                 } else {
                     toViewController.view.alpha = 0
                     print("Search is not enabled.")
                     let toVC = toViewController as! SearchViewController
                     toVC.searchTermField.text = ""
+                    
                     UIView.animateWithDuration(animationTime, animations: { () -> Void in
                         toViewController.view.alpha = 1
                         }) { (finished: Bool) -> Void in
@@ -509,6 +501,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                 // DO SOMETHING!!!
                 print("Animate TO Card")
                 containerView.addSubview(toViewController.view)
+                
                 UIView.animateWithDuration(animationTime, animations: { () -> Void in
                     toViewController.view.alpha = 1
                     }) { (finished: Bool) -> Void in
@@ -516,7 +509,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                 }
             }
         } else {
-            eventCloseButton.alpha = 1
             if fromViewController.isKindOfClass(SearchViewController) { // Animate FROM SearchViewController
                 let fromVC = fromViewController as! SearchViewController
                 fromVC.searchTermField.alpha = 0
@@ -563,6 +555,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                         tempSearchTermField.frame.size.width = 271
                         tempSearchLocationField.frame.origin = CGPoint(x: 52, y: 28)
                         tempSearchLocationField.frame.size.width = 271
+                        self.logoImage.alpha = 1
+                        self.logoImage.frame.origin.y = 627
                         }) { (finished: Bool) -> Void in
                             tempSearchTermField.removeFromSuperview()
                             tempSearchLocationField.removeFromSuperview()

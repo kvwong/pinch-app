@@ -39,11 +39,6 @@
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
-		<key>ParseUI.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>12</integer>
-		</dict>
 		<key>Pods-Pinch.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -107,27 +102,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3D553BF539F5A69D65BB2BA282CF66D1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>4878C70B21CA37D7CB8A476BF986741B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>49FF5417381A49252BBC99F7EF7F04D9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5799A04C788F268F5A7D413D457BF7C3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5AB66EDEF488D8F8B3EABF59A5A12DF7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -172,11 +152,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A1E9F4C238ADC9B49B19A7D0EBB64808</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>A9A83F63385AA43314397B8DD375464B</key>
 		<dict>
 			<key>primary</key>
@@ -198,16 +173,6 @@
 			<true/>
 		</dict>
 		<key>DBC46146340B5D8EF0F644353B4D6C19</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E02022F2DA500BEE0B5C96E8922C4FF9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F710EAB41DD6932844C4A82A87A2628F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

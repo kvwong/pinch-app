@@ -73,12 +73,13 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         eventTitleLabel.text = titleLabel
         eventTimeAndDateLabel.text = scheduleDate
         eventAddressLabel.text = addressLabel
-        eventNPOLabel.text = npoLabel
+        //eventNPOLabel.text = npoLabel
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 4
         
-        //eventDescriptionLabel.text = event!["description"] as! NSString as String
-        eventDescriptionLabel.text = "California"
+
+        eventDescriptionLabel.text = event!["description"] as! NSString as String
+
         
         eventDescriptionLabel.attributedText = NSAttributedString(string: eventDescriptionLabel.text!, attributes:[NSFontAttributeName: UIFont(name: "Lato-Regular", size: 14)!, NSForegroundColorAttributeName: colorTextMedium, NSParagraphStyleAttributeName: paragraphStyle])
         //        descriptionIndex = String.CharacterView.Index(5000)
@@ -87,11 +88,11 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         //            eventDescriptionLabel.text = eventDescriptionLabel.text?.substringToIndex(descriptionIndex) + "..."
         //        }
         
-        //npo = event.valueForKey("organization") as! PFObject
-        //print("npo: \(npo.valueForKey("name")!)")
-        //eventNPOLabel.text = npo.valueForKey("name")! as! String
-        eventNPOLabel.text = "Girls on the Run"
-        
+
+        npo = event.valueForKey("organization") as! PFObject
+        print("npo: \(npo.valueForKey("name")!)")
+        eventNPOLabel.text = npo.valueForKey("name")! as! String
+
         friend1.image = friend1Image
         friend2.image = friend2Image
         friend3.image = friend3Image
@@ -113,7 +114,7 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        //self.navigationController?.navigationBarHidden = false
+        self.navigationController?.navigationBarHidden = false
     }
     
     override func didReceiveMemoryWarning() {
