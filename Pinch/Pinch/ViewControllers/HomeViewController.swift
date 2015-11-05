@@ -40,6 +40,11 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     @IBOutlet weak var tagButton1: UIButton!
     @IBOutlet weak var tagButton2: UIButton!
     @IBOutlet weak var logoImage: UIImageView!
+    @IBOutlet weak var bottomNavView: UIView!
+    @IBOutlet weak var containerScrollView: UIScrollView!
+    @IBOutlet weak var eventCloseButton: UIButton!
+    @IBOutlet weak var eventContainerView: UIView!
+    
     
     var eventCardTransition: EventCardTransition!
     var interactiveTransition: UIPercentDrivenInteractiveTransition!

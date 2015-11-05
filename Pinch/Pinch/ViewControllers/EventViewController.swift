@@ -77,12 +77,9 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 4
         
-<<<<<<< HEAD
-       // eventDescriptionLabel.text = event!["description"] as! NSString as String
-        eventDescriptionLabel.text = "California"
-=======
+
         eventDescriptionLabel.text = event!["description"] as! NSString as String
->>>>>>> origin/master
+
         
         eventDescriptionLabel.attributedText = NSAttributedString(string: eventDescriptionLabel.text!, attributes:[NSFontAttributeName: UIFont(name: "Lato-Regular", size: 14)!, NSForegroundColorAttributeName: colorTextMedium, NSParagraphStyleAttributeName: paragraphStyle])
         //        descriptionIndex = String.CharacterView.Index(5000)
@@ -91,17 +88,11 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         //            eventDescriptionLabel.text = eventDescriptionLabel.text?.substringToIndex(descriptionIndex) + "..."
         //        }
         
-<<<<<<< HEAD
-       //  npo = event.valueForKey("organization") as! PFObject
-        //print("npo: \(npo.valueForKey("name")!)")
-        //eventNPOLabel.text = npo.valueForKey("name")! as! String
-        //eventNPOLabel.text = "Girls on the Run"
-=======
+
         npo = event.valueForKey("organization") as! PFObject
         print("npo: \(npo.valueForKey("name")!)")
         eventNPOLabel.text = npo.valueForKey("name")! as! String
->>>>>>> origin/master
-        
+
         friend1.image = friend1Image
         friend2.image = friend2Image
         friend3.image = friend3Image
