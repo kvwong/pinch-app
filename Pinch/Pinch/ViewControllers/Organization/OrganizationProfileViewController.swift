@@ -8,6 +8,7 @@
 
 import UIKit
 import ParseUI
+import Parse
 
 class OrganizationProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -18,6 +19,8 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
     var aboutViewController: AboutViewController!
     var upcomingViewController: UpcomingViewController!
     var followersViewController: FollowersViewController!
+    
+    var npo: PFObject!
     
     var activeViewController: TabTableViewController! {
         didSet {
@@ -53,10 +56,13 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
         
         aboutViewController = storyboard.instantiateViewControllerWithIdentifier("AboutViewController") as! AboutViewController
         aboutViewController.view.layoutIfNeeded()
+        aboutViewController.organizationProfileViewController = self
         upcomingViewController = storyboard.instantiateViewControllerWithIdentifier("UpcomingViewController") as! UpcomingViewController
         upcomingViewController.view.layoutIfNeeded()
+        upcomingViewController.organizationProfileViewController = self
         followersViewController = storyboard.instantiateViewControllerWithIdentifier("FollowersViewController") as! FollowersViewController
         followersViewController.view.layoutIfNeeded()
+        followersViewController.organizationProfileViewController = self
         
         activeViewController = aboutViewController
         //activeViewController = upcomingViewController
@@ -100,16 +106,23 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
         
     }
     
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == 0 || indexPath.section == 1 {
             let cell =  tableView.dequeueReusableCellWithIdentifier("NPOImageTableViewCell") as! NPOImageTableViewCell
             cell.selectionStyle = UITableViewCellSelectionStyle.None
+            
             return cell
         } else {
             let contentIndexPath = NSIndexPath(forRow: indexPath.row, inSection: indexPath.section - 2)
-//            let contentIndexPath = NSIndexPath(forRow: indexPath.row, inSection: indexPath.section + 1)
-            let cell = activeViewController.tableView(activeViewController.tableView, cellForRowAtIndexPath: contentIndexPath)
-            //cell.selectionStyle = UITableViewCellSelectionStyle.None
+
+            var cell = activeViewController.tableView(activeViewController.tableView, cellForRowAtIndexPath: contentIndexPath) as! AboutCellsTableViewCell
+            
+            cell.organizationProfileViewController = self
+            
+            print("cell.orgVC set in OrgVC: \(cell.organizationProfileViewController)")
+            
+            cell.selectionStyle = UITableViewCellSelectionStyle.None
             
             return cell
         }

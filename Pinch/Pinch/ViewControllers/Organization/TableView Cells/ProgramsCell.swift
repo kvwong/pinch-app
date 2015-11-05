@@ -8,13 +8,14 @@
 
 import UIKit
 
-class ProgramsCell: UITableViewCell {
+class ProgramsCell: AboutCellsTableViewCell{
 
     @IBOutlet weak var programsLabel: UILabel!
     @IBOutlet weak var programsImage1: UIImageView!
     @IBOutlet weak var programsImage2: UIImageView!
     
     var height: Int!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

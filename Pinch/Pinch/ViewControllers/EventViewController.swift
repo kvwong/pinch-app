@@ -120,8 +120,19 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     
     @IBAction func onTapNPO(sender: AnyObject) {
         print("NPO Profile")
-        performSegueWithIdentifier("segueToOrganization", sender: nil)
+        performSegueWithIdentifier("segueToNPO", sender: nil)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "segueToNPO" {
+            
+        let npoVC = segue.destinationViewController as! OrganizationProfileViewController
+            
+        npoVC.npo = npo
+            
+        }}
+    
+    
     /*func scrollViewDidScroll(scrollView: UIScrollView) {
     
     let offset = scrollView.contentOffset.y

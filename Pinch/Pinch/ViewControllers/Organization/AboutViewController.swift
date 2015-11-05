@@ -12,12 +12,16 @@ import ParseUI
 
 protocol TabTableViewController : UITableViewDataSource, UITableViewDelegate {
     weak var tableView: UITableView! { get set }
+    var organizationProfileViewController: OrganizationProfileViewController! { get set }
 }
 
 class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TabTableViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var organizations: [PFObject] = []
+    
+    var organizationProfileViewController: OrganizationProfileViewController!
+    
+   // var organizations: [PFObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,28 +29,7 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.dataSource = self
         tableView.delegate = self
         
-        let query = PFQuery(className: "Organization")
-        //query.includeKey("events") //Include Events class
-        query.findObjectsInBackgroundWithBlock {
-            (objects: [PFObject]?, error: NSError?) -> Void in
-            
-            if error == nil {
-                // The find succeeded.
-                print("Successfully retrieved \(objects!.count) organizations.")
-                // Do something with the found objects
-                if let objects = objects as? [PFObject]? {
-                    for (index, object) in objects!.enumerate() {
-                        print("\(index): \(object.objectId!)")
-                        self.organizations.append(object)
-                    }
-                   
-                }
-            } else {
-                // Log details of the failure
-                print("Error: \(error!) \(error!.userInfo)")
-            }
-        }
-
+    
 //        tableView.estimatedRowHeight = 220
 //        tableView.rowHeight = UITableViewAutomaticDimension
     }
@@ -66,17 +49,22 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             let cell = tableView.dequeueReusableCellWithIdentifier("StoryCell") as! StoryCell
             cell.selectionStyle = UITableViewCellSelectionStyle.None
+            cell.organizationProfileViewController = organizationProfileViewController
+            
+            print("cell.orgVC set in About: \(cell.organizationProfileViewController)")
             return cell
             
         }else if indexPath.section == 1 {
             
             let cell = tableView.dequeueReusableCellWithIdentifier("ProgramsCell") as! ProgramsCell
             cell.selectionStyle = UITableViewCellSelectionStyle.None
+            cell.organizationProfileViewController = organizationProfileViewController
             return cell
             
         }else {
             let cell = tableView.dequeueReusableCellWithIdentifier("PhotosAndVideosCell") as! PhotosAndVideosCell
             cell.selectionStyle = UITableViewCellSelectionStyle.None
+            cell.organizationProfileViewController = organizationProfileViewController
             return cell
             
         }

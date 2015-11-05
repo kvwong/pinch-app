@@ -12,6 +12,7 @@ class UpcomingViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var tableView: UITableView!
     
+    var organizationProfileViewController: OrganizationProfileViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()

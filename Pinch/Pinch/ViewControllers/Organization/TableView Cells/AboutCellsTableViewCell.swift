@@ -1,24 +1,23 @@
 //
-//  NPOImageTableViewCell.swift
+//  AboutCellsTableViewCell.swift
 //  Pinch
 //
-//  Created by Jessie Chen on 10/29/15.
+//  Created by Jessie Chen on 11/4/15.
 //  Copyright © 2015 Team 2. All rights reserved.
 //
 
 import UIKit
 
-class NPOImageTableViewCell: AboutCellsTableViewCell{
+class AboutCellsTableViewCell: UITableViewCell {
+
+    var organizationProfileViewController: OrganizationProfileViewController!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

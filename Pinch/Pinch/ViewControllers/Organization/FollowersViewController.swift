@@ -12,6 +12,8 @@ class FollowersViewController: UIViewController, UITableViewDataSource, UITableV
 
     @IBOutlet weak var tableView: UITableView!
     
+    var organizationProfileViewController: OrganizationProfileViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
