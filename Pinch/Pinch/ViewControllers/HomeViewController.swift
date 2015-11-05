@@ -132,8 +132,10 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                         // Add action on tap
                         let cardTap = UITapGestureRecognizer(target: self, action: "onCardTap:")
                         let cardPan = UIPanGestureRecognizer(target: self, action: "onPanCard:")
+                        cardTap.delegate = self
+                        cardPan.delegate = self
                         container.addGestureRecognizer(cardTap)
-                        //container.addGestureRecognizer(cardPan)
+                        container.addGestureRecognizer(cardPan)
                         
                         let event = eventNavController.topViewController as! EventViewController
                         event.index = index
@@ -237,44 +239,31 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
             self.pageViewController.view.userInteractionEnabled = false
             self.pageViewController.view.layer.cornerRadius = 4
         })
-    }
+    }*/
     
-    @IBAction func onTapContainer(sender: UITapGestureRecognizer) {
-        UIView.animateWithDuration(0.3, animations: { () -> Void in
-            self.pageViewController.view.userInteractionEnabled = true
-            self.eventContainerView.transform = CGAffineTransformMakeScale(1.0, 1.0)
-            self.pageViewController.view.transform = CGAffineTransformMakeScale(1.0, 1.0)
-            self.eventContainerView.frame.origin.y = 0
-            self.eventsScrollView.transform = CGAffineTransformMakeScale(1.0, 1.0)
-            self.eventsScrollView.frame.origin.y = 0
-            self.bottomNavView.frame.origin.y = 668
-            self.pageViewController.view.layer.cornerRadius = 4
-            
-        })
-    }
-    
-    @IBAction func panContainer(sender: UIPanGestureRecognizer) {
+    func onPanCard(sender: UIPanGestureRecognizer) {
+        print(sender.view!)
         let translation = sender.translationInView(view)
         let velocity = sender.velocityInView(view)
-        
+        /*
+        initialY = convertPoint(sender.view!.center.y, toCoordinateSpace coordinateSpace: self)
         if sender.state == UIGestureRecognizerState.Began {
-            
-            initialY = eventContainerView.frame.origin.y
-            initialX = eventContainerView.frame.origin.x
-            
+            initialY = sender.view!.center.y
         } else if sender.state == UIGestureRecognizerState.Changed {
-            eventContainerView.frame.origin.y = initialY + translation.y
-            //eventContainerView.frame.origin.x = initialX + translation.x
-            
-            /*if eventContainerView.frame.origin.y < 29 && eventContainerView.frame.origin.y > 0 {
-            eventContainerView.transform = CGAffineTransformMakeScale(1.0+(abs(translation.y)/29),1.0+(abs(translation.y)/29))
-            print(abs(translation.y))
-            }*/
-            
+            print(initialY + translation.y)
+            if initialY + translation.y <= view.bounds.height/2 {
+                sender.view!.center.y = initialY + translation.y
+                let difference = UIScreen.mainScreen().bounds.height/2 - sender.view!.center.y
+                let percentagePan = difference / (UIScreen.mainScreen().bounds.height/2)
+                print("percentagePan is: \(percentagePan)")
+                var scale = 0.7466 + percentagePan * (1 - 0.7466)
+                sender.view!.transform = CGAffineTransformMakeScale (scale, scale)
+            } else {
+                sender.view!.center.y = view.bounds.height/2
+            }
         } else if sender.state == UIGestureRecognizerState.Ended {
-            if velocity.y < 0 && eventContainerView.frame.origin.y < initialY {
+            /*if velocity.y < 0 && eventContainerView.frame.origin.y < initialY {
                 UIView.animateWithDuration(0.3, animations: { () -> Void in
-                    self.pageViewController.view.userInteractionEnabled = true
                     self.eventContainerView.transform = CGAffineTransformMakeScale(1.0, 1.0)
                     self.pageViewController.view.transform = CGAffineTransformMakeScale(1.0, 1.0)
                     self.eventContainerView.frame.origin.y = 0
@@ -293,46 +282,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
             
             if velocity.y > 0 && eventContainerView.frame.origin.y == 0 {
                 //eventContainerView.frame.origin.y = 0
-            }
-        }
-    }*/
-    
-    // Gesture Interaction for Card
-    func onPanCard(sender: AnyObject) {
-        print("Sender: \(sender)")
-        let translation = sender.translationInView(view)
-        let velocity = sender.velocityInView(view)
-        
-        if sender.state == UIGestureRecognizerState.Began {
-            initialY = sender.view!!.frame.origin.y
-        } else if sender.state == UIGestureRecognizerState.Changed {
-            //print("gesture changing")
-            //let distance = initialY-(abs(translation.y))
-            //print(translation.y)
-            //print(distance)
-            //print(velocity.y)
-            //print(distance/104)
-            //interactiveTransition.updateInteractiveTransition((distance/104))
-            
-            sender.view!!.frame.origin.y = initialY + translation.y
-            //eventView.transform = CGAffineTransformMakeScale(1.0+abs(translation.y/208), 1.0+abs(translation.y/208))
-            
-            if sender.view!!.frame.origin.y < 104 && sender.view!!.frame.origin.y > 0 {
-                //fadeTransition.percentComplete = abs(translation.y)/104
-            } else {
-                // do nothing
-            }
-            
-        } else if sender.state == UIGestureRecognizerState.Ended {
-            sender.view!!.frame.origin.y = 104
-            sender.view!!.transform = CGAffineTransformMakeScale(1.0, 1.0)
-            if velocity.y < 0.0 {
-                //fadeTransition.finish()
-            } else {
-                //fadeTransition.cancel()
-                //dismissViewControllerAnimated(false, completion: nil)
-            }
-        }
+            }*/
+        }*/
     }
     
     /*
@@ -347,7 +298,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     // Custom Transitions ------------------------------
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print(sender!)
         if segue.identifier == "eventDetailSegue" {
             fadeTransition = FadeTransition()
             fadeTransition.isInteractive = true
