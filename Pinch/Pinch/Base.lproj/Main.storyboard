@@ -617,17 +617,26 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="sG8-Fy-g8U">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="t7i-7t-pjJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                            </imageView>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="content_youractivity" id="geH-7x-Fiz">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="915"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Activity" id="WvP-8J-AA0"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="activityImageView" destination="geH-7x-Fiz" id="T3d-Po-eKO"/>
+                        <outlet property="activityScrollView" destination="t7i-7t-pjJ" id="C7R-3u-fb5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDT-GP-nFv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3553,6 +3562,7 @@
         <image name="card_youth" width="107" height="128"/>
         <image name="content_badges" width="375" height="1061"/>
         <image name="content_stats" width="375" height="451"/>
+        <image name="content_youractivity" width="375" height="915"/>
         <image name="gotr" width="562" height="459"/>
         <image name="icon_activity_24x24" width="24" height="24"/>
         <image name="icon_back_arrow_white_15x14" width="15" height="14"/>
