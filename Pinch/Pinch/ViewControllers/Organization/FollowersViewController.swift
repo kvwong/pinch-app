@@ -50,6 +50,7 @@ class FollowersViewController: UIViewController, UITableViewDataSource, UITableV
                         self.users.append(object)
                       
                     }
+                    self.tableView.reloadData()
                 }
             } else {
                 // Log details of the failure
