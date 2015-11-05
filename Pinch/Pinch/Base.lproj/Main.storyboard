@@ -1016,6 +1016,7 @@
                                         <gestureRecognizers/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="omu-2I-TIA" appends="YES" id="tpQ-m4-b4a"/>
+                                            <outletCollection property="gestureRecognizers" destination="uq6-lb-TVP" appends="YES" id="bIw-8o-Sxs"/>
                                         </connections>
                                     </view>
                                 </subviews>
@@ -1168,6 +1169,11 @@
                         <action selector="panContainer:" destination="BYZ-38-t0r" id="IXR-ZB-W74"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer id="uq6-lb-TVP">
+                    <connections>
+                        <action selector="onTapContainer:" destination="BYZ-38-t0r" id="udh-gq-ZyR"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1779.5" y="361.5"/>
         </scene>
@@ -1362,11 +1368,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Event Details v3" id="wFv-Ah-817">
-                                <rect key="frame" x="0.0" y="-497" width="375" height="1662"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="jjG-Jb-qFi">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1375,6 +1376,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1702"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Event Details v3" id="wFv-Ah-817">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1662"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <animations/>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" id="4dB-9o-AJ5">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="578"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <animations/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
                                             <view contentMode="scaleToFill" id="v8p-Sq-AuK">
                                                 <rect key="frame" x="0.0" y="1590" width="375" height="100"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1508,12 +1520,6 @@
                                                 </subviews>
                                                 <animations/>
                                                 <color key="backgroundColor" red="0.48866637100513433" green="0.48797812915322691" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" id="4dB-9o-AJ5">
-                                                <rect key="frame" x="0.0" y="562" width="375" height="578"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <animations/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ArP-jv-JyL">
                                                 <rect key="frame" x="0.0" y="470" width="375" height="44"/>

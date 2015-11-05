@@ -11,7 +11,7 @@ import UIImageEffects
 import Parse
 
 
-class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
+class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning, UIGestureRecognizerDelegate {
     
     // Outlets and Vars --------------------------------
     
@@ -54,6 +54,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     var cardView: UIView!
     var status: Bool!
     var initialY: CGFloat!
+    var initialX: CGFloat!
     var fadeTransition: FadeTransition!
     
     var isPresenting: Bool = true
@@ -73,6 +74,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         pageViewController = storyboard.instantiateViewControllerWithIdentifier("EventPageViewController") as! EventPageViewController
         
         self.pageViewController.view.layer.cornerRadius = 4
+
+        //containerScrollView.delegate = self
         
         pageViewController.view.frame = eventContainerView.bounds
         //pageViewController.view.transform = CGAffineTransformMakeScale(1.0,1.0)
@@ -214,7 +217,22 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
 
         })
     }
+    
+    @IBAction func onTapContainer(sender: UITapGestureRecognizer) {
+        
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+         
+            self.pageViewController.view.userInteractionEnabled = true
+            self.eventContainerView.transform = CGAffineTransformMakeScale(1.0, 1.0)
+            self.pageViewController.view.transform = CGAffineTransformMakeScale(1.0, 1.0)
+            self.eventContainerView.frame.origin.y = 0
+            self.containerScrollView.transform = CGAffineTransformMakeScale(1.0, 1.0)
+            self.containerScrollView.frame.origin.y = 0
+            self.bottomNavView.frame.origin.y = 668
+            self.pageViewController.view.layer.cornerRadius = 4
 
+        })
+    }
     
     @IBAction func panContainer(sender: UIPanGestureRecognizer) {
         let translation = sender.translationInView(view)
@@ -223,9 +241,11 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         if sender.state == UIGestureRecognizerState.Began {
             
             initialY = eventContainerView.frame.origin.y
+            initialX = eventContainerView.frame.origin.x
             
         } else if sender.state == UIGestureRecognizerState.Changed {
             eventContainerView.frame.origin.y = initialY + translation.y
+            //eventContainerView.frame.origin.x = initialX + translation.x
             
             /*if eventContainerView.frame.origin.y < 29 && eventContainerView.frame.origin.y > 0 {
                 eventContainerView.transform = CGAffineTransformMakeScale(1.0+(abs(translation.y)/29),1.0+(abs(translation.y)/29))
@@ -252,6 +272,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
             } else {
                 UIView.animateWithDuration(0.3, animations: { () -> Void in
                     self.eventContainerView.frame.origin.y = self.initialY
+                    self.eventContainerView.frame.origin.x = self.initialX
                     //eventContainerView.transform = CGAffineTransformIdentity
                     })
             }
