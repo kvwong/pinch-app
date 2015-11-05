@@ -73,7 +73,15 @@ class EventPageViewController: UIPageViewController, UIPageViewControllerDataSou
         return true
     }
     
-    
+    override func prefersStatusBarHidden() -> Bool {
+        if self.navigationController?.navigationBarHidden == true {
+            return true
+        }
+        else
+        {
+            return false
+        }
+    }
     // Build EventView Controllers for H-Scroll --------
     
     func viewControllerAtIndex(index: Int) -> UINavigationController! {

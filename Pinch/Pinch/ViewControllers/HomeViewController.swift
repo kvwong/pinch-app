@@ -11,7 +11,7 @@ import UIImageEffects
 import Parse
 
 
-class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning, UIGestureRecognizerDelegate {
+class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning, UIGestureRecognizerDelegate, UIScrollViewDelegate {
     
     // Outlets and Vars --------------------------------
     
@@ -68,7 +68,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         super.viewDidLoad()
         status = false
         
-        eventView.alpha = 0
+        eventView.alpha = 1
         containerScrollView.alpha = 1
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         pageViewController = storyboard.instantiateViewControllerWithIdentifier("EventPageViewController") as! EventPageViewController
@@ -76,15 +76,20 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         self.pageViewController.view.layer.cornerRadius = 4
 
         //containerScrollView.delegate = self
+        for view in self.view.subviews {
+            if view.isKindOfClass(UIScrollView) {
+                
+                containerScrollView.delegate = self
+            }
+        }
         
         pageViewController.view.frame = eventContainerView.bounds
         //pageViewController.view.transform = CGAffineTransformMakeScale(1.0,1.0)
-        pageViewController.view.transform = CGAffineTransformMakeScale(0.85,0.85)
+        pageViewController.view.transform = CGAffineTransformMakeScale(0.80,0.80)
         addChildViewController(pageViewController)
         pageViewController.view.userInteractionEnabled = false
         eventContainerView.addSubview(pageViewController.view)
         pageViewController.didMoveToParentViewController(self)
-    
         
         containerScrollView.contentSize.width = 2000
         
@@ -154,6 +159,10 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         // Dispose of any resources that can be recreated.
     }
     
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
     /*
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return 1
@@ -209,11 +218,12 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         UIView.animateWithDuration(0.4, animations: { () -> Void in
             print("event back button")
             self.pageViewController.view.userInteractionEnabled = true
-            self.eventContainerView.transform = CGAffineTransformMakeScale(0.9, 0.9)
+            self.eventContainerView.transform = CGAffineTransformMakeScale(0.8, 0.8)
             self.containerScrollView.frame.origin.y = 40
             self.bottomNavView.frame.origin.y = 592
             self.pageViewController.view.userInteractionEnabled = false
             self.pageViewController.view.layer.cornerRadius = 4
+            
 
         })
     }
@@ -229,7 +239,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
             self.containerScrollView.transform = CGAffineTransformMakeScale(1.0, 1.0)
             self.containerScrollView.frame.origin.y = 0
             self.bottomNavView.frame.origin.y = 668
-            self.pageViewController.view.layer.cornerRadius = 4
+            self.pageViewController.view.layer.cornerRadius = 0
 
         })
     }
@@ -265,7 +275,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                     self.containerScrollView.transform = CGAffineTransformMakeScale(1.0, 1.0)
                     self.containerScrollView.frame.origin.y = 0
                     self.bottomNavView.frame.origin.y = 668
-                    self.pageViewController.view.layer.cornerRadius = 4
+                    self.pageViewController.view.layer.cornerRadius = 0
 
                     
                 })
