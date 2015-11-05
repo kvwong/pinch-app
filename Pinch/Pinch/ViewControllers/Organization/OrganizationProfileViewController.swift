@@ -55,14 +55,14 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         aboutViewController = storyboard.instantiateViewControllerWithIdentifier("AboutViewController") as! AboutViewController
-        aboutViewController.view.layoutIfNeeded()
         aboutViewController.organizationProfileViewController = self
+        aboutViewController.view.layoutIfNeeded()
         upcomingViewController = storyboard.instantiateViewControllerWithIdentifier("UpcomingViewController") as! UpcomingViewController
-        upcomingViewController.view.layoutIfNeeded()
         upcomingViewController.organizationProfileViewController = self
+        upcomingViewController.view.layoutIfNeeded()
         followersViewController = storyboard.instantiateViewControllerWithIdentifier("FollowersViewController") as! FollowersViewController
-        followersViewController.view.layoutIfNeeded()
         followersViewController.organizationProfileViewController = self
+        followersViewController.view.layoutIfNeeded()
         
         activeViewController = aboutViewController
         //activeViewController = upcomingViewController

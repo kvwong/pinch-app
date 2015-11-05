@@ -29,14 +29,11 @@ class StoryCell: AboutCellsTableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        height = 500
-        
+    }
+    
+    override func reloadData() {
         storyLabel.text = organizationProfileViewController.npo.valueForKey("story")! as! String
-        
-       
-        
-        
+
         //storyLabel.text = "Girls on the Run® was established in 1996 in Charlotte, North Carolina. The Girls on the Run® curricula, the heart of the program, provides pre-adolescent girls with the necessary tools to embrace their individual strengths and successfully navigate life experiences. The earliest version of the 24­ lesson curriculum was piloted in 1996 with the help of thirteen brave girls. Twenty-six girls came the next season, then seventy-five. In 2000, Girls on the Run International, a 501c3 organization was born."
         
         storyLabel.sizeToFit()
@@ -44,16 +41,14 @@ class StoryCell: AboutCellsTableViewCell {
         height = Int(storyImage.frame.origin.y + storyImage.frame.height + CGFloat(8))
         
         var defaults = NSUserDefaults.standardUserDefaults()
-        
         defaults.setInteger(height, forKey: "storycell_height")
         defaults.synchronize()
         
-
+        
         storyImage.file = self.organizationProfileViewController.npo["storyImage"] as? PFFile
         //storyImage.file = organization["storyImage"] as? PFFile
         
         storyImage.loadInBackground()
-        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

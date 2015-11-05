@@ -10,7 +10,11 @@ import UIKit
 
 class AboutCellsTableViewCell: UITableViewCell {
 
-    var organizationProfileViewController: OrganizationProfileViewController!
+    var organizationProfileViewController: OrganizationProfileViewController! {
+        didSet {
+            reloadData()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,6 +22,10 @@ class AboutCellsTableViewCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    func reloadData() {
+        
     }
 
 }
