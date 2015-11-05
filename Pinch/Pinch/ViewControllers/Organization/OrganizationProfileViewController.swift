@@ -69,9 +69,6 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
 
     }
     
-    
-    
-    
     func scrollViewDidScroll(scrollView: UIScrollView) {
         
         if tableView.contentOffset.y > 220 {
@@ -79,7 +76,11 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
         } else {
             tabsView.frame.origin.y = tabsViewInitialY - tableView.contentOffset.y
         }
+    }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBarHidden = false
     }
     
     override func didReceiveMemoryWarning() {
