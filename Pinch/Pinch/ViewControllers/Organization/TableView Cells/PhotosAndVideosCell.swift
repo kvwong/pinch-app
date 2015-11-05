@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotosAndVideosCell: UITableViewCell {
+class PhotosAndVideosCell: AboutCellsTableViewCell {
     @IBOutlet weak var image1: UIImageView!
     @IBOutlet weak var image2: UIImageView!
     @IBOutlet weak var image3: UIImageView!
@@ -19,6 +19,7 @@ class PhotosAndVideosCell: UITableViewCell {
     @IBOutlet weak var image8: UIImageView!
     @IBOutlet weak var image9: UIImageView!
 
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

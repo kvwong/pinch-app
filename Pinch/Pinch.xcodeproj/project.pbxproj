@@ -77,6 +77,7 @@
 		12CDC1161BD9E79A0087561B /* TestEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CDC1151BD9E79A0087561B /* TestEvents.swift */; };
 		12DB7DEA1BD2FEEF00C17FE4 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB7DE91BD2FEEF00C17FE4 /* Common.swift */; };
 		12E03E3D1BDCBB7300195277 /* SearchCausesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E03E3C1BDCBB7300195277 /* SearchCausesTableViewCell.swift */; };
+		40E4ADF81BEAEB7C00D0AFB2 /* NPOCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E4ADF71BEAEB7C00D0AFB2 /* NPOCell.swift */; };
 		439B0A90EDAC7EB206EB98E3 /* Pods_Pinch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D9BEA7369A5037279544AF0 /* Pods_Pinch.framework */; };
 		CB106ADD1BE30DCB00AABA50 /* ResultsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB106ADC1BE30DCB00AABA50 /* ResultsCollectionViewCell.swift */; };
 		CB3D28AD1BD8E67700AC1BBD /* EventCardTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D28AC1BD8E67700AC1BBD /* EventCardTransition.swift */; };
@@ -180,6 +181,7 @@
 		12CDC1151BD9E79A0087561B /* TestEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestEvents.swift; path = Helpers/TestEvents.swift; sourceTree = "<group>"; };
 		12DB7DE91BD2FEEF00C17FE4 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Common.swift; path = Helpers/Common.swift; sourceTree = "<group>"; };
 		12E03E3C1BDCBB7300195277 /* SearchCausesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchCausesTableViewCell.swift; path = ViewControllers/SearchTableViews/SearchCausesTableViewCell.swift; sourceTree = "<group>"; };
+		40E4ADF71BEAEB7C00D0AFB2 /* NPOCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NPOCell.swift; path = "ViewControllers/Organization/TableView Cells/NPOCell.swift"; sourceTree = "<group>"; };
 		8D9BEA7369A5037279544AF0 /* Pods_Pinch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pinch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB106ADC1BE30DCB00AABA50 /* ResultsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultsCollectionViewCell.swift; path = Classes/ResultsCollectionViewCell.swift; sourceTree = "<group>"; };
 		CB3D28AC1BD8E67700AC1BBD /* EventCardTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventCardTransition.swift; path = Helpers/EventCardTransition.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				1204AB5E1BE784B700C46105 /* PhotosAndVideosCell.swift */,
 				1204AB5F1BE784B700C46105 /* ProgramsCell.swift */,
 				1204AB601BE784B700C46105 /* StoryCell.swift */,
+				40E4ADF71BEAEB7C00D0AFB2 /* NPOCell.swift */,
 			);
 			name = "TableView Cells";
 			sourceTree = "<group>";
@@ -720,6 +723,7 @@
 				1204AB5A1BE784A400C46105 /* UpcomingViewController.swift in Sources */,
 				121648BA1BD0DC1C00852536 /* SearchResultsViewController.swift in Sources */,
 				121185051BD2230A00C17136 /* LogInViewController.swift in Sources */,
+				40E4ADF81BEAEB7C00D0AFB2 /* NPOCell.swift in Sources */,
 				12CDC1161BD9E79A0087561B /* TestEvents.swift in Sources */,
 				121648B41BD0DAC400852536 /* ActivityViewController.swift in Sources */,
 				CB50A5DF1BD7901E0072C54C /* FadeTransition.swift in Sources */,

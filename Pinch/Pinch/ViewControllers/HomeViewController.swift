@@ -8,9 +8,11 @@
 
 import UIKit
 import UIImageEffects
+import Parse
+
 
 class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
-
+    
     // Outlets and Vars --------------------------------
     
     @IBOutlet weak var containerScrollView: UIScrollView!
@@ -56,6 +58,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     
     var isPresenting: Bool = true
     var wasTapped: Bool = true
+    
+    var events: [PFObject] = []
     
     // Overrides ---------------------------------------
     
@@ -108,6 +112,32 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         } else {
             searchView.hidden = true
         }
+        
+        // Download events from Parse
+        let query = PFQuery(className:"Event")
+        query.includeKey("organization") // Include Organization class
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) events.")
+                // Do something with the found objects
+                if let objects = objects as? [PFObject]? {
+                    for (index, object) in objects!.enumerate() {
+                        print("\(index): \(object.objectId!)")
+                        self.events.append(object)
+                    }
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+        
+        //Temp Text
+        descriptionLabel.text = "This is the text from the Home View Controller"
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -115,19 +145,19 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     /*
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+    return 1
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        return
+    return
     }
     */
     
@@ -162,7 +192,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     
     
     // Event Cards -------------------------------------
-
+    
     @IBAction func onTap(sender: AnyObject) {
         print("tapped card")
         cardView = sender.view as UIView!
@@ -253,14 +283,14 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
             
             eventView.frame.origin.y = initialY + translation.y
             //eventView.transform = CGAffineTransformMakeScale(1.0+abs(translation.y/208), 1.0+abs(translation.y/208))
-
+            
             
             if eventView.frame.origin.y < 104 && eventView.frame.origin.y > 0 {
                 fadeTransition.percentComplete = abs(translation.y)/104
             } else {
                 // do nothing
             }
-
+            
             
         } else if sender.state == UIGestureRecognizerState.Ended {
             eventView.frame.origin.y = 104
@@ -276,18 +306,18 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     
     /*
     func interactionControllerForPresentation(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        interactiveTransition = UIPercentDrivenInteractiveTransition()
-        //Setting the completion speed gets rid of a weird bounce effect bug when transitions complete
-        interactiveTransition.completionSpeed = 0.99
-        return interactiveTransition
+    interactiveTransition = UIPercentDrivenInteractiveTransition()
+    //Setting the completion speed gets rid of a weird bounce effect bug when transitions complete
+    interactiveTransition.completionSpeed = 0.99
+    return interactiveTransition
     }*/
-
+    
     
     // Custom Transitions ------------------------------
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "eventDetailSegue" {
-
+            
             fadeTransition = FadeTransition()
             fadeTransition.isInteractive = true
             print("1")
@@ -310,7 +340,10 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
             eventDetailViewController.friend2Image = friend2.image
             eventDetailViewController.friend3Image = friend3.image
             eventDetailViewController.descriptionLabel = descriptionLabel.text
+            //eventDetailViewController.eventObjectID = events[0].objectId
+            eventDetailViewController.event = events[0]
             
+
             //let eventDetailViewController = page.topViewController as! EventViewController
             //let pageViewController = nav.topViewController as! EventPageViewController
             //let eventDetailViewController = segue.destinationViewController as! EventViewController
@@ -319,7 +352,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
             let destinationViewController = segue.destinationViewController as! SearchViewController
             destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
             destinationViewController.transitioningDelegate = self
-
+            
             if self.searchTermField.text != "" {
                 destinationViewController.searchTerm = self.searchTermField.text! // Assumes search is never empty
             }
@@ -343,7 +376,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
             self.searchView.hidden = true
         }
     }
-
+    
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         isPresenting = true
         return self
@@ -512,6 +545,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
             }
         }
     }
-
-
+    
+    
 }

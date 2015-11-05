@@ -112,57 +112,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[User]'s Past Events" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y0Z-L8-lw1">
+                                <rect key="frame" x="59" y="20" width="257" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="14"/>
+                                <color key="textColor" red="0.65098039215686276" green="0.67843137254901964" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="iMS-03-qTd">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="208"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="ly4-vn-9kI">
-                                        <rect key="frame" x="-6" y="0.0" width="917" height="235"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="829" height="235"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="card_youth" id="m1Q-Jz-npi">
-                                                <rect key="frame" x="135" y="60" width="107" height="128"/>
+                                                <rect key="frame" x="131" y="64" width="107" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
                                             </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="card_housing" id="AOA-As-Ajh">
-                                                <rect key="frame" x="20" y="60" width="107" height="128"/>
+                                                <rect key="frame" x="16" y="64" width="107" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
                                             </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="card_international" id="43w-CV-yJj">
-                                                <rect key="frame" x="710" y="60" width="107" height="128"/>
+                                                <rect key="frame" x="706" y="64" width="107" height="128"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <animations/>
                                             </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="card_relief" id="pJg-yJ-s4X">
-                                                <rect key="frame" x="365" y="60" width="107" height="128"/>
+                                                <rect key="frame" x="361" y="64" width="107" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
                                             </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="card_art_culture" id="19s-lI-gc2">
-                                                <rect key="frame" x="480" y="60" width="107" height="128"/>
+                                                <rect key="frame" x="476" y="64" width="107" height="128"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <animations/>
                                             </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="card_medicine" id="Eh6-Pf-6pk">
-                                                <rect key="frame" x="250" y="60" width="107" height="128"/>
+                                                <rect key="frame" x="246" y="64" width="107" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
                                             </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="card_environment" id="eiD-JU-BeO">
-                                                <rect key="frame" x="595" y="60" width="107" height="128"/>
+                                                <rect key="frame" x="591" y="64" width="107" height="128"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <animations/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Annabel's Past Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y0Z-L8-lw1">
-                                                <rect key="frame" x="116" y="30" width="257" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="14"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -171,14 +171,14 @@
                                 <animations/>
                             </scrollView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="112" sectionHeaderHeight="28" sectionFooterHeight="28" id="Oq5-Fl-jBA">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <inset key="contentInset" minX="0.0" minY="125" maxX="0.0" maxY="0.0"/>
+                                <inset key="contentInset" minX="0.0" minY="150" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserProfileDetailsTableViewCell" rowHeight="220" id="3aa-zM-iKJ" customClass="UserProfileDetailsTableViewCell" customModule="Pinch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="153" width="375" height="220"/>
+                                        <rect key="frame" x="0.0" y="178" width="375" height="220"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3aa-zM-iKJ" id="sgH-Ar-IRj">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
@@ -238,7 +238,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserProfileMenuTableViewCell" rowHeight="184" id="mB4-lb-GfI" customClass="UserProfileMenuTableViewCell" customModule="Pinch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="373" width="375" height="184"/>
+                                        <rect key="frame" x="0.0" y="398" width="375" height="184"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mB4-lb-GfI" id="NmL-7a-ffI">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="184"/>
@@ -318,7 +318,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserProfileEventTabsTableViewCell" rowHeight="44" id="zoX-iG-IQ3" customClass="UserProfileEventTabsTableViewCell" customModule="Pinch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="557" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="582" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zoX-iG-IQ3" id="B7k-w4-reD">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -385,7 +385,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserProfileUpcomingAndSavedEventsTableViewCell" rowHeight="112" id="DSz-Ge-7Xr" customClass="UserProfileUpcomingAndSavedEventsTableViewCell" customModule="Pinch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="601" width="375" height="112"/>
+                                        <rect key="frame" x="0.0" y="626" width="375" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DSz-Ge-7Xr" id="cIg-IO-9ms">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
@@ -464,7 +464,6 @@
                         <animations/>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="Msn-f2-oQj">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="ro1-ca-y7Q">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ii7-FH-jB4">
@@ -484,6 +483,8 @@
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
                         <outlet property="artCardView" destination="19s-lI-gc2" id="Iv7-eA-FNw"/>
+                        <outlet property="cardsScrollView" destination="iMS-03-qTd" id="n0s-xF-JIB"/>
+                        <outlet property="cardsScrollViewContent" destination="ly4-vn-9kI" id="Wt7-Q9-p2e"/>
                         <outlet property="environmentCardView" destination="eiD-JU-BeO" id="Q7i-P3-fbX"/>
                         <outlet property="eventsTableView" destination="Oq5-Fl-jBA" id="GGE-G7-PmA"/>
                         <outlet property="housingCardView" destination="AOA-As-Ajh" id="M6I-73-zfl"/>
@@ -491,8 +492,6 @@
                         <outlet property="medicineCardView" destination="Eh6-Pf-6pk" id="pQs-AT-bxp"/>
                         <outlet property="pastEventsLabel" destination="Y0Z-L8-lw1" id="cUk-bt-dax"/>
                         <outlet property="reliefCardView" destination="pJg-yJ-s4X" id="5Nf-Tf-tSV"/>
-                        <outlet property="scrollView" destination="iMS-03-qTd" id="kcV-lZ-t5F"/>
-                        <outlet property="scrollViewContent" destination="ly4-vn-9kI" id="JvU-5u-Dpp"/>
                         <outlet property="youthCardView" destination="m1Q-Jz-npi" id="F8A-7r-g5E"/>
                         <segue destination="n7v-Hh-x8C" kind="push" identifier="segueToFollowing" id="O7t-Rq-kzQ"/>
                     </connections>
@@ -737,11 +736,11 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="NPOProfileTabsTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="NPOProfileTabsTableViewCell" rowHeight="369" id="9NS-6s-qBU" userLabel="NPOProfileTabsTableViewCell" customClass="NPOProfileTabsTableViewCell" customModule="Pinch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="234" width="375" height="369"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="NPOProfileTabsTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="NPOProfileTabsTableViewCell" rowHeight="48" id="9NS-6s-qBU" userLabel="NPOProfileTabsTableViewCell" customClass="NPOProfileTabsTableViewCell" customModule="Pinch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="234" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9NS-6s-qBU" id="zsb-9J-1ht">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="369"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" id="wJG-oc-UpQ" userLabel="Divider">
@@ -751,27 +750,13 @@
                                                     <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" id="8X2-YL-oEx" userLabel="Active Tab">
-                                                    <rect key="frame" x="125" y="43" width="125" height="3"/>
+                                                    <rect key="frame" x="0.0" y="43" width="125" height="3"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.2784313725" green="0.77647058820000003" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Tx0-MM-D0E">
-                                                    <rect key="frame" x="0.0" y="4" width="122" height="38"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
-                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <state key="normal" title="About">
-                                                        <color key="titleColor" red="0.28235294119999998" green="0.35686274509999999" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="didPressAbout:" destination="9NS-6s-qBU" eventType="touchUpInside" id="BRQ-o2-3Qq"/>
-                                                    </connections>
-                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5ht-2u-bCn">
-                                                    <rect key="frame" x="125" y="5" width="115" height="36"/>
+                                                    <rect key="frame" x="131" y="5" width="115" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -798,12 +783,20 @@
                                                         <action selector="didPressFollowing:" destination="9NS-6s-qBU" eventType="touchUpInside" id="9On-2Y-d5Q"/>
                                                     </connections>
                                                 </button>
-                                                <view contentMode="scaleToFill" id="Rrj-XR-z2V">
-                                                    <rect key="frame" x="0.0" y="60" width="375" height="309"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Tx0-MM-D0E">
+                                                    <rect key="frame" x="0.0" y="4" width="122" height="38"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </view>
+                                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <state key="normal" title="About">
+                                                        <color key="titleColor" red="0.28235294119999998" green="0.35686274509999999" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="didPressAbout:" destination="9NS-6s-qBU" eventType="touchUpInside" id="BRQ-o2-3Qq"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -811,7 +804,6 @@
                                         <connections>
                                             <outlet property="aboutTab" destination="Tx0-MM-D0E" id="0p7-bh-Ut2"/>
                                             <outlet property="activeTabView" destination="8X2-YL-oEx" id="eLO-CD-ovu"/>
-                                            <outlet property="displayView" destination="Rrj-XR-z2V" id="PMa-Mi-rc5"/>
                                             <outlet property="followersTab" destination="a36-2F-kFB" id="eoe-Zy-sHm"/>
                                             <outlet property="upcomingTab" destination="5ht-2u-bCn" id="rWg-H7-y26"/>
                                         </connections>
@@ -831,7 +823,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qK2-VW-R8H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4477.5" y="224.5"/>
+            <point key="canvasLocation" x="4355.5" y="224.5"/>
         </scene>
         <!--Onboarding Finish View Controller-->
         <scene sceneID="B49-6R-rTV">
@@ -1203,7 +1195,7 @@
                                 <rect key="frame" x="16" y="15" width="14" height="14"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
-                                <state key="normal" title="Button" image="icon_close_14x14"/>
+                                <state key="normal" title="Button" image="icon_close_white_14x14"/>
                                 <connections>
                                     <action selector="didPressCloseButton:" destination="Ngy-vJ-zBg" eventType="touchUpInside" id="Cf5-gT-QdC"/>
                                 </connections>
@@ -1370,6 +1362,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Event Details v3" id="wFv-Ah-817">
+                                <rect key="frame" x="0.0" y="-497" width="375" height="1662"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="jjG-Jb-qFi">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1378,17 +1375,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1702"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Event Details v3" id="wFv-Ah-817">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1662"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <animations/>
-                                            </imageView>
-                                            <view contentMode="scaleToFill" id="4dB-9o-AJ5">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="578"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <animations/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </view>
                                             <view contentMode="scaleToFill" id="v8p-Sq-AuK">
                                                 <rect key="frame" x="0.0" y="1590" width="375" height="100"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1441,22 +1427,6 @@
                                                 <animations/>
                                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OIN-dS-t1z">
-                                                <rect key="frame" x="16" y="358" width="343" height="119"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <animations/>
-                                                <attributedString key="attributedText">
-                                                    <fragment>
-                                                        <string key="content">Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper.</string>
-                                                        <attributes>
-                                                            <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <font key="NSFont" size="14" name="Lato-Regular"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="4"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <view contentMode="scaleToFill" id="IOW-LX-bU8">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1538,6 +1508,12 @@
                                                 </subviews>
                                                 <animations/>
                                                 <color key="backgroundColor" red="0.48866637100513433" green="0.48797812915322691" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" id="4dB-9o-AJ5">
+                                                <rect key="frame" x="0.0" y="562" width="375" height="578"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <animations/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ArP-jv-JyL">
                                                 <rect key="frame" x="0.0" y="470" width="375" height="44"/>
@@ -1623,6 +1599,21 @@
                                                     <outletCollection property="gestureRecognizers" destination="zTh-v6-ziq" appends="YES" id="0fP-Wd-0su"/>
                                                 </connections>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OIN-dS-t1z">
+                                                <rect key="frame" x="17" y="359" width="338" height="119"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <animations/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="There is nothing here at first... Going to receive data from Home View Controller">
+                                                        <attributes>
+                                                            <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <font key="NSFont" size="14" name="Lato-Regular"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="4"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1697,7 +1688,7 @@
                         <outlet property="tagButton2" destination="xXI-zh-0S0" id="i8n-gj-MQA"/>
                         <outlet property="wireframeImage" destination="wFv-Ah-817" id="5Sg-WH-0rI"/>
                         <segue destination="6eq-NL-otq" kind="modal" identifier="Expand Banner" id="2vP-9V-FRD"/>
-                        <segue destination="8mf-en-3ur" kind="push" identifier="segueToOrganization" id="0Lu-Xf-p68"/>
+                        <segue destination="8mf-en-3ur" kind="push" identifier="segueToNPO" id="0Lu-Xf-p68"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G6b-cM-Ti1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2363,6 +2354,10 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="eventDistanceDragger" destination="aQG-um-fpQ" id="H2v-DS-Pgr"/>
+                        <outlet property="eventLengthDragger" destination="2gd-jZ-EzZ" id="QP9-iA-kdg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZV-Tl-2iZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3169,7 +3164,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="106" sectionHeaderHeight="28" sectionFooterHeight="28" id="Y4r-hB-GwO">
-                                <rect key="frame" x="0.0" y="-70" width="375" height="1000"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3182,13 +3177,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" id="d0w-ka-90A" userLabel="Divider">
-                                                    <rect key="frame" x="72" y="100" width="295" height="1"/>
+                                                    <rect key="frame" x="72" y="104" width="295" height="1"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J7e-i7-S5J">
-                                                    <rect key="frame" x="72" y="69" width="191" height="15"/>
+                                                    <rect key="frame" x="72" y="73" width="191" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
@@ -3196,13 +3191,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="XcJ-NP-ibE">
-                                                    <rect key="frame" x="8" y="5" width="52" height="52"/>
+                                                    <rect key="frame" x="8" y="9" width="52" height="52"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.91372549020000005" green="0.93725490199999995" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Vp-Vi-AlU">
-                                                    <rect key="frame" x="72" y="27" width="191" height="40"/>
+                                                    <rect key="frame" x="72" y="31" width="191" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
@@ -3210,7 +3205,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q2f-ln-S2X">
-                                                    <rect key="frame" x="72" y="6" width="191" height="17"/>
+                                                    <rect key="frame" x="72" y="10" width="191" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
@@ -3218,7 +3213,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KBA-2G-02L">
-                                                    <rect key="frame" x="295" y="6" width="58" height="30"/>
+                                                    <rect key="frame" x="295" y="10" width="58" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
@@ -3310,7 +3305,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Epe-Vv-6N3">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PFImageView" id="Epe-Vv-6N3" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="143" width="375" height="184"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
@@ -3321,7 +3316,7 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <outlet property="storyImage" destination="Epe-Vv-6N3" id="BXh-K1-sJx"/>
+                                            <outlet property="storyImage" destination="Epe-Vv-6N3" id="qC3-PB-9LZ"/>
                                             <outlet property="storyLabel" destination="uzA-Uh-7YS" id="owl-pv-x2S"/>
                                         </connections>
                                     </tableViewCell>
@@ -3454,7 +3449,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kOw-Qi-yZR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4955.5" y="224.5"/>
+            <point key="canvasLocation" x="4808.5" y="182.5"/>
         </scene>
         <!--Followers-->
         <scene sceneID="B8h-RF-Swp">
@@ -3534,7 +3529,7 @@
             <objects>
                 <navigationController storyboardIdentifier="EventNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="60X-fF-rAO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0qV-mD-nrA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -3560,6 +3555,7 @@
         <image name="Event Details - Play Video" width="375" height="667"/>
         <image name="Event Details - Testimonials" width="375" height="1047"/>
         <image name="Event Details v3" width="375" height="1662"/>
+        <image name="PFImageView" width="107" height="128"/>
         <image name="Splash" width="375" height="667"/>
         <image name="avatar_cameron" width="395" height="395"/>
         <image name="avatar_jessie" width="390" height="320"/>

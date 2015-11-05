@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FollowingTableViewCell: UITableViewCell {
+class FollowingTableViewCell: NPOCell {
     
     @IBOutlet weak var profilePicImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!

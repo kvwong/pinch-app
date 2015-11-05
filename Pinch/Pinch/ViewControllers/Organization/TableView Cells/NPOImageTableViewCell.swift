@@ -8,8 +8,8 @@
 
 import UIKit
 
-class NPOImageTableViewCell: UITableViewCell {
-
+class NPOImageTableViewCell: AboutCellsTableViewCell{
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

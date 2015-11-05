@@ -14,28 +14,14 @@ class NPOProfileTabsTableViewCell: UITableViewCell {
     @IBOutlet weak var upcomingTab: UIButton!
     @IBOutlet weak var followersTab: UIButton!
     @IBOutlet weak var activeTabView: UIView!
-    @IBOutlet weak var displayView: UIView!
-
-    var aboutViewController: UIViewController!
-    var upcomingViewController: UIViewController!
-    var followersViewController: UIViewController!
 
     var organizationProfileViewController: OrganizationProfileViewController!
     
-    var previousTab = "Upcoming"
+    var previousTab = "About"
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        aboutViewController = storyboard.instantiateViewControllerWithIdentifier("AboutViewController")
-        
-        upcomingViewController = storyboard.instantiateViewControllerWithIdentifier("UpcomingViewController")
-        
-        followersViewController = storyboard.instantiateViewControllerWithIdentifier("FollowersViewController")
-        
-        switchTabs("About")
+
         aboutTab.setTitleColor(colorTextLight, forState: .Normal)
         upcomingTab.setTitleColor(colorTextLight, forState: .Normal)
         followersTab.setTitleColor(colorTextLight, forState: .Normal)
@@ -58,49 +44,51 @@ class NPOProfileTabsTableViewCell: UITableViewCell {
     }
     
     func loadUpcoming() {
-        print("Loading upcoming events...")
-        //call viewWillLoad
-        upcomingViewController.willMoveToParentViewController(organizationProfileViewController)
+    organizationProfileViewController.activeViewController = organizationProfileViewController.upcomingViewController
         
-        upcomingViewController.view.frame = displayView.frame
-        displayView.addSubview(upcomingViewController.view)
-        
-        //call viewDidLoad. Put in animation completion bloc
-        upcomingViewController.didMoveToParentViewController(organizationProfileViewController)
+//        print("Loading upcoming events...")
+//        //call viewWillLoad
+//        upcomingViewController.willMoveToParentViewController(organizationProfileViewController)
+//        
+//        upcomingViewController.view.frame = displayView.frame
+//        displayView.addSubview(upcomingViewController.view)
+//        
+//        //call viewDidLoad. Put in animation completion bloc
+//        upcomingViewController.didMoveToParentViewController(organizationProfileViewController)
     }
     
     func loadAbout() {
-        print("Loading about page...")
-        //call viewWillLoad
-        aboutViewController.willMoveToParentViewController(organizationProfileViewController)
+        organizationProfileViewController.activeViewController = organizationProfileViewController.aboutViewController
         
-        aboutViewController.view.frame = displayView.frame
-        displayView.addSubview(aboutViewController.view)
-        
-        //call viewDidLoad. Put in animation completion bloc
-        aboutViewController.didMoveToParentViewController(organizationProfileViewController)
+//        print("Loading about page...")
+//        //call viewWillLoad
+//        aboutViewController.willMoveToParentViewController(organizationProfileViewController)
+//        
+//        aboutViewController.view.frame = displayView.frame
+//        displayView.addSubview(aboutViewController.view)
+//        
+//        //call viewDidLoad. Put in animation completion bloc
+//        aboutViewController.didMoveToParentViewController(organizationProfileViewController)
 
     }
     
     func loadFollowers() {
+        
+        organizationProfileViewController.activeViewController = organizationProfileViewController.followersViewController
+        
         print("Loading followers list...")
-        //call viewWillLoad
-        followersViewController.willMoveToParentViewController(organizationProfileViewController)
-        
-        followersViewController.view.frame = displayView.frame
-        displayView.addSubview(followersViewController.view)
-        
-        //call viewDidLoad. Put in animation completion bloc
-        followersViewController.didMoveToParentViewController(organizationProfileViewController)
+//        //call viewWillLoad
+//        followersViewController.willMoveToParentViewController(organizationProfileViewController)
+//        
+//        followersViewController.view.frame = displayView.frame
+//        displayView.addSubview(followersViewController.view)
+//        
+//        //call viewDidLoad. Put in animation completion bloc
+//        followersViewController.didMoveToParentViewController(organizationProfileViewController)
 
     }
     
     func switchTabs(tabToSwitchTo: String) {
-        
-        for subview in displayView.subviews {
-            subview.removeFromSuperview()
-        }
-        
         var situation: Int!
         
         if tabToSwitchTo == "Upcoming" && previousTab == "About" {
