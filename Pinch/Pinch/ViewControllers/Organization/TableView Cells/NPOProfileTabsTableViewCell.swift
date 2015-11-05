@@ -28,6 +28,8 @@ class NPOProfileTabsTableViewCell: UITableViewCell {
         aboutTab.setTitleColor(colorTextDark, forState: .Selected)
         upcomingTab.setTitleColor(colorTextDark, forState: .Selected)
         followersTab.setTitleColor(colorTextDark, forState: .Selected)
+        aboutTab.selected = true
+        aboutTab.userInteractionEnabled = false
         
     }
 

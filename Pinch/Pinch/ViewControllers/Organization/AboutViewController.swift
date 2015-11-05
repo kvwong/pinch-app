@@ -106,7 +106,7 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
             var programscellHeight = defaults.integerForKey("programscell_height")
             height = CGFloat(programscellHeight)
         }else {
-            height = 450
+            height = 447
         }
         
         return height

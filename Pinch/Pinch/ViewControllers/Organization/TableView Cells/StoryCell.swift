@@ -9,7 +9,7 @@
 import UIKit
 import ParseUI
 import Parse
-import AFNetworking
+//import AFNetworking
 
 //protocol AboutCells: UITableViewCell {
 //    weak var organizationProfileViewController: OrganizationProfileViewController! { get set }
@@ -46,7 +46,6 @@ class StoryCell: AboutCellsTableViewCell {
         
         
         storyImage.file = self.organizationProfileViewController.npo["storyImage"] as? PFFile
-        //storyImage.file = organization["storyImage"] as? PFFile
         
         storyImage.loadInBackground()
     }

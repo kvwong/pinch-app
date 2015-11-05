@@ -179,28 +179,10 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
     
     // Automatically snap eventsTableView
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if scrollView == eventsTableView {
-            let middlePoint = (scrollViewOpenY - scrollViewClosedY)/2
-            if eventsTableView.contentOffset.y < -scrollViewClosedY + 80 && eventsTableView.contentOffset.y > -(scrollViewClosedY + middlePoint) {
-                print("Returning eventsTableView to CLOSED POSITION")
-                UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
-                    //self.eventsTableView.contentInset.top = self.scrollViewClosedY
-                    self.eventsTableView.contentOffset.y = -self.scrollViewClosedY
-                    self.pastEventsLabel.alpha = 0
-                    }, completion: nil)
-            } else if eventsTableView.contentOffset.y < -(scrollViewClosedY + middlePoint) && eventsTableView.contentOffset.y > -scrollViewOpenY {
-                print("Returning eventsTableView to OPEN POSITION")
-                UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
-                    //self.eventsTableView.contentInset.top = self.scrollViewOpenY
-                    self.eventsTableView.contentOffset.y = -self.scrollViewOpenY
-                    self.pastEventsLabel.alpha = 1
-                    }, completion: { Void in
-                        self.view.bringSubviewToFront(self.cardsScrollView)
-                        self.view.bringSubviewToFront(self.closeButton)
-                })
-            }
-            self.view.sendSubviewToBack(cardsScrollView)
-        }
+         snapBack(scrollView)
+    }
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+         snapBack(scrollView)
     }
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
@@ -271,6 +253,33 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             }
             
         }
+    }
+    
+    func snapBack (scrollView: UIScrollView){
+    
+        if scrollView == eventsTableView {
+            let middlePoint = (scrollViewOpenY - scrollViewClosedY)/2
+            if eventsTableView.contentOffset.y < -scrollViewClosedY + 80 && eventsTableView.contentOffset.y > -(scrollViewClosedY + middlePoint) {
+                print("Returning eventsTableView to CLOSED POSITION")
+                UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
+                    //self.eventsTableView.contentInset.top = self.scrollViewClosedY
+                    self.eventsTableView.contentOffset.y = -self.scrollViewClosedY
+                    self.pastEventsLabel.alpha = 0
+                    }, completion: nil)
+            } else if eventsTableView.contentOffset.y < -(scrollViewClosedY + middlePoint) && eventsTableView.contentOffset.y > -scrollViewOpenY {
+                print("Returning eventsTableView to OPEN POSITION")
+                UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
+                    //self.eventsTableView.contentInset.top = self.scrollViewOpenY
+                    self.eventsTableView.contentOffset.y = -self.scrollViewOpenY
+                    self.pastEventsLabel.alpha = 1
+                    }, completion: { Void in
+                        self.view.bringSubviewToFront(self.cardsScrollView)
+                        self.view.bringSubviewToFront(self.closeButton)
+                })
+            }
+            self.view.sendSubviewToBack(cardsScrollView)
+        }
+
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
