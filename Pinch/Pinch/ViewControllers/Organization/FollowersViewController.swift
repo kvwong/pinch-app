@@ -34,19 +34,6 @@ class FollowersViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.separatorInset.left = 68
         tableView.tableFooterView = UIView.init(frame: CGRectZero)
         
-        print("users AAA: \(users)")
-    }
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("FollowingTableViewCell") as! FollowingTableViewCell
-        
         // Download Users from Parse
         let query = PFQuery(className:"_User")
         //query.includeKey("organization") // Include Organization class
@@ -61,9 +48,7 @@ class FollowersViewController: UIViewController, UITableViewDataSource, UITableV
                     for (index, object) in objects!.enumerate() {
                         print("\(index): \(object.objectId!)")
                         self.users.append(object)
-                        if indexPath.row == index {
-                            self.user = object
-                        }
+                      
                     }
                 }
             } else {
@@ -71,6 +56,21 @@ class FollowersViewController: UIViewController, UITableViewDataSource, UITableV
                 print("Error: \(error!) \(error!.userInfo)")
             }
         }
+        
+        print("users AAA: \(users)")
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 7    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("FollowingTableViewCell") as! FollowingTableViewCell
+        
+     
 
         //print("user BBB: \(user)")
         print("indexPath.row: \(indexPath.row)")
