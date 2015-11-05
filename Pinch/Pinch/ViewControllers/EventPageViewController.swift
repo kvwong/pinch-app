@@ -36,6 +36,7 @@ class EventPageViewController: UIPageViewController, UIPageViewControllerDataSou
         // Download events from Parse
         let query = PFQuery(className:"Event")
         query.includeKey("organization") // Include Organization class
+        query.orderByAscending("addressStreet")
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             
@@ -82,7 +83,8 @@ class EventPageViewController: UIPageViewController, UIPageViewControllerDataSou
         
         let event = navigationController.topViewController as! EventViewController
         event.index = index
-        //event.scrollView.delegate = self
+        
+        
         
         // Populate data from Parse
         
@@ -101,9 +103,12 @@ class EventPageViewController: UIPageViewController, UIPageViewControllerDataSou
         
         // Non-profit name
         event.npoLabel = self.events[index]["organization"]["name"] as! String
+        event.npo = self.events[index]["organization"] as! PFObject
         
         // Event description
         event.descriptionLabel = self.events[index]["description"] as! String
+        
+        event.event = self.events[index]
         
         print("Event \(event) created at index \(index)")
         return navigationController
