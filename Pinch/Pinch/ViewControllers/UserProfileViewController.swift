@@ -179,7 +179,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
     // Automatically snap eventsTableView
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         let middlePoint = (scrollViewOpenY - scrollViewClosedY)/2
-        if eventsTableView.contentOffset.y < -scrollViewClosedY + 50 && eventsTableView.contentOffset.y > -(scrollViewClosedY + middlePoint) {
+        if eventsTableView.contentOffset.y < -scrollViewClosedY + 80 && eventsTableView.contentOffset.y > -(scrollViewClosedY + middlePoint) {
             print("Returning eventsTableView to CLOSED POSITION")
             UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
                 self.eventsTableView.contentInset.top = self.scrollViewClosedY
