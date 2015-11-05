@@ -65,9 +65,9 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             endRotation: 0,
             view: self.reliefCardView),
         Card( // yellow
-            startOrigin: CGPoint(x: 71, y: 92),
+            startOrigin: CGPoint(x: 71, y: 102),
             endOrigin: CGPoint(x: 488, y: 64),
-            startRotation: radian(-23),
+            startRotation: radian(-13),
             endRotation: 0,
             view: self.artCardView),
         Card( // dark green
@@ -179,29 +179,27 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
     // Automatically snap eventsTableView
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         let middlePoint = (scrollViewOpenY - scrollViewClosedY)/2
-        if eventsTableView.contentOffset.y < -scrollViewClosedY && eventsTableView.contentOffset.y > -(scrollViewClosedY + middlePoint) {
+        if eventsTableView.contentOffset.y < -scrollViewClosedY + 50 && eventsTableView.contentOffset.y > -(scrollViewClosedY + middlePoint) {
             print("Returning eventsTableView to CLOSED POSITION")
-//            UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
-//                self.eventsTableView.contentInset.top = self.scrollViewClosedY
-//                self.eventsTableView.contentOffset.y = -self.scrollViewClosedY
-//                self.pastEventsLabel.alpha = 0
-//                }, completion: nil)
-            
-            self.eventsTableView.contentInset.top = self.scrollViewClosedY
-            self.eventsTableView.contentOffset.y = -self.scrollViewClosedY
-            self.pastEventsLabel.alpha = 0
-            
+            UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
+                self.eventsTableView.contentInset.top = self.scrollViewClosedY
+                self.eventsTableView.contentOffset.y = -self.scrollViewClosedY
+                self.pastEventsLabel.alpha = 0
+                }, completion: nil)
         } else if eventsTableView.contentOffset.y < -(scrollViewClosedY + middlePoint) && eventsTableView.contentOffset.y > -scrollViewOpenY {
             print("Returning eventsTableView to OPEN POSITION")
-//            UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
-//                self.eventsTableView.contentInset.top = self.scrollViewOpenY
-//                self.eventsTableView.contentOffset.y = -self.scrollViewOpenY
-//                self.pastEventsLabel.alpha = 1
-//                }, completion: nil)
-            
-            self.eventsTableView.contentInset.top = self.scrollViewOpenY
-            self.eventsTableView.contentOffset.y = -self.scrollViewOpenY
-            self.pastEventsLabel.alpha = 1
+            UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
+                self.eventsTableView.contentInset.top = self.scrollViewOpenY
+                self.eventsTableView.contentOffset.y = -self.scrollViewOpenY
+                self.pastEventsLabel.alpha = 1
+                }, completion: nil)
+        }
+        self.view.sendSubviewToBack(cardsScrollView)
+    }
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        if scrollView == eventsTableView {
+            cardsScrollViewInitialX = self.cardsScrollView.contentOffset.x
         }
     }
     
@@ -241,8 +239,8 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             }
             
             // Adjust cards and past events label based on scroll position
-            var currentOffset = -1*eventsTableView.contentOffset.y - scrollViewClosedY
-            var finalOffset = CGFloat(scrollViewOpenY - scrollViewClosedY)
+            let currentOffset = -1*eventsTableView.contentOffset.y - scrollViewClosedY
+            let finalOffset = CGFloat(scrollViewOpenY - scrollViewClosedY)
             if eventsTableView.contentOffset.y < -scrollViewClosedY && eventsTableView.contentOffset.y > -scrollViewOpenY {
                 percentScroll = (currentOffset / finalOffset)
                 self.view.sendSubviewToBack(cardsScrollView)
@@ -271,7 +269,6 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
                 let translationTransform = CGAffineTransformTranslate(transform, tx, ty)
                 card.view.transform = translationTransform
             }
-            
             
         }
     }
