@@ -57,6 +57,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     var wasTapped: Bool = true
     
     var events: [PFObject] = []
+    var pageViewController: UIPageViewController!
+    var initialX: CGFloat!
     
     // Overrides ---------------------------------------
     
