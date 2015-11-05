@@ -40,33 +40,7 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
         super.viewDidLoad()
         
     
-        
-  
-        
-        // Download Users from Parse
-        let query = PFQuery(className:"Event")
-        query.includeKey("organization") // Include Organization class
-        query.findObjectsInBackgroundWithBlock {
-            (objects: [PFObject]?, error: NSError?) -> Void in
-            
-            if error == nil {
-                // The find succeeded.
-                print("Successfully retrieved \(objects!.count) events.")
-                // Do something with the found objects
-                if let objects = objects as? [PFObject]? {
-                    for (index, object) in objects!.enumerate() {
-                        print("\(index): \(object.objectId!)")
-                        self.events.append(object)
-                    }
-                    self.tableView.reloadData()
-                }
-            } else {
-                // Log details of the failure
-                print("Error: \(error!) \(error!.userInfo)")
-            }
-        }
-
-        npo = events[0].valueForKey("organization") as! PFObject
+     //   npo = events[0].valueForKey("organization") as! PFObject
         
          self.title = npo.valueForKey("name") as! String
         
