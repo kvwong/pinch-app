@@ -64,8 +64,8 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             startRotation: radian(14),
             endRotation: 0,
             view: self.reliefCardView),
-        Card( // yellow
-            startOrigin: CGPoint(x: 71, y: 102),
+        Card( // purple
+            startOrigin: CGPoint(x: 71, y: 92),
             endOrigin: CGPoint(x: 488, y: 64),
             startRotation: radian(-13),
             endRotation: 0,
@@ -186,6 +186,12 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
                 self.eventsTableView.contentOffset.y = -self.scrollViewClosedY
                 self.pastEventsLabel.alpha = 0
                 }, completion: nil)
+            
+//                self.eventsTableView.contentInset.top = self.scrollViewClosedY
+//                self.eventsTableView.contentOffset.y = -self.scrollViewClosedY
+//                self.pastEventsLabel.alpha = 0
+            
+            
         } else if eventsTableView.contentOffset.y < -(scrollViewClosedY + middlePoint) && eventsTableView.contentOffset.y > -scrollViewOpenY {
             print("Returning eventsTableView to OPEN POSITION")
             UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
@@ -193,6 +199,11 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
                 self.eventsTableView.contentOffset.y = -self.scrollViewOpenY
                 self.pastEventsLabel.alpha = 1
                 }, completion: nil)
+            
+//            self.eventsTableView.contentInset.top = self.scrollViewOpenY
+//            self.eventsTableView.contentOffset.y = -self.scrollViewOpenY
+//            self.pastEventsLabel.alpha = 1
+
         }
         self.view.sendSubviewToBack(cardsScrollView)
     }
