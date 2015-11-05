@@ -116,7 +116,7 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
         } else {
             let contentIndexPath = NSIndexPath(forRow: indexPath.row, inSection: indexPath.section - 2)
 
-            var cell = activeViewController.tableView(activeViewController.tableView, cellForRowAtIndexPath: contentIndexPath) as! AboutCellsTableViewCell
+            var cell = activeViewController.tableView(activeViewController.tableView, cellForRowAtIndexPath: contentIndexPath) as! NPOCell
             
             cell.organizationProfileViewController = self
             

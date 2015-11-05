@@ -8,24 +8,26 @@
 
 import UIKit
 
-class AboutCellsTableViewCell: UITableViewCell {
-
+class NPOCell: UITableViewCell {
     var organizationProfileViewController: OrganizationProfileViewController! {
         didSet {
             reloadData()
         }
     }
     
+    func reloadData() {
+        
+    }
+}
+
+class AboutCellsTableViewCell: NPOCell {
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-    }
-    
-    func reloadData() {
-        
     }
 
 }
