@@ -36,6 +36,8 @@ class OrganizationProfileViewController: UIViewController, UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = npo.valueForKey("name") as! String
+        
         tableView.delegate = self
         tableView.dataSource = self
         
