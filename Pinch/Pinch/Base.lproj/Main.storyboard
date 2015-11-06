@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15C27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="B8T-uJ-7Xz">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
@@ -1173,6 +1173,7 @@
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Event Details v3" id="D1Y-1p-wp4">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1662"/>
                                                 <autoresizingMask key="autoresizingMask"/>
+                                                <animations/>
                                             </imageView>
                                             <view contentMode="scaleToFill" id="4dB-9o-AJ5">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="578"/>
