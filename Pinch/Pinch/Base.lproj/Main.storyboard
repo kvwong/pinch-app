@@ -1170,6 +1170,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1702"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Event Details v3" id="D1Y-1p-wp4">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1662"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </imageView>
                                             <view contentMode="scaleToFill" id="4dB-9o-AJ5">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="578"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1470,7 +1474,7 @@
                         <outlet property="eventDescriptionLabel" destination="OIN-dS-t1z" id="7DM-Ph-bxr"/>
                         <outlet property="eventFriendCountLabel" destination="R9h-co-pdI" id="2uj-4Z-Yhy"/>
                         <outlet property="eventNPOLabel" destination="5Nc-4a-IKA" id="8TA-Qn-4Uq"/>
-                        <outlet property="eventSummaryView" destination="sxt-02-1hn" id="lFX-ld-oX8"/>
+                        <outlet property="eventSummaryView" destination="sxt-02-1hn" id="xaG-NB-ie8"/>
                         <outlet property="eventTimeAndDateLabel" destination="Co6-Yx-FCs" id="lNJ-gB-oCe"/>
                         <outlet property="eventTitleLabel" destination="H2A-LX-z8e" id="xtG-Px-mAG"/>
                         <outlet property="friend1" destination="gIJ-Hv-lfU" id="67C-WS-Fop"/>
@@ -3318,10 +3322,10 @@
             </objects>
             <point key="canvasLocation" x="4477.5" y="1117.5"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Event Navigation Controller-->
         <scene sceneID="P4U-eD-5yv">
             <objects>
-                <navigationController storyboardIdentifier="EventNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="60X-fF-rAO" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="EventNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="60X-fF-rAO" customClass="EventNavigationController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -3349,6 +3353,7 @@
         <image name="Event Details - People Going" width="375" height="667"/>
         <image name="Event Details - Play Video" width="375" height="667"/>
         <image name="Event Details - Testimonials" width="375" height="1047"/>
+        <image name="Event Details v3" width="375" height="1662"/>
         <image name="PFImageView" width="107" height="128"/>
         <image name="Splash" width="375" height="667"/>
         <image name="avatar_kevin" width="331" height="331"/>

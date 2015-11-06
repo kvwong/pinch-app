@@ -17,6 +17,7 @@
 		1204AB641BE784B700C46105 /* PhotosAndVideosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1204AB5E1BE784B700C46105 /* PhotosAndVideosCell.swift */; };
 		1204AB651BE784B700C46105 /* ProgramsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1204AB5F1BE784B700C46105 /* ProgramsCell.swift */; };
 		1204AB661BE784B700C46105 /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1204AB601BE784B700C46105 /* StoryCell.swift */; };
+		1206ED621BEC2D6D0061394C /* EventNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206ED611BEC2D6D0061394C /* EventNavigationController.swift */; };
 		121184DD1BD21BD900C17136 /* Cause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184DC1BD21BD900C17136 /* Cause.swift */; };
 		121184EE1BD221C300C17136 /* EventTestimonialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184ED1BD221C300C17136 /* EventTestimonialsViewController.swift */; };
 		121184F01BD221CE00C17136 /* EventLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121184EF1BD221CE00C17136 /* EventLocationViewController.swift */; };
@@ -114,6 +115,7 @@
 		1204AB5E1BE784B700C46105 /* PhotosAndVideosCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotosAndVideosCell.swift; path = "ViewControllers/Organization/TableView Cells/PhotosAndVideosCell.swift"; sourceTree = "<group>"; };
 		1204AB5F1BE784B700C46105 /* ProgramsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgramsCell.swift; path = "ViewControllers/Organization/TableView Cells/ProgramsCell.swift"; sourceTree = "<group>"; };
 		1204AB601BE784B700C46105 /* StoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryCell.swift; path = "ViewControllers/Organization/TableView Cells/StoryCell.swift"; sourceTree = "<group>"; };
+		1206ED611BEC2D6D0061394C /* EventNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventNavigationController.swift; path = ViewControllers/EventNavigationController.swift; sourceTree = "<group>"; };
 		121184DC1BD21BD900C17136 /* Cause.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cause.swift; path = Helpers/Cause.swift; sourceTree = "<group>"; };
 		121184ED1BD221C300C17136 /* EventTestimonialsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTestimonialsViewController.swift; path = ViewControllers/EventTestimonialsViewController.swift; sourceTree = "<group>"; };
 		121184EF1BD221CE00C17136 /* EventLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventLocationViewController.swift; path = ViewControllers/EventLocationViewController.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				121185061BD2235C00C17136 /* EventFeedbackViewController.swift */,
 				CB50A5E21BD794320072C54C /* EventInviteFriendsViewController.swift */,
 				127AAC4F1BE4C009007B3842 /* EventPageViewController.swift */,
+				1206ED611BEC2D6D0061394C /* EventNavigationController.swift */,
 			);
 			name = Event;
 			sourceTree = "<group>";
@@ -727,6 +730,7 @@
 				121648B41BD0DAC400852536 /* ActivityViewController.swift in Sources */,
 				CB50A5DF1BD7901E0072C54C /* FadeTransition.swift in Sources */,
 				121184F01BD221CE00C17136 /* EventLocationViewController.swift in Sources */,
+				1206ED621BEC2D6D0061394C /* EventNavigationController.swift in Sources */,
 				12DB7DEA1BD2FEEF00C17FE4 /* Common.swift in Sources */,
 				121185031BD2230000C17136 /* SignUpViewController.swift in Sources */,
 				121648C71BD0DDF400852536 /* Event.swift in Sources */,

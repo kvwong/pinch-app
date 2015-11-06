@@ -58,8 +58,14 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
         
-        scrollView.contentSize.height = eventSummaryView.frame.size.height
+        //scrollView.contentSize.height = eventSummaryView.frame.size.height
         self.navigationController?.navigationBarHidden = true
         scrollView.delegate = self
         eventBannerImage.clipsToBounds = true
@@ -73,22 +79,12 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 4
         
-
-        //eventDescriptionLabel.text = event!["description"] as! NSString as String // Not pulling data yet
-
+        eventDescriptionLabel.attributedText = NSAttributedString(string: descriptionLabel, attributes:[NSFontAttributeName: UIFont(name: "Lato-Regular", size: 14)!, NSForegroundColorAttributeName: colorTextMedium, NSParagraphStyleAttributeName: paragraphStyle])
         
-        eventDescriptionLabel.attributedText = NSAttributedString(string: eventDescriptionLabel.text!, attributes:[NSFontAttributeName: UIFont(name: "Lato-Regular", size: 14)!, NSForegroundColorAttributeName: colorTextMedium, NSParagraphStyleAttributeName: paragraphStyle])
-        //        descriptionIndex = String.CharacterView.Index(5000)
-        //
-        //        if eventDescriptionLabel.text?.characters.count > 5000{
-        //            eventDescriptionLabel.text = eventDescriptionLabel.text?.substringToIndex(descriptionIndex) + "..."
-        //        }
-        
-
         //npo = event.valueForKey("organization") as! PFObject
         //print("npo: \(npo.valueForKey("name")!)")
         //eventNPOLabel.text = npo.valueForKey("name")! as! String
-
+        
         friend1.image = friend1Image
         friend2.image = friend2Image
         friend3.image = friend3Image
@@ -100,12 +96,6 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         // Styling for RSVP button
         rsvpButton.layer.masksToBounds = true
         rsvpButton.layer.cornerRadius = buttonCornerRadius
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
-        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
     }
     
     override func viewWillDisappear(animated: Bool) {

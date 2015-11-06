@@ -8,11 +8,9 @@
 
 import UIKit
 
-class FadeTransition: BaseTransition {
+class EventTransition: BaseTransition {
     
     override func presentTransition(containerView: UIView, fromViewController: UIViewController, toViewController: UIViewController) {
-        print("2")
-        //let eventDetailViewController = toViewController as! EventViewController
         let nav = toViewController as! UINavigationController
         let eventDetailViewController = nav.viewControllers.first as! EventViewController   
         let homeViewController = fromViewController as! HomeViewController

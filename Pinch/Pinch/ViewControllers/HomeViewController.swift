@@ -11,7 +11,7 @@ import UIImageEffects
 import Parse
 
 
-class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControllerTransitioningDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate {
+class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning, UIGestureRecognizerDelegate, UIScrollViewDelegate {
     
     // Outlets and Vars --------------------------------
     
@@ -27,30 +27,19 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     var searchTerm = ""
     var searchLocation = ""
     
-    // Events
-    /*
-    @IBOutlet weak var eventView: UIView!
-    @IBOutlet weak var eventContentView: UIView!
-    @IBOutlet weak var summaryBannerImage: UIImageView!
-    @IBOutlet weak var scheduledDate: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var npoLabel: UILabel!
-    @IBOutlet weak var resultsCollectionView: UICollectionView!
-    @IBOutlet weak var friend1: UIImageView!
-    @IBOutlet weak var friend2: UIImageView!
-    @IBOutlet weak var friend3: UIImageView!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var tagButton1: UIButton!
-    @IBOutlet weak var tagButton2: UIButton!
-    */
-    
     var eventCardTransition: EventCardTransition!
     var interactiveTransition: UIPercentDrivenInteractiveTransition!
+    var transitionContext: UIViewControllerContextTransitioning?
     var cardView: UIView!
     var initialY: CGFloat!
     var initialX: CGFloat!
-    var fadeTransition: FadeTransition!
+    var eventTransition: EventTransition!
+    let middlePoint = CGPoint(x: UIScreen.mainScreen().bounds.width/2, y: UIScreen.mainScreen().bounds.height/2)
+    var tempEventController: EventViewController!
+    var initialScale: CGFloat!
+    var verticalPanRange: CGFloat!
+    var percentageScaled: CGFloat!
+    var cardPointInSuperview: CGPoint!
     
     var isPresenting: Bool = true
     var wasTapped: Bool = true
@@ -64,14 +53,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         
         eventsScrollView.delegate = self
         
-        // Event card styles
-        //eventView.layer.cornerRadius = buttonCornerRadius * 1.5
-        //eventContentView.layer.cornerRadius = eventView.layer.cornerRadius
-        //eventContentView.layer.masksToBounds = true
-        //eventView.layer.shadowOffset = CGSize(width: 0, height: 2)
-        //eventView.layer.shadowOpacity = 0.05
-        //eventView.layer.shadowRadius = 3
-        
         // Search field styles
         searchTermField.layer.cornerRadius = buttonCornerRadius
         searchTermField.leftView = UIImageView(image: UIImage(named: "icon_search_13x13"))
@@ -81,9 +62,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         searchTermField.attributedPlaceholder = NSAttributedString(string: "Search",
             attributes:[NSForegroundColorAttributeName: UIColorFromRGB("FFFFFF", alpha: 0.5)])
         searchTermField.delegate = self
-        
-        //tagButton1.layer.cornerRadius = 3
-        //tagButton2.layer.cornerRadius = 3
         
         // Display search UIView if active
         if isSearchEnabled {
@@ -95,6 +73,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         // Download events from Parse
         let query = PFQuery(className:"Event")
         query.includeKey("organization") // Include Organization class
+        query.orderByAscending("addressStreet")
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             
@@ -102,19 +81,21 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                 // The find succeeded.
                 print("Successfully retrieved \(objects!.count) events.")
                 // Do something with the found objects
-                if let objects = objects as? [PFObject]? {
-                    for (index, object) in objects!.enumerate() {
+                if let objects = objects as [PFObject]? {
+                    for (index, object) in objects.enumerate() {
                         print("\(index): \(object.objectId!)")
                         self.events.append(object)
                         let container = UIView()
-                        let eventNavController = self.storyboard!.instantiateViewControllerWithIdentifier("EventNavigationController") as! UINavigationController;
+                        let eventNavController = self.storyboard!.instantiateViewControllerWithIdentifier("EventNavigationController") as! UINavigationController
                         let eventViewController = eventNavController.topViewController as! EventViewController
-                        eventViewController.index = index
+                        self.buildEventController(eventViewController, index: index)
                         eventNavController.view.transform = CGAffineTransformMakeScale(0.7466,0.7466)
                         container.addSubview(eventNavController.view)
                         eventNavController.didMoveToParentViewController(self)
                         eventNavController.view.userInteractionEnabled = false
                         eventNavController.view.frame.origin = CGPointMake(0,0)
+
+                        // Event card styles
                         container.frame.origin.x = (eventNavController.view.frame.width + 12) * CGFloat(index)
                         container.frame.size.width = eventNavController.view.frame.width
                         container.frame.size.height = container.frame.size.width * (self.view.bounds.height/self.view.bounds.width)
@@ -123,6 +104,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                         container.layer.shadowOffset = CGSize(width: 0, height: 2)
                         container.layer.shadowOpacity = 0.10
                         container.layer.shadowRadius = 3
+                        
                         container.tag = index
                         self.eventsScrollView.addSubview(container)
                         
@@ -136,36 +118,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                         cardPan.delegate = self
                         container.addGestureRecognizer(cardTap)
                         container.addGestureRecognizer(cardPan)
-                        
-                        let event = eventNavController.topViewController as! EventViewController
-                        event.index = index
-                        
-                        // Populate data from Parse
-                        
-                        // Header image
-                        let imageURL = self.events[index]["imageURL"] as! String
-                        let imageData = NSData(contentsOfURL: NSURL(string: imageURL)!)
-                        event.summaryBannerImage = UIImage(data: imageData!)
-                        
-                        // Header text
-                        event.titleLabel = self.events[index]["name"] as! String
-                        let street = self.events[index]["addressStreet"] as! String
-                        let city = self.events[index]["addressCity"] as! String
-                        let state = self.events[index]["addressState"] as! String
-                        let zip = self.events[index]["addressZIP"] as! String
-                        event.addressLabel = "\(street), \(city), \(state) \(zip)"
-                        
-                        // Non-profit name
-                        event.npoLabel = self.events[index]["organization"]["name"] as! String
-                        
-                        // Event description
-                        event.descriptionLabel = self.events[index]["description"] as! String
-                        
-                        // Store event inside the event
-                        event.event = self.events[index]
-                        
-                        print("Event \(event) created at index \(index)")
-                        
                     }
                 }
             } else {
@@ -219,141 +171,29 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         return false
     }
     
-    
-    // Event Cards -------------------------------------
-    
-    func onCardTap(sender: UITapGestureRecognizer) {
-        performSegueWithIdentifier("eventDetailSegue", sender: sender.view)
-        fadeTransition.finish()
-        //eventView.frame.origin.y = 104
-        //eventView.transform = CGAffineTransformMakeScale(1.0, 1.0)
-    }
-    /*
-    @IBAction func backButton(sender: AnyObject) {
-        UIView.animateWithDuration(0.4, animations: { () -> Void in
-            print("event back button")
-            self.pageViewController.view.userInteractionEnabled = true
-            self.eventContainerView.transform = CGAffineTransformMakeScale(0.9, 0.9)
-            self.eventsScrollView.frame.origin.y = 40
-            self.bottomNavView.frame.origin.y = 592
-            self.pageViewController.view.userInteractionEnabled = false
-            self.pageViewController.view.layer.cornerRadius = 4
-        })
-    }*/
-    
-    func onPanCard(sender: UIPanGestureRecognizer) {
-        let translation = sender.translationInView(view)
-        let velocity = sender.velocityInView(view)
-        let middlePoint: CGFloat = UIScreen.mainScreen().bounds.height/2
-        
-        
-        //***************************************
-        //***       NOT WORKING RIGHT      ******
-        //***************************************
-        
-        if sender.state == UIGestureRecognizerState.Began {
-            initialY = sender.view!.center.y
-            print("initialY is: \(initialY)")
-        } else if sender.state == UIGestureRecognizerState.Changed {
-            print(initialY + translation.y)
-            if initialY + translation.y <= middlePoint {
-                sender.view!.center.y = initialY + translation.y
-                let difference = middlePoint - sender.view!.center.y
-                let percentagePan = difference / middlePoint
-                print("percentagePan is: \(percentagePan)")
-                var scale = 0.7466 + percentagePan * (1 - 0.7466)
-                sender.view!.transform = CGAffineTransformMakeScale(scale, scale)
-            } else {
-                sender.view!.center.y = middlePoint
-            }
-        } else if sender.state == UIGestureRecognizerState.Ended {
-            /*if velocity.y < 0 && eventContainerView.frame.origin.y < initialY {
-                UIView.animateWithDuration(0.3, animations: { () -> Void in
-                    self.eventContainerView.transform = CGAffineTransformMakeScale(1.0, 1.0)
-                    self.pageViewController.view.transform = CGAffineTransformMakeScale(1.0, 1.0)
-                    self.eventContainerView.frame.origin.y = 0
-                    self.eventsScrollView.transform = CGAffineTransformMakeScale(1.0, 1.0)
-                    self.eventsScrollView.frame.origin.y = 0
-                    self.bottomNavView.frame.origin.y = 668
-                    self.pageViewController.view.layer.cornerRadius = 4
-                })
-            } else {
-                UIView.animateWithDuration(0.3, animations: { () -> Void in
-                    self.eventContainerView.frame.origin.y = self.initialY
-                    self.eventContainerView.frame.origin.x = self.initialX
-                    //eventContainerView.transform = CGAffineTransformIdentity
-                })
-            }
-            
-            if velocity.y > 0 && eventContainerView.frame.origin.y == 0 {
-                //eventContainerView.frame.origin.y = 0
-            }*/
-        }
-    }
-    
-    /*
+/*
     func interactionControllerForPresentation(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-    interactiveTransition = UIPercentDrivenInteractiveTransition()
-    //Setting the completion speed gets rid of a weird bounce effect bug when transitions complete
-    interactiveTransition.completionSpeed = 0.99
-    return interactiveTransition
-    }*/
-    
-    
+        interactiveTransition = UIPercentDrivenInteractiveTransition()
+        //Setting the completion speed gets rid of a weird bounce effect bug when transitions complete
+        interactiveTransition.completionSpeed = 0.99
+        return interactiveTransition
+    }
+*/
+
+
     // Custom Transitions ------------------------------
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "eventDetailSegue" {
-            fadeTransition = FadeTransition()
-            fadeTransition.isInteractive = true
-            let nav = segue.destinationViewController as! UINavigationController
-            let eventDetailViewController = nav.topViewController as! EventViewController
-            
-            eventDetailViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
-            nav.transitioningDelegate = fadeTransition
-            fadeTransition.duration = 0.5
-            
-            let index = sender!.tag
-            eventDetailViewController.index = index
-            
-            // Populate data from Parse
-            
-            // Header image
-            let imageURL = self.events[index]["imageURL"] as! String
-            let imageData = NSData(contentsOfURL: NSURL(string: imageURL)!)
-            eventDetailViewController.summaryBannerImage = UIImage(data: imageData!)
-            
-            // Header text
-            eventDetailViewController.titleLabel = self.events[index]["name"] as! String
-            let street = self.events[index]["addressStreet"] as! String
-            let city = self.events[index]["addressCity"] as! String
-            let state = self.events[index]["addressState"] as! String
-            let zip = self.events[index]["addressZIP"] as! String
-            eventDetailViewController.addressLabel = "\(street), \(city), \(state) \(zip)"
-            
-            // Non-profit name
-            eventDetailViewController.npoLabel = self.events[index]["organization"]["name"] as! String
-            
-            // Event description
-            eventDetailViewController.descriptionLabel = self.events[index]["description"] as! String
-            
-            // Pass data to Destination Event View Controller
-            eventDetailViewController.event =  events[index]
-            //eventDetailViewController.scheduleDate = scheduledDate.text
-            //eventDetailViewController.friend1Image = friend1.image
-            //eventDetailViewController.friend2Image = friend2.image
-            //eventDetailViewController.friend3Image = friend3.image
-            
-            
-            //let eventDetailViewController = page.topViewController as! EventViewController
-            //let pageViewController = nav.topViewController as! EventPageViewController
-            //let eventDetailViewController = segue.destinationViewController as! EventViewController
-            
+            let destinationNavViewController = segue.destinationViewController as! UINavigationController
+            let destinationEventViewController = destinationNavViewController.topViewController as! EventViewController
+            destinationNavViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+            destinationNavViewController.transitioningDelegate = self
+            self.buildEventController(destinationEventViewController, index: sender!.tag)
         } else if segue.identifier == "segueToSearch" {
             let destinationViewController = segue.destinationViewController as! SearchViewController
             destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
             destinationViewController.transitioningDelegate = self
-            
             if self.searchTermField.text != "" {
                 destinationViewController.searchTerm = self.searchTermField.text! // Assumes search is never empty
             }
@@ -361,7 +201,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     }
     
     @IBAction func unwindFromSearch(segue: UIStoryboardSegue) {
-        print(segue.destinationViewController)
         if segue.sourceViewController.isKindOfClass(SearchViewController) {
             let fromViewController = segue.sourceViewController as! SearchViewController
             if fromViewController.searchTermField.text! != "" {
@@ -380,7 +219,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         }
     }
     
-    /*
+    
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         isPresenting = true
         return self
@@ -389,21 +228,25 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         isPresenting = false
         return self
-    }*/
+    }
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         // The value here should be the duration of the animations scheduled in the animationTransition method
-        return 0.5
+        return 0.3
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        print("Animating transition to Search...")
+        self.transitionContext = transitionContext
+        
         let containerView = transitionContext.containerView()!
         let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
         let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
         
-        let animationTime = 0.3
+        print("Animating transition to ... \(toViewController)")
         
+        //let duration = 0.3
+        let duration = transitionDuration(transitionContext)
+
         if (isPresenting) {
             if toViewController.isKindOfClass(SearchViewController) { // Animate TO SearchViewController
                 containerView.addSubview(toViewController.view)
@@ -449,11 +292,11 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                     */
                     transitionContext.completeTransition(true)
                     
-                    UIView.animateWithDuration(animationTime, animations: { () -> Void in
+                    UIView.animateWithDuration(duration, animations: { () -> Void in
                         toVC.backgroundView.alpha = 1
                         
                     })
-                    UIView.animateWithDuration(animationTime, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
+                    UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
                         print("Animating `tempTextField`...")
                         tempSearchTermField.frame.origin = CGPoint(x: 16, y: 64)
                         tempSearchTermField.frame.size.width = 343
@@ -470,28 +313,40 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                     print("Search is not enabled.")
                     let toVC = toViewController as! SearchViewController
                     toVC.searchTermField.text = ""
-                    UIView.animateWithDuration(animationTime, animations: { () -> Void in
+                    UIView.animateWithDuration(duration, animations: { () -> Void in
                         toViewController.view.alpha = 1
                         }) { (finished: Bool) -> Void in
                             transitionContext.completeTransition(true)
                     }
                 }
-            } else if toViewController.isKindOfClass(EventViewController) { // Animate TO EventViewController
-                // DO SOMETHING!!!
-                print("Animate TO Card")
+            } else if toViewController.isKindOfClass(EventNavigationController) { // Animate TO EventViewController
+                print("Animate TO Event")
+                toViewController.willMoveToParentViewController(self)
                 containerView.addSubview(toViewController.view)
-                UIView.animateWithDuration(animationTime, animations: { () -> Void in
-                    toViewController.view.alpha = 1
-                    }) { (finished: Bool) -> Void in
+                toViewController.view.frame = self.view.frame;
+                
+                //containerView.addChildViewController(toViewController)
+                toViewController.didMoveToParentViewController(self)
+                let toVC = (toViewController as! EventNavigationController).topViewController as! EventViewController
+                //self.buildEventController(toEventViewController, index: sender.view!.tag)
+                
+                UIView.animateWithDuration(duration, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
+                    toVC.view!.transform = CGAffineTransformMakeScale(1.0, 1.0)
+                    toVC.view!.center = CGPoint(x: UIScreen.mainScreen().bounds.width/2, y: UIScreen.mainScreen().bounds.height/2)
+                    toVC.view.layer.cornerRadius = 0
+                    //self.bottomNavView.frame.origin.y = 668
+                    }, completion: {
+                        finished in
+                        //self.tempEventController.view.removeFromSuperview()
                         transitionContext.completeTransition(true)
-                }
+                })
             }
         } else {
             if fromViewController.isKindOfClass(SearchViewController) { // Animate FROM SearchViewController
                 let fromVC = fromViewController as! SearchViewController
                 fromVC.searchTermField.alpha = 0
                 fromVC.searchLocationField.alpha = 0
-                UIView.animateWithDuration(animationTime, animations: { () -> Void in
+                UIView.animateWithDuration(duration, animations: { () -> Void in
                     fromViewController.view.alpha = 0
                     }) { (finished: Bool) -> Void in
                         transitionContext.completeTransition(true)
@@ -527,7 +382,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                     window!.addSubview(tempSearchLocationField)
                     window!.addSubview(tempSearchTermField)
                     
-                    UIView.animateWithDuration(animationTime, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
+                    UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
                         print("Animating `tempTextField`...")
                         tempSearchTermField.frame.origin = CGPoint(x: 52, y: 28)
                         tempSearchTermField.frame.size.width = 271
@@ -540,12 +395,111 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                     }
                 }
             } else if fromViewController.isKindOfClass(EventViewController) { // Animate FROM EventViewController
-                // DO SOMETHING!!!
                 print("Animate FROM Card")
-                
+                UIView.animateWithDuration(duration, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
+                    self.tempEventController.view!.transform = CGAffineTransformMakeScale(1.0, 1.0)
+                    self.tempEventController.view!.center = self.cardPointInSuperview
+                    self.tempEventController.view.layer.cornerRadius = 0
+                    //self.bottomNavView.frame.origin.y = 668
+                    }, completion: {
+                        finished in
+                        self.tempEventController.view.removeFromSuperview()
+                        transitionContext.completeTransition(true)
+                })
             }
         }
     }
     
+    
+    // Event Cards -------------------------------------
+    
+    func onCardTap(sender: UITapGestureRecognizer) {
+        performSegueWithIdentifier("eventDetailSegue", sender: sender.view)
+        //eventTransition.finish()
+        //transitionContext?.completeTransition(true)
+        //animateTransition(transitionContext)
+    }
+    
+    func onPanCard(sender: UIPanGestureRecognizer) {
+        
+        //----------------------------------------
+        //-----       NOT WORKING RIGHT      -----
+        //----------------------------------------
+        
+        let translation = sender.translationInView(view)
+        let velocity = sender.velocityInView(view)
+        
+        if sender.state == UIGestureRecognizerState.Began {
+            cardPointInSuperview = (sender.view!.superview?.convertPoint(sender.view!.center, toView: self.view))!
+            initialY = cardPointInSuperview.y
+            print("initialY is: \(initialY)")
+            
+            // Instantiate a temporary view controller to transition
+            tempEventController = self.storyboard!.instantiateViewControllerWithIdentifier("EventViewController") as! EventViewController
+            self.buildEventController(tempEventController, index: sender.view!.tag)
+            self.view.addSubview(tempEventController.view)
+            self.addChildViewController(tempEventController)
+            tempEventController.didMoveToParentViewController(self)
+            tempEventController.view.userInteractionEnabled = false
+            tempEventController.view.layer.cornerRadius = buttonCornerRadius * 2
+            initialScale = sender.view!.frame.width / UIScreen.mainScreen().bounds.width
+            tempEventController.view!.transform = CGAffineTransformMakeScale(initialScale, initialScale)
+            tempEventController.view!.center = (sender.view!.superview?.convertPoint(sender.view!.center, toView: self.view))!
+            verticalPanRange = (UIScreen.mainScreen().bounds.height - tempEventController.view!.frame.height)/2
+            print("tempEventController height: \(tempEventController.view!.frame.height), range: \(verticalPanRange)")
+            percentageScaled = 0
+        } else if sender.state == UIGestureRecognizerState.Changed {
+            if abs(translation.y) < verticalPanRange {
+                print("In range, translation.y is: \(translation.y)")
+                if (initialY + translation.y) <= middlePoint.y {
+                    tempEventController.view!.center.y = initialY + translation.y
+                    percentageScaled = (verticalPanRange - abs(translation.y)) / verticalPanRange
+                    print("percentage is: \(percentageScaled)")
+                    let scale = initialScale + (1 - percentageScaled) * (1 - initialScale)
+                    print("initialScale is: \(initialScale), scale is: \(scale)")
+                    tempEventController.view!.transform = CGAffineTransformMakeScale(scale, scale)
+                }
+            } else {
+                print("Out of range")
+            }
+        } else if sender.state == UIGestureRecognizerState.Ended {
+            if percentageScaled > 0.5 {
+                performSegueWithIdentifier("eventDetailSegue", sender: nil)
+            } else {
+                //shrinkCard(self.transitionContext!)
+            }
+        }
+    }
+    
+    
+    // Pull Data from Parse ----------------------------
+    
+    func buildEventController(event: EventViewController, index: Int) {
+        event.index = index
+        
+        // Header image
+        let imageURL = self.events[index]["imageURL"] as! String
+        let imageData = NSData(contentsOfURL: NSURL(string: imageURL)!)
+        event.summaryBannerImage = UIImage(data: imageData!)
+        
+        // Header text
+        event.titleLabel = self.events[index]["name"] as! String
+        let street = self.events[index]["addressStreet"] as! String
+        let city = self.events[index]["addressCity"] as! String
+        let state = self.events[index]["addressState"] as! String
+        let zip = self.events[index]["addressZIP"] as! String
+        event.addressLabel = "\(street), \(city), \(state) \(zip)"
+        
+        // Non-profit name
+        event.npoLabel = self.events[index]["organization"]["name"] as! String
+        
+        // Event description
+        event.descriptionLabel = self.events[index]["description"] as! String
+        
+        // Pass data to Destination Event View Controller
+        event.event =  events[index]
+        
+        print("Event \(event) created at index \(index)")
+    }
     
 }
