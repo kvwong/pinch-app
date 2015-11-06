@@ -1167,6 +1167,7 @@
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Event Details v3" id="D1Y-1p-wp4">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1662"/>
                                                 <autoresizingMask key="autoresizingMask"/>
+                                                <animations/>
                                             </imageView>
                                             <view contentMode="scaleToFill" id="4dB-9o-AJ5">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="578"/>

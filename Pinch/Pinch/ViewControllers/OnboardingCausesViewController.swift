@@ -44,6 +44,10 @@ class OnboardingCausesViewController: UIViewController {
         tagListView.tagCornerRadius = 10
         tagListView.collectionView.scrollEnabled = false
         tagListView.collectionView.backgroundColor = colorBackgroundLight
+        tagListView.tagColor = UIColorFromRGB("47C6B2", alpha: 1)
+        //tagListView.tintColor = UIColorFromRGB("47C6B2", alpha: 1)
+        //tagListView.backgroundColor = UIColorFromRGB("47C6B2", alpha: 1)
+        
         
         for cause in Cause.allValues {
             tagListView.tags.addObject(cause.rawValue) // Populates the tag cloud from the Cause enum
