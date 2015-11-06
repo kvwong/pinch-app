@@ -66,6 +66,7 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
         
         //scrollView.contentSize.height = eventSummaryView.frame.size.height
+        scrollView.contentSize = CGSizeMake(375, 1662)
         self.navigationController?.navigationBarHidden = true
         scrollView.delegate = self
         eventBannerImage.clipsToBounds = true
@@ -73,7 +74,7 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         
         eventBannerImage.image = summaryBannerImage
         eventTitleLabel.text = titleLabel
-        eventTimeAndDateLabel.text = scheduleDate
+        //eventTimeAndDateLabel.text = scheduleDate
         eventAddressLabel.text = addressLabel
         //eventNPOLabel.text = npoLabel
         let paragraphStyle = NSMutableParagraphStyle()
@@ -81,14 +82,20 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         
         eventDescriptionLabel.attributedText = NSAttributedString(string: descriptionLabel, attributes:[NSFontAttributeName: UIFont(name: "Lato-Regular", size: 14)!, NSForegroundColorAttributeName: colorTextMedium, NSParagraphStyleAttributeName: paragraphStyle])
         
-        //npo = event.valueForKey("organization") as! PFObject
-        //print("npo: \(npo.valueForKey("name")!)")
-        //eventNPOLabel.text = npo.valueForKey("name")! as! String
+        npo = event.valueForKey("organization") as! PFObject
+        print("npo: \(npo.valueForKey("name")!)")
+        eventNPOLabel.text = npo.valueForKey("name")! as! String
         
-        friend1.image = friend1Image
-        friend2.image = friend2Image
-        friend3.image = friend3Image
+        //friend1.image = friend1Image
+        //friend2.image = friend2Image
+        //friend3.image = friend3Image
         
+        friend1.layer.masksToBounds = true
+        friend2.layer.masksToBounds = true
+        friend3.layer.masksToBounds = true
+        friend1.layer.cornerRadius = 15
+        friend2.layer.cornerRadius = 15
+        friend3.layer.cornerRadius = 15
         
         tagButton1.layer.cornerRadius = 3
         tagButton2.layer.cornerRadius = 3
@@ -114,12 +121,10 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "segueToNPO" {
-            
-        let npoVC = segue.destinationViewController as! OrganizationProfileViewController
-            
-        npoVC.npo = npo
-            
-        }}
+            let npoVC = segue.destinationViewController as! OrganizationProfileViewController
+            npoVC.npo = npo
+        }
+    }
     
     
     /*func scrollViewDidScroll(scrollView: UIScrollView) {
