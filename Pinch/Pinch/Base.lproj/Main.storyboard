@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="V8y-lG-Mwc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Lato-Bold.ttf">
-            <string>Lato-Bold</string>
-            <string>Lato-Bold</string>
             <string>Lato-Bold</string>
             <string>Lato-Bold</string>
             <string>Lato-Bold</string>
@@ -282,7 +280,7 @@
                                                             <animations/>
                                                             <state key="normal" image="button_profile_menu_nonprofits"/>
                                                             <connections>
-                                                                <action selector="didPressNonProfits:" destination="ALl-jm-gkw" eventType="touchUpInside" id="kHf-Cx-f2U"/>
+                                                                <segue destination="lwS-1M-rYG" kind="push" id="ZZ7-lP-KhI"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="L2k-ce-nMg" userLabel="Following">
@@ -291,7 +289,7 @@
                                                             <animations/>
                                                             <state key="normal" image="button_profile_menu_following"/>
                                                             <connections>
-                                                                <action selector="didPressFollowing:" destination="ALl-jm-gkw" eventType="touchUpInside" id="ie6-uG-jsv"/>
+                                                                <segue destination="n7v-Hh-x8C" kind="push" id="Y1d-dK-lkb"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -486,7 +484,6 @@
                         <outlet property="pastEventsLabel" destination="Y0Z-L8-lw1" id="cUk-bt-dax"/>
                         <outlet property="reliefCardView" destination="pJg-yJ-s4X" id="5Nf-Tf-tSV"/>
                         <outlet property="youthCardView" destination="m1Q-Jz-npi" id="F8A-7r-g5E"/>
-                        <segue destination="n7v-Hh-x8C" kind="push" identifier="segueToFollowing" id="O7t-Rq-kzQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xV2-bH-zqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -537,55 +534,17 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="28" sectionFooterHeight="28" id="w4s-Rs-WY7">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" id="EYO-KF-cxz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FollowingTableViewCell" rowHeight="56" id="r9U-If-KPb" customClass="FollowingTableViewCell" customModule="Pinch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="56"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="content_followingusers" id="c7k-dC-M1b">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="513"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r9U-If-KPb" id="V8Q-pX-176">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="poE-9O-7qd">
-                                                    <rect key="frame" x="16" y="8" width="40" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
-                                                    <color key="backgroundColor" red="0.91372549020000005" green="0.93725490199999995" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1N6-GJ-80D">
-                                                    <rect key="frame" x="68" y="17" width="212" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
-                                                    <color key="textColor" red="0.13333333333333333" green="0.18431372549019609" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="m81-40-BCu">
-                                                    <rect key="frame" x="272" y="14" width="87" height="28"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
-                                                    <color key="backgroundColor" red="0.27843137254901962" green="0.77647058823529413" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
-                                                    <state key="normal" title="Following">
-                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                            <animations/>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                        <connections>
-                                            <outlet property="followingButton" destination="m81-40-BCu" id="IoY-kB-upU"/>
-                                            <outlet property="nameLabel" destination="1N6-GJ-80D" id="lqX-8q-yR6"/>
-                                            <outlet property="profilePicImageView" destination="poE-9O-7qd" id="HDu-Bp-XPM"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </scrollView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
@@ -594,12 +553,47 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="followingTableView" destination="w4s-Rs-WY7" id="wkJ-iA-FHY"/>
+                        <outlet property="followingContentView" destination="c7k-dC-M1b" id="sPV-7G-bJU"/>
+                        <outlet property="followingScrollView" destination="EYO-KF-cxz" id="AA2-0L-Qkw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcz-hH-ATq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4588.5" y="-593.5"/>
+            <point key="canvasLocation" x="5012.5" y="-593.5"/>
+        </scene>
+        <!--Non-Profits-->
+        <scene sceneID="1Dw-vL-hYZ">
+            <objects>
+                <viewController id="lwS-1M-rYG" customClass="UserOrgsViewController" customModule="Pinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ihg-cA-v5g">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" id="Afu-AS-i4C">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="content_followingorgs" id="sQj-kR-ac7">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="342"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Non-Profits" id="yr6-dk-o91"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="orgsContentView" destination="sQj-kR-ac7" id="tS5-wi-9En"/>
+                        <outlet property="orgsScrollView" destination="Afu-AS-i4C" id="aQQ-HH-Swv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pgi-Bw-bHw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4551.5" y="-593.5"/>
         </scene>
         <!--Activity-->
         <scene sceneID="7cf-s4-zQo">
@@ -680,7 +674,7 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="YDl-kP-ozy">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" id="YDl-kP-ozy">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -3372,6 +3366,8 @@
         <image name="card_relief" width="107" height="128"/>
         <image name="card_youth" width="107" height="128"/>
         <image name="content_badges" width="375" height="1061"/>
+        <image name="content_followingorgs" width="375" height="342"/>
+        <image name="content_followingusers" width="375" height="513"/>
         <image name="content_stats" width="375" height="451"/>
         <image name="content_youractivity" width="375" height="915"/>
         <image name="content_yourtestimonials" width="375" height="370"/>
