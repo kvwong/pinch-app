@@ -40,6 +40,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     var verticalPanRange: CGFloat!
     var percentageScaled: CGFloat!
     var cardPointInSuperview: CGPoint!
+    var index: Int!
     
     var isPresenting: Bool = true
     var wasTapped: Bool = true
@@ -337,6 +338,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                     //self.bottomNavView.frame.origin.y = 668
                     }, completion: {
                         finished in
+                        toVC.view.userInteractionEnabled = true
                         //self.tempEventController.view.removeFromSuperview()
                         transitionContext.completeTransition(true)
                 })
@@ -464,7 +466,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIViewControlle
             }
         } else if sender.state == UIGestureRecognizerState.Ended {
             if percentageScaled > 0.5 {
-                performSegueWithIdentifier("eventDetailSegue", sender: nil)
+                performSegueWithIdentifier("eventDetailSegue", sender: sender.view)
             } else {
                 //shrinkCard(self.transitionContext!)
             }
