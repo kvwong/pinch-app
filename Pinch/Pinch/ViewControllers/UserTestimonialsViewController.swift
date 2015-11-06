@@ -16,7 +16,7 @@ class UserTestimonialsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        testimonialsScrollView.contentSize = testimonialsImageView.frame.size
+        testimonialsScrollView.contentSize = testimonialsImageView.image!.size
     }
     
     override func viewWillAppear(animated: Bool) {

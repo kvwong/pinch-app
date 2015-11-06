@@ -1,22 +1,22 @@
 //
-//  UserFollowingViewController.swift
+//  UserOrgsViewController.swift
 //  Pinch
 //
-//  Created by Cameron Wu on 10/16/15.
+//  Created by Cameron Wu on 11/5/15.
 //  Copyright © 2015 Team 2. All rights reserved.
 //
 
 import UIKit
 
-class UserFollowingViewController: UIViewController {
-    
-    @IBOutlet weak var followingScrollView: UIScrollView!
-    @IBOutlet weak var followingContentView: UIImageView!
+class UserOrgsViewController: UIViewController {
+
+    @IBOutlet weak var orgsScrollView: UIScrollView!
+    @IBOutlet weak var orgsContentView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        followingScrollView.contentSize = followingContentView.image!.size
+        
+        orgsScrollView.contentSize = orgsContentView.image!.size
     }
     
     override func viewWillAppear(animated: Bool) {

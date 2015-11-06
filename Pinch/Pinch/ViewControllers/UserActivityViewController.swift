@@ -16,7 +16,7 @@ class UserActivityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        activityScrollView.contentSize = activityImageView.frame.size
+        activityScrollView.contentSize = activityImageView.image!.size
     }
     
     override func viewWillAppear(animated: Bool) {
