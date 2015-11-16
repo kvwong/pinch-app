@@ -52,7 +52,7 @@ class EventConfirmAttendanceViewController: UIViewController {
         //Apple Maps
         if (UIApplication.sharedApplication().canOpenURL(NSURL(string:"http://maps.apple.com")!)) {
             UIApplication.sharedApplication().openURL(NSURL(string:
-                "http://maps.apple.com/?daddr=San+Francisco,+CA&saddr=cupertino")!)
+                "http://maps.apple.com/?daddr=2576+Harrison+St+San+Francisco,+CA&saddr=Twitter")!)
         } else {
             NSLog("Can't use Apple Maps");
         }

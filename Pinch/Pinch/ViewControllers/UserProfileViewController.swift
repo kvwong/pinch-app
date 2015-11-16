@@ -319,8 +319,10 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             let event = testEvents[0]
             
             // TO-DO: download an image into cell.eventImageView.image
-            row.titleLabel.text = event.name
-            row.attendeeCountLabel.text = "\(event.attendees.count) people are going"
+            //row.titleLabel.text = event.name
+            //row.attendeeCountLabel.text = "\(event.attendees.count) people are going"
+            row.titleLabel.text = "Volunteering Event"
+            row.attendeeCountLabel.text = "15 people are going"
             
             // Adjusted description line-height
             var attrString: NSMutableAttributedString = NSMutableAttributedString(string: event.description)
